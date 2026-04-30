@@ -25,19 +25,38 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* 🔥 BODY AJUSTADO PARA HEADER FIXO */
 body {
   background: var(--azul-escuro);
   color: var(--branco);
+  padding-top: 90px;
 }
 
+/* 🔥 HEADER PREMIUM */
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 10%;
   display: flex;
   justify-content: space-between;
-  padding: 15px 10%;
   align-items: center;
+  z-index: 1000;
+
+  background: rgba(11, 18, 32, 0.6);
+  backdrop-filter: blur(10px);
+
+  transition: all 0.3s ease;
 }
 
-/* 🔥 NOVA IDENTIDADE (LOGO + TEXTO) */
+/* 🔥 EFEITO AO ROLAR */
+header.scrolled {
+  background: rgba(11, 18, 32, 0.95);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  padding: 10px 10%;
+}
+
+/* 🔥 BRAND */
 .brand {
   display: flex;
   align-items: center;
@@ -65,7 +84,6 @@ header {
   color: var(--cinza);
 }
 
-/* RESPONSIVO BRAND */
 @media(max-width: 600px){
   .brand-sub {
     display: none;
@@ -192,7 +210,6 @@ footer {
   color: var(--cinza);
 }
 
-/* RESPONSIVO */
 @media(max-width: 900px) {
   .hero, .solutions {
     flex-direction: column;
@@ -376,6 +393,17 @@ window.addEventListener('scroll', () => {
       sec.classList.add('show');
     }
   });
+});
+
+/* 🔥 HEADER DINÂMICO */
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
 });
 </script>
 
