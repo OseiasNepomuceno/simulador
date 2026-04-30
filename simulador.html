@@ -2,48 +2,211 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Simulador de Transição Tributária COREGOV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Simulador Tributário COREGOV</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body { font-family: Arial; background: #f5f6fa; padding: 20px; }
-.container { max-width: 600px; margin: auto; }
-input { width: 100%; padding: 10px; margin: 5px 0; }
-button { padding: 12px; width: 100%; background: #2c7be5; color: white; border: none; cursor: pointer; }
-.result { margin-top: 20px; padding: 15px; border-radius: 8px; }
-.blue { background: #d6e4ff; }
-.yellow { background: #fff3cd; }
-.red { background: #f8d7da; }
-.green { background: #d4edda; }
-.whatsapp { background: #25d366; margin-top: 10px; }
+:root {
+  --verde: #00FF9F;
+  --azul-escuro: #0B1220;
+  --azul-medio: #111A2A;
+  --branco: #FFFFFF;
+  --cinza: #CCCCCC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding-top: 90px;
+}
+
+/* HEADER PADRÃO */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(11,18,32,0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+header.scrolled {
+  background: rgba(11,18,32,0.95);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  height: 50px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  color: var(--verde);
+  font-weight: 700;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: var(--cinza);
+}
+
+nav a {
+  margin: 0 10px;
+  color: var(--cinza);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--verde);
+}
+
+.btn {
+  background: var(--verde);
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 650px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* CARD */
+.card {
+  background: var(--azul-medio);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+/* BOTÃO */
+button {
+  width: 100%;
+  padding: 14px;
+  background: var(--verde);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* RESULTADOS */
+.result {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.blue { background: #1d3557; }
+.yellow { background: #665c00; }
+.red { background: #7a1f1f; }
+.green { background: #1f6f3a; }
+
+.whatsapp {
+  background: #25d366;
+  margin-top: 10px;
+}
 </style>
 </head>
 
 <body>
+
+<!-- HEADER PADRÃO COREGOV -->
+<header>
+  <div class="brand">
+    <img src="logo-icon.png" class="logo-icon">
+    <div class="brand-text">
+      <span class="brand-name">COREGOV</span>
+      <span class="brand-sub">Administração & Contabilidade</span>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="quem-somos.html">Quem Somos</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="simulador.html">Simulador</a>
+  </nav>
+
+  <a class="btn" href="https://wa.me/5518991511523" target="_blank">
+    Falar com especialista
+  </a>
+</header>
+
+<!-- SIMULADOR -->
 <div class="container">
-<h2>📊 Simulador de Transição Tributária COREGOV</h2>
 
-<label>Receita Mensal (R$)</label>
-<input type="number" id="receita" value="150000">
+  <h2>📊 Simulador Tributário COREGOV</h2>
 
-<label>Alíquota Simples (%)</label>
-<input type="number" id="simples" value="8">
+  <div class="card">
 
-<label>IBS (%)</label>
-<input type="number" id="ibs" value="10">
+    <label>Receita Mensal (R$)</label>
+    <input type="number" id="receita" value="150000">
 
-<label>CBS (%)</label>
-<input type="number" id="cbs" value="8.8">
+    <label>Alíquota Simples (%)</label>
+    <input type="number" id="simples" value="8">
 
-<button onclick="calcular()">Calcular Impacto</button>
+    <label>IBS (%)</label>
+    <input type="number" id="ibs" value="10">
 
-<div id="resultado"></div>
+    <label>CBS (%)</label>
+    <input type="number" id="cbs" value="8.8">
+
+    <button onclick="calcular()">Calcular Impacto</button>
+
+    <div id="resultado"></div>
+
+  </div>
 </div>
 
 <script>
 function calcular() {
-    let receita = parseFloat(document.getElementById('receita').value);
-    let simples = parseFloat(document.getElementById('simples').value);
-    let ibs = parseFloat(document.getElementById('ibs').value);
-    let cbs = parseFloat(document.getElementById('cbs').value);
+    let receita = +document.getElementById('receita').value;
+    let simples = +document.getElementById('simples').value;
+    let ibs = +document.getElementById('ibs').value;
+    let cbs = +document.getElementById('cbs').value;
 
     let atual = receita * (simples / 100);
     let novo = receita * ((ibs + cbs) / 100);
@@ -51,14 +214,14 @@ function calcular() {
     let perc = (dif / atual) * 100;
 
     let cor = "green";
-    let mensagem = "Cenário vantajoso";
+    let msg = "Cenário favorável";
 
     if (perc > 30) {
         cor = "red";
-        mensagem = "Impacto alto! Planejamento urgente recomendado.";
+        msg = "Impacto alto! Atenção estratégica necessária.";
     } else if (perc > 0) {
         cor = "yellow";
-        mensagem = "Impacto moderado. Avalie estratégias.";
+        msg = "Impacto moderado. Avaliar ajustes.";
     }
 
     document.getElementById('resultado').innerHTML = `
@@ -66,7 +229,7 @@ function calcular() {
         <div class="result yellow">Novo Modelo: R$ ${novo.toFixed(2)}</div>
         <div class="result ${cor}">
             Diferença: R$ ${dif.toFixed(2)} (${perc.toFixed(2)}%)<br><br>
-            <strong>${mensagem}</strong>
+            <strong>${msg}</strong>
         </div>
 
         <div class="result">
@@ -80,9 +243,10 @@ function calcular() {
 }
 
 function whatsapp() {
-    let numero = "5518991511523";
-    let texto = "Olá COREGOV, fiz a simulação tributária e gostaria de uma análise completa.";
-    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(texto)}`, '_blank');
+    window.open(
+      "https://wa.me/5518991511523?text=Olá COREGOV, fiz a simulação tributária e quero uma análise completa.",
+      "_blank"
+    );
 }
 </script>
 
