@@ -1,44 +1,31 @@
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-
+document.addEventListener("DOMContentLoaded", async () => {
   try {
+    const res = await fetch("blog/posts.json");
+    const posts = await res.json();
 
-    /* 🔥 POPUP AUTO-FECHA */
-    setTimeout(() => {
-      const popup = document.getElementById("popup");
-      if (popup) popup.style.display = "none";
-    }, 6000);
+    const container = document.getElementById("blog-home");
 
-    /* 🔥 ANIMAÇÃO DAS SEÇÕES AO SCROLL */
-    const sections = document.querySelectorAll('.section');
+    if (!container) return;
 
-    const handleScroll = () => {
-      sections.forEach(sec => {
-        if (!sec) return;
+    // pega só os 3 primeiros artigos
+    const latestPosts = posts.slice(0, 3);
 
-        const top = sec.getBoundingClientRect().top;
+    latestPosts.forEach(post => {
+      const card = document.createElement("div");
+      card.className = "card";
 
-        if (top < window.innerHeight - 100) {
-          sec.classList.add('show');
-        }
-      });
-    };
+      card.innerHTML = `
+        <h3>${post.title}</h3>
+        <p>${post.desc}</p>
+        <a href="blog/${post.file}" class="btn">Ler artigo</a>
+      `;
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // executa uma vez ao carregar
-
-    /* 🔥 HEADER DINÂMICO (SEM DUPLICAÇÃO E MAIS SEGURO) */
-    const headerEl = document.querySelector("header");
-
-    if (headerEl) {
-      window.addEventListener("scroll", () => {
-        headerEl.classList.toggle("scrolled", window.scrollY > 50);
-      });
-    }
+      container.appendChild(card);
+    });
 
   } catch (error) {
-    console.error("Erro no script principal COREGOV:", error);
+    console.error("Erro ao carregar blog na home:", error);
   }
-
 });
 </script>
