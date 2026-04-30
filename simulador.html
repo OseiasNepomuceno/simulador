@@ -30,7 +30,7 @@ body {
   padding-top: 90px;
 }
 
-/* HEADER PADRÃO */
+/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -101,7 +101,6 @@ nav a:hover {
   padding: 40px 20px;
 }
 
-/* CARD */
 .card {
   background: var(--azul-medio);
   padding: 20px;
@@ -109,8 +108,8 @@ nav a:hover {
   margin-top: 10px;
 }
 
-/* INPUT */
-input {
+/* INPUTS */
+input, select {
   width: 100%;
   padding: 12px;
   margin: 8px 0;
@@ -146,6 +145,7 @@ button {
 
 .whatsapp {
   background: #25d366;
+  color: #000;
   margin-top: 10px;
 }
 </style>
@@ -153,7 +153,6 @@ button {
 
 <body>
 
-<!-- HEADER PADRÃO COREGOV -->
 <header>
   <div class="brand">
     <img src="logo-icon.png" class="logo-icon">
@@ -164,90 +163,96 @@ button {
   </div>
 
   <nav>
-  <a href="index.html">Início</a>
-  <a href="quem-somos.html">Quem Somos</a>
-  <a href="servicos.html">Serviços</a>
-  <a href="simulador.html">Simulador</a>
-  <a href="blog/index.html">Blog</a>
-</nav>
+    <a href="index.html">Início</a>
+    <a href="quem-somos.html">Quem Somos</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="simulador.html">Simulador</a>
+    <a href="blog/index.html">Blog</a>
+  </nav>
 
   <a class="btn" href="https://wa.me/5518991511523" target="_blank">
     Falar com especialista
   </a>
 </header>
 
-<!-- SIMULADOR -->
+<!-- SIMULADOR EVOLUÍDO -->
 <div class="container">
 
-  <h2>📊 Simulador Tributário COREGOV</h2>
+<h2>🧠 Simulador Tributário Inteligente</h2>
 
-  <div class="card">
+<div class="card">
 
-    <label>Receita Mensal (R$)</label>
-    <input type="number" id="receita" value="150000">
+<!-- LEAD CAPTURE -->
+<input type="text" id="nome" placeholder="Seu nome">
+<input type="text" id="whats" placeholder="WhatsApp (DDD + número)">
 
-    <label>Alíquota Simples (%)</label>
-    <input type="number" id="simples" value="8">
+<select id="tipo">
+  <option value="mei">MEI</option>
+  <option value="simples">Simples Nacional</option>
+  <option value="presumido">Lucro Presumido</option>
+</select>
 
-    <label>IBS (%)</label>
-    <input type="number" id="ibs" value="10">
+<!-- DADOS -->
+<input type="number" id="receita" placeholder="Faturamento mensal (R$)">
+<input type="number" id="simples" value="8" placeholder="Alíquota atual (%)">
+<input type="number" id="ibs" value="10" placeholder="IBS (%)">
+<input type="number" id="cbs" value="8.8" placeholder="CBS (%)">
 
-    <label>CBS (%)</label>
-    <input type="number" id="cbs" value="8.8">
+<button onclick="calcular()">Gerar Diagnóstico</button>
 
-    <button onclick="calcular()">Calcular Impacto</button>
+<div id="resultado"></div>
 
-    <div id="resultado"></div>
-
-  </div>
+</div>
 </div>
 
 <script>
 function calcular() {
-    let receita = +document.getElementById('receita').value;
-    let simples = +document.getElementById('simples').value;
-    let ibs = +document.getElementById('ibs').value;
-    let cbs = +document.getElementById('cbs').value;
 
-    let atual = receita * (simples / 100);
-    let novo = receita * ((ibs + cbs) / 100);
-    let dif = novo - atual;
-    let perc = (dif / atual) * 100;
+let nome = document.getElementById("nome").value;
+let whats = document.getElementById("whats").value;
 
-    let cor = "green";
-    let msg = "Cenário favorável";
+let receita = +document.getElementById('receita').value;
+let simples = +document.getElementById('simples').value;
+let ibs = +document.getElementById('ibs').value;
+let cbs = +document.getElementById('cbs').value;
 
-    if (perc > 30) {
-        cor = "red";
-        msg = "Impacto alto! Atenção estratégica necessária.";
-    } else if (perc > 0) {
-        cor = "yellow";
-        msg = "Impacto moderado. Avaliar ajustes.";
-    }
+let atual = receita * (simples / 100);
+let novo = receita * ((ibs + cbs) / 100);
 
-    document.getElementById('resultado').innerHTML = `
-        <div class="result blue">Imposto Atual: R$ ${atual.toFixed(2)}</div>
-        <div class="result yellow">Novo Modelo: R$ ${novo.toFixed(2)}</div>
-        <div class="result ${cor}">
-            Diferença: R$ ${dif.toFixed(2)} (${perc.toFixed(2)}%)<br><br>
-            <strong>${msg}</strong>
-        </div>
+let dif = novo - atual;
+let perc = (dif / atual) * 100;
 
-        <div class="result">
-            📌 Revisar precificação<br>
-            📌 Analisar créditos tributários<br>
-            📌 Avaliar regime tributário
-        </div>
+let cor = "green";
+let msg = "Situação saudável";
 
-        <button class="whatsapp" onclick="whatsapp()">Falar com especialista</button>
-    `;
+if (perc > 30) {
+  cor = "red";
+  msg = "⚠️ Alto impacto tributário";
+} else if (perc > 0) {
+  cor = "yellow";
+  msg = "⚠️ Atenção necessária";
 }
 
-function whatsapp() {
-    window.open(
-      "https://wa.me/5518991511523?text=Olá COREGOV, fiz a simulação tributária e quero uma análise completa.",
-      "_blank"
-    );
+let texto = `Olá, me chamo ${nome}. Fiz o diagnóstico tributário e quero uma análise completa.`;
+
+document.getElementById("resultado").innerHTML = `
+  <div class="result blue">Atual: R$ ${atual.toFixed(2)}</div>
+  <div class="result yellow">Novo: R$ ${novo.toFixed(2)}</div>
+  <div class="result ${cor}">
+    Diferença: R$ ${dif.toFixed(2)} (${perc.toFixed(2)}%)<br><br>
+    <strong>${msg}</strong>
+  </div>
+
+  <div class="result">
+    📌 Revisar precificação<br>
+    📌 Analisar créditos tributários<br>
+    📌 Avaliar regime tributário
+  </div>
+
+  <button class="whatsapp" onclick="window.open('https://wa.me/55${whats}?text=${encodeURIComponent(texto)}','_blank')">
+    Falar com especialista agora
+  </button>
+`;
 }
 </script>
 
