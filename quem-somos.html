@@ -30,7 +30,7 @@ body {
   padding-top: 90px;
 }
 
-/* HEADER PADRÃO (CORRIGIDO) */
+/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -64,7 +64,6 @@ header.scrolled {
 .brand-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
 }
 
 .brand-name {
@@ -97,6 +96,8 @@ nav a:hover {
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  display: inline-block;
+  margin-top: 15px;
 }
 
 /* CONTAINER */
@@ -160,7 +161,6 @@ p {
 
 <body>
 
-<!-- HEADER ÚNICO (CORRIGIDO) -->
 <header>
   <div class="brand">
     <img src="logo-icon.png" class="logo-icon">
@@ -172,12 +172,12 @@ p {
   </div>
 
   <nav>
-  <a href="index.html">Início</a>
-  <a href="quem-somos.html">Quem Somos</a>
-  <a href="servicos.html">Serviços</a>
-  <a href="simulador.html">Simulador</a>
-  <a href="blog/index.html">Blog</a>
-</nav>
+    <a href="index.html">Início</a>
+    <a href="quem-somos.html">Quem Somos</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="simulador.html">Simulador</a>
+    <a href="blog/index.html">Blog</a>
+  </nav>
 
   <a class="btn" href="https://wa.me/5518991511523" target="_blank">
     Falar com especialista
@@ -187,18 +187,34 @@ p {
 <!-- CONTEÚDO -->
 <div class="container">
 
+  <!-- CÍNTIA -->
   <div class="card">
     <img src="cintia.jpg" class="foto">
     <h2>Cíntia Gomes Leite</h2>
     <h3>Especialista em Contabilidade Estratégica</h3>
-    <p>Atuação com foco em gestão tributária e redução de impostos.</p>
+
+    <p>Atuação com foco em gestão tributária e redução de impostos para empresas.</p>
+
+    <p>Ajuda empreendedores a pagar menos impostos com segurança e planejamento.</p>
+
+    <a class="btn" href="https://wa.me/5518991511523?text=Olá Cíntia, vi seu perfil no site e gostaria de orientação sobre contabilidade." target="_blank">
+      Falar com a Cíntia
+    </a>
   </div>
 
+  <!-- OSEIAS -->
   <div class="card">
     <img src="oseias.jpg" class="foto">
     <h2>Oseias Rodrigues Nepomuceno</h2>
     <h3>Estrategista em Gestão & Dados</h3>
-    <p>Transforma dados em decisões estratégicas e automação de processos.</p>
+
+    <p>Especialista em gestão empresarial, dados e automação de processos.</p>
+
+    <p>Transforma informações em decisões estratégicas para aumento de lucro.</p>
+
+    <a class="btn" href="https://wa.me/5518991888698?text=Olá Oseias, vi seu perfil no site e gostaria de melhorar a gestão da minha empresa." target="_blank">
+      Falar com o Oseias
+    </a>
   </div>
 
 </div>
@@ -206,7 +222,7 @@ p {
 <div class="cta">
   <h2>Quer melhorar os resultados da sua empresa?</h2>
   <br>
-  <a href="simulador.html" class="btn">Fazer diagnóstico gratuito</a>
+  <a href="servicos.html" class="btn">Ver soluções</a>
 </div>
 
 <script>
