@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serviços - COREGOV</title>
+
+<link rel="icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --verde: #00FF9F;
+  --azul-escuro: #0B1220;
+  --azul-medio: #111A2E;
+  --branco: #FFFFFF;
+  --cinza: #CCCCCC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding-top: 90px;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(11,18,32,0.8);
+  backdrop-filter: blur(10px);
+}
+
+.logo-icon {
+  height: 50px;
+}
+
+nav a {
+  margin: 0 10px;
+  color: var(--cinza);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--verde);
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero span {
+  color: var(--verde);
+}
+
+/* CARDS */
+.services {
+  padding: 40px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: var(--azul-medio);
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.icon {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--cinza);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--verde);
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* RESPONSIVO */
+@media(max-width: 800px){
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo-icon.png" class="logo-icon">
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="quem-somos.html">Quem Somos</a>
+    <a href="simulador.html">Simulador</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Nossos <span>Serviços</span></h1>
+  <p>Estratégia, gestão e contabilidade para fazer sua empresa crescer com segurança</p>
+</section>
+
+<section class="services">
+
+  <div class="card">
+    <div class="icon">📊</div>
+    <h3>Contabilidade Empresarial</h3>
+    <p>Organização fiscal, tributária e suporte completo para sua empresa crescer com segurança.</p>
+    <a href="https://wa.me/55SEUNUMERO" class="btn">Falar com especialista</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">💰</div>
+    <h3>Gestão Financeira</h3>
+    <p>Controle de fluxo de caixa, lucro real e decisões baseadas em números.</p>
+    <a href="https://wa.me/55SEUNUMERO" class="btn">Falar com especialista</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">📈</div>
+    <h3>Gestão de Negócios</h3>
+    <p>Estratégia, processos e crescimento estruturado para sua empresa.</p>
+    <a href="https://wa.me/55SEUNUMERO" class="btn">Falar com especialista</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">📍</div>
+    <h3>Pesquisa de Mercado & CNPJ</h3>
+    <p>Mapeamento de empresas por região para decisões estratégicas mais assertivas.</p>
+    <a href="https://wa.me/55SEUNUMERO" class="btn">Falar com especialista</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">🔐</div>
+    <h3>Certificado Digital</h3>
+    <p>Emissão e renovação de certificados para pessoa física e jurídica.</p>
+    <a href="https://wa.me/55SEUNERO" class="btn">Falar com especialista</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">🚀</div>
+    <h3>Abertura de MEI</h3>
+    <p>Abra seu MEI de forma rápida, correta e sem complicação.</p>
+    <a href="https://wa.me/55SEUNUMERO" class="btn">Falar com especialista</a>
+  </div>
+
+</section>
+
+</body>
+</html>
