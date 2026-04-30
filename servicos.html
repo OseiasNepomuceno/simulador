@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Serviços - COREGOV</title>
+
+<title>Serviços de Contabilidade e Gestão em Presidente Prudente | COREGOV</title>
+
+<meta name="description" content="Serviços de contabilidade, gestão financeira, abertura de MEI e certificado digital em Presidente Prudente. Aumente seus lucros com estratégia.">
 
 <link rel="icon" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -30,7 +33,7 @@ body {
   padding-top: 90px;
 }
 
-/* HEADER */
+/* HEADER PREMIUM */
 header {
   position: fixed;
   top: 0;
@@ -39,8 +42,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(11,18,32,0.8);
+  background: rgba(11,18,32,0.6);
   backdrop-filter: blur(10px);
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+header.scrolled {
+  background: rgba(11,18,32,0.95);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .logo-icon {
@@ -113,13 +123,7 @@ p {
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-}
-
-/* RESPONSIVO */
-@media(max-width: 800px){
-  .hero h1 {
-    font-size: 2rem;
-  }
+  margin-right: 8px;
 }
 </style>
 </head>
@@ -132,6 +136,7 @@ p {
   <nav>
     <a href="index.html">Início</a>
     <a href="quem-somos.html">Quem Somos</a>
+    <a href="servicos.html">Serviços</a>
     <a href="simulador.html">Simulador</a>
   </nav>
 </header>
@@ -143,49 +148,80 @@ p {
 
 <section class="services">
 
+  <!-- CONTABILIDADE -->
   <div class="card">
     <div class="icon">📊</div>
     <h3>Contabilidade Empresarial</h3>
-    <p>Organização fiscal, tributária e suporte completo para sua empresa crescer com segurança.</p>
-    <a href="https://wa.me/55SEUNUMERO" class="btn">Falar com especialista</a>
+    <p>Organização fiscal e tributária para sua empresa crescer com segurança.</p>
+
+    <a href="servicos/contabilidade-presidente-prudente.html" class="btn">Saiba mais</a>
+    <a href="https://wa.me/5518991511523" class="btn">WhatsApp</a>
   </div>
 
+  <!-- FINANCEIRO -->
   <div class="card">
     <div class="icon">💰</div>
     <h3>Gestão Financeira</h3>
-    <p>Controle de fluxo de caixa, lucro real e decisões baseadas em números.</p>
-    <a href="https://wa.me/55991511523" class="btn">Falar com especialista</a>
+    <p>Controle de caixa, lucro real e decisões baseadas em dados.</p>
+
+    <a href="servicos/gestao-financeira.html" class="btn">Saiba mais</a>
+    <a href="https://wa.me/5518991511523" class="btn">WhatsApp</a>
   </div>
 
+  <!-- NEGÓCIOS -->
   <div class="card">
     <div class="icon">📈</div>
     <h3>Gestão de Negócios</h3>
-    <p>Estratégia, processos e crescimento estruturado para sua empresa.</p>
-    <a href="https://wa.me/55SEUNUMERO" class="btn">Falar com especialista</a>
+    <p>Estratégia e crescimento estruturado para sua empresa.</p>
+
+    <a href="servicos/gestao-negocios.html" class="btn">Saiba mais</a>
+    <a href="https://wa.me/5518991511523" class="btn">WhatsApp</a>
   </div>
 
+  <!-- PESQUISA -->
   <div class="card">
     <div class="icon">📍</div>
-    <h3>Pesquisa de Mercado & CNPJ</h3>
-    <p>Mapeamento de empresas por região para decisões estratégicas mais assertivas.</p>
-    <a href="https://wa.me/55SEUNUMERO" class="btn">Falar com especialista</a>
+    <h3>Pesquisa de Mercado</h3>
+    <p>Mapeamento de empresas e CNPJ por região.</p>
+
+    <a href="servicos/pesquisa-mercado.html" class="btn">Saiba mais</a>
+    <a href="https://wa.me/5518991511523" class="btn">WhatsApp</a>
   </div>
 
+  <!-- CERTIFICADO -->
   <div class="card">
     <div class="icon">🔐</div>
     <h3>Certificado Digital</h3>
-    <p>Emissão e renovação de certificados para pessoa física e jurídica.</p>
-    <a href="https://wa.me/55SEUNERO" class="btn">Falar com especialista</a>
+    <p>Emissão e renovação para CPF e CNPJ.</p>
+
+    <a href="servicos/certificado-digital.html" class="btn">Saiba mais</a>
+    <a href="https://wa.me/5518991511523" class="btn">WhatsApp</a>
   </div>
 
+  <!-- MEI -->
   <div class="card">
     <div class="icon">🚀</div>
     <h3>Abertura de MEI</h3>
-    <p>Abra seu MEI de forma rápida, correta e sem complicação.</p>
-    <a href="https://wa.me/55SEUNUMERO" class="btn">Falar com especialista</a>
+    <p>Abra seu MEI rápido e sem complicação.</p>
+
+    <a href="servicos/abrir-mei.html" class="btn">Saiba mais</a>
+    <a href="https://wa.me/5518991511523" class="btn">WhatsApp</a>
   </div>
 
 </section>
+
+<script>
+/* HEADER EFEITO */
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+</script>
 
 </body>
 </html>
