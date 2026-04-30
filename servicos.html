@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COREGOV Administração & Contabilidade</title>
 
 <title>Serviços de Contabilidade e Gestão em Presidente Prudente | COREGOV</title>
 
@@ -16,7 +15,7 @@
 :root {
   --verde: #00FF9F;
   --azul-escuro: #0B1220;
-  --azul-medio: #111A2E;
+  --azul-medio: #111A2A;
   --branco: #FFFFFF;
   --cinza: #CCCCCC;
 }
@@ -34,7 +33,7 @@ body {
   padding-top: 90px;
 }
 
-/* HEADER PREMIUM */
+/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -54,10 +53,35 @@ header.scrolled {
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
+/* BRAND */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .logo-icon {
   height: 50px;
 }
 
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--verde);
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: var(--cinza);
+}
+
+/* NAV */
 nav a {
   margin: 0 10px;
   color: var(--cinza);
@@ -66,6 +90,16 @@ nav a {
 
 nav a:hover {
   color: var(--verde);
+}
+
+/* BTN */
+.btn {
+  background: var(--verde);
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* HERO */
@@ -82,7 +116,7 @@ nav a:hover {
   color: var(--verde);
 }
 
-/* CARDS */
+/* SERVICES */
 .services {
   padding: 40px 10%;
   display: grid;
@@ -115,22 +149,12 @@ p {
   font-size: 14px;
   margin-bottom: 15px;
 }
-
-.btn {
-  display: inline-block;
-  background: var(--verde);
-  color: #000;
-  padding: 10px 18px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-right: 8px;
-}
 </style>
 </head>
 
 <body>
 
+<!-- HEADER CORRIGIDO (ÚNICO) -->
 <header>
   <div class="brand">
     <img src="logo-icon.png" alt="COREGOV" class="logo-icon">
@@ -152,95 +176,65 @@ p {
     Falar com especialista
   </a>
 </header>
-  <img src="logo-icon.png" class="logo-icon">
 
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="quem-somos.html">Quem Somos</a>
-    <a href="servicos.html">Serviços</a>
-    <a href="simulador.html">Simulador</a>
-  </nav>
-</header>
-
+<!-- HERO -->
 <section class="hero">
   <h1>Nossos <span>Serviços</span></h1>
   <p>Estratégia, gestão e contabilidade para fazer sua empresa crescer com segurança</p>
 </section>
 
+<!-- SERVICES -->
 <section class="services">
 
-  <!-- CONTABILIDADE -->
   <div class="card">
     <div class="icon">📊</div>
     <h3>Contabilidade Empresarial</h3>
     <p>Organização fiscal e tributária para sua empresa crescer com segurança.</p>
-
     <a href="servicos/contabilidade-presidente-prudente.html" class="btn">Saiba mais</a>
-    <a href="https://wa.me/5518991511523" class="btn">WhatsApp</a>
   </div>
 
-  <!-- FINANCEIRO -->
   <div class="card">
     <div class="icon">💰</div>
     <h3>Gestão Financeira</h3>
     <p>Controle de caixa, lucro real e decisões baseadas em dados.</p>
-
     <a href="servicos/gestao-financeira-presidente-prudente.html" class="btn">Saiba mais</a>
-    <a href="https://wa.me/5518991511523" class="btn">WhatsApp</a>
   </div>
 
-  <!-- NEGÓCIOS -->
   <div class="card">
     <div class="icon">📈</div>
     <h3>Gestão de Negócios</h3>
     <p>Estratégia e crescimento estruturado para sua empresa.</p>
-
     <a href="servicos/gestao-negocios-presidente-prudente.html" class="btn">Saiba mais</a>
-    <a href="https://wa.me/5518991888698" class="btn">WhatsApp</a>
   </div>
 
-  <!-- PESQUISA -->
   <div class="card">
     <div class="icon">📍</div>
     <h3>Pesquisa de Mercado</h3>
     <p>Mapeamento de empresas e CNPJ por região.</p>
-
     <a href="servicos/pesquisa-mercado-presidente-prudente.html" class="btn">Saiba mais</a>
-    <a href="https://wa.me/5518991888698" class="btn">WhatsApp</a>
   </div>
 
-  <!-- CERTIFICADO -->
   <div class="card">
     <div class="icon">🔐</div>
     <h3>Certificado Digital</h3>
     <p>Emissão e renovação para CPF e CNPJ.</p>
-
     <a href="servicos/certificado-digital-presidente-prudente.html" class="btn">Saiba mais</a>
-    <a href="https://wa.me/5518991511523" class="btn">WhatsApp</a>
   </div>
 
-  <!-- MEI -->
   <div class="card">
     <div class="icon">🚀</div>
     <h3>Abertura de MEI</h3>
     <p>Abra seu MEI rápido e sem complicação.</p>
-
     <a href="servicos/abrir-mei-presidente-prudente.html" class="btn">Saiba mais</a>
-    <a href="https://wa.me/5518991511523" class="btn">WhatsApp</a>
   </div>
 
 </section>
 
 <script>
-/* HEADER EFEITO */
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
+  header.classList.toggle("scrolled", window.scrollY > 50);
 });
 </script>
 
