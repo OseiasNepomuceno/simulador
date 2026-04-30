@@ -125,12 +125,7 @@ p {
   margin-bottom: 12px;
 }
 
-/* CTA FINAL */
-.cta {
-  text-align: center;
-  margin-top: 40px;
-}
-
+/* BOTÃO */
 .btn {
   background: var(--verde);
   color: #000;
@@ -139,10 +134,18 @@ p {
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .btn:hover {
   transform: scale(1.05);
+}
+
+/* CTA FINAL */
+.cta {
+  text-align: center;
+  margin-top: 40px;
 }
 
 /* RESPONSIVO */
@@ -185,6 +188,12 @@ p {
     <p>
       Seu trabalho vai além da contabilidade tradicional, oferecendo clareza financeira, organização e decisões inteligentes para o crescimento sustentável.
     </p>
+
+    <a href="https://wa.me/55SEUNUMEROCINTIA?text=Olá, vi seu perfil no site e gostaria de entender como posso pagar menos impostos com segurança."
+       class="btn"
+       target="_blank">
+       Falar com a Especialista
+    </a>
   </div>
 
   <!-- OSEIAS -->
@@ -205,6 +214,12 @@ p {
     <p>
       Com mais de 30 anos de experiência, transforma dados em decisões estratégicas, eliminando gargalos e automatizando processos.
     </p>
+
+    <a href="https://wa.me/55SEUNUMEROOSEIAS?text=Olá, vi seu perfil no site e gostaria de melhorar a gestão da minha empresa."
+       class="btn"
+       target="_blank">
+       Falar com o Especialista
+    </a>
   </div>
 
 </div>
@@ -216,7 +231,6 @@ p {
 </div>
 
 <script>
-/* ANIMAÇÃO AO ROLAR */
 const cards = document.querySelectorAll('.card');
 
 window.addEventListener('scroll', () => {
@@ -228,7 +242,6 @@ window.addEventListener('scroll', () => {
   });
 });
 
-/* HEADER DINÂMICO */
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
