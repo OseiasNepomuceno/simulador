@@ -15,6 +15,78 @@
       font-family: 'Poppins', sans-serif;
     }
 
+    <!-- BOTÃO WHATSAPP PREMIUM -->
+<a href="https://wa.me/5599999999999?text=Olá,%20vi%20o%20site%20e%20quero%20um%20diagnóstico%20gratuito"
+   class="wpp-button"
+   target="_blank">
+
+  <div class="wpp-pulse"></div>
+  <div class="wpp-icon">💬</div>
+
+  <div class="wpp-text">
+    Fale comigo agora
+  </div>
+
+</a>
+
+<style>
+.wpp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 999;
+}
+
+.wpp-icon {
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.wpp-pulse {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(37, 211, 102, 0.5);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  70% { transform: scale(1.6); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.wpp-text {
+  margin-left: 10px;
+  background: white;
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: 0.3s;
+}
+
+.wpp-button:hover .wpp-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+</style>
+
     body {
       background: #0b1220;
       color: #fff;
