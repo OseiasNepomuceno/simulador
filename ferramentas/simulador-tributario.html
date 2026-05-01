@@ -30,7 +30,6 @@ body {
   padding-top: 90px;
 }
 
-/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -41,38 +40,20 @@ header {
   align-items: center;
   background: rgba(11,18,32,0.6);
   backdrop-filter: blur(10px);
-  z-index: 1000;
-}
-
-header.scrolled {
-  background: rgba(11,18,32,0.95);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .brand {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .logo-icon {
   height: 50px;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
 .brand-name {
   color: var(--verde);
-  font-weight: 700;
-}
-
-.brand-sub {
-  font-size: 12px;
-  color: var(--cinza);
+  font-weight: bold;
 }
 
 nav a {
@@ -81,20 +62,6 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover {
-  color: var(--verde);
-}
-
-.btn {
-  background: var(--verde);
-  color: #000;
-  padding: 10px 18px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* CONTAINER */
 .container {
   max-width: 650px;
   margin: auto;
@@ -105,33 +72,26 @@ nav a:hover {
   background: var(--azul-medio);
   padding: 20px;
   border-radius: 12px;
-  margin-top: 10px;
 }
 
-/* INPUTS */
 input, select {
   width: 100%;
   padding: 12px;
   margin: 8px 0;
   border-radius: 8px;
   border: none;
-  outline: none;
 }
 
-/* BOTÃO */
 button {
   width: 100%;
   padding: 14px;
   background: var(--verde);
-  color: #000;
-  border: none;
   border-radius: 8px;
-  cursor: pointer;
   font-weight: bold;
   margin-top: 10px;
+  cursor: pointer;
 }
 
-/* RESULTADOS */
 .result {
   margin-top: 15px;
   padding: 15px;
@@ -145,8 +105,6 @@ button {
 
 .whatsapp {
   background: #25d366;
-  color: #000;
-  margin-top: 10px;
 }
 </style>
 </head>
@@ -156,87 +114,48 @@ button {
 <header>
   <div class="brand">
     <img src="logo-icon.png" class="logo-icon">
-    <div class="brand-text">
-      <span class="brand-name">COREGOV</span>
-      <span class="brand-sub">Administração & Contabilidade</span>
-    </div>
+    <div class="brand-name">COREGOV</div>
   </div>
-
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="quem-somos.html">Quem Somos</a>
-    <a href="servicos.html">Serviços</a>
-    <a href="simulador.html">Simulador</a>
-    <a href="blog/index.html">Blog</a>
-  </nav>
-
-  
 </header>
 
-<!-- SIMULADOR EVOLUÍDO -->
 <div class="container">
 
 <h2>🧠 Simulador Tributário Inteligente</h2>
 
 <div class="card">
 
-<!-- LEAD CAPTURE -->
-<input type="text" id="nome" placeholder="Seu nome">
-<input type="text" id="whats" placeholder="WhatsApp (DDD + número)">
-
-<select id="tipo">
-  <option value="mei">MEI</option>
-  <option value="simples">Simples Nacional</option>
-  <option value="presumido">Lucro Presumido</option>
-</select>
-
 <!-- DADOS -->
-<input type="number" id="receita" placeholder="Faturamento mensal (R$)">
-<input type="number" id="simples" value="8" placeholder="Alíquota atual (%)">
-<input type="number" id="ibs" value="10" placeholder="IBS (%)">
-<input type="number" id="cbs" value="8.8" placeholder="CBS (%)">
+<input type="text" id="nomeLead" placeholder="Seu nome">
+<input type="text" id="whats" placeholder="WhatsApp">
+
+<input type="number" id="receita" placeholder="Faturamento mensal">
+<input type="number" id="simples" value="8">
+<input type="number" id="ibs" value="10">
+<input type="number" id="cbs" value="8.8">
 
 <button onclick="calcular()">Gerar Diagnóstico</button>
 
 <div id="resultado"></div>
-  
-<div id="bloqueio" style="display:none; margin-top:20px;">
 
-  <div style="
-    background: rgba(255,255,255,0.05);
-    padding:20px;
-    border-radius:12px;
-    text-align:center;
-  ">
+<!-- BLOQUEIO -->
+<div id="bloqueio" style="display:none; margin-top:20px;">
+  <div style="background: rgba(255,255,255,0.05); padding:20px; border-radius:12px; text-align:center;">
     
     <h3>🔒 Análise completa bloqueada</h3>
 
-    <p style="color:#ccc; margin:10px 0;">
-      Veja exatamente quanto sua empresa pode ganhar ou perder com essa mudança.
+    <p style="color:#ccc;">
+      Descubra exatamente quanto você pode ganhar ou perder.
     </p>
 
-    <input type="text" id="nome" placeholder="Seu nome" style="width:100%; padding:10px; margin:5px 0;">
-    <input type="email" id="email" placeholder="Seu melhor e-mail" style="width:100%; padding:10px; margin:5px 0;">
+    <input type="email" id="email" placeholder="Seu melhor e-mail">
 
-    <button onclick="liberar()" style="
-      width:100%;
-      padding:12px;
-      background:#00FF9F;
-      border:none;
-      border-radius:8px;
-      font-weight:bold;
-      margin-top:10px;
-    ">
-      Liberar análise completa
-    </button>
-
-    <p style="font-size:12px; margin-top:10px; color:#999;">
-      🔒 Seus dados estão seguros
-    </p>
+    <button onclick="liberar()">Liberar análise completa</button>
 
   </div>
 </div>
-  
+
+<!-- RESULTADO COMPLETO -->
+<div id="resultado-completo" style="display:none; margin-top:20px;"></div>
 
 </div>
 </div>
@@ -244,7 +163,7 @@ button {
 <script>
 function calcular() {
 
-let nome = document.getElementById("nome").value;
+let nome = document.getElementById("nomeLead").value;
 let whats = document.getElementById("whats").value;
 
 let receita = +document.getElementById('receita').value;
@@ -269,24 +188,47 @@ if (perc > 30) {
   msg = "⚠️ Atenção necessária";
 }
 
-let texto = `Olá, me chamo ${nome}. Fiz o diagnóstico tributário e quero uma análise completa.`;
-
 document.getElementById("resultado").innerHTML = `
   <div class="result blue">Atual: R$ ${atual.toFixed(2)}</div>
   <div class="result yellow">Novo: R$ ${novo.toFixed(2)}</div>
   <div class="result ${cor}">
-    Diferença: R$ ${dif.toFixed(2)} (${perc.toFixed(2)}%)<br><br>
+    Diferença: ${perc.toFixed(2)}%<br><br>
     <strong>${msg}</strong>
   </div>
 
   <div class="result">
-    📌 Revisar precificação<br>
-    📌 Analisar créditos tributários<br>
-    📌 Avaliar regime tributário
+    💡 Seu novo imposto pode impactar sua margem em até <strong>${perc.toFixed(2)}%</strong>
+  </div>
+`;
+
+document.getElementById("bloqueio").style.display = "block";
+}
+
+function liberar() {
+
+let email = document.getElementById("email").value;
+if(!email){
+  alert("Digite seu e-mail");
+  return;
+}
+
+document.getElementById("bloqueio").style.display = "none";
+
+let nome = document.getElementById("nomeLead").value;
+let whats = document.getElementById("whats").value;
+
+let texto = `Olá, me chamo ${nome}. Fiz o diagnóstico tributário e quero análise completa.`;
+
+document.getElementById("resultado-completo").style.display = "block";
+document.getElementById("resultado-completo").innerHTML = `
+  <div class="result green">
+    ✔ Melhor regime sugerido<br>
+    ✔ Ajuste de precificação<br>
+    ✔ Estratégia de economia tributária
   </div>
 
   <button class="whatsapp" onclick="window.open('https://wa.me/55${whats}?text=${encodeURIComponent(texto)}','_blank')">
-    Falar com especialista agora
+    Falar com especialista
   </button>
 `;
 }
