@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Raio-X MEI | COREGOV</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  background:#0B1220;
+  color:#fff;
+  font-family:Poppins;
+  padding:30px;
+}
+
+.container{max-width:700px;margin:auto;}
+
+input{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border-radius:8px;
+  border:none;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  background:#00FF9F;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.result{
+  margin-top:15px;
+  padding:15px;
+  border-radius:10px;
+}
+
+.green{background:#1f6f3a;}
+.yellow{background:#665c00;}
+.red{background:#7a1f1f;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>📊 Raio-X Financeiro do MEI</h2>
+
+<label>Faturamento Mensal (R$)</label>
+<input type="number" id="fat" value="10000">
+
+<label>Custos Totais (R$)</label>
+<input type="number" id="custos" value="6000">
+
+<label>Despesas Fixas (R$)</label>
+<input type="number" id="fixos" value="2000">
+
+<button onclick="analisar()">Gerar Análise</button>
+
+<div id="res"></div>
+
+</div>
+
+<script>
+function analisar(){
+
+  let fat = +document.getElementById("fat").value;
+  let custos = +document.getElementById("custos").value;
+  let fixos = +document.getElementById("fixos").value;
+
+  let lucro = fat - custos - fixos;
+  let margem = (lucro/fat)*100;
+
+  let cor="green";
+  let msg="Negócio saudável";
+
+  if(margem < 10){
+    cor="red";
+    msg="⚠ Alto risco financeiro";
+  } else if(margem < 20){
+    cor="yellow";
+    msg="⚠ Margem baixa";
+  }
+
+  document.getElementById("res").innerHTML=`
+    <div class="result ${cor}">
+      💰 Lucro: R$ ${lucro.toFixed(2)}<br>
+      📊 Margem: ${margem.toFixed(2)}%<br><br>
+      <b>${msg}</b>
+    </div>
+
+    <div class="result">
+      📌 Ajustar custos pode aumentar lucro imediato<br>
+      📌 Falta de controle gera prejuízo invisível
+    </div>
+
+    <a href="https://wa.me/5518991511523?text=Quero análise completa do meu MEI">
+      Falar com especialista
+    </a>
+  `;
+}
+</script>
+
+</body>
+</html>
