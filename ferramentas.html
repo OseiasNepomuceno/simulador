@@ -1,10 +1,196 @@
-<section class="hero">
-  <div class="hero-text">
-    <h2>Ferramentas que <span>aumentam seu lucro</span></h2>
-    <p>Diagnósticos rápidos para entender sua empresa e tomar decisões mais inteligentes.</p>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ferramentas para Empresas | COREGOV</title>
+<meta name="description" content="Ferramentas gratuitas para MEI e pequenas empresas melhorarem lucro, impostos e gestão.">
+
+<link rel="icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --verde: #00FF9F;
+  --azul-escuro: #0B1220;
+  --azul-medio: #111A2E;
+  --branco: #FFFFFF;
+  --cinza: #CCCCCC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding-top: 90px;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(11,18,32,0.6);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+header.scrolled {
+  background: rgba(11,18,32,0.95);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  height: 50px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  color: var(--verde);
+  font-weight: 700;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: var(--cinza);
+}
+
+/* NAV */
+nav a {
+  margin: 0 10px;
+  color: var(--cinza);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--verde);
+}
+
+/* BOTÃO */
+.btn {
+  background: var(--verde);
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.hero span {
+  color: var(--verde);
+}
+
+/* SECTION */
+.section {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: var(--azul-medio);
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card span {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 50px 10%;
+}
+
+/* RESPONSIVO */
+@media(max-width: 900px){
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="brand">
+    <img src="logo-icon.png" class="logo-icon">
+    <div class="brand-text">
+      <span class="brand-name">COREGOV</span>
+      <span class="brand-sub">Administração & Contabilidade</span>
+    </div>
   </div>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="ferramentas.html" style="color: var(--verde); font-weight: bold;">Ferramentas</a>
+    <a href="simulador.html">Simulador</a>
+    <a href="blog/index.html">Blog</a>
+    <a href="quem-somos.html">Quem Somos</a>
+  </nav>
+
+  <a class="btn" href="https://wa.me/5518991511523" target="_blank">
+    Falar com especialista
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h2>Ferramentas que <span>aumentam seu lucro</span></h2>
+  <p>Diagnósticos rápidos para tomar decisões mais inteligentes</p>
 </section>
 
+<!-- CARDS -->
 <section class="section">
 
   <h2>Escolha sua análise</h2>
@@ -21,21 +207,21 @@
     <div class="card">
       <span>⚖️</span>
       <h3>IBS + CBS</h3>
-      <p>Compare o Simples Nacional com o novo modelo tributário.</p>
+      <p>Compare o Simples com o novo modelo.</p>
       <a href="ferramentas/impostos-ibs-cbs.html" class="btn">Acessar</a>
     </div>
 
     <div class="card">
       <span>💰</span>
       <h3>Precificação Inteligente</h3>
-      <p>Descubra o preço ideal para ter lucro de verdade.</p>
+      <p>Defina o preço ideal com lucro.</p>
       <a href="ferramentas/precificacao.html" class="btn">Acessar</a>
     </div>
 
     <div class="card">
       <span>🔍</span>
       <h3>Raio-X MEI</h3>
-      <p>Veja se sua empresa está saudável ou perdendo dinheiro.</p>
+      <p>Veja se sua empresa está saudável.</p>
       <a href="ferramentas/raio-x-mei.html" class="btn">Acessar</a>
     </div>
 
@@ -43,7 +229,8 @@
 
 </section>
 
-<section class="section cta">
+<!-- CTA -->
+<section class="cta">
   <h2>Quer uma análise completa da sua empresa?</h2>
   <br>
   <a href="https://wa.me/5518991511523?text=Olá, usei as ferramentas e quero uma análise completa." 
@@ -51,3 +238,14 @@
      Falar com especialista
   </a>
 </section>
+
+<script>
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  header.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+
+</body>
+</html>
