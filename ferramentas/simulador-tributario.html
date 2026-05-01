@@ -1,1 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Simulador Tributário COREGOV</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --verde: #00FF9F;
+  --azul-escuro: #0B1220;
+  --azul-medio: #111A2A;
+  --branco: #FFFFFF;
+  --cinza: #CCCCCC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding-top: 90px;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(11,18,32,0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+header.scrolled {
+  background: rgba(11,18,32,0.95);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  height: 50px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  color: var(--verde);
+  font-weight: 700;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: var(--cinza);
+}
+
+nav a {
+  margin: 0 10px;
+  color: var(--cinza);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--verde);
+}
+
+.btn {
+  background: var(--verde);
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 650px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.card {
+  background: var(--azul-medio);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+/* BOTÃO */
+button {
+  width: 100%;
+  padding: 14px;
+  background: var(--verde);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* RESULTADOS */
+.result {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.blue { background: #1d3557; }
+.yellow { background: #665c00; }
+.red { background: #7a1f1f; }
+.green { background: #1f6f3a; }
+
+.whatsapp {
+  background: #25d366;
+  color: #000;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <img src="logo-icon.png" class="logo-icon">
+    <div class="brand-text">
+      <span class="brand-name">COREGOV</span>
+      <span class="brand-sub">Administração & Contabilidade</span>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="quem-somos.html">Quem Somos</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="simulador.html">Simulador</a>
+    <a href="blog/index.html">Blog</a>
+  </nav>
+
+  <a class="btn" href="https://wa.me/5518991511523" target="_blank">
+    Falar com especialista
+  </a>
+</header>
+
+<!-- SIMULADOR EVOLUÍDO -->
+<div class="container">
+
+<h2>🧠 Simulador Tributário Inteligente</h2>
+
+<div class="card">
+
+<!-- LEAD CAPTURE -->
+<input type="text" id="nome" placeholder="Seu nome">
+<input type="text" id="whats" placeholder="WhatsApp (DDD + número)">
+
+<select id="tipo">
+  <option value="mei">MEI</option>
+  <option value="simples">Simples Nacional</option>
+  <option value="presumido">Lucro Presumido</option>
+</select>
+
+<!-- DADOS -->
+<input type="number" id="receita" placeholder="Faturamento mensal (R$)">
+<input type="number" id="simples" value="8" placeholder="Alíquota atual (%)">
+<input type="number" id="ibs" value="10" placeholder="IBS (%)">
+<input type="number" id="cbs" value="8.8" placeholder="CBS (%)">
+
+<button onclick="calcular()">Gerar Diagnóstico</button>
+
+<div id="resultado"></div>
+
+</div>
+</div>
+
+<script>
+function calcular() {
+
+let nome = document.getElementById("nome").value;
+let whats = document.getElementById("whats").value;
+
+let receita = +document.getElementById('receita').value;
+let simples = +document.getElementById('simples').value;
+let ibs = +document.getElementById('ibs').value;
+let cbs = +document.getElementById('cbs').value;
+
+let atual = receita * (simples / 100);
+let novo = receita * ((ibs + cbs) / 100);
+
+let dif = novo - atual;
+let perc = (dif / atual) * 100;
+
+let cor = "green";
+let msg = "Situação saudável";
+
+if (perc > 30) {
+  cor = "red";
+  msg = "⚠️ Alto impacto tributário";
+} else if (perc > 0) {
+  cor = "yellow";
+  msg = "⚠️ Atenção necessária";
+}
+
+let texto = `Olá, me chamo ${nome}. Fiz o diagnóstico tributário e quero uma análise completa.`;
+
+document.getElementById("resultado").innerHTML = `
+  <div class="result blue">Atual: R$ ${atual.toFixed(2)}</div>
+  <div class="result yellow">Novo: R$ ${novo.toFixed(2)}</div>
+  <div class="result ${cor}">
+    Diferença: R$ ${dif.toFixed(2)} (${perc.toFixed(2)}%)<br><br>
+    <strong>${msg}</strong>
+  </div>
+
+  <div class="result">
+    📌 Revisar precificação<br>
+    📌 Analisar créditos tributários<br>
+    📌 Avaliar regime tributário
+  </div>
+
+  <button class="whatsapp" onclick="window.open('https://wa.me/55${whats}?text=${encodeURIComponent(texto)}','_blank')">
+    Falar com especialista agora
+  </button>
+`;
+}
+</script>
+
+</body>
+</html>
