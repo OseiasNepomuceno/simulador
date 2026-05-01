@@ -190,8 +190,7 @@ fetch("/base-empresas.csv")
 .then(text => {
 
   const linhas = parseCSV(text);
-  const header = linhas[0];
-
+  const header = linhas[0].map(h => h.toLowerCase().trim());
   dados = linhas.slice(1).map(col => {
 
     let endereco = (col[header.indexOf("endereco_completo")] || "").toUpperCase();
