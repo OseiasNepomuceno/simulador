@@ -26,7 +26,6 @@ body{
   padding-top:90px;
 }
 
-/* HEADER */
 header{
   position:fixed;
   top:0;
@@ -50,14 +49,12 @@ nav a{
 
 nav a:hover{color:var(--verde);}
 
-/* CONTAINER */
 .container{
   max-width:900px;
   margin:auto;
   padding:40px 20px;
 }
 
-/* CARD */
 .card{
   background:var(--azul-medio);
   padding:20px;
@@ -65,7 +62,6 @@ nav a:hover{color:var(--verde);}
   margin-top:15px;
 }
 
-/* SELECT */
 select{
   width:100%;
   padding:12px;
@@ -73,7 +69,6 @@ select{
   margin:10px 0;
 }
 
-/* BOTÃO */
 .btn{
   display:inline-block;
   background:var(--verde);
@@ -86,13 +81,11 @@ select{
   cursor:pointer;
 }
 
-/* LISTA */
 .item{
   border-bottom:1px solid rgba(255,255,255,0.1);
   padding:10px 0;
 }
 
-/* BADGE */
 .badge{
   background:var(--verde);
   color:#000;
@@ -102,7 +95,6 @@ select{
   margin-left:5px;
 }
 
-/* LOCK */
 .lock{
   margin-top:20px;
   text-align:center;
@@ -132,7 +124,7 @@ select{
 <div class="card">
 
 <select id="bairro">
-  <option value="">Carregando bairros...</option>
+  <option>Carregando bairros...</option>
 </select>
 
 <button class="btn" onclick="gerarRota()">Gerar rota inteligente</button>
@@ -147,54 +139,38 @@ select{
 
 let dados = [];
 
-/* 🔥 CSV ROBUSTO (suporta vírgulas no texto) */
-function parseCSV(text) {
-  const linhas = [];
-  let atual = '';
-  let dentroAspas = false;
-
-  for (let i = 0; i < text.length; i++) {
-    const char = text[i];
-
-    if (char === '"') {
-      dentroAspas = !dentroAspas;
-    } else if (char === '\n' && !dentroAspas) {
-      linhas.push(atual);
-      atual = '';
-    } else {
-      atual += char;
-    }
-  }
-  linhas.push(atual);
-
-  return linhas.map(l => {
-    const cols = [];
-    let col = '';
-    let aspas = false;
-
-    for (let c of l) {
-      if (c === '"') aspas = !aspas;
-      else if (c === ',' && !aspas) {
-        cols.push(col);
-        col = '';
-      } else col += c;
-    }
-    cols.push(col);
-    return cols;
-  });
+/* 🔥 DETECTOR INTELIGENTE DE SEPARADOR */
+function detectarSeparador(linha){
+  if(linha.includes("\t")) return "\t";
+  if(linha.includes(";")) return ";";
+  return ",";
 }
 
-/* CARREGAR CSV */
-fetch("/base-empresas.csv")
-.then(res => res.text())
+/* 🔥 CARREGAR BASE */
+fetch("../base-empresas.csv")
+.then(res => {
+  if(!res.ok) throw new Error("Erro ao carregar base");
+  return res.text();
+})
 .then(text => {
 
-  const linhas = parseCSV(text);
-  const header = linhas[0].map(h => h.toLowerCase().trim());
-  dados = linhas.slice(1).map(col => {
+  const linhas = text.split("\n").filter(l => l.trim() !== "");
+  const separador = detectarSeparador(linhas[0]);
+
+  console.log("Separador detectado:", separador);
+
+  const header = linhas[0].split(separador).map(h => h.toLowerCase().trim());
+
+  dados = linhas.slice(1).map(l => {
+
+    const col = l.split(separador);
 
     let endereco = (col[header.indexOf("endereco_completo")] || "").toUpperCase();
-    let bairro = endereco.split("-").pop()?.trim() || "";
+
+    if(!endereco) return null;
+
+    let partes = endereco.split("-");
+    let bairro = partes[partes.length - 1]?.trim() || "";
 
     /* PADRONIZAÇÃO */
     if(bairro.includes("ANA JACINTA")) bairro = "C. H. ANA JACINTA";
@@ -204,18 +180,24 @@ fetch("/base-empresas.csv")
     if(bairro.includes("CENTRO")) bairro = "CENTRO";
 
     return {
-      empresa: col[header.indexOf("razao_social")],
-      porte: col[header.indexOf("desc_porte")],
+      empresa: col[header.indexOf("razao_social")] || "",
+      porte: col[header.indexOf("desc_porte")] || "",
       endereco: endereco,
       bairro: bairro,
-      rua: endereco.split(",")[0]
+      rua: endereco.split(",")[0]?.trim()
     };
-  });
+  }).filter(Boolean);
+
+  console.log("Empresas carregadas:", dados.length);
 
   popularBairros();
+})
+.catch(err => {
+  console.error(err);
+  document.getElementById("bairro").innerHTML = "<option>Erro ao carregar base</option>";
 });
 
-/* POPULAR */
+/* POPULAR BAIRROS */
 function popularBairros(){
   const bairros = [...new Set(dados.map(d => d.bairro))].filter(b => b).sort();
 
@@ -242,7 +224,6 @@ if(!bairro){
 
 let filtrado = dados.filter(d => d.bairro === bairro);
 
-/* AGRUPAR RUAS */
 let ruas = {};
 
 filtrado.forEach(d => {
@@ -250,12 +231,11 @@ filtrado.forEach(d => {
   ruas[d.rua].push(d);
 });
 
-/* SCORE */
 let ranking = Object.entries(ruas)
 .map(([rua, lista]) => {
 
-  let me = lista.filter(e => e.porte?.includes("ME")).length;
-  let epp = lista.filter(e => e.porte?.includes("EPP")).length;
+  let me = lista.filter(e => e.porte.includes("ME")).length;
+  let epp = lista.filter(e => e.porte.includes("EPP")).length;
 
   return {
     rua,
@@ -267,7 +247,6 @@ let ranking = Object.entries(ruas)
 })
 .sort((a,b) => b.score - a.score);
 
-/* EXIBIÇÃO */
 let html = `<h3>📊 Melhor rota em ${bairro}</h3>`;
 
 ranking.slice(0,3).forEach(r => {
@@ -298,18 +277,17 @@ ranking.slice(0,3).forEach(r => {
   html += `</div>`;
 });
 
-/* PRO */
 html += `
 <div class="lock">
   <h3>🔒 Versão PRO</h3>
 
   <p style="color:#ccc;">
-    Você está vendo apenas 20% do potencial deste bairro
+    Você está vendo apenas uma amostra dos dados
   </p>
 
   <p>✔ Lista completa de empresas</p>
   <p>✔ Rota otimizada por conversão</p>
-  <p>✔ Prioridade por tipo de cliente</p>
+  <p>✔ Priorização por perfil de cliente</p>
   <p>✔ Exportação de leads</p>
 
   <a href="https://wa.me/5518991511523?text=Quero acesso PRO da Rota Inteligente"
