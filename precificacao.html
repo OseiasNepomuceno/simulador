@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Precificação Inteligente | COREGOV</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --verde:#00FF9F;
+  --azul:#0B1220;
+  --azul2:#111A2A;
+  --branco:#fff;
+  --cinza:#ccc;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+
+body{background:var(--azul);color:#fff;padding-top:90px;}
+
+header{
+  position:fixed;top:0;width:100%;
+  padding:15px 10%;
+  display:flex;justify-content:space-between;
+  align-items:center;
+  background:rgba(11,18,32,0.6);
+}
+
+nav a{margin:0 10px;color:#ccc;text-decoration:none;}
+
+.btn{
+  background:var(--verde);
+  color:#000;
+  padding:10px 15px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.container{max-width:700px;margin:auto;padding:30px;}
+
+.card{
+  background:var(--azul2);
+  padding:20px;
+  border-radius:12px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border-radius:8px;
+  border:none;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  background:var(--verde);
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.result{
+  margin-top:15px;
+  padding:15px;
+  border-radius:10px;
+}
+
+.green{background:#1f6f3a;}
+.yellow{background:#665c00;}
+.red{background:#7a1f1f;}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="simulador.html">Simulador</a>
+  </nav>
+  <a class="btn" href="https://wa.me/5518991511523">Contato</a>
+</header>
+
+<div class="container">
+
+<h2>💰 Precificação Inteligente</h2>
+
+<div class="card">
+
+<label>Custo do Produto (R$)</label>
+<input type="number" id="custo" value="20">
+
+<label>Impostos (%)</label>
+<input type="number" id="imposto" value="8">
+
+<label>Comissão (%)</label>
+<input type="number" id="comissao" value="40">
+
+<label>Margem de Lucro Desejada (%)</label>
+<input type="number" id="lucro" value="30">
+
+<button onclick="calcular()">Calcular Preço Ideal</button>
+
+<div id="resultado"></div>
+
+</div>
+
+</div>
+
+<script>
+function calcular(){
+
+  let custo = +document.getElementById("custo").value;
+  let imposto = +document.getElementById("imposto").value/100;
+  let comissao = +document.getElementById("comissao").value/100;
+  let lucro = +document.getElementById("lucro").value/100;
+
+  let preco = custo / (1 - imposto - comissao - lucro);
+
+  let lucroReal = preco - custo - (preco*imposto) - (preco*comissao);
+
+  let margem = (lucroReal/preco)*100;
+
+  let cor="green";
+  let msg="Preço saudável";
+
+  if(margem < 10){
+    cor="red";
+    msg="⚠ Margem muito baixa — risco de prejuízo";
+  } else if(margem < 20){
+    cor="yellow";
+    msg="⚠ Margem apertada — atenção";
+  }
+
+  document.getElementById("resultado").innerHTML=`
+    <div class="result ${cor}">
+      💰 Preço ideal: R$ ${preco.toFixed(2)}<br><br>
+      📊 Margem real: ${margem.toFixed(2)}%<br><br>
+      <b>${msg}</b>
+    </div>
+
+    <div class="result">
+      📌 Ajustar preço pode aumentar lucro sem vender mais<br>
+      📌 Precificação errada é o principal motivo de prejuízo
+    </div>
+
+    <a class="btn" href="https://wa.me/5518991511523?text=Quero ajuda para melhorar minha precificação">
+      Quero ajuda com minha precificação
+    </a>
+  `;
+}
+</script>
+
+</body>
+</html>
