@@ -62,11 +62,6 @@ header.scrolled {
   height: 50px;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
 .brand-name {
   color: var(--verde);
   font-weight: 700;
@@ -90,12 +85,14 @@ nav a:hover {
 
 /* BOTÃO */
 .btn {
+  display: inline-block;
   background: var(--verde);
   color: #000;
   padding: 10px 18px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  margin-top: 15px; /* 🔥 espaço garantido */
 }
 
 /* HERO */
@@ -121,8 +118,8 @@ nav a:hover {
 /* CARDS */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
   margin-top: 30px;
 }
 
@@ -131,6 +128,11 @@ nav a:hover {
   padding: 25px;
   border-radius: 12px;
   transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 🔥 resolve sobreposição */
+  min-height: 230px;
 }
 
 .card:hover {
@@ -139,7 +141,6 @@ nav a:hover {
 
 .card span {
   font-size: 30px;
-  display: block;
   margin-bottom: 10px;
 }
 
@@ -160,13 +161,12 @@ nav a:hover {
 
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="brand">
     <img src="logo-icon.png" class="logo-icon">
-    <div class="brand-text">
-      <span class="brand-name">COREGOV</span>
-      <span class="brand-sub">Administração & Contabilidade</span>
+    <div>
+      <div class="brand-name">COREGOV</div>
+      <div class="brand-sub">Administração & Contabilidade</div>
     </div>
   </div>
 
@@ -178,55 +178,57 @@ nav a:hover {
     <a href="blog/index.html">Blog</a>
     <a href="quem-somos.html">Quem Somos</a>
   </nav>
-  
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <h2>Ferramentas que <span>aumentam seu lucro</span></h2>
-  <p>Diagnósticos rápidos para tomar decisões mais inteligentes</p>
+  <p>Diagnósticos rápidos para decisões mais inteligentes</p>
 </section>
 
-<!-- CARDS -->
 <section class="section">
-
   <h2>Escolha sua análise</h2>
 
   <div class="cards">
 
     <div class="card">
-      <span>📊</span>
-      <h3>Simulador Tributário</h3>
-      <p>Descubra se você paga mais impostos do que deveria.</p>
+      <div>
+        <span>📊</span>
+        <h3>Simulador Tributário</h3>
+        <p>Descubra se você paga mais impostos do que deveria.</p>
+      </div>
       <a href="ferramentas/simulador-tributario.html" class="btn">Acessar</a>
     </div>
 
     <div class="card">
-      <span>⚖️</span>
-      <h3>IBS + CBS</h3>
-      <p>Compare o Simples com o novo modelo.</p>
+      <div>
+        <span>⚖️</span>
+        <h3>IBS + CBS</h3>
+        <p>Compare o Simples com o novo modelo.</p>
+      </div>
       <a href="ferramentas/impostos-ibs-cbs.html" class="btn">Acessar</a>
     </div>
 
     <div class="card">
-      <span>💰</span>
-      <h3>Precificação Inteligente</h3>
-      <p>Defina o preço ideal com lucro.</p>
+      <div>
+        <span>💰</span>
+        <h3>Precificação Inteligente</h3>
+        <p>Defina o preço ideal com lucro.</p>
+      </div>
       <a href="ferramentas/precificacao.html" class="btn">Acessar</a>
     </div>
 
     <div class="card">
-      <span>🔍</span>
-      <h3>Raio-X MEI</h3>
-      <p>Veja se sua empresa está saudável.</p>
+      <div>
+        <span>🔍</span>
+        <h3>Raio-X MEI</h3>
+        <p>Veja se sua empresa está saudável.</p>
+      </div>
       <a href="ferramentas/raio-x-mei.html" class="btn">Acessar</a>
     </div>
 
   </div>
-
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <h2>Quer uma análise completa da sua empresa?</h2>
   <br>
