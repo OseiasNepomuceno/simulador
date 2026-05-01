@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Simulador Fator R | COREGOV</title>
+<meta name="description" content="Descubra se sua empresa da saúde pode pagar menos impostos com o Fator R.">
+
+<link rel="icon" href="../favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --verde: #00FF9F;
+  --azul-escuro: #0B1220;
+  --azul-medio: #111A2E;
+  --branco: #FFFFFF;
+  --cinza: #CCCCCC;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body {
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding-top: 90px;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top:0;
+  width:100%;
+  padding:15px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background: rgba(11,18,32,0.6);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+}
+
+header.scrolled {
+  background: rgba(11,18,32,0.95);
+}
+
+.logo-icon { height:50px; }
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand-name {
+  color: var(--verde);
+  font-weight:bold;
+}
+
+/* NAV */
+nav a {
+  margin:0 10px;
+  color: var(--cinza);
+  text-decoration:none;
+}
+
+nav a:hover {
+  color: var(--verde);
+}
+
+/* CONTAINER */
+.container {
+  max-width:650px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* CARD */
+.card {
+  background: var(--azul-medio);
+  padding:25px;
+  border-radius:12px;
+  margin-top:15px;
+}
+
+/* INPUTS */
+input {
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border-radius:8px;
+  border:none;
+}
+
+/* BOTÃO */
+button {
+  width:100%;
+  padding:14px;
+  background: var(--verde);
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+/* RESULTADOS */
+.result {
+  padding:15px;
+  margin-top:10px;
+  border-radius:10px;
+}
+
+.green { background:#1f6f3a; }
+.yellow { background:#665c00; }
+.red { background:#7a1f1f; }
+.blue { background:#1d3557; }
+
+.lock {
+  margin-top:20px;
+  background: rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <img src="../logo-icon.png" class="logo-icon">
+    <span class="brand-name">COREGOV</span>
+  </div>
+
+  <nav>
+    <a href="../index.html">Início</a>
+    <a href="../ferramentas.html" style="color:var(--verde)">Ferramentas</a>
+  </nav>
+</header>
+
+<div class="container">
+
+<h2>🩺 Simulador Fator R (Área da Saúde)</h2>
+<p style="color:#ccc;">Descubra se você pode pagar menos impostos migrando do Anexo V para o Anexo III</p>
+
+<div class="card">
+
+<input type="number" id="receita" placeholder="Faturamento anual (R$)">
+<input type="number" id="folha" placeholder="Folha de pagamento anual (R$)">
+
+<button onclick="calcular()">Calcular Fator R</button>
+
+<div id="resultado"></div>
+
+<div id="bloqueio" style="display:none;" class="lock">
+
+<h3>🔒 Economia tributária detalhada</h3>
+
+<p style="color:#ccc;">
+Veja quanto você pode economizar ajustando sua folha de pagamento.
+</p>
+
+<input type="text" id="nome" placeholder="Seu nome">
+<input type="email" id="email" placeholder="Seu e-mail">
+
+<button onclick="liberar()">Liberar análise completa</button>
+
+</div>
+
+</div>
+</div>
+
+<script>
+
+function calcular(){
+
+let receita = +document.getElementById("receita").value;
+let folha = +document.getElementById("folha").value;
+
+if(!receita || !folha){
+  alert("Preencha os campos");
+  return;
+}
+
+let fator = (folha / receita) * 100;
+
+let anexo = fator >= 28 ? "Anexo III (menor imposto)" : "Anexo V (maior imposto)";
+let cor = fator >= 28 ? "green" : "red";
+
+let impacto = fator >= 28 
+  ? "Você está pagando menos imposto ✔"
+  : "Você pode estar pagando imposto acima do necessário ⚠️";
+
+document.getElementById("resultado").innerHTML = `
+  <div class="result blue">
+    Fator R: ${fator.toFixed(2)}%
+  </div>
+
+  <div class="result ${cor}">
+    ${anexo}<br><br>
+    ${impacto}
+  </div>
+
+  <div class="result yellow">
+    📌 Ajustar pró-labore pode reduzir impostos<br>
+    📌 Planejamento da folha é essencial<br>
+    📌 Estratégia correta = mais lucro
+  </div>
+`;
+
+document.getElementById("bloqueio").style.display = "block";
+
+}
+
+/* LIBERAÇÃO */
+function liberar(){
+
+let nome = document.getElementById("nome").value;
+
+document.getElementById("bloqueio").innerHTML = `
+  <div class="result green">
+    ✅ Análise liberada!<br><br>
+    Possível economia: até 15% a 25% em impostos.<br><br>
+    👉 Ajustando sua folha você pode migrar de anexo e aumentar sua margem.
+  </div>
+
+  <button onclick="window.open('https://wa.me/5518991511523?text=Olá, fiz o cálculo do Fator R e quero reduzir meus impostos','_blank')">
+    Falar com especialista
+  </button>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
