@@ -201,6 +201,43 @@ button {
 <button onclick="calcular()">Gerar Diagnóstico</button>
 
 <div id="resultado"></div>
+<div id="bloqueio" style="display:none; margin-top:20px;">
+
+  <div style="
+    background: rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+  ">
+    
+    <h3>🔒 Análise completa bloqueada</h3>
+
+    <p style="color:#ccc; margin:10px 0;">
+      Veja exatamente quanto sua empresa pode ganhar ou perder com essa mudança.
+    </p>
+
+    <input type="text" id="nome" placeholder="Seu nome" style="width:100%; padding:10px; margin:5px 0;">
+    <input type="email" id="email" placeholder="Seu melhor e-mail" style="width:100%; padding:10px; margin:5px 0;">
+
+    <button onclick="liberar()" style="
+      width:100%;
+      padding:12px;
+      background:#00FF9F;
+      border:none;
+      border-radius:8px;
+      font-weight:bold;
+      margin-top:10px;
+    ">
+      Liberar análise completa
+    </button>
+
+    <p style="font-size:12px; margin-top:10px; color:#999;">
+      🔒 Seus dados estão seguros
+    </p>
+
+  </div>
+</div>
+  
 
 </div>
 </div>
