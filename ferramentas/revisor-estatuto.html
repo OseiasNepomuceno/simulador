@@ -4,10 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Revisor de Estatuto | COREGOV</title>
+<title>Revisor de Estatuto PRO | COREGOV</title>
 
 <link rel="icon" href="../favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 
 <style>
 :root {
@@ -26,7 +28,6 @@ body{
   padding-top:90px;
 }
 
-/* HEADER */
 header{
   position:fixed;
   top:0;
@@ -36,8 +37,6 @@ header{
   justify-content:space-between;
   align-items:center;
   background:rgba(11,18,32,0.6);
-  backdrop-filter:blur(10px);
-  z-index:1000;
 }
 
 .logo-icon{height:50px;}
@@ -50,7 +49,6 @@ nav a{
 
 nav a:hover{color:var(--verde);}
 
-/* CONTAINER */
 .container{
   max-width:700px;
   margin:auto;
@@ -58,7 +56,6 @@ nav a:hover{color:var(--verde);}
   text-align:center;
 }
 
-/* CARD */
 .card{
   background:var(--azul-medio);
   padding:25px;
@@ -66,7 +63,6 @@ nav a:hover{color:var(--verde);}
   margin-top:20px;
 }
 
-/* INPUT */
 input{
   width:100%;
   padding:12px;
@@ -75,7 +71,6 @@ input{
   margin:8px 0;
 }
 
-/* BOTÃO */
 .btn{
   background:var(--verde);
   color:#000;
@@ -88,21 +83,17 @@ input{
   margin-top:10px;
 }
 
-/* RESULTADO */
 .result{
   margin-top:20px;
-  padding:15px;
+  padding:20px;
   border-radius:10px;
   background:#1d3557;
+  text-align:left;
 }
 
-/* LOCK */
-.lock{
-  margin-top:20px;
-  padding:20px;
-  border-radius:12px;
-  background:rgba(255,255,255,0.05);
-}
+.alert{color:#ffcc00;}
+.danger{color:#ff4d4d;}
+.ok{color:#00FF9F;}
 </style>
 </head>
 
@@ -110,7 +101,6 @@ input{
 
 <header>
   <img src="../logo-icon.png" class="logo-icon">
-
   <nav>
     <a href="../index.html">Início</a>
     <a href="../ferramentas.html" style="color:var(--verde)">Ferramentas</a>
@@ -119,17 +109,15 @@ input{
 
 <div class="container">
 
-<h2>📜 Revisor de Estatuto Inteligente</h2>
-<p style="color:#ccc;">Descubra riscos jurídicos e oportunidades no seu estatuto</p>
+<h2>📜 Revisor de Estatuto PRO</h2>
+<p style="color:#ccc;">Análise jurídica automatizada com inteligência estratégica</p>
 
 <div class="card">
 
 <input type="text" id="nome" placeholder="Seu nome">
-<input type="text" id="email" placeholder="Seu e-mail">
-
 <input type="file" id="arquivo" accept=".pdf">
 
-<button class="btn" onclick="analisar()">🚀 Analisar Estatuto</button>
+<button class="btn" onclick="analisarPDF()">🚀 Analisar Estatuto</button>
 
 <div id="resultado"></div>
 
@@ -139,64 +127,97 @@ input{
 
 <script>
 
-let usos = 0;
-const LIMITE_FREE = 1;
-
-function analisar(){
+async function analisarPDF(){
 
 let nome = document.getElementById("nome").value;
-let email = document.getElementById("email").value;
-let arquivo = document.getElementById("arquivo").files[0];
+let file = document.getElementById("arquivo").files[0];
 
-if(!nome || !email || !arquivo){
-  alert("Preencha todos os campos");
+if(!nome || !file){
+  alert("Preencha os campos");
   return;
 }
 
-/* 🔒 BLOQUEIO FREE */
-if(usos >= LIMITE_FREE){
-  document.getElementById("resultado").innerHTML = `
-    <div class="lock">
-      <h3>🔒 Análise completa bloqueada</h3>
-      <p>Você já utilizou sua análise gratuita.</p>
+document.getElementById("resultado").innerHTML = "⏳ Lendo documento...";
 
-      <p>✔ Revisão completa do estatuto</p>
-      <p>✔ Identificação de riscos jurídicos</p>
-      <p>✔ Sugestões de melhoria</p>
+const reader = new FileReader();
 
-      <a href="https://wa.me/5518991511523?text=Quero acesso ao Revisor de Estatuto PRO"
-         class="btn" target="_blank">
-         Liberar versão PRO
-      </a>
-    </div>
-  `;
-  return;
+reader.onload = async function(){
+
+  const typedarray = new Uint8Array(this.result);
+  const pdf = await pdfjsLib.getDocument(typedarray).promise;
+
+  let textoCompleto = "";
+
+  for(let i = 1; i <= pdf.numPages; i++){
+    const page = await pdf.getPage(i);
+    const content = await page.getTextContent();
+    const strings = content.items.map(item => item.str);
+    textoCompleto += strings.join(" ") + " ";
+  }
+
+  gerarAnalise(nome, textoCompleto);
+};
+
+reader.readAsArrayBuffer(file);
 }
 
-/* SIMULAÇÃO IA */
-usos++;
+/* 🧠 ANÁLISE INTELIGENTE */
+function gerarAnalise(nome, texto){
 
-document.getElementById("resultado").innerHTML = `
-  <div class="result">
-    <strong>📊 Diagnóstico Inicial:</strong><br><br>
+let riscos = [];
+let alertas = [];
+let pontos_ok = [];
 
-    ✔ Estrutura básica identificada<br>
-    ⚠ Possível inconsistência em cláusulas administrativas<br>
-    ⚠ Risco de enquadramento inadequado<br><br>
+/* REGRAS SIMULADAS (base jurídica real) */
 
-    <strong>Recomendação:</strong><br>
-    Revisar cláusulas de governança e adequação à legislação vigente.
-  </div>
+if(!texto.includes("ADMINISTRADOR")){
+  riscos.push("Ausência de cláusula clara de administração");
+}
 
-  <button class="btn" onclick="whats('${nome}')">
-    Falar com especialista
-  </button>
+if(!texto.includes("CAPITAL SOCIAL")){
+  alertas.push("Capital social não identificado claramente");
+}
+
+if(texto.includes("LUCRO")){
+  pontos_ok.push("Cláusula de distribuição de lucro encontrada");
+}
+
+if(!texto.includes("RESPONSABILIDADE")){
+  riscos.push("Falta de definição de responsabilidade dos sócios");
+}
+
+/* RESULTADO */
+let html = `
+<div class="result">
+
+<h3>📊 Diagnóstico Estratégico</h3><br>
+
+<strong class="danger">⚠ Riscos encontrados:</strong><br>
+${riscos.length ? riscos.map(r => "• " + r).join("<br>") : "Nenhum risco crítico identificado"}<br><br>
+
+<strong class="alert">⚠ Pontos de atenção:</strong><br>
+${alertas.length ? alertas.map(a => "• " + a).join("<br>") : "Nenhum alerta relevante"}<br><br>
+
+<strong class="ok">✔ Pontos positivos:</strong><br>
+${pontos_ok.length ? pontos_ok.map(p => "• " + p).join("<br>") : "Nenhum ponto identificado"}<br><br>
+
+<hr><br>
+
+<strong>📌 Recomendação:</strong><br>
+Revisar cláusulas jurídicas para evitar riscos fiscais e societários.
+
+</div>
+
+<button class="btn" onclick="whats('${nome}')">
+  Falar com especialista
+</button>
 `;
 
+document.getElementById("resultado").innerHTML = html;
 }
 
 function whats(nome){
-let msg = encodeURIComponent(`Olá, me chamo ${nome}. Usei o revisor de estatuto e quero análise completa.`);
+let msg = encodeURIComponent(`Olá, me chamo ${nome}. Usei o Revisor PRO e quero uma análise completa do meu estatuto.`);
 window.open(`https://wa.me/5518991511523?text=${msg}`, "_blank");
 }
 
