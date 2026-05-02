@@ -1,1 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Revisor de Estatuto | COREGOV</title>
+
+<link rel="icon" href="../favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --verde:#00FF9F;
+  --azul-escuro:#0B1220;
+  --azul-medio:#111A2E;
+  --branco:#fff;
+  --cinza:#ccc;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+  background:var(--azul-escuro);
+  color:var(--branco);
+  padding-top:90px;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:15px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(11,18,32,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.logo-icon{height:50px;}
+
+nav a{
+  margin:0 10px;
+  color:var(--cinza);
+  text-decoration:none;
+}
+
+nav a:hover{color:var(--verde);}
+
+/* CONTAINER */
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:40px 20px;
+  text-align:center;
+}
+
+/* CARD */
+.card{
+  background:var(--azul-medio);
+  padding:25px;
+  border-radius:12px;
+  margin-top:20px;
+}
+
+/* INPUT */
+input{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  margin:8px 0;
+}
+
+/* BOTÃO */
+.btn{
+  background:var(--verde);
+  color:#000;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  width:100%;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+/* RESULTADO */
+.result{
+  margin-top:20px;
+  padding:15px;
+  border-radius:10px;
+  background:#1d3557;
+}
+
+/* LOCK */
+.lock{
+  margin-top:20px;
+  padding:20px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.05);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="../logo-icon.png" class="logo-icon">
+
+  <nav>
+    <a href="../index.html">Início</a>
+    <a href="../ferramentas.html" style="color:var(--verde)">Ferramentas</a>
+  </nav>
+</header>
+
+<div class="container">
+
+<h2>📜 Revisor de Estatuto Inteligente</h2>
+<p style="color:#ccc;">Descubra riscos jurídicos e oportunidades no seu estatuto</p>
+
+<div class="card">
+
+<input type="text" id="nome" placeholder="Seu nome">
+<input type="text" id="email" placeholder="Seu e-mail">
+
+<input type="file" id="arquivo" accept=".pdf">
+
+<button class="btn" onclick="analisar()">🚀 Analisar Estatuto</button>
+
+<div id="resultado"></div>
+
+</div>
+
+</div>
+
+<script>
+
+let usos = 0;
+const LIMITE_FREE = 1;
+
+function analisar(){
+
+let nome = document.getElementById("nome").value;
+let email = document.getElementById("email").value;
+let arquivo = document.getElementById("arquivo").files[0];
+
+if(!nome || !email || !arquivo){
+  alert("Preencha todos os campos");
+  return;
+}
+
+/* 🔒 BLOQUEIO FREE */
+if(usos >= LIMITE_FREE){
+  document.getElementById("resultado").innerHTML = `
+    <div class="lock">
+      <h3>🔒 Análise completa bloqueada</h3>
+      <p>Você já utilizou sua análise gratuita.</p>
+
+      <p>✔ Revisão completa do estatuto</p>
+      <p>✔ Identificação de riscos jurídicos</p>
+      <p>✔ Sugestões de melhoria</p>
+
+      <a href="https://wa.me/5518991511523?text=Quero acesso ao Revisor de Estatuto PRO"
+         class="btn" target="_blank">
+         Liberar versão PRO
+      </a>
+    </div>
+  `;
+  return;
+}
+
+/* SIMULAÇÃO IA */
+usos++;
+
+document.getElementById("resultado").innerHTML = `
+  <div class="result">
+    <strong>📊 Diagnóstico Inicial:</strong><br><br>
+
+    ✔ Estrutura básica identificada<br>
+    ⚠ Possível inconsistência em cláusulas administrativas<br>
+    ⚠ Risco de enquadramento inadequado<br><br>
+
+    <strong>Recomendação:</strong><br>
+    Revisar cláusulas de governança e adequação à legislação vigente.
+  </div>
+
+  <button class="btn" onclick="whats('${nome}')">
+    Falar com especialista
+  </button>
+`;
+
+}
+
+function whats(nome){
+let msg = encodeURIComponent(`Olá, me chamo ${nome}. Usei o revisor de estatuto e quero análise completa.`);
+window.open(`https://wa.me/5518991511523?text=${msg}`, "_blank");
+}
+
+</script>
+
+</body>
+</html>
