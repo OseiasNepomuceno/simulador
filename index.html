@@ -20,6 +20,7 @@
   --cinza: #CCCCCC;
 }
 
+/* RESET GLOBAL */
 * {
   margin: 0;
   padding: 0;
@@ -28,61 +29,55 @@
 }
 
 body {
-  background: var(--azul-escuro);
+  background: var(--azul-escuro) !important;
   color: var(--branco);
-  padding-top: 90px;
+  padding-top: 85px;
 }
 
-/* HEADER */
+/* HEADER FIXO */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 15px 10%;
+  padding: 12px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background: rgba(11,18,32,0.6);
+  background: rgba(11,18,32,0.85);
   backdrop-filter: blur(10px);
 }
 
-header.scrolled {
-  background: rgba(11,18,32,0.95);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+/* LOGO CONTROLADO (CORREÇÃO DO ERRO) */
+.logo-icon {
+  height: 34px;   /* 🔥 AQUI CORRIGE O TAMANHO */
+  width: auto;
 }
 
 /* BRAND */
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-}
-
-.logo-icon {
-  height: 50px;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
+  gap: 10px;
 }
 
 .brand-name {
   color: var(--verde);
   font-weight: 700;
+  font-size: 16px;
 }
 
 .brand-sub {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--cinza);
 }
 
 /* NAV */
 nav a {
-  margin: 0 10px;
+  margin: 0 8px;
   color: var(--cinza);
   text-decoration: none;
+  font-size: 14px;
 }
 
 nav a:hover {
@@ -91,14 +86,14 @@ nav a:hover {
 
 nav a.active {
   color: var(--verde);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /* BOTÃO */
 .btn {
   background: var(--verde);
   color: #000;
-  padding: 10px 18px;
+  padding: 9px 16px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
@@ -115,7 +110,7 @@ h1 span {
   color: var(--verde);
 }
 
-/* SERVIÇOS RELACIONADOS */
+/* LINKS RELACIONADOS */
 .related {
   max-width: 800px;
   margin: auto;
@@ -157,10 +152,10 @@ h1 span {
     <a href="/quem-somos.html">Quem Somos</a>
   </nav>
 
-  <a class="btn" href="https://wa.me/5518991511523" target="_blank">Contato</a>
+  <a class="btn" href="https://wa.me/5518991511523">Contato</a>
 </header>
 
-<!-- CONTEÚDO PRINCIPAL -->
+<!-- CONTEÚDO -->
 <div class="section">
 
 <h1>Abertura de MEI em <span>Presidente Prudente</span></h1>
@@ -183,7 +178,7 @@ h1 span {
 
 </div>
 
-<!-- SERVIÇOS RELACIONADOS -->
+<!-- RELACIONADOS -->
 <div class="related">
 
 <h2>Serviços relacionados</h2>
@@ -196,13 +191,6 @@ h1 span {
 <a href="/servicos/abrir-mei-presidente-prudente.html">→ Abertura de MEI</a>
 
 </div>
-
-<script>
-window.addEventListener("scroll", () => {
-  document.querySelector("header")
-    .classList.toggle("scrolled", window.scrollY > 50);
-});
-</script>
 
 </body>
 </html>
