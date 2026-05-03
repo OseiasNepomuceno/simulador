@@ -11,8 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  console.log("Supabase conectado:", supabase);
-  
 :root {
   --verde: #00FF9F;
   --azul-escuro: #0B1220;
@@ -27,9 +25,6 @@
   box-sizing:border-box;
   font-family:'Poppins',sans-serif;
 }
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-<script src="../supabase.js"></script>
 
 body {
   background: var(--azul-escuro);
@@ -49,10 +44,6 @@ header {
   background: rgba(11,18,32,0.6);
   backdrop-filter: blur(10px);
   z-index:1000;
-}
-
-header.scrolled {
-  background: rgba(11,18,32,0.95);
 }
 
 .logo-icon { height:50px; }
@@ -153,8 +144,8 @@ button {
 
 <div class="container">
 
-<h2>🩺 Simulador Fator R (Área da Saúde)</h2>
-<p style="color:#ccc;">Descubra se você pode pagar menos impostos migrando do Anexo IV para o Anexo III</p>
+<h2>🩺 Simulador Fator R</h2>
+<p style="color:#ccc;">Descubra se você pode pagar menos impostos migrando do Anexo V para o Anexo III</p>
 
 <div class="card">
 
@@ -167,24 +158,29 @@ button {
 
 <div id="bloqueio" style="display:none;" class="lock">
 
-<h3>🔒 Economia tributária detalhada</h3>
+<h3>🔒 Análise completa PRO</h3>
 
 <p style="color:#ccc;">
-Veja quanto você pode economizar ajustando sua folha de pagamento.
+Veja quanto você pode economizar ajustando sua folha.
 </p>
 
-<input type="text" id="nome" placeholder="Seu nome">
-<input type="email" id="email" placeholder="Seu e-mail">
-
-<button onclick="liberar()">Liberar análise completa</button>
+<button onclick="mostrarLogin()">Desbloquear análise</button>
 
 </div>
 
 </div>
 </div>
+
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="../supabase.js"></script>
 
 <script>
 
+/* TESTE */
+console.log("Supabase conectado:", supabase);
+
+/* CALCULO */
 function calcular(){
 
 let receita = +document.getElementById("receita").value;
@@ -201,7 +197,7 @@ let anexo = fator >= 28 ? "Anexo III (menor imposto)" : "Anexo V (maior imposto)
 let cor = fator >= 28 ? "green" : "red";
 
 let impacto = fator >= 28 
-  ? "Você está pagando menos imposto ✔"
+  ? "Você está bem enquadrado ✔"
   : "Você pode estar pagando imposto acima do necessário ⚠️";
 
 document.getElementById("resultado").innerHTML = `
@@ -216,8 +212,7 @@ document.getElementById("resultado").innerHTML = `
 
   <div class="result yellow">
     📌 Ajustar pró-labore pode reduzir impostos<br>
-    📌 Planejamento da folha é essencial<br>
-    📌 Estratégia correta = mais lucro
+    📌 Planejamento da folha é essencial
   </div>
 `;
 
@@ -225,23 +220,9 @@ document.getElementById("bloqueio").style.display = "block";
 
 }
 
-/* LIBERAÇÃO */
-function liberar(){
-
-let nome = document.getElementById("nome").value;
-
-document.getElementById("bloqueio").innerHTML = `
-  <div class="result green">
-    ✅ Análise liberada!<br><br>
-    Possível economia: até 15% a 25% em impostos.<br><br>
-    👉 Ajustando sua folha você pode migrar de anexo e aumentar sua margem.
-  </div>
-
-  <button onclick="window.open('https://wa.me/5518991511523?text=Olá, fiz o cálculo do Fator R e quero reduzir meus impostos','_blank')">
-    Falar com especialista
-  </button>
-`;
-
+/* SIMULA LOGIN/TRIAL */
+function mostrarLogin(){
+  alert("🔒 Acesso completo disponível no plano PRO");
 }
 
 </script>
