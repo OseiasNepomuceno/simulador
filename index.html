@@ -4,142 +4,127 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Abertura de MEI em Presidente Prudente | COREGOV</title>
+<title>COREGOV Administração & Contabilidade</title>
 
-<meta name="description" content="Abra seu MEI em Presidente Prudente de forma rápida e segura com suporte profissional.">
+<meta name="description" content="Gestão, contabilidade e estratégia para aumentar lucro e reduzir impostos de empresas em Presidente Prudente.">
 
 <link rel="icon" href="/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --verde: #00FF9F;
-  --azul-escuro: #0B1220;
-  --azul-medio: #111A2E;
-  --branco: #FFFFFF;
-  --cinza: #CCCCCC;
+  --verde:#00FF9F;
+  --azul:#0B1220;
+  --cinza:#CCCCCC;
 }
 
-/* RESET GLOBAL */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
 }
 
 body {
-  background: var(--azul-escuro) !important;
-  color: var(--branco);
-  padding-top: 85px;
+  background:var(--azul);
+  color:#fff;
+  padding-top:90px;
 }
 
-/* HEADER FIXO */
+/* HEADER */
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 12px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  background: rgba(11,18,32,0.85);
-  backdrop-filter: blur(10px);
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:12px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(11,18,32,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
 }
 
-/* LOGO CONTROLADO (CORREÇÃO DO ERRO) */
 .logo-icon {
-  height: 34px;   /* 🔥 AQUI CORRIGE O TAMANHO */
-  width: auto;
+  height:34px;
 }
 
-/* BRAND */
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
 .brand-name {
-  color: var(--verde);
-  font-weight: 700;
-  font-size: 16px;
+  color:var(--verde);
+  font-weight:700;
 }
 
 .brand-sub {
-  font-size: 11px;
-  color: var(--cinza);
+  font-size:11px;
+  color:var(--cinza);
 }
 
-/* NAV */
 nav a {
-  margin: 0 8px;
-  color: var(--cinza);
-  text-decoration: none;
-  font-size: 14px;
+  margin:0 8px;
+  color:var(--cinza);
+  text-decoration:none;
 }
 
 nav a:hover {
-  color: var(--verde);
+  color:var(--verde);
 }
 
-nav a.active {
-  color: var(--verde);
-  font-weight: 600;
-}
-
-/* BOTÃO */
 .btn {
-  background: var(--verde);
-  color: #000;
-  padding: 9px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+  background:var(--verde);
+  color:#000;
+  padding:9px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-/* CONTEÚDO */
-.section {
-  max-width: 800px;
-  margin: auto;
-  padding: 60px 20px;
+/* HERO */
+.hero {
+  padding:80px 10%;
+  text-align:center;
 }
 
-h1 span {
-  color: var(--verde);
+.hero h1 span {
+  color:var(--verde);
 }
 
-/* LINKS RELACIONADOS */
-.related {
-  max-width: 800px;
-  margin: auto;
-  padding: 40px 20px;
+/* CARDS */
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:40px 10%;
 }
 
-.related a {
-  display: block;
-  color: var(--cinza);
-  text-decoration: none;
-  margin: 8px 0;
+.card {
+  background:#111A2E;
+  padding:20px;
+  border-radius:12px;
 }
 
-.related a:hover {
-  color: var(--verde);
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:30px;
+  color:#888;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER PADRÃO -->
 <header>
   <div class="brand">
     <img src="/logo-icon.png" class="logo-icon">
-
-    <div class="brand-text">
-      <span class="brand-name">COREGOV</span>
-      <span class="brand-sub">Administração & Contabilidade</span>
+    <div>
+      <div class="brand-name">COREGOV</div>
+      <div class="brand-sub">Administração & Contabilidade</div>
     </div>
   </div>
 
@@ -155,42 +140,20 @@ h1 span {
   <a class="btn" href="https://wa.me/5518991511523">Contato</a>
 </header>
 
-<!-- CONTEÚDO -->
-<div class="section">
+<section class="hero">
+  <h1>Gestão inteligente para sua <span>empresa crescer</span></h1>
+  <p>Contabilidade + estratégia para reduzir custos e aumentar lucro.</p>
+</section>
 
-<h1>Abertura de MEI em <span>Presidente Prudente</span></h1>
+<section class="cards">
+  <div class="card">📊 Gestão Financeira</div>
+  <div class="card">📉 Redução de impostos</div>
+  <div class="card">📈 Crescimento empresarial</div>
+</section>
 
-<p>Formalize seu negócio de forma rápida e segura.</p>
-
-<h2>O que fazemos</h2>
-<ul>
-  <li>Abertura de CNPJ MEI</li>
-  <li>Orientação completa</li>
-  <li>Cadastro correto de atividade</li>
-</ul>
-
-<h2>Benefícios</h2>
-<p>Empresa formalizada e pronta para crescer.</p>
-
-<br>
-
-<a class="btn" href="https://wa.me/5518991511523">Falar com especialista</a>
-
-</div>
-
-<!-- RELACIONADOS -->
-<div class="related">
-
-<h2>Serviços relacionados</h2>
-
-<a href="/servicos/contabilidade-presidente-prudente.html">→ Contabilidade Empresarial</a>
-<a href="/servicos/gestao-financeira-presidente-prudente.html">→ Gestão Financeira</a>
-<a href="/servicos/gestao-negocios-presidente-prudente.html">→ Gestão de Negócios</a>
-<a href="/servicos/pesquisa-mercado-presidente-prudente.html">→ Pesquisa de Mercado</a>
-<a href="/servicos/certificado-digital-presidente-prudente.html">→ Certificado Digital</a>
-<a href="/servicos/abrir-mei-presidente-prudente.html">→ Abertura de MEI</a>
-
-</div>
+<footer>
+  © 2026 COREGOV
+</footer>
 
 </body>
 </html>
