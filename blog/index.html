@@ -17,6 +17,59 @@ a {color:#00ff9f;text-decoration:none}
 .container {max-width:900px;margin:auto;padding:40px}
 ul {line-height:1.8}
 h1 span{color:#00ff9f}
+
+/* HEADER */
+header {
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:12px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(11,18,32,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.logo-icon {
+  height:34px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand-name {
+  color:var(--verde);
+  font-weight:700;
+}
+
+.brand-sub {
+  font-size:11px;
+  color:var(--cinza);
+}
+
+nav a {
+  margin:0 8px;
+  color:var(--cinza);
+  text-decoration:none;
+}
+
+nav a:hover {
+  color:var(--verde);
+}
+
+.btn {
+  background:var(--verde);
+  color:#000;
+  padding:9px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
 </style>
 
 </head>
