@@ -8,29 +8,131 @@
 
 <meta name="description" content="Abra seu MEI em Presidente Prudente de forma rápida e segura com suporte profissional.">
 
-<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-h1 span{color:#00ff9f}
-.btn{
-  background:#00ff9f;
-  color:#000;
-  padding:12px 20px;
-  border-radius:8px;
-  text-decoration:none;
-  display:inline-block;
-  margin-top:20px;
+:root {
+  --verde: #00FF9F;
+  --azul-escuro: #0B1220;
+  --azul-medio: #111A2E;
+  --branco: #FFFFFF;
+  --cinza: #CCCCCC;
 }
-.section{
-  max-width:800px;
-  margin:auto;
+
+/* RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--azul-escuro) !important;
+  color: var(--branco);
+  padding-top: 85px;
+}
+
+/* HEADER FIXO */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 12px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(11,18,32,0.85);
+  backdrop-filter: blur(10px);
+}
+
+/* LOGO CONTROLADO (CORREÇÃO DO ERRO) */
+.logo-icon {
+  height: 34px;   /* 🔥 AQUI CORRIGE O TAMANHO */
+  width: auto;
+}
+
+/* BRAND */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-name {
+  color: var(--verde);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.brand-sub {
+  font-size: 11px;
+  color: var(--cinza);
+}
+
+/* NAV */
+nav a {
+  margin: 0 8px;
+  color: var(--cinza);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--verde);
+}
+
+nav a.active {
+  color: var(--verde);
+  font-weight: 600;
+}
+
+/* BOTÃO */
+.btn {
+  background: var(--verde);
+  color: #000;
+  padding: 9px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* CONTEÚDO */
+.section {
+  max-width: 800px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+h1 span {
+  color: var(--verde);
+}
+
+/* LINKS RELACIONADOS */
+.related {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.related a {
+  display: block;
+  color: var(--cinza);
+  text-decoration: none;
+  margin: 8px 0;
+}
+
+.related a:hover {
+  color: var(--verde);
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER PADRÃO GLOBAL -->
+<!-- HEADER PADRÃO -->
 <header>
   <div class="brand">
     <img src="/logo-icon.png" class="logo-icon">
@@ -49,6 +151,8 @@ h1 span{color:#00ff9f}
     <a href="/blog/index.html">Blog</a>
     <a href="/quem-somos.html">Quem Somos</a>
   </nav>
+
+  <a class="btn" href="https://wa.me/5518991511523">Contato</a>
 </header>
 
 <!-- CONTEÚDO -->
@@ -60,26 +164,24 @@ h1 span{color:#00ff9f}
 
 <h2>O que fazemos</h2>
 <ul>
-<li>Abertura de CNPJ MEI</li>
-<li>Orientação completa</li>
-<li>Cadastro correto de atividade</li>
+  <li>Abertura de CNPJ MEI</li>
+  <li>Orientação completa</li>
+  <li>Cadastro correto de atividade</li>
 </ul>
 
 <h2>Benefícios</h2>
 <p>Empresa formalizada e pronta para crescer.</p>
 
+<br>
+
 <a class="btn" href="https://wa.me/5518991511523">Falar com especialista</a>
 
 </div>
 
-<!-- SERVIÇOS RELACIONADOS (AGORA CORRETO) -->
-<hr style="margin:40px 0; opacity:0.2">
-
-<div class="section">
+<!-- RELACIONADOS -->
+<div class="related">
 
 <h2>Serviços relacionados</h2>
-
-<div style="display:grid;gap:10px;margin-top:20px">
 
 <a href="/servicos/contabilidade-presidente-prudente.html">→ Contabilidade Empresarial</a>
 <a href="/servicos/gestao-financeira-presidente-prudente.html">→ Gestão Financeira</a>
@@ -87,8 +189,6 @@ h1 span{color:#00ff9f}
 <a href="/servicos/pesquisa-mercado-presidente-prudente.html">→ Pesquisa de Mercado</a>
 <a href="/servicos/certificado-digital-presidente-prudente.html">→ Certificado Digital</a>
 <a href="/servicos/abrir-mei-presidente-prudente.html">→ Abertura de MEI</a>
-
-</div>
 
 </div>
 
