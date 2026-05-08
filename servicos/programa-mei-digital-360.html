@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Programa MEI Digital 360 | Instagram Profissional para MEI - COREGOV</title>
+
+<meta name="description" content="Transforme o Instagram do seu negócio com o Programa MEI Digital 360 da COREGOV. Posts profissionais, Canva, automação, planejamento e suporte estratégico por 06 meses.">
+
+<meta name="keywords" content="instagram para mei, marketing para mei, gestão instagram mei, posts canva mei, automação instagram, marketing digital presidente prudente, social media para mei, instagram profissional">
+
+<link rel="icon" href="../favicon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0f172a;
+color:#fff;
+line-height:1.6;
+overflow-x:hidden;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+padding:20px 0;
+background:#020617;
+position:sticky;
+top:0;
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+color:#22c55e;
+}
+
+.hero{
+padding:100px 0;
+background:
+linear-gradient(rgba(2,6,23,0.88),rgba(2,6,23,0.92)),
+url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop') center/cover;
+}
+
+.hero-content{
+max-width:700px;
+}
+
+.badge{
+display:inline-block;
+background:#22c55e;
+color:#fff;
+padding:8px 18px;
+border-radius:30px;
+font-size:14px;
+font-weight:600;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:56px;
+line-height:1.1;
+margin-bottom:25px;
+font-weight:800;
+}
+
+.hero h1 span{
+color:#22c55e;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:35px;
+color:#cbd5e1;
+}
+
+.cta-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:18px 32px;
+border-radius:12px;
+font-weight:700;
+text-decoration:none;
+transition:0.3s;
+display:inline-block;
+}
+
+.btn-primary{
+background:#22c55e;
+color:#fff;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+background:#16a34a;
+}
+
+.btn-secondary{
+border:2px solid #22c55e;
+color:#22c55e;
+}
+
+.btn-secondary:hover{
+background:#22c55e;
+color:#fff;
+}
+
+.section{
+padding:90px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.section-title p{
+color:#94a3b8;
+font-size:18px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111827;
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.06);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#22c55e;
+}
+
+.card h3{
+font-size:24px;
+margin-bottom:18px;
+color:#22c55e;
+}
+
+.card p{
+color:#cbd5e1;
+}
+
+.benefits{
+background:#020617;
+}
+
+.benefits-list{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.benefit{
+background:#111827;
+padding:20px;
+border-radius:14px;
+font-weight:500;
+}
+
+.pricing{
+text-align:center;
+}
+
+.price-box{
+background:#111827;
+max-width:500px;
+margin:auto;
+padding:50px 35px;
+border-radius:25px;
+border:2px solid #22c55e;
+}
+
+.price-box h3{
+font-size:34px;
+margin-bottom:15px;
+}
+
+.old-price{
+text-decoration:line-through;
+color:#94a3b8;
+margin-bottom:10px;
+}
+
+.price{
+font-size:64px;
+font-weight:800;
+color:#22c55e;
+margin-bottom:10px;
+}
+
+.price small{
+font-size:22px;
+}
+
+.price-description{
+color:#cbd5e1;
+margin-bottom:30px;
+}
+
+.price-box ul{
+list-style:none;
+margin-bottom:35px;
+text-align:left;
+}
+
+.price-box ul li{
+margin-bottom:15px;
+padding-left:28px;
+position:relative;
+}
+
+.price-box ul li::before{
+content:'✔';
+position:absolute;
+left:0;
+color:#22c55e;
+font-weight:700;
+}
+
+.urgency{
+background:#22c55e;
+color:#fff;
+padding:18px;
+border-radius:14px;
+margin-top:25px;
+font-weight:700;
+}
+
+.final-cta{
+padding:100px 0;
+background:
+linear-gradient(rgba(2,6,23,0.92),rgba(2,6,23,0.92)),
+url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop') center/cover;
+text-align:center;
+}
+
+.final-cta h2{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.final-cta p{
+font-size:22px;
+max-width:800px;
+margin:auto;
+margin-bottom:35px;
+color:#cbd5e1;
+}
+
+footer{
+background:#020617;
+padding:30px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.08);
+color:#94a3b8;
+}
+
+.whatsapp-float{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#22c55e;
+width:70px;
+height:70px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+text-decoration:none;
+color:#fff;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+z-index:999;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+.section-title h2{
+font-size:32px;
+}
+
+.final-cta h2{
+font-size:36px;
+}
+
+.price{
+font-size:48px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<div class="logo">COREGOV</div>
+<a href="https://wa.me/5518999999999" class="btn btn-primary">
+Falar no WhatsApp
+</a>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+
+<div class="badge">
+🚀 Programa Exclusivo para MEI
+</div>
+
+<h1>
+Transforme seu <span>Instagram</span> em uma máquina de vendas
+</h1>
+
+<p>
+Chega de perfil parado sem clientes. 
+A COREGOV criou um programa completo para MEIs que querem vender mais, atrair clientes e ter presença profissional nas redes sociais.
+</p>
+
+<div class="cta-buttons">
+<a href="https://wa.me/5518999999999" class="btn btn-primary">
+QUERO COMEÇAR AGORA
+</a>
+
+<a href="#planos" class="btn btn-secondary">
+VER PLANOS
+</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="section-title">
+<h2>O que você recebe</h2>
+<p>Estrutura completa para profissionalizar seu Instagram</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>🎨 Posts Profissionais</h3>
+<p>
+Criação de artes modernas no Canva com identidade visual profissional e foco em vendas.
+</p>
+</div>
+
+<div class="card">
+<h3>📅 Planejamento Estratégico</h3>
+<p>
+Planejamento de conteúdo para 15 dias com ideias prontas para atrair clientes.
+</p>
+</div>
+
+<div class="card">
+<h3>🤖 Automação de Postagens</h3>
+<p>
+Seu conteúdo publicado automaticamente mesmo quando você estiver trabalhando.
+</p>
+</div>
+
+<div class="card">
+<h3>📈 Crescimento do Instagram</h3>
+<p>
+Estratégias para aumentar alcance, autoridade e atrair novos clientes da sua região.
+</p>
+</div>
+
+<div class="card">
+<h3>💬 Suporte por 06 Meses</h3>
+<p>
+Acompanhamento estratégico e suporte para implantação e crescimento contínuo.
+</p>
+</div>
+
+<div class="card">
+<h3>🚀 Posicionamento Profissional</h3>
+<p>
+Seu negócio passa a transmitir mais confiança, organização e credibilidade.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section benefits">
+<div class="container">
+
+<div class="section-title">
+<h2>Ideal para MEIs que:</h2>
+<p>Querem crescer sem gastar fortunas com agência</p>
+</div>
+
+<div class="benefits-list">
+
+<div class="benefit">✔ Não sabem o que postar</div>
+<div class="benefit">✔ Têm Instagram parado</div>
+<div class="benefit">✔ Precisam atrair mais clientes</div>
+<div class="benefit">✔ Querem aparência profissional</div>
+<div class="benefit">✔ Não têm tempo para criar conteúdo</div>
+<div class="benefit">✔ Precisam vender mais pela internet</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section pricing" id="planos">
+<div class="container">
+
+<div class="section-title">
+<h2>Plano acessível para MEI</h2>
+<p>Implantação + suporte estratégico completo</p>
+</div>
+
+<div class="price-box">
+
+<h3>Programa MEI Digital 360</h3>
+
+<div class="old-price">
+De R$ 997
+</div>
+
+<div class="price">
+R$ 497<small>/mês</small>
+</div>
+
+<p class="price-description">
+ou implantação inicial + suporte mensal reduzido
+</p>
+
+<ul>
+<li>15 Posts profissionais</li>
+<li>15 Stories estratégicos</li>
+<li>Templates Canva editáveis</li>
+<li>Automação de postagens</li>
+<li>Planejamento de conteúdo</li>
+<li>Suporte estratégico por 06 meses</li>
+<li>Estratégia de crescimento Instagram</li>
+<li>Atendimento personalizado</li>
+</ul>
+
+<a href="https://wa.me/5518999999999" class="btn btn-primary">
+QUERO GARANTIR MINHA VAGA
+</a>
+
+<div class="urgency">
+⚠ Vagas limitadas para garantir atendimento personalizado
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="final-cta">
+<div class="container">
+
+<h2>
+Seu concorrente já está aparecendo todos os dias no Instagram.
+</h2>
+
+<p>
+Agora é a hora de profissionalizar sua presença digital e transformar seguidores em clientes.
+</p>
+
+<a href="https://wa.me/5518999999999" class="btn btn-primary">
+FALAR COM A COREGOV AGORA
+</a>
+
+</div>
+</section>
+
+<footer>
+© 2026 COREGOV — Gestão, Estratégia e Crescimento para MEIs
+</footer>
+
+<a href="https://wa.me/5518999999999" class="whatsapp-float">
+💬
+</a>
+
+</body>
+</html>
