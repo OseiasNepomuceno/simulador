@@ -1,56 +1,85 @@
-<!-- SDK Supabase via CDN -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const supabaseClient = supabase.createClient(
-      'https://mztdxodzbwbgtwbelltc.supabase.co',   // substitua pela URL do seu projeto
-      'sb_publishable_8rdOLvmJzJxDRfI5ECRhXA_r8Be3fYO'                     // substitua pela chave anon
-    )
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoreGov RH | Recrutamento</title>
+</head>
+<body>
+  <!-- Formulário -->
+  <form id="curriculoForm">
+    <input type="text" name="nome" placeholder="Nome completo" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="text" name="telefone" placeholder="Telefone / WhatsApp">
+    <select name="area">
+      <option value="">Área de atuação</option>
+      <option>Administrativo</option>
+      <option>Financeiro</option>
+      <option>Comercial</option>
+      <option>Marketing</option>
+      <option>Recursos Humanos</option>
+      <option>Contabilidade</option>
+    </select>
+    <textarea name="experiencia" rows="6" placeholder="Fale sobre sua experiência profissional"></textarea>
+    <input type="file" name="curriculo" accept=".pdf,.doc,.docx">
+    <button type="submit">Enviar Currículo</button>
+  </form>
 
-    const form = document.getElementById('curriculoForm')
-    if (!form) {
-      console.error('Formulário com id="curriculoForm" não encontrado!')
-      return
-    }
+  <!-- SDK Supabase via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const supabaseClient = supabase.createClient(
+        'https://SEU-PROJETO.supabase.co',
+        'SUA-CHAVE-ANON'
+      )
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault()
+      const form = document.getElementById('curriculoForm')
+      if (!form) {
+        console.error('Formulário com id="curriculoForm" não encontrado!')
+        return
+      }
 
-      const nome = form.nome.value
-      const email = form.email.value
-      const telefone = form.telefone.value
-      const area = form.area.value
-      const experiencia = form.experiencia.value
-      const file = form.curriculo.files[0]
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault()
 
-      let filePath = null
+        const nome = form.nome.value
+        const email = form.email.value
+        const telefone = form.telefone.value
+        const area = form.area.value
+        const experiencia = form.experiencia.value
+        const file = form.curriculo.files[0]
 
-      if (file) {
-        const { data: fileData, error: fileError } = await supabaseClient
-          .storage
-          .from('CURRICULOS')
-          .upload(`uploads/${Date.now()}_${file.name}`, file)
+        let filePath = null
 
-        if (fileError) {
-          console.error('Erro no upload:', fileError.message)
-          alert('Erro ao enviar arquivo: ' + fileError.message)
-          return
-        } else {
-          filePath = fileData.path
+        if (file) {
+          const { data: fileData, error: fileError } = await supabaseClient
+            .storage
+            .from('CURRICULOS')
+            .upload(`uploads/${Date.now()}_${file.name}`, file)
+
+          if (fileError) {
+            console.error('Erro no upload:', fileError.message)
+            alert('Erro ao enviar arquivo: ' + fileError.message)
+            return
+          } else {
+            filePath = fileData.path
+          }
         }
-      }
 
-      const { data, error } = await supabaseClient
-        .from('candidatos')
-        .insert([{ nome, email, telefone, area, experiencia, curriculo: filePath }])
+        const { data, error } = await supabaseClient
+          .from('candidatos')
+          .insert([{ nome, email, telefone, area, experiencia, curriculo: filePath }])
 
-      if (error) {
-        console.error('Erro ao inserir:', error.message)
-        alert('Erro ao salvar candidato: ' + error.message)
-      } else {
-        alert('Currículo enviado com sucesso!')
-        form.reset()
-      }
+        if (error) {
+          console.error('Erro ao inserir:', error.message)
+          alert('Erro ao salvar candidato: ' + error.message)
+        } else {
+          alert('Currículo enviado com sucesso!')
+          form.reset()
+        }
+      })
     })
-  })
-</script>
+  </script>
+</body>
+</html>
