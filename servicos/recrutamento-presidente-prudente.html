@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CoreGov RH | Recrutamento</title>
+  <title>Teste Supabase</title>
 </head>
 <body>
-  <!-- Formulário -->
+  <h2>Cadastro de Currículo</h2>
+
   <form id="curriculoForm">
-    <input type="text" name="nome" placeholder="Nome completo" required>
-    <input type="email" name="email" placeholder="E-mail" required>
-    <input type="text" name="telefone" placeholder="Telefone / WhatsApp">
+    <input type="text" name="nome" placeholder="Nome completo" required><br>
+    <input type="email" name="email" placeholder="E-mail" required><br>
+    <input type="text" name="telefone" placeholder="Telefone / WhatsApp"><br>
     <select name="area">
       <option value="">Área de atuação</option>
       <option>Administrativo</option>
@@ -19,9 +20,9 @@
       <option>Marketing</option>
       <option>Recursos Humanos</option>
       <option>Contabilidade</option>
-    </select>
-    <textarea name="experiencia" rows="6" placeholder="Fale sobre sua experiência profissional"></textarea>
-    <input type="file" name="curriculo" accept=".pdf,.doc,.docx">
+    </select><br>
+    <textarea name="experiencia" rows="4" placeholder="Experiência profissional"></textarea><br>
+    <input type="file" name="curriculo" accept=".pdf,.doc,.docx"><br><br>
     <button type="submit">Enviar Currículo</button>
   </form>
 
@@ -30,8 +31,8 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const supabaseClient = supabase.createClient(
-        'https://SEU-PROJETO.supabase.co',
-        'SUA-CHAVE-ANON'
+        'https://SEU-PROJETO.supabase.co',   // substitua pela URL do seu projeto
+        'SUA-CHAVE-ANON'                     // substitua pela chave anon
       )
 
       const form = document.getElementById('curriculoForm')
@@ -52,6 +53,7 @@
 
         let filePath = null
 
+        // Upload do arquivo para o bucket CURRICULOS
         if (file) {
           const { data: fileData, error: fileError } = await supabaseClient
             .storage
@@ -67,6 +69,7 @@
           }
         }
 
+        // Inserção dos dados na tabela candidatos
         const { data, error } = await supabaseClient
           .from('candidatos')
           .insert([{ nome, email, telefone, area, experiencia, curriculo: filePath }])
