@@ -2,12 +2,19 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Inicialização correta com CDN
     const supabaseClient = supabase.createClient(
       'https://SEU-PROJETO.supabase.co',   // substitua pela URL do seu projeto
       'SUA-CHAVE-ANON'                     // substitua pela chave anon
     )
 
+    // Captura do formulário
     const form = document.getElementById('curriculoForm')
+    if (!form) {
+      console.error('Formulário com id="curriculoForm" não encontrado!')
+      return
+    }
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault()
 
