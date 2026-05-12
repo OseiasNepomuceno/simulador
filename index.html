@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COREGOV Administração & Contabilidade</title>
+<title>COREGOV Administração, Contabilidade & Recrutamento</title>
 
-<meta name="description" content="Gestão, contabilidade e estratégia para aumentar lucro e reduzir impostos de empresas em Presidente Prudente.">
+<meta name="description" content="Gestão, contabilidade, recrutamento e estratégia para aumentar lucro, reduzir impostos e desenvolver empresas em Presidente Prudente.">
 
 <link rel="icon" href="/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -43,6 +43,7 @@ header {
   background:rgba(11,18,32,0.85);
   backdrop-filter:blur(10px);
   z-index:1000;
+  border-bottom:1px solid rgba(0,255,159,0.08);
 }
 
 .logo-icon {
@@ -69,6 +70,7 @@ nav a {
   margin:0 8px;
   color:var(--cinza);
   text-decoration:none;
+  transition:.3s;
 }
 
 nav a:hover {
@@ -82,6 +84,12 @@ nav a:hover {
   border-radius:8px;
   text-decoration:none;
   font-weight:bold;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 20px rgba(0,255,159,0.3);
 }
 
 /* HERO */
@@ -90,17 +98,31 @@ nav a:hover {
   text-align:center;
 }
 
+.hero h1 {
+  font-size:52px;
+  margin-bottom:20px;
+}
+
 .hero h1 span {
   color:var(--verde);
+}
+
+.hero p{
+  color:var(--cinza);
+  max-width:800px;
+  margin:auto;
+  line-height:1.8;
+  font-size:18px;
 }
 
 /* 🔥 IMAGEM CENTRALIZADA */
 .hero-img {
   display:block;
-  margin:30px auto 0 auto;
-  max-width:500px;
+  margin:40px auto 0 auto;
+  max-width:550px;
   width:100%;
-  border-radius:12px;
+  border-radius:16px;
+  box-shadow:0 0 40px rgba(0,0,0,0.4);
 }
 
 /* CARDS */
@@ -113,15 +135,108 @@ nav a:hover {
 
 .card {
   background:#111A2E;
-  padding:20px;
-  border-radius:12px;
+  padding:25px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.05);
+  transition:.3s;
+  font-size:18px;
+  font-weight:600;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(0,255,159,0.3);
+  box-shadow:0 0 25px rgba(0,255,159,0.08);
+}
+
+/* RECRUTAMENTO */
+.rh-section{
+  padding:80px 10%;
+}
+
+.rh-box{
+  background:linear-gradient(135deg,#111A2E,#0E1525);
+  border-radius:24px;
+  padding:50px;
+  border:1px solid rgba(0,255,159,0.08);
+  box-shadow:0 0 40px rgba(0,0,0,0.35);
+}
+
+.rh-box h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.rh-box h2 span{
+  color:var(--verde);
+}
+
+.rh-box p{
+  color:var(--cinza);
+  line-height:1.9;
+  margin-bottom:40px;
+}
+
+.rh-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.rh-card{
+  background:#0B1220;
+  padding:25px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.05);
+  transition:.3s;
+}
+
+.rh-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(0,255,159,0.3);
+}
+
+.rh-card h3{
+  color:var(--verde);
+  margin-bottom:12px;
+}
+
+.rh-btn{
+  margin-top:35px;
+  display:inline-block;
 }
 
 /* FOOTER */
 footer {
   text-align:center;
-  padding:30px;
+  padding:40px;
   color:#888;
+  border-top:1px solid rgba(255,255,255,0.05);
+  margin-top:60px;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+
+header{
+  flex-direction:column;
+  gap:15px;
+}
+
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.hero h1{
+  font-size:38px;
+}
+
+.rh-box h2{
+  font-size:32px;
+}
+
 }
 </style>
 </head>
@@ -133,7 +248,7 @@ footer {
     <img src="/logo-icon.png" class="logo-icon">
     <div>
       <div class="brand-name">COREGOV</div>
-      <div class="brand-sub">Administração & Contabilidade</div>
+      <div class="brand-sub">Administração, Contabilidade & RH</div>
     </div>
   </div>
 
@@ -142,6 +257,7 @@ footer {
     <a href="/servicos.html">Serviços</a>
     <a href="/ferramentas.html">Ferramentas</a>
     <a href="/simulador.html">Simulador</a>
+    <a href="/recrutamento.html">Recrutamento</a>
     <a href="/blog/index.html">Blog</a>
     <a href="/quem-somos.html">Quem Somos</a>
   </nav>
@@ -150,8 +266,15 @@ footer {
 </header>
 
 <section class="hero">
-  <h1>Gestão inteligente para sua <span>empresa crescer</span></h1>
-  <p>Contabilidade + estratégia para reduzir custos e aumentar lucro.</p>
+  <h1>
+    Gestão inteligente para sua 
+    <span>empresa crescer</span>
+  </h1>
+
+  <p>
+    Contabilidade, recrutamento e estratégia empresarial para reduzir custos,
+    desenvolver equipes e aumentar resultados.
+  </p>
 
   <!-- IMAGEM INSERIDA -->
   <img src="/coregov_clientes.png" alt="Clientes COREGOV" class="hero-img">
@@ -162,10 +285,66 @@ footer {
   <div class="card">📊 Gestão Financeira</div>
   <div class="card">📉 Redução de impostos</div>
   <div class="card">📈 Crescimento empresarial</div>
+  <div class="card">👥 Recrutamento & Seleção</div>
+</section>
+
+<!-- RECRUTAMENTO -->
+<section class="rh-section">
+
+<div class="rh-box">
+
+<h2>
+Recrutamento & <span>Seleção Inteligente</span>
+</h2>
+
+<p>
+A CoreGov também atua com recrutamento, seleção e desenvolvimento profissional,
+conectando empresas aos melhores talentos através de estratégias modernas de RH,
+orientação curricular e gestão de liderança.
+</p>
+
+<div class="rh-grid">
+
+<div class="rh-card">
+<h3>📄 Banco de Currículos</h3>
+<p>
+Cadastre talentos e conecte profissionais às oportunidades certas.
+</p>
+</div>
+
+<div class="rh-card">
+<h3>🧠 Orientação Curricular</h3>
+<p>
+Análise gratuita de currículo para fortalecer posicionamento profissional.
+</p>
+</div>
+
+<div class="rh-card">
+<h3>📈 Gestão de Carreira</h3>
+<p>
+Planejamento estratégico para crescimento profissional e desenvolvimento contínuo.
+</p>
+</div>
+
+<div class="rh-card">
+<h3>👔 Gestão de Liderança</h3>
+<p>
+Desenvolvimento de líderes e fortalecimento de equipes de alta performance.
+</p>
+</div>
+
+</div>
+
+<a href="/recrutamento.html" class="btn rh-btn">
+Conhecer RH CoreGov
+</a>
+
+</div>
+
 </section>
 
 <footer>
-  © 2026 COREGOV
+  © 2026 COREGOV — Administração, Contabilidade & Recrutamento
 </footer>
 
 </body>
