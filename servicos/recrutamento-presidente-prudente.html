@@ -353,96 +353,84 @@ display:none;
 </style>
 </head>
 
+<!-- ... (mantenha todo o seu código CSS e cabeçalho igual) ... -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-
-const supabaseUrl = 'https://mztdxodzbwbgtwbelltc.supabase.co';
-const supabaseKey = 'sb_publishable_8rdOLvmJzJxDRfI5ECRhXA_r8Be3fYO';
-
-const supabase = window.supabase.createClient(
-supabaseUrl,
-supabaseKey
-);
-
-document
-.getElementById('curriculoForm')
-.addEventListener('submit', async function(e){
-
-e.preventDefault();
-
-const form = e.target;
-
-const nome = form.nome.value;
-const email = form.email.value;
-const telefone = form.telefone.value;
-const area = form.area.value;
-const experiencia = form.experiencia.value;
-
-const file = form.curriculo.files[0];
-
-let curriculoUrl = '';
-
-/* UPLOAD CURRÍCULO */
-
-if(file){
-
-const fileName = Date.now() + '_' + file.name;
-
-const { error: uploadError } = await supabase.storage
-.from('curriculos')
-.upload(fileName, file);
-
-if(uploadError){
-
-console.log(uploadError);
-
-alert('Erro ao enviar currículo.');
-
-return;
-
+// 2. MODIFICAÇÃO DE SEGURANÇA E INICIALIZAÇÃO
+if (typeof window.supabaseClient === 'undefined') {
+    const supabaseUrl = 'https://mztdxodzbwbgtwbelltc.supabase.co';
+    const supabaseKey = 'sb_publishable_8rdOLvmJzJxDRfI5ECRhXA_r8Be3fYO';
+    
+    window.supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
 }
 
-const { data } = supabase.storage
-.from('curriculos')
-.getPublicUrl(fileName);
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('curriculoForm');
+    
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-curriculoUrl = data.publicUrl;
+            const nome = form.nome.value;
+            const email = form.email.value;
+            const telefone = form.telefone.value;
+            const area = form.area.value;
+            const experiencia = form.experiencia.value;
+            const file = form.curriculo.files[0];
 
-}
+            let curriculoUrl = '';
 
-/* SALVAR NO BANCO */
+            /* UPLOAD CURRÍCULO */
+            if (file) {
+                const fileName = Date.now() + '_' + file.name;
 
-const { error } = await supabase
-.from('candidatos')
-.insert([
-{
-nome,
-email,
-telefone,
-area,
-experiencia,
-curriculo: curriculoUrl
-}
-]);
+                const { error: uploadError } = await window.supabaseClient.storage
+                    .from('curriculos')
+                    .upload(fileName, file);
 
-if(error){
+                if (uploadError) {
+                    console.error('Erro Storage:', uploadError);
+                    alert('Erro ao enviar currículo. Verifique se o arquivo não é muito grande.');
+                    return;
+                }
 
-console.log(error);
+                const { data } = window.supabaseClient.storage
+                    .from('curriculos')
+                    .getPublicUrl(fileName);
 
-alert('Erro ao salvar dados.');
+                curriculoUrl = data.publicUrl;
+            }
 
-return;
+            /* SALVAR NO BANCO */
+            const { error } = await window.supabaseClient
+                .from('candidatos')
+                .insert([
+                    {
+                        nome,
+                        email,
+                        telefone,
+                        area,
+                        experiencia,
+                        curriculo: curriculoUrl
+                    }
+                ]);
 
-}
+            if (error) {
+                console.error('Erro Database:', error);
+                alert('Erro ao salvar dados no banco. Verifique as permissões RLS.');
+                return;
+            }
 
-alert('Currículo enviado com sucesso!');
-
-form.reset();
-
+            alert('Currículo enviado com sucesso!');
+            form.reset();
+        });
+    }
 });
-
 </script>
+
+<!-- ... (mantenha o restante do corpo do HTML igual) ... -->
   
 <body>
 
