@@ -196,13 +196,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (form) {
         form.addEventListener('submit', async function(e) {
-            e.preventDefault();
+            // ESTA LINHA É ESSENCIAL: ela impede o envio pela URL
+            e.preventDefault(); 
 
-            // Desativa o botão para evitar múltiplos cliques
             const submitBtn = form.querySelector('button[type="submit"]');
             submitBtn.disabled = true;
             submitBtn.innerText = 'Enviando...';
 
+            // ... restante do código de upload e insert ...
+ 
             const nome = form.nome.value;
             const email = form.email.value;
             const telefone = form.telefone.value;
