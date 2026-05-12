@@ -1,370 +1,195 @@
-# recrutamento.html
-
-```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CoreGov RH | Recrutamento e Seleção</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreGov RH | Recrutamento e Seleção</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#070B14;
-color:#fff;
-overflow-x:hidden;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-.container{
-width:90%;
-max-width:1300px;
-margin:auto;
-}
-
-header{
-padding:25px 0;
-position:fixed;
-width:100%;
-top:0;
-z-index:999;
-background:rgba(7,11,20,0.92);
-backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(30,144,255,0.15);
-}
-
-.nav{
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.logo{
-font-size:28px;
-font-weight:800;
-color:#1E90FF;
-}
-
-.logo span{
-color:#00FF88;
-}
-
-.menu{
-display:flex;
-gap:25px;
-}
-
-.menu a{
-color:#fff;
-text-decoration:none;
-font-weight:500;
-transition:.3s;
-}
-
-.menu a:hover{
-color:#00FF88;
-}
-
-.btn{
-padding:15px 30px;
-border-radius:14px;
-font-weight:700;
-text-decoration:none;
-display:inline-block;
-transition:.3s;
-}
-
-.btn-primary{
-background:#00FF88;
-color:#000;
-box-shadow:0 0 30px rgba(0,255,136,0.3);
-}
-
-.btn-primary:hover{
-transform:translateY(-3px);
-}
-
-.btn-secondary{
-border:1px solid rgba(30,144,255,0.3);
-background:rgba(30,144,255,0.1);
-color:#fff;
-}
-
-.hero{
-padding:180px 0 120px;
-background:linear-gradient(135deg,#070B14,#0E1525);
-position:relative;
-}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.hero h1{
-font-size:68px;
-line-height:1.1;
-margin-bottom:25px;
-font-weight:800;
-}
-
-.hero h1 span{
-color:#00FF88;
-}
-
-.hero p{
-font-size:18px;
-color:#ccc;
-line-height:1.8;
-margin-bottom:40px;
-}
-
-.hero-card{
-background:#0E1525;
-padding:40px;
-border-radius:30px;
-border:1px solid rgba(30,144,255,0.2);
-box-shadow:0 0 40px rgba(0,0,0,0.4);
-animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0px)}
-50%{transform:translateY(-10px)}
-100%{transform:translateY(0px)}
-}
-
-.hero-card h3{
-font-size:30px;
-margin-bottom:15px;
-}
-
-.hero-card p{
-margin-bottom:0;
-}
-
-.section{
-padding:100px 0;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:70px;
-}
-
-.section-title span{
-color:#00FF88;
-font-weight:700;
-letter-spacing:2px;
-text-transform:uppercase;
-font-size:14px;
-}
-
-.section-title h2{
-font-size:52px;
-margin:20px 0;
-font-weight:800;
-}
-
-.section-title p{
-color:#bbb;
-font-size:18px;
-max-width:800px;
-margin:auto;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.card{
-background:#0E1525;
-padding:35px;
-border-radius:24px;
-border:1px solid rgba(30,144,255,0.1);
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-border-color:#1E90FF;
-box-shadow:0 0 30px rgba(30,144,255,0.15);
-}
-
-.card h3{
-font-size:28px;
-margin-bottom:20px;
-}
-
-.card p{
-color:#bbb;
-line-height:1.7;
-}
-
-.form-section{
-background:#0B111D;
-}
-
-.form-box{
-background:#0E1525;
-padding:50px;
-border-radius:30px;
-border:1px solid rgba(30,144,255,0.1);
-}
-
-.form-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-}
-
-input, textarea, select{
-width:100%;
-padding:18px;
-border:none;
-border-radius:16px;
-background:#121B2E;
-color:#fff;
-outline:none;
-border:1px solid transparent;
-transition:.3s;
-}
-
-input:focus,
-textarea:focus,
-select:focus{
-border-color:#1E90FF;
-}
-
-textarea{
-margin-top:20px;
-resize:none;
-}
-
-.form-actions{
-margin-top:30px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-gap:20px;
-}
-
-.partner-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:50px;
-}
-
-.partner{
-background:#0E1525;
-padding:35px;
-text-align:center;
-border-radius:20px;
-border:1px solid rgba(30,144,255,0.1);
-font-weight:700;
-font-size:22px;
-}
-
-.vagas{
-background:linear-gradient(135deg,#0B111D,#0E1525);
-padding:40px;
-border-radius:30px;
-border:1px solid rgba(30,144,255,0.1);
-}
-
-.vaga-item{
-padding:25px;
-border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-.vaga-item:last-child{
-border-bottom:none;
-}
-
-.vaga-item h4{
-font-size:24px;
-margin-bottom:10px;
-}
-
-.vaga-item p{
-color:#bbb;
-}
-
-footer{
-padding:50px 0;
-text-align:center;
-border-top:1px solid rgba(30,144,255,0.1);
-color:#888;
-}
-
-.whatsapp-float{
-position:fixed;
-right:25px;
-bottom:25px;
-background:#25D366;
-width:70px;
-height:70px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:34px;
-text-decoration:none;
-box-shadow:0 0 30px rgba(37,211,102,0.5);
-z-index:999;
-}
-
-@media(max-width:980px){
-.hero-grid,
-.form-grid{
-grid-template-columns:1fr;
-}
-
-.hero h1{
-font-size:46px;
-}
-
-.section-title h2{
-font-size:38px;
-}
-
-.menu{
-display:none;
-}
-}
-</style>
+    <style>
+        /* CSS Original Preservado */
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+        body{background:#070B14;color:#fff;overflow-x:hidden;}
+        html{scroll-behavior:smooth;}
+        .container{width:90%;max-width:1300px;margin:auto;}
+        header{padding:25px 0;position:fixed;width:100%;top:0;z-index:999;background:rgba(7,11,20,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(30,144,255,0.15);}
+        .nav{display:flex;align-items:center;justify-content:space-between;}
+        .logo{font-size:28px;font-weight:800;color:#1E90FF;}
+        .logo span{color:#00FF88;}
+        .menu{display:flex;gap:25px;}
+        .menu a{color:#fff;text-decoration:none;font-weight:500;transition:.3s;}
+        .menu a:hover{color:#00FF88;}
+        .btn{padding:15px 30px;border-radius:14px;font-weight:700;text-decoration:none;display:inline-block;transition:.3s;}
+        .btn-primary{background:#00FF88;color:#000;box-shadow:0 0 30px rgba(0,255,136,0.3);}
+        .btn-primary:hover{transform:translateY(-3px);}
+        .btn-secondary{border:1px solid rgba(30,144,255,0.3);background:rgba(30,144,255,0.1);color:#fff;}
+        .hero{padding:180px 0 120px;background:linear-gradient(135deg,#070B14,#0E1525);position:relative;}
+        .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+        .hero h1{font-size:68px;line-height:1.1;margin-bottom:25px;font-weight:800;}
+        .hero h1 span{color:#00FF88;}
+        .hero p{font-size:18px;color:#ccc;line-height:1.8;margin-bottom:40px;}
+        .hero-card{background:#0E1525;padding:40px;border-radius:30px;border:1px solid rgba(30,144,255,0.2);box-shadow:0 0 40px rgba(0,0,0,0.4);animation:float 4s ease-in-out infinite;}
+        @keyframes float{0%{transform:translateY(0px)}50%{transform:translateY(-10px)}100%{transform:translateY(0px)}}
+        .hero-card h3{font-size:30px;margin-bottom:15px;}
+        .hero-card p{margin-bottom:0;}
+        .section{padding:100px 0;}
+        .section-title{text-align:center;margin-bottom:70px;}
+        .section-title span{color:#00FF88;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:14px;}
+        .section-title h2{font-size:52px;margin:20px 0;font-weight:800;}
+        .section-title p{color:#bbb;font-size:18px;max-width:800px;margin:auto;}
+        .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
+        .card{background:#0E1525;padding:35px;border-radius:24px;border:1px solid rgba(30,144,255,0.1);transition:.4s;}
+        .card:hover{transform:translateY(-10px);border-color:#1E90FF;box-shadow:0 0 30px rgba(30,144,255,0.15);}
+        .card h3{font-size:28px;margin-bottom:20px;}
+        .card p{color:#bbb;line-height:1.7;}
+        .form-section{background:#0B111D;}
+        .form-box{background:#0E1525;padding:50px;border-radius:30px;border:1px solid rgba(30,144,255,0.1);}
+        .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+        input, textarea, select{width:100%;padding:18px;border:none;border-radius:16px;background:#121B2E;color:#fff;outline:none;border:1px solid transparent;transition:.3s;}
+        input:focus,textarea:focus,select:focus{border-color:#1E90FF;}
+        textarea{margin-top:20px;resize:none;}
+        .form-actions{margin-top:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+        .partner-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;margin-top:50px;}
+        .partner{background:#0E1525;padding:35px;text-align:center;border-radius:20px;border:1px solid rgba(30,144,255,0.1);font-weight:700;font-size:22px;}
+        .vagas{background:linear-gradient(135deg,#0B111D,#0E1525);padding:40px;border-radius:30px;border:1px solid rgba(30,144,255,0.1);}
+        .vaga-item{padding:25px;border-bottom:1px solid rgba(255,255,255,0.08);}
+        .vaga-item:last-child{border-bottom:none;}
+        .vaga-item h4{font-size:24px;margin-bottom:10px;}
+        .vaga-item p{color:#bbb;}
+        footer{padding:50px 0;text-align:center;border-top:1px solid rgba(30,144,255,0.1);color:#888;}
+        .whatsapp-float{position:fixed;right:25px;bottom:25px;background:#25D366;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:34px;text-decoration:none;box-shadow:0 0 30px rgba(37,211,102,0.5);z-index:999;}
+        @media(max-width:980px){.hero-grid,.form-grid{grid-template-columns:1fr;}.hero h1{font-size:46px;}.section-title h2{font-size:38px;}.menu{display:none;}}
+    </style>
 </head>
 
-<!-- ... (mantenha todo o seu código CSS e cabeçalho igual) ... -->
+<body>
 
+<header>
+    <div class="container nav">
+        <div class="logo">CORE<span>GOV</span></div>
+        <div class="menu">
+            <a href="#servicos">Serviços</a>
+            <a href="#curriculo">Currículo</a>
+            <a href="#vagas">Vagas</a>
+            <a href="#parceiros">Parceiros</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <h1>Recrutamento inteligente e <span>gestão de carreira</span></h1>
+            <p>A CoreGov conecta empresas e profissionais através de soluções modernas de recrutamento, orientação curricular, liderança e desenvolvimento profissional.</p>
+            <a href="#curriculo" class="btn btn-primary">Cadastrar Currículo</a>
+            <a href="https://wa.me/5518991888698" class="btn btn-secondary">Falar no WhatsApp</a>
+        </div>
+        <div class="hero-card">
+            <h3>Seu próximo passo profissional começa aqui.</h3>
+            <p>Banco de currículos, orientação gratuita, gestão de carreira e desenvolvimento de liderança para profissionais e empresas.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="servicos">
+    <div class="container">
+        <div class="section-title">
+            <span>CoreGov RH</span>
+            <h2>Serviços estratégicos</h2>
+            <p>Uma estrutura moderna para conectar talentos, fortalecer carreiras e desenvolver equipes.</p>
+        </div>
+        <div class="cards">
+            <div class="card"><h3>Banco de Currículos</h3><p>Cadastre profissionais e conecte empresas aos melhores talentos.</p></div>
+            <div class="card"><h3>Orientação Curricular</h3><p>Análise gratuita de currículo para aumentar oportunidades de contratação.</p></div>
+            <div class="card"><h3>Gestão de Carreira</h3><p>Planejamento profissional para crescimento e posicionamento no mercado.</p></div>
+            <div class="card"><h3>Gestão de Liderança</h3><p>Desenvolvimento estratégico de líderes e equipes de alta performance.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="section form-section" id="curriculo">
+    <div class="container">
+        <div class="section-title">
+            <span>Banco de Talentos</span>
+            <h2>Cadastre seu currículo</h2>
+            <p>Preencha suas informações e faça parte do banco de talentos CoreGov.</p>
+        </div>
+        <div class="form-box">
+            <form id="curriculoForm">
+                <div class="form-grid">
+                    <input type="text" name="nome" placeholder="Nome completo" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <input type="text" name="telefone" placeholder="Telefone / WhatsApp">
+                    <select name="area">
+                        <option value="">Área de atuação</option>
+                        <option>Administrativo</option>
+                        <option>Financeiro</option>
+                        <option>Comercial</option>
+                        <option>Marketing</option>
+                        <option>Recursos Humanos</option>
+                        <option>Contabilidade</option>
+                    </select>
+                </div>
+                <textarea name="experiencia" rows="6" placeholder="Fale sobre sua experiência profissional"></textarea>
+                <br><br>
+                <input type="file" name="curriculo" accept=".pdf,.doc,.docx">
+                <div class="form-actions">
+                    <p>Orientação curricular gratuita para profissionais cadastrados.</p>
+                    <button class="btn btn-primary" type="submit">Enviar Currículo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="vagas">
+    <div class="container">
+        <div class="section-title">
+            <span>Oportunidades</span>
+            <h2>Vagas futuras</h2>
+            <p>Acompanhe oportunidades profissionais divulgadas pela CoreGov e empresas parceiras.</p>
+        </div>
+        <div class="vagas">
+            <div class="vaga-item"><h4>Assistente Administrativo</h4><p>Presencial • Presidente Prudente/SP</p></div>
+            <div class="vaga-item"><h4>Auxiliar Financeiro</h4><p>Híbrido • Região Nordeste</p></div>
+            <div class="vaga-item"><h4>Consultor Comercial</h4><p>Remoto • Todo Brasil</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="parceiros">
+    <div class="container">
+        <div class="section-title">
+            <span>Empresas Parceiras</span>
+            <h2>Conectando oportunidades</h2>
+            <p>Empresas parceiras que acreditam no desenvolvimento profissional e humano.</p>
+        </div>
+        <div class="partner-grid">
+            <div class="partner">CoreGov</div>
+            <div class="partner">CGL Consultoria Contábil</div>
+            <div class="partner">Empresa Parceira</div>
+            <div class="partner">Empresa Parceira</div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2026 CoreGov RH — Recrutamento, seleção e desenvolvimento profissional.</p>
+    </div>
+</footer>
+
+<a href="https://wa.me/5518991888698" class="whatsapp-float">💬</a>
+
+<!-- SCRIPTS SUPABASE -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-// 2. MODIFICAÇÃO DE SEGURANÇA E INICIALIZAÇÃO
-if (typeof window.supabaseClient === 'undefined') {
-    const supabaseUrl = 'https://mztdxodzbwbgtwbelltc.supabase.co';
-    const supabaseKey = 'sb_publishable_8rdOLvmJzJxDRfI5ECRhXA_r8Be3fYO';
-    
-    window.supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
-}
+// INICIALIZAÇÃO DO CLIENTE SUPABASE
+const supabaseUrl = 'https://mztdxodzbwbgtwbelltc.supabase.co';
+const supabaseKey = 'sb_publishable_8rdOLvmJzJxDRfI5ECRhXA_r8Be3fYO';
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('curriculoForm');
@@ -372,6 +197,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (form) {
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
+
+            // Desativa o botão para evitar múltiplos cliques
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Enviando...';
 
             const nome = form.nome.value;
             const email = form.email.value;
@@ -382,30 +212,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let curriculoUrl = '';
 
-            /* UPLOAD CURRÍCULO */
+            /* 1. UPLOAD DO ARQUIVO NO STORAGE */
             if (file) {
-                const fileName = Date.now() + '_' + file.name;
+                const fileName = Date.now() + '_' + file.name.replace(/\s/g, '_');
 
-                const { error: uploadError } = await window.supabaseClient.storage
-                    .from('curriculos')
+                const { error: uploadError } = await supabase.storage
+                    .from('curriculos') // Nome do bucket em minúsculo conforme imagem image_8298ba.png
                     .upload(fileName, file);
 
                 if (uploadError) {
-                    console.error('Erro Storage:', uploadError);
-                    alert('Erro ao enviar currículo. Verifique se o arquivo não é muito grande.');
+                    console.error('ERRO DETALHADO STORAGE:', uploadError);
+                    alert('Erro no Storage: ' + uploadError.message);
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = 'Enviar Currículo';
                     return;
                 }
 
-                const { data } = window.supabaseClient.storage
+                // GERA A URL PÚBLICA
+                const { data: publicData } = supabase.storage
                     .from('curriculos')
                     .getPublicUrl(fileName);
 
-                curriculoUrl = data.publicUrl;
+                curriculoUrl = publicData.publicUrl;
             }
 
-            /* SALVAR NO BANCO */
-            const { error } = await window.supabaseClient
-                .from('candidatos')
+            /* 2. SALVAR DADOS NA TABELA CANDIDATOS */
+            const { error: dbError } = await supabase
+                .from('candidatos') // Nome da tabela em minúsculo conforme imagem image_828d37.png
                 .insert([
                     {
                         nome,
@@ -417,270 +250,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 ]);
 
-            if (error) {
-                console.error('Erro Database:', error);
-                alert('Erro ao salvar dados no banco. Verifique as permissões RLS.');
+            if (dbError) {
+                console.error('ERRO DETALHADO DATABASE:', dbError);
+                alert('Erro ao salvar no banco: ' + dbError.message);
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Enviar Currículo';
                 return;
             }
 
-            alert('Currículo enviado com sucesso!');
+            /* 3. SUCESSO */
+            alert('Currículo enviado com sucesso! Nossa equipe entrará em contato.');
             form.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Enviar Currículo';
         });
     }
 });
 </script>
 
-<!-- ... (mantenha o restante do corpo do HTML igual) ... -->
-  
-<body>
-
-<header>
-<div class="container nav">
-<div class="logo">CORE<span>GOV</span></div>
-
-<div class="menu">
-<a href="#servicos">Serviços</a>
-<a href="#curriculo">Currículo</a>
-<a href="#vagas">Vagas</a>
-<a href="#parceiros">Parceiros</a>
-</div>
-</div>
-</header>
-
-<section class="hero">
-<div class="container hero-grid">
-<div>
-<h1>
-Recrutamento inteligente e <span>gestão de carreira</span>
-</h1>
-
-<p>
-A CoreGov conecta empresas e profissionais através de soluções modernas de recrutamento, orientação curricular, liderança e desenvolvimento profissional.
-</p>
-
-<a href="#curriculo" class="btn btn-primary">Cadastrar Currículo</a>
-<a href="https://wa.me/5518991888698" class="btn btn-secondary">Falar no WhatsApp</a>
-</div>
-
-<div class="hero-card">
-<h3>Seu próximo passo profissional começa aqui.</h3>
-<p>
-Banco de currículos, orientação gratuita, gestão de carreira e desenvolvimento de liderança para profissionais e empresas.
-</p>
-</div>
-</div>
-</section>
-
-<section class="section" id="servicos">
-<div class="container">
-<div class="section-title">
-<span>CoreGov RH</span>
-<h2>Serviços estratégicos</h2>
-<p>
-Uma estrutura moderna para conectar talentos, fortalecer carreiras e desenvolver equipes.
-</p>
-</div>
-
-<div class="cards">
-<div class="card">
-<h3>Banco de Currículos</h3>
-<p>
-Cadastre profissionais e conecte empresas aos melhores talentos.
-</p>
-</div>
-
-<div class="card">
-<h3>Orientação Curricular</h3>
-<p>
-Análise gratuita de currículo para aumentar oportunidades de contratação.
-</p>
-</div>
-
-<div class="card">
-<h3>Gestão de Carreira</h3>
-<p>
-Planejamento profissional para crescimento e posicionamento no mercado.
-</p>
-</div>
-
-<div class="card">
-<h3>Gestão de Liderança</h3>
-<p>
-Desenvolvimento estratégico de líderes e equipes de alta performance.
-</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section form-section" id="curriculo">
-<div class="container">
-<div class="section-title">
-<span>Banco de Talentos</span>
-<h2>Cadastre seu currículo</h2>
-<p>
-Preencha suas informações e faça parte do banco de talentos CoreGov.
-</p>
-</div>
-
-<div class="form-box">
-<form id="curriculoForm">
-
-<div class="form-grid">
-
-<input 
-type="text" 
-name="nome" 
-placeholder="Nome completo" 
-required
->
-
-<input 
-type="email" 
-name="email" 
-placeholder="E-mail" 
-required
->
-
-<input 
-type="text" 
-name="telefone" 
-placeholder="Telefone / WhatsApp"
->
-
-<select name="area">
-
-<option value="">Área de atuação</option>
-
-<option>Administrativo</option>
-<option>Financeiro</option>
-<option>Comercial</option>
-<option>Marketing</option>
-<option>Recursos Humanos</option>
-<option>Contabilidade</option>
-
-</select>
-
-</div>
-
-<textarea 
-name="experiencia" 
-rows="6" 
-placeholder="Fale sobre sua experiência profissional"
-></textarea>
-
-<br><br>
-
-<input 
-type="file" 
-name="curriculo" 
-accept=".pdf,.doc,.docx"
->
-
-<div class="form-actions">
-
-<p>
-Orientação curricular gratuita para profissionais cadastrados.
-</p>
-
-<button class="btn btn-primary" type="submit">
-Enviar Currículo
-</button>
-
-</div>
-
-</form>
-</div>
-</div>
-</section>
-
-<section class="section" id="vagas">
-<div class="container">
-<div class="section-title">
-<span>Oportunidades</span>
-<h2>Vagas futuras</h2>
-<p>
-Acompanhe oportunidades profissionais divulgadas pela CoreGov e empresas parceiras.
-</p>
-</div>
-
-<div class="vagas">
-<div class="vaga-item">
-<h4>Assistente Administrativo</h4>
-<p>Presencial • Presidente Prudente/SP</p>
-</div>
-
-<div class="vaga-item">
-<h4>Auxiliar Financeiro</h4>
-<p>Híbrido • Região Nordeste</p>
-</div>
-
-<div class="vaga-item">
-<h4>Consultor Comercial</h4>
-<p>Remoto • Todo Brasil</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section" id="parceiros">
-<div class="container">
-<div class="section-title">
-<span>Empresas Parceiras</span>
-<h2>Conectando oportunidades</h2>
-<p>
-Empresas parceiras que acreditam no desenvolvimento profissional e humano.
-</p>
-</div>
-
-<div class="partner-grid">
-<div class="partner">CoreGov</div>
-<div class="partner">CGL Consultoria Contábil</div>
-<div class="partner">Empresa Parceira</div>
-<div class="partner">Empresa Parceira</div>
-</div>
-</div>
-</section>
-
-<footer>
-<div class="container">
-<p>
-© 2026 CoreGov RH — Recrutamento, seleção e desenvolvimento profissional.
-</p>
-</div>
-</footer>
-
-<a href="https://wa.me/5518991888698" class="whatsapp-float">
-💬
-</a>
-
 </body>
 </html>
-```
-
-# COMO USAR
-
-1. Crie um arquivo chamado:
-
-```bash
-recrutamento.html
-```
-
-2. Cole todo o código acima.
-
-3. Suba para sua hospedagem ou GitHub Pages.
-
-4. Edite:
-
-* número do WhatsApp
-* vagas
-* parceiros
-* formulário
-* textos
-
-5. Opcional:
-
-* integrar envio de currículo via PHP/FormSubmit
-* integrar banco de dados
-* painel administrativo
-* upload PDF currículo
