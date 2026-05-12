@@ -444,31 +444,71 @@ Preencha suas informações e faça parte do banco de talentos CoreGov.
 </div>
 
 <div class="form-box">
-<form>
+<form id="curriculoForm">
+
 <div class="form-grid">
-<input type="text" placeholder="Nome completo">
-<input type="email" placeholder="E-mail">
-<input type="text" placeholder="Telefone / WhatsApp">
-<select>
-<option>Área de atuação</option>
+
+<input 
+type="text" 
+name="nome" 
+placeholder="Nome completo" 
+required
+>
+
+<input 
+type="email" 
+name="email" 
+placeholder="E-mail" 
+required
+>
+
+<input 
+type="text" 
+name="telefone" 
+placeholder="Telefone / WhatsApp"
+>
+
+<select name="area">
+
+<option value="">Área de atuação</option>
+
 <option>Administrativo</option>
 <option>Financeiro</option>
 <option>Comercial</option>
 <option>Marketing</option>
 <option>Recursos Humanos</option>
 <option>Contabilidade</option>
+
 </select>
+
 </div>
 
-<textarea rows="6" placeholder="Fale sobre sua experiência profissional"></textarea>
+<textarea 
+name="experiencia" 
+rows="6" 
+placeholder="Fale sobre sua experiência profissional"
+></textarea>
+
+<br><br>
+
+<input 
+type="file" 
+name="curriculo" 
+accept=".pdf,.doc,.docx"
+>
 
 <div class="form-actions">
-<p>Orientação curricular gratuita para profissionais cadastrados.</p>
+
+<p>
+Orientação curricular gratuita para profissionais cadastrados.
+</p>
 
 <button class="btn btn-primary" type="submit">
 Enviar Currículo
 </button>
+
 </div>
+
 </form>
 </div>
 </div>
