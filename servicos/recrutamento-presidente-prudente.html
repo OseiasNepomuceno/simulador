@@ -117,7 +117,7 @@
         </div>
         <div class="form-box">
             <!-- Deixe apenas assim -->
-            <form id="curriculoForm">        
+           <form id="curriculoForm" onsubmit="event.preventDefault();">        
                 <div class="form-grid">
                     <input type="text" name="nome" placeholder="Nome completo" required>
                     <input type="email" name="email" placeholder="E-mail" required>
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const fileName = Date.now() + '_' + file.name.replace(/\s/g, '_');
 
                 const { error: uploadError } = await supabase.storage
-                    .from('curriculos') // Nome do bucket em minúsculo conforme imagem image_8298ba.png
+                    .from('CURRICULOS') // Nome do bucket em minúsculo conforme imagem image_8298ba.png
                     .upload(fileName, file);
 
                 if (uploadError) {
