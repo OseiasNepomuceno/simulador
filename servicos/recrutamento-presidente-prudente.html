@@ -116,7 +116,8 @@
             <p>Preencha suas informações e faça parte do banco de talentos CoreGov.</p>
         </div>
         <div class="form-box">
-            <form id="curriculoForm" method="POST">
+            <!-- Deixe apenas assim -->
+            <form id="curriculoForm">        
                 <div class="form-grid">
                     <input type="text" name="nome" placeholder="Nome completo" required>
                     <input type="email" name="email" placeholder="E-mail" required>
@@ -196,8 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (form) {
         form.addEventListener('submit', async function(e) {
-            // ESTA LINHA É ESSENCIAL: ela impede o envio pela URL
-            e.preventDefault(); 
+            e.preventDefault(); // ESTA LINHA É ESSENCIAL: ela impede o envio pela URL
 
             const submitBtn = form.querySelector('button[type="submit"]');
             submitBtn.disabled = true;
