@@ -37,14 +37,14 @@
       }
     }
 
-    // Inserção dos dados na tabela curriculos
+    // Inserção dos dados na tabela candidatos
     const { data, error } = await supabaseClient
-      .from('curriculos')
-      .insert([{ nome, email, telefone, area, experiencia, arquivo: filePath }])
+      .from('candidatos')
+      .insert([{ nome, email, telefone, area, experiencia, curriculo: filePath }])
 
     if (error) {
       console.error('Erro ao inserir:', error.message)
-      alert('Erro ao salvar currículo: ' + error.message)
+      alert('Erro ao salvar candidato: ' + error.message)
     } else {
       alert('Currículo enviado com sucesso!')
       form.reset()
