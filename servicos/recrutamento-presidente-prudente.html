@@ -1,53 +1,54 @@
 <!-- SDK Supabase via CDN -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const { createClient } = supabase
-  const supabaseClient = createClient(
-    'https://SEU-PROJETO.supabase.co',   // substitua pela URL do seu projeto
-    'SUA-CHAVE-ANON'                     // substitua pela chave anon
-  )
+  document.addEventListener('DOMContentLoaded', () => {
+    const supabaseClient = supabase.createClient(
+      'https://SEU-PROJETO.supabase.co',   // substitua pela URL do seu projeto
+      'SUA-CHAVE-ANON'                     // substitua pela chave anon
+    )
 
-  document.getElementById('curriculoForm').addEventListener('submit', async (e) => {
-    e.preventDefault()
-    const form = e.target
+    const form = document.getElementById('curriculoForm')
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
 
-    // Captura dos campos
-    const nome = form.nome.value
-    const email = form.email.value
-    const telefone = form.telefone.value
-    const area = form.area.value
-    const experiencia = form.experiencia.value
-    const file = form.curriculo.files[0]
+      // Captura dos campos
+      const nome = form.nome.value
+      const email = form.email.value
+      const telefone = form.telefone.value
+      const area = form.area.value
+      const experiencia = form.experiencia.value
+      const file = form.curriculo.files[0]
 
-    let filePath = null
+      let filePath = null
 
-    // Upload do arquivo para o bucket CURRICULOS
-    if (file) {
-      const { data: fileData, error: fileError } = await supabaseClient
-        .storage
-        .from('CURRICULOS')
-        .upload(`uploads/${Date.now()}_${file.name}`, file)
+      // Upload do arquivo para o bucket CURRICULOS
+      if (file) {
+        const { data: fileData, error: fileError } = await supabaseClient
+          .storage
+          .from('CURRICULOS')
+          .upload(`uploads/${Date.now()}_${file.name}`, file)
 
-      if (fileError) {
-        console.error('Erro no upload:', fileError.message)
-        alert('Erro ao enviar arquivo: ' + fileError.message)
-        return
-      } else {
-        filePath = fileData.path
+        if (fileError) {
+          console.error('Erro no upload:', fileError.message)
+          alert('Erro ao enviar arquivo: ' + fileError.message)
+          return
+        } else {
+          filePath = fileData.path
+        }
       }
-    }
 
-    // Inserção dos dados na tabela candidatos
-    const { data, error } = await supabaseClient
-      .from('candidatos')
-      .insert([{ nome, email, telefone, area, experiencia, curriculo: filePath }])
+      // Inserção dos dados na tabela candidatos
+      const { data, error } = await supabaseClient
+        .from('candidatos')
+        .insert([{ nome, email, telefone, area, experiencia, curriculo: filePath }])
 
-    if (error) {
-      console.error('Erro ao inserir:', error.message)
-      alert('Erro ao salvar candidato: ' + error.message)
-    } else {
-      alert('Currículo enviado com sucesso!')
-      form.reset()
-    }
+      if (error) {
+        console.error('Erro ao inserir:', error.message)
+        alert('Erro ao salvar candidato: ' + error.message)
+      } else {
+        alert('Currículo enviado com sucesso!')
+        form.reset()
+      }
+    })
   })
 </script>
