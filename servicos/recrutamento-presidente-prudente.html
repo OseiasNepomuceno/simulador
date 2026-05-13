@@ -55,9 +55,7 @@
 
         // Upload do arquivo para o bucket CURRICULOS
         if (file) {
-          const { data: fileData, error: fileError } = await supabaseClient
-            .storage
-            .from('CURRICULOS')
+          const { data: fileData, error: fileError } = await supabaseClient.storage.from('curriculos')
             .upload(`uploads/${Date.now()}_${file.name}`, file)
 
           if (fileError) {
