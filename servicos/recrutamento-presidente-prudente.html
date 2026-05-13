@@ -180,12 +180,13 @@ p {
   <title>Cadastro de Currículo</title>
 </head>
 <body>
+  <div class="form-container">
   <h2>Cadastro de Currículo</h2>
 
   <form id="curriculoForm" action="javascript:void(0);">
-    <input type="text" name="nome" placeholder="Nome completo" required><br>
-    <input type="email" name="email" placeholder="E-mail" required><br>
-    <input type="text" name="telefone" placeholder="Telefone / WhatsApp"><br>
+    <input type="text" name="nome" placeholder="Nome completo" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="text" name="telefone" placeholder="Telefone / WhatsApp">
     <select name="area">
       <option value="">Área de atuação</option>
       <option>Administrativo</option>
@@ -194,11 +195,12 @@ p {
       <option>Marketing</option>
       <option>Recursos Humanos</option>
       <option>Contabilidade</option>
-    </select><br>
-    <textarea name="experiencia" rows="4" placeholder="Experiência profissional"></textarea><br>
-    <input type="file" name="curriculo" accept=".pdf,.doc,.docx"><br><br>
+    </select>
+    <textarea name="experiencia" rows="4" placeholder="Experiência profissional"></textarea>
+    <input type="file" name="curriculo" accept=".pdf,.doc,.docx">
     <button type="submit">Enviar Currículo</button>
   </form>
+</div>
 
   <!-- SDK Supabase via CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
