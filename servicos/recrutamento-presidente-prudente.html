@@ -55,10 +55,18 @@
 
         // Upload do arquivo para o bucket "curriculos"
         if (file) {
+          // Normaliza o nome do arquivo
+          const safeFileName = file.name
+            .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove acentos
+            .replace(/\s+/g, "_")                             // troca espaços por _
+            .replace(/[^a-zA-Z0-9._-]/g, "");                 // remove caracteres inválidos
+
+          const filePathKey = `uploads/${Date.now()}_${safeFileName}`;
+
           const { data: fileData, error: fileError } = await supabaseClient
             .storage
             .from('curriculos') // nome exato do bucket em minúsculo
-            .upload(`uploads/${Date.now()}_${file.name}`, file)
+            .upload(filePathKey, file)
 
           if (fileError) {
             console.error('Erro no upload:', fileError.message)
