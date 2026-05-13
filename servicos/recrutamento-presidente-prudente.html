@@ -31,15 +31,11 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const supabaseClient = supabase.createClient(
-        'https://mztdxodzbwbgtwbelltc.supabase.co',   // substitua pela URL do seu projeto
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16dGR4b2R6YndiZ3R3YmVsbHRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3NTcxMjEsImV4cCI6MjA5MzMzMzEyMX0.gEBgtPsjRxipjBCB_dTt05hFGZ2xGh4lJhJH5TkUVNA'                     // substitua pela chave anon
+        'https://mztdxodzbwbgtwbelltc.supabase.co',   // URL correta do projeto
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16dGR4b2R6YndiZ3R3YmVsbHRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3NTcxMjEsImV4cCI6MjA5MzMzMzEyMX0.gEBgtPsjRxipjBCB_dTt05hFGZ2xGh4lJhJH5TkUVNA'                     // chave anon (ey...)
       )
 
       const form = document.getElementById('curriculoForm')
-      if (!form) {
-        console.error('Formulário com id="curriculoForm" não encontrado!')
-        return
-      }
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault()
@@ -55,21 +51,19 @@
 
         // Upload do arquivo para o bucket "curriculos"
         if (file) {
-          // Normaliza o nome do arquivo
           const safeFileName = file.name
-            .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove acentos
-            .replace(/\s+/g, "_")                             // troca espaços por _
-            .replace(/[^a-zA-Z0-9._-]/g, "");                 // remove caracteres inválidos
+            .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, "_")
+            .replace(/[^a-zA-Z0-9._-]/g, "");
 
           const filePathKey = `uploads/${Date.now()}_${safeFileName}`;
 
           const { data: fileData, error: fileError } = await supabaseClient
             .storage
-            .from('curriculos') // nome exato do bucket em minúsculo
+            .from('curriculos')
             .upload(filePathKey, file)
 
           if (fileError) {
-            console.error('Erro no upload:', fileError.message)
             alert('Erro ao enviar arquivo: ' + fileError.message)
             return
           } else {
@@ -83,10 +77,13 @@
           .insert([{ nome, email, telefone, area, experiencia, curriculo: filePath }])
 
         if (error) {
-          console.error('Erro ao inserir:', error.message)
           alert('Erro ao salvar candidato: ' + error.message)
         } else {
-          alert('Currículo enviado com sucesso!')
+          // Converte data para horário de Brasília
+          const dataLocal = new Date().toLocaleString("pt-BR", {
+            timeZone: "America/Sao_Paulo"
+          })
+          alert(`Currículo enviado com sucesso!\nHorário BR: ${dataLocal}`)
           form.reset()
         }
       })
