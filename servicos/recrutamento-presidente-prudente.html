@@ -20,6 +20,50 @@
   --cinza: #CCCCCC;
 }
 
+  .recrutamento-section {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.recrutamento-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--verde);
+}
+
+.recrutamento-section p {
+  color: var(--cinza);
+  margin-bottom: 40px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: var(--azul-medio);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  color: var(--verde);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: var(--cinza);
+}
+
   .painel-container {
   max-width: 900px;
   margin: 40px auto;
