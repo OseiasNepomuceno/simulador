@@ -2,53 +2,276 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Painel de Candidatos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Serviços de Contabilidade e Gestão em Presidente Prudente | COREGOV</title>
+  <meta name="description" content="Serviços de contabilidade, gestão financeira, abertura de MEI e certificado digital em Presidente Prudente. Aumente seus lucros com estratégia.">
+
+  <link rel="icon" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --verde: #00FF9F;
+      --azul-escuro: #0B1220;
+      --azul-medio: #111A2A;
+      --branco: #FFFFFF;
+      --cinza: #CCCCCC;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--azul-escuro);
+      color: var(--branco);
+      padding-top: 90px;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(11,18,32,0.6);
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+      z-index: 1000;
+    }
+
+    header.scrolled {
+      background: rgba(11,18,32,0.95);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* BRAND */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      height: 50px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--verde);
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--cinza);
+    }
+
+    /* NAV */
+    nav a {
+      margin: 0 10px;
+      color: var(--cinza);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--verde);
+    }
+
+    /* FORMULÁRIO */
+    .form-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: var(--azul-medio);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--verde);
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: none;
+      font-size: 14px;
+    }
+
+    .form-container button {
+      display: block;
+      width: 100%;
+      background: var(--verde);
+      color: #000;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background: #00e68f;
+    }
+
+    /* PAINEL ADMINISTRATIVO */
+    .painel-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: var(--azul-medio);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    }
+
+    .painel-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--verde);
+    }
+
+    .filtro-area {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .filtro-area select {
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    .tabela-candidatos {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .tabela-candidatos th,
+    .tabela-candidatos td {
+      padding: 12px;
+      border-bottom: 1px solid var(--cinza);
+      text-align: left;
+    }
+
+    .tabela-candidatos th {
+      background: var(--azul-escuro);
+      color: var(--verde);
+    }
+
+    .tabela-candidatos tr:hover {
+      background: rgba(255,255,255,0.05);
+    }
+  </style>
 </head>
+
 <body>
+
+<!-- HEADER -->
+<header>
+  <div class="brand">
+    <img src="logo-icon.png" alt="COREGOV" class="logo-icon">
+    <div class="brand-text">
+      <span class="brand-name">COREGOV</span>
+      <span class="brand-sub">Administração, Contabilidade & RH</span>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="ferramentas.html" class="active">Ferramentas</a>
+    <a href="simulador.html">Simulador</a>
+    <a href="blog/index.html">Blog</a>
+    <a href="quem-somos.html">Quem Somos</a>
+  </nav>
+</header>
+
+<!-- FORMULÁRIO DE CADASTRO -->
+<div class="form-container">
+  <h2>Cadastro de Currículo</h2>
+  <form id="curriculoForm" action="javascript:void(0);">
+    <input type="text" name="nome" placeholder="Nome completo" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="text" name="telefone" placeholder="Telefone / WhatsApp">
+    <select name="area">
+      <option value="">Área de atuação</option>
+      <option>Administrativo</option>
+      <option>Financeiro</option>
+      <option>Comercial</option>
+      <option>Marketing</option>
+      <option>Recursos Humanos</option>
+      <option>Contabilidade</option>
+    </select>
+    <textarea name="experiencia" rows="4" placeholder="Experiência profissional"></textarea>
+    <input type="file" name="curriculo" accept=".pdf,.doc,.docx">
+    <button type="submit">Enviar Currículo</button>
+  </form>
+</div>
+
+<!-- PAINEL ADMINISTRATIVO -->
+<div class="painel-container">
   <h2>Painel Administrativo - Lista de Candidatos</h2>
-  <ul id="listaCandidatos"></ul>
+  <div class="filtro-area">
+    <label for="filtro">Filtrar por área: </label>
+    <select id="filtro">
+      <option value="">Todas</option>
+      <option>Administrativo</option>
+      <option>Financeiro</option>
+      <option>Comercial</option>
+      <option>Marketing</option>
+      <option>Recursos Humanos</option>
+      <option>Contabilidade</option>
+    </select>
+  </div>
+  <table class="tabela-candidatos">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Área</th>
+        <th>Telefone</th>
+        <th>Currículo</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody id="listaCandidatos"></tbody>
+  </table>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      const supabaseClient = supabase.createClient(
-        'https://mztdxodzbwbgtwbelltc.supabase.co',   // URL do seu projeto
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16dGR4b2R6YndiZ3R3YmVsbHRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3NTcxMjEsImV4cCI6MjA5MzMzMzEyMX0.gEBgtPsjRxipjBCB_dTt05hFGZ2xGh4lJhJH5TkUVNA'                     // chave anon (ey...)
-      )
+<!-- SDK Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const supabaseClient = supabase.createClient(
+      'https://mztdxodzbwbgtwbelltc.supabase.co',   // URL do projeto
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16dGR4b2R6YndiZ3R3YmVsbHRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3NTcxMjEsImV4cCI6MjA5MzMzMzEyMX0.gEBgtPsjRxipjBCB_dTt05hFGZ2xGh4lJhJH5TkUVNA'     // chave anon (ey...)
+    )
 
-      const lista = document.getElementById('listaCandidatos')
+    const form = document.getElementById('curriculoForm')
+    const lista = document.getElementById('listaCandidatos')
+    const filtro = document.getElementById('filtro')
 
-      const { data, error } = await supabaseClient
-        .from('candidatos')
-        .select('*')
-        .order('id', { ascending: false })
-
-      if (error) {
-        lista.innerHTML = `<li>Erro ao carregar candidatos: ${error.message}</li>`
-        return
-      }
-
-      if (!data || data.length === 0) {
-        lista.innerHTML = '<li>Nenhum candidato encontrado.</li>'
-        return
-      }
-
-      lista.innerHTML = data.map(c => {
-        const criadoEm = c.created_at
-          ? new Date(c.created_at).toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })
-          : "—"
-
-        return `
-          <li>
-            <strong>${c.nome}</strong> — ${c.email}<br>
-            Área: ${c.area} | Telefone: ${c.telefone}<br>
-            Experiência: ${c.experiencia}<br>
-            Currículo: ${c.curriculo ? `<a href="https://SEU-PROJETO.supabase.co/storage/v1/object/public/curriculos/${c.curriculo}" target="_blank">Download</a>` : "Não enviado"}<br>
-            Inserido em: ${criadoEm}
-          </li>
-        `
-      }).join('')
-    })
-  </script>
-</body>
-</html>
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const nome = form.nome.value
+      const email = form.email
