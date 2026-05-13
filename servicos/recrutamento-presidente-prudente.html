@@ -20,6 +20,54 @@
   --cinza: #CCCCCC;
 }
 
+  .painel-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: var(--azul-medio);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.painel-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--verde);
+}
+
+.filtro-area {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filtro-area select {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+}
+
+.tabela-candidatos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-candidatos th,
+.tabela-candidatos td {
+  padding: 12px;
+  border-bottom: 1px solid var(--cinza);
+  text-align: left;
+}
+
+.tabela-candidatos th {
+  background: var(--azul-escuro);
+  color: var(--verde);
+}
+
+.tabela-candidatos tr:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+
 * {
   margin: 0;
   padding: 0;
