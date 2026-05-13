@@ -279,3 +279,57 @@ nav a:hover {
 .tabela-candidatos tr:hover {
   background: rgba(255,255,255,0.05);
 }
+
+
+/* ADICIONE ESSE CSS */
+
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+
+.card{
+  background:#fff;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.3s;
+  border:1px solid #e5e7eb;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card h3{
+  font-size:26px;
+  color:#071b33;
+  margin-bottom:15px;
+  font-weight:700;
+}
+
+.card p{
+  font-size:16px;
+  line-height:1.8;
+  color:#555;
+  margin-bottom:25px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:#fff;
+  text-decoration:none;
+  padding:14px 26px;
+  border-radius:50px;
+  font-weight:700;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.03);
+}
