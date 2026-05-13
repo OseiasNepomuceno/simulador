@@ -125,15 +125,22 @@ nav a:hover {
   transform: translateY(0);
 }
 
-/* FOTO */
 .foto {
   width: 180px;
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top; /* centraliza melhor o rosto */
   border: 3px solid var(--verde);
   margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4); /* dá destaque */
+  transition: transform 0.3s ease;
 }
+
+.foto:hover {
+  transform: scale(1.05); /* leve zoom ao passar o mouse */
+}
+
 
 /* TEXTOS */
 h2 { color: var(--verde); margin-bottom: 10px; }
