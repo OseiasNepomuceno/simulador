@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teste Supabase</title>
+  <title>Cadastro de Currículo</title>
 </head>
 <body>
   <h2>Cadastro de Currículo</h2>
 
-  <form id="curriculoForm">
+  <form id="curriculoForm" action="javascript:void(0);">
     <input type="text" name="nome" placeholder="Nome completo" required><br>
     <input type="email" name="email" placeholder="E-mail" required><br>
     <input type="text" name="telefone" placeholder="Telefone / WhatsApp"><br>
@@ -34,11 +34,6 @@
         'https://mztdxodzbwbgtwbelltc.supabase.co',   // substitua pela URL do seu projeto
         'sb_publishable_8rdOLvmJzJxDRfI5ECRhXA_r8Be3fYO'                     // substitua pela chave anon
       )
-
-      (async () => {
-  const { data, error } = await supabaseClient.storage.from('CURRICULOS').list()
-  console.log('Teste Storage:', { data, error })
-})();
 
       const form = document.getElementById('curriculoForm')
       if (!form) {
