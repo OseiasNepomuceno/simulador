@@ -4,42 +4,322 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Orientação Curricular em Presidente Prudente | COREGOV</title>
+  <title>Orientação Curricular Gratuita em Presidente Prudente | COREGOV</title>
+
   <link rel="icon" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../csss/style.css">   <!-- CSS global -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../csss/style.css">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#f5f7fa;
+      color:#222;
+    }
+
+    /* HEADER */
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 40px;
+      background:#071b33;
+      position:sticky;
+      top:0;
+      z-index:999;
+      box-shadow:0 2px 12px rgba(0,0,0,0.18);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo-icon{
+      width:58px;
+      height:auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .brand-name{
+      color:#fff;
+      font-size:24px;
+      font-weight:800;
+      line-height:1;
+    }
+
+    .brand-sub{
+      color:#cbd5e1;
+      font-size:12px;
+    }
+
+    nav{
+      display:flex;
+      gap:22px;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:500;
+      transition:0.3s;
+      position:relative;
+    }
+
+    nav a:hover,
+    nav a.active{
+      color:#2ce07b;
+    }
+
+    /* HERO */
+
+    .servico-hero{
+      height:500px;
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .servico-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        rgba(0,0,0,0.70),
+        rgba(0,0,0,0.70)
+      );
+    }
+
+    .servico-hero-overlay{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      color:#fff;
+      max-width:900px;
+      padding:20px;
+    }
+
+    .servico-hero-overlay h1{
+      font-size:60px;
+      line-height:1.1;
+      margin-bottom:18px;
+      font-weight:800;
+    }
+
+    .servico-hero-overlay span{
+      color:#2ce07b;
+    }
+
+    .servico-hero-overlay p{
+      font-size:22px;
+      color:#dbe4ee;
+      margin-bottom:35px;
+    }
+
+    /* SECTION */
+
+    .servico-section{
+      max-width:1150px;
+      margin:70px auto;
+      padding:0 20px;
+    }
+
+    .servico-section h2{
+      font-size:40px;
+      color:#071b33;
+      margin-bottom:25px;
+      text-align:center;
+      font-weight:800;
+    }
+
+    /* BOX CONTEÚDO */
+
+    .curriculo-box{
+      background:#fff;
+      border-radius:22px;
+      padding:45px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.08);
+      border-left:7px solid #2ce07b;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .curriculo-box::before{
+      content:"";
+      position:absolute;
+      width:250px;
+      height:250px;
+      background:rgba(44,224,123,0.08);
+      border-radius:50%;
+      top:-80px;
+      right:-80px;
+    }
+
+    .curriculo-box h3{
+      font-size:38px;
+      color:#071b33;
+      margin-bottom:25px;
+      line-height:1.2;
+      font-weight:800;
+      position:relative;
+      z-index:2;
+    }
+
+    .curriculo-box p{
+      font-size:19px;
+      line-height:1.9;
+      color:#444;
+      margin-bottom:22px;
+      position:relative;
+      z-index:2;
+    }
+
+    .curriculo-box strong{
+      color:#071b33;
+    }
+
+    .curriculo-box ul{
+      list-style:none;
+      margin-top:30px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:18px;
+      position:relative;
+      z-index:2;
+    }
+
+    .curriculo-box ul li{
+      background:#f7fafc;
+      padding:18px;
+      border-radius:14px;
+      font-size:17px;
+      font-weight:600;
+      color:#071b33;
+      border:1px solid #e5e7eb;
+      transition:0.3s;
+    }
+
+    .curriculo-box ul li:hover{
+      transform:translateY(-4px);
+      box-shadow:0 8px 18px rgba(0,0,0,0.08);
+    }
+
+    /* BOTÃO */
+
+    .btn-area{
+      text-align:center;
+      margin-top:45px;
+    }
+
+    .btn-especialista{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      background:linear-gradient(135deg,#25D366,#128C7E);
+      color:#fff;
+      text-decoration:none;
+      padding:18px 34px;
+      border-radius:60px;
+      font-size:20px;
+      font-weight:700;
+      transition:0.3s ease;
+      box-shadow:0 10px 25px rgba(18,140,126,0.28);
+    }
+
+    .btn-especialista:hover{
+      transform:translateY(-4px) scale(1.02);
+      box-shadow:0 15px 30px rgba(18,140,126,0.40);
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:900px){
+
+      header{
+        flex-direction:column;
+        gap:20px;
+        padding:20px;
+      }
+
+      nav{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .servico-hero{
+        height:420px;
+      }
+
+      .servico-hero-overlay h1{
+        font-size:42px;
+      }
+
+      .servico-hero-overlay p{
+        font-size:18px;
+      }
+
+      .servico-section h2{
+        font-size:32px;
+      }
+
+      .curriculo-box{
+        padding:28px;
+      }
+
+      .curriculo-box h3{
+        font-size:30px;
+      }
+
+      .curriculo-box p{
+        font-size:17px;
+      }
+
+      .btn-especialista{
+        width:100%;
+        font-size:18px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
-
-<div class="servico-hero" style="background-image:url('img/orientacao-curricular.jpg');">
-  <div class="servico-hero-overlay">
-    <h1>Orientação Curricular</h1>
-    <p>Adapte seu currículo para cada oportunidade.</p>
-  </div>
-</div>
-
-<section class="servico-section">
-  <h2>Sobre a Orientação Curricular</h2>
-  <p>
-    Cada vaga exige um currículo diferente. Um gerente deve destacar 
-    liderança e resultados, enquanto um repositor deve evidenciar 
-    organização e eficiência. Aqui você aprenderá a estruturar 
-    currículos sob medida para cada perfil e oportunidade.
-  </p>
-</section>
-
-
-  <body>
+<body>
 
 <!-- HEADER -->
+
 <header>
+
   <div class="brand">
+
     <img src="/logo-icon.png" alt="COREGOV" class="logo-icon">
+
     <div class="brand-text">
       <span class="brand-name">COREGOV</span>
       <span class="brand-sub">Administração, Contabilidade & RH</span>
     </div>
+
   </div>
 
   <nav>
@@ -50,9 +330,88 @@
     <a href="blog/index.html">Blog</a>
     <a href="quem-somos.html">Quem Somos</a>
   </nav>
+
 </header>
+
+<!-- HERO -->
+
+<div class="servico-hero" style="background-image:url('img/orientacao-curricular.jpg');">
+
+  <div class="servico-hero-overlay">
+
+    <h1>
+      Orientação Curricular
+      <span>Gratuita</span>
+    </h1>
+
+    <p>
+      Aprenda como criar um currículo profissional que realmente chama atenção dos recrutadores.
+    </p>
+
+    <a 
+      href="https://wa.me/5518991888698?text=Olá%20Coregov,%20tenho%20interesse%20na%20Orientação%20Curricular,%20como%20funciona?"
+      target="_blank"
+      class="btn-especialista"
+    >
+      💬 Fale com Especialista
+    </a>
+
+  </div>
+
+</div>
+
+<!-- CONTEÚDO -->
+
+<section class="servico-section">
+
+  <h2>Sobre a Orientação Curricular Gratuita</h2>
+
+  <div class="curriculo-box">
+
+    <h3>
+      Seu currículo está eliminando você das vagas?
+    </h3>
+
+    <p>
+      A maioria das pessoas envia o mesmo currículo para todas as vagas —
+      e acaba sendo ignorada pelos recrutadores.
+    </p>
+
+    <p>
+      Cada oportunidade exige uma apresentação estratégica.
+      Um currículo para área administrativa precisa destacar organização,
+      resultados e experiência. Já para cargos de liderança,
+      é essencial evidenciar gestão de equipes, metas e desempenho.
+    </p>
+
+    <p>
+      Na <strong>Orientação Curricular COREGOV</strong>, você aprende como adaptar
+      seu currículo de forma profissional para aumentar suas chances de entrevista
+      e conquistar melhores oportunidades no mercado.
+    </p>
+
+    <ul>
+      <li>✔ Currículo mais profissional e estratégico</li>
+      <li>✔ Adaptação para diferentes vagas</li>
+      <li>✔ Destaque para suas competências</li>
+      <li>✔ Mais chances de ser chamado para entrevistas</li>
+    </ul>
+
+    <div class="btn-area">
+
+      <a 
+        href="https://wa.me/5518991888698?text=Olá%20Coregov,%20tenho%20interesse%20na%20Orientação%20Curricular,%20como%20funciona?"
+        target="_blank"
+        class="btn-especialista"
+      >
+        🚀 Quero Melhorar Meu Currículo
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
 </body>
 </html>
-  
-
