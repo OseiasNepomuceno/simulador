@@ -1,321 +1,111 @@
-:root {
-  --verde: #00FF9F;
-  --azul-escuro: #0B1220;
-  --azul-medio: #111A2A;
-  --branco: #FFFFFF;
-  --cinza: #CCCCCC;
+/* =========================================
+   COREGOV - CSS GLOBAL PADRONIZADO
+========================================= */
+
+/* VARIÁVEIS */
+
+:root{
+  --verde:#00FF9F;
+  --verde-hover:#00e68f;
+  --azul-escuro:#0B1220;
+  --azul-medio:#111A2A;
+  --branco:#FFFFFF;
+  --cinza:#CCCCCC;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+/* RESET GLOBAL */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
-body {
-  background: var(--azul-escuro);
-  color: var(--branco);
-  padding-top: 90px;
+/* BODY */
+
+body{
+  background:var(--azul-escuro);
+  color:var(--branco);
+  padding-top:90px;
 }
 
-/* HEADER */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 15px 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(11,18,32,0.6);
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
-  z-index: 1000;
-}
+/* =========================================
+   HEADER
+========================================= */
 
-header.scrolled {
-  background: rgba(11,18,32,0.95);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo-icon {
-  height: 50px;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.brand-name {
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--verde);
-}
-
-.brand-sub {
-  font-size: 12px;
-  color: var(--cinza);
-}
-
-nav a {
-  margin: 0 10px;
-  color: var(--cinza);
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: var(--verde);
-}
-
-/* BOTÃO PADRÃO */
-.btn {
-  background: var(--verde);
-  color: #000;
-  padding: 10px 18px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.btn:hover {
-  background: #00e68f;
-}
-
-/* SEÇÃO DE RECRUTAMENTO */
-.recrutamento-section {
-  padding: 60px 10%;
-  text-align: center;
-}
-
-.recrutamento-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: var(--verde);
-}
-
-.recrutamento-section p {
-  color: var(--cinza);
-  margin-bottom: 40px;
-}
-
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-}
-
-.card {
-  background: var(--azul-medio);
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-}
-
-.card h3 {
-  color: var(--verde);
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 14px;
-  color: var(--cinza);
-  margin-bottom: 15px;
-}
-
-/* FORMULÁRIO DE CURRÍCULO */
-.form-container {
-  max-width: 600px;
-  margin: 40px auto;
-  background: var(--azul-medio);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-}
-
-.form-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: var(--verde);
-}
-
-.form-container input,
-.form-container select,
-.form-container textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: none;
-  font-size: 14px;
-}
-
-.form-container button {
-  display: block;
-  width: 100%;
-  background: var(--verde);
-  color: #000;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.form-container button:hover {
-  background: #00e68f;
-}
-
-/* PÁGINAS DE SERVIÇOS (Hero + Conteúdo) */
-.servico-hero {
-  position: relative;
-  width: 100%;
-  height: 280px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.servico-hero-overlay {
-  background: rgba(11,18,32,0.7);
-  padding: 20px 40px;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.servico-hero h1 {
-  color: var(--verde);
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.servico-hero p {
-  color: var(--branco);
-  font-size: 16px;
-  line-height: 1.4;
-}
-
-.servico-section {
-  max-width: 900px;
-  margin: 40px auto;
-  background: var(--azul-medio);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-}
-
-.servico-section h2 {
-  color: var(--verde);
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.servico-section p {
-  color: var(--cinza);
-  line-height: 1.6;
-  text-align: justify;
-}
-
-/* PAINEL ADMINISTRATIVO */
-.painel-container {
-  max-width: 900px;
-  margin: 40px auto;
-  background: var(--azul-medio);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-}
-
-.painel-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: var(--verde);
-}
-
-.filtro-area {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.filtro-area select {
-  padding: 8px;
-  border-radius: 6px;
-  border: none;
-}
-
-.tabela-candidatos {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.tabela-candidatos th,
-.tabela-candidatos td {
-  padding: 12px;
-  border-bottom: 1px solid var(--cinza);
-  text-align: left;
-}
-
-.tabela-candidatos th {
-  background: var(--azul-escuro);
-  color: var(--verde);
-}
-
-.tabela-candidatos tr:hover {
-  background: rgba(255,255,255,0.05);
-}
-
-
-/* ADICIONE ESSE CSS */
-
-.cards-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-  margin-top:50px;
-}
-
-.card{
-  background:#fff;
-  padding:35px;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:15px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(11,18,32,0.90);
+  backdrop-filter:blur(10px);
+  z-index:1000;
   transition:0.3s;
-  border:1px solid #e5e7eb;
 }
 
-.card:hover{
-  transform:translateY(-6px);
+header.scrolled{
+  background:rgba(11,18,32,0.98);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
-.card h3{
-  font-size:26px;
-  color:#071b33;
-  margin-bottom:15px;
+/* BRAND */
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-icon{
+  height:42px;
+  width:auto;
+}
+
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+.brand-name{
+  font-size:18px;
   font-weight:700;
+  color:var(--verde);
 }
 
-.card p{
-  font-size:16px;
-  line-height:1.8;
-  color:#555;
-  margin-bottom:25px;
+.brand-sub{
+  font-size:11px;
+  color:var(--cinza);
 }
+
+/* NAV */
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+nav a{
+  color:var(--cinza);
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+  color:var(--verde);
+}
+
+/* =========================================
+   BOTÃO PADRÃO
+========================================= */
 
 .btn{
   display:inline-flex;
@@ -323,13 +113,296 @@ nav a:hover {
   justify-content:center;
   background:linear-gradient(135deg,#25D366,#128C7E);
   color:#fff;
+  padding:12px 24px;
+  border-radius:10px;
   text-decoration:none;
-  padding:14px 26px;
-  border-radius:50px;
   font-weight:700;
   transition:0.3s;
+  border:none;
+  cursor:pointer;
 }
 
 .btn:hover{
-  transform:scale(1.03);
+  transform:translateY(-2px);
+  opacity:0.95;
+}
+
+/* =========================================
+   HERO DE SERVIÇOS
+========================================= */
+
+.servico-hero{
+  position:relative;
+  width:100%;
+  height:320px;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.servico-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.60);
+}
+
+.servico-hero-overlay{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+}
+
+.servico-hero-overlay h1{
+  color:var(--verde);
+  font-size:48px;
+  margin-bottom:15px;
+  font-weight:700;
+}
+
+.servico-hero-overlay p{
+  color:var(--branco);
+  font-size:18px;
+  max-width:700px;
+  margin:auto;
+}
+
+/* =========================================
+   SEÇÕES PADRÃO
+========================================= */
+
+.section,
+.servico-section,
+.recrutamento-section{
+  max-width:1200px;
+  margin:50px auto;
+  padding:0 20px;
+}
+
+.section h1,
+.servico-section h1{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.section h1 span{
+  color:var(--verde);
+}
+
+.section h2,
+.servico-section h2,
+.recrutamento-section h2{
+  color:var(--verde);
+  margin-bottom:20px;
+  font-size:36px;
+}
+
+.section p,
+.section li,
+.servico-section p,
+.recrutamento-section p{
+  color:var(--cinza);
+  line-height:1.8;
+  font-size:17px;
+}
+
+.section ul{
+  padding-left:20px;
+  margin:20px 0;
+}
+
+/* =========================================
+   GRID DOS CARDS
+========================================= */
+
+.cards-grid,
+.cards-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+/* CARD PADRÃO */
+
+.card{
+  background:var(--azul-medio);
+  padding:30px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:0 8px 25px rgba(0,0,0,0.35);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:var(--verde);
+}
+
+.card h3{
+  color:var(--verde);
+  margin-bottom:15px;
+  font-size:24px;
+  font-weight:700;
+}
+
+.card p{
+  color:var(--cinza);
+  line-height:1.7;
+  margin-bottom:25px;
+  font-size:15px;
+}
+
+/* =========================================
+   FORMULÁRIOS
+========================================= */
+
+.form-container{
+  max-width:700px;
+  margin:60px auto;
+  background:var(--azul-medio);
+  padding:35px;
+  border-radius:16px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+.form-container h2{
+  text-align:center;
+  color:var(--verde);
+  margin-bottom:25px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:16px;
+  border:none;
+  border-radius:10px;
+  background:#1b2740;
+  color:#fff;
+  font-size:15px;
+}
+
+.form-container textarea{
+  resize:vertical;
+}
+
+.form-container button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.form-container button:hover{
+  opacity:0.95;
+  transform:translateY(-2px);
+}
+
+/* =========================================
+   TABELAS
+========================================= */
+
+.tabela-candidatos{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:30px;
+}
+
+.tabela-candidatos th,
+.tabela-candidatos td{
+  padding:14px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  text-align:left;
+}
+
+.tabela-candidatos th{
+  color:var(--verde);
+  background:#09111f;
+}
+
+.tabela-candidatos tr:hover{
+  background:rgba(255,255,255,0.03);
+}
+
+/* =========================================
+   LINKS RELACIONADOS
+========================================= */
+
+.related{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px 80px;
+}
+
+.related h2{
+  margin-bottom:25px;
+}
+
+.related-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+
+.related-grid a{
+  background:var(--azul-medio);
+  padding:18px;
+  border-radius:12px;
+  color:var(--cinza);
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.related-grid a:hover{
+  border:1px solid var(--verde);
+  color:var(--verde);
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media(max-width:900px){
+
+  header{
+    flex-direction:column;
+    gap:20px;
+    padding:20px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .servico-hero-overlay h1{
+    font-size:36px;
+  }
+
+  .section h1,
+  .servico-section h1{
+    font-size:34px;
+  }
+
+  .section h2,
+  .servico-section h2,
+  .recrutamento-section h2{
+    font-size:28px;
+  }
+
+  .card{
+    padding:24px;
+  }
+
 }
