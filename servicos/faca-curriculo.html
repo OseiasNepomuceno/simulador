@@ -1,468 +1,478 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Faça Currículo com a conosco! | COREGOV</title>
+  <title>Faça Currículo Conosco | COREGOV</title>
+
   <link rel="icon" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../csss/style.css">   <!-- CSS global -->
 
-  /* PLANOS CURRÍCULOS */
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-.planos-curriculos{
-  padding:80px 20px;
-  background:#f4f7fb;
-}
+  <link rel="stylesheet" href="../csss/style.css">
 
-.titulo-planos{
-  text-align:center;
-  max-width:850px;
-  margin:0 auto 60px;
-}
+  <!-- CSS LOCAL -->
+  <style>
 
-.titulo-planos h2{
-  font-size:42px;
-  color:#071b33;
-  margin-bottom:20px;
-  font-weight:800;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-.titulo-planos p{
-  font-size:18px;
-  color:#555;
-  line-height:1.8;
-}
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#f4f7fb;
+      color:#222;
+    }
 
-.cards-curriculos{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
-  max-width:1400px;
-  margin:auto;
-}
+    /* HERO */
 
-.card-curriculo{
-  background:#fff;
-  border-radius:24px;
-  padding:35px;
-  box-shadow:0 12px 35px rgba(0,0,0,0.08);
-  transition:0.4s;
-  position:relative;
-  overflow:hidden;
-  border:1px solid #e5e7eb;
-}
+    .servico-hero{
+      height:420px;
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
 
-.card-curriculo:hover{
-  transform:translateY(-8px);
-}
+    .servico-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.65);
+    }
 
-.card-curriculo::before{
-  content:"";
-  position:absolute;
-  top:-100px;
-  right:-100px;
-  width:220px;
-  height:220px;
-  background:rgba(44,224,123,0.08);
-  border-radius:50%;
-}
+    .servico-hero-overlay{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      color:#fff;
+      padding:20px;
+    }
 
-.card-curriculo h3{
-  font-size:30px;
-  color:#071b33;
-  margin:20px 0 10px;
-  font-weight:800;
-  position:relative;
-  z-index:2;
-}
+    .servico-hero-overlay h1{
+      font-size:58px;
+      margin-bottom:15px;
+      font-weight:800;
+    }
 
-.metodo{
-  display:inline-block;
-  background:#071b33;
-  color:#fff;
-  padding:8px 16px;
-  border-radius:30px;
-  font-size:13px;
-  font-weight:700;
-  margin-bottom:20px;
-  position:relative;
-  z-index:2;
-}
+    .servico-hero-overlay p{
+      font-size:22px;
+      color:#e5e7eb;
+    }
 
-.descricao{
-  font-size:16px;
-  color:#555;
-  line-height:1.8;
-  margin-bottom:25px;
-  position:relative;
-  z-index:2;
-}
+    /* PLANOS CURRÍCULOS */
 
-.card-curriculo ul{
-  list-style:none;
-  margin-bottom:30px;
-  position:relative;
-  z-index:2;
-}
+    .planos-curriculos{
+      padding:80px 20px;
+      background:#f4f7fb;
+    }
 
-.card-curriculo ul li{
-  margin-bottom:14px;
-  font-size:16px;
-  color:#222;
-}
+    .titulo-planos{
+      text-align:center;
+      max-width:850px;
+      margin:0 auto 60px;
+    }
 
-.preco{
-  font-size:42px;
-  font-weight:800;
-  color:#2ce07b;
-  margin-bottom:25px;
-  position:relative;
-  z-index:2;
-}
+    .titulo-planos h2{
+      font-size:42px;
+      color:#071b33;
+      margin-bottom:20px;
+      font-weight:800;
+    }
 
-.btn-card{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  background:linear-gradient(135deg,#25D366,#128C7E);
-  color:#fff;
-  padding:16px;
-  border-radius:50px;
-  font-weight:700;
-  transition:0.3s;
-  position:relative;
-  z-index:2;
-}
+    .titulo-planos p{
+      font-size:18px;
+      color:#555;
+      line-height:1.8;
+    }
 
-.btn-card:hover{
-  transform:scale(1.03);
-}
+    .cards-curriculos{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+      max-width:1400px;
+      margin:auto;
+    }
 
-.tag-plano{
-  display:inline-block;
-  background:#071b33;
-  color:#fff;
-  padding:10px 18px;
-  border-radius:50px;
-  font-size:14px;
-  font-weight:700;
-  position:relative;
-  z-index:2;
-}
+    .card-curriculo{
+      background:#fff;
+      border-radius:24px;
+      padding:35px;
+      box-shadow:0 12px 35px rgba(0,0,0,0.08);
+      transition:0.4s;
+      position:relative;
+      overflow:hidden;
+      border:1px solid #e5e7eb;
+    }
 
-.verde{
-  background:#2ce07b;
-  color:#071b33;
-}
+    .card-curriculo:hover{
+      transform:translateY(-8px);
+    }
 
-.dourado{
-  background:#d4af37;
-  color:#071b33;
-}
+    .card-curriculo::before{
+      content:"";
+      position:absolute;
+      top:-100px;
+      right:-100px;
+      width:220px;
+      height:220px;
+      background:rgba(44,224,123,0.08);
+      border-radius:50%;
+    }
 
-.blacktag{
-  background:#111827;
-}
+    .card-curriculo h3{
+      font-size:30px;
+      color:#071b33;
+      margin:20px 0 10px;
+      font-weight:800;
+      position:relative;
+      z-index:2;
+    }
 
-.destaque{
-  border:2px solid #2ce07b;
-  transform:scale(1.02);
-}
+    .metodo{
+      display:inline-block;
+      background:#071b33;
+      color:#fff;
+      padding:8px 16px;
+      border-radius:30px;
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:20px;
+      position:relative;
+      z-index:2;
+    }
 
-.premium{
-  border:2px solid #d4af37;
-}
+    .descricao{
+      font-size:16px;
+      color:#555;
+      line-height:1.8;
+      margin-bottom:25px;
+      position:relative;
+      z-index:2;
+    }
 
-.black{
-  background:linear-gradient(135deg,#071b33,#111827);
-  color:#fff;
-}
+    .card-curriculo ul{
+      list-style:none;
+      margin-bottom:30px;
+      position:relative;
+      z-index:2;
+      padding-left:0;
+    }
 
-.black h3,
-.black ul li,
-.black .descricao{
-  color:#fff;
-}
+    .card-curriculo ul li{
+      margin-bottom:14px;
+      font-size:16px;
+      color:#222;
+    }
 
-.black .preco{
-  color:#2ce07b;
-}
+    .preco{
+      font-size:42px;
+      font-weight:800;
+      color:#2ce07b;
+      margin-bottom:25px;
+      position:relative;
+      z-index:2;
+    }
 
-.black .metodo{
-  background:#2ce07b;
-  color:#071b33;
-}
+    .btn-card{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      background:linear-gradient(135deg,#25D366,#128C7E);
+      color:#fff;
+      padding:16px;
+      border-radius:50px;
+      font-weight:700;
+      transition:0.3s;
+      position:relative;
+      z-index:2;
+    }
 
-@media(max-width:900px){
+    .btn-card:hover{
+      transform:scale(1.03);
+    }
 
-  .titulo-planos h2{
-    font-size:34px;
-  }
+    .tag-plano{
+      display:inline-block;
+      background:#071b33;
+      color:#fff;
+      padding:10px 18px;
+      border-radius:50px;
+      font-size:14px;
+      font-weight:700;
+      position:relative;
+      z-index:2;
+    }
 
-  .card-curriculo{
-    padding:28px;
-  }
+    .verde{
+      background:#2ce07b;
+      color:#071b33;
+    }
 
-  .card-curriculo h3{
-    font-size:26px;
-  }
+    .dourado{
+      background:#d4af37;
+      color:#071b33;
+    }
 
-  .preco{
-    font-size:36px;
-  }
+    .blacktag{
+      background:#111827;
+    }
 
-}
+    .destaque{
+      border:2px solid #2ce07b;
+      transform:scale(1.02);
+    }
+
+    .premium{
+      border:2px solid #d4af37;
+    }
+
+    .black{
+      background:linear-gradient(135deg,#071b33,#111827);
+      color:#fff;
+    }
+
+    .black h3,
+    .black ul li,
+    .black .descricao{
+      color:#fff;
+    }
+
+    .black .preco{
+      color:#2ce07b;
+    }
+
+    .black .metodo{
+      background:#2ce07b;
+      color:#071b33;
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:900px){
+
+      .servico-hero-overlay h1{
+        font-size:42px;
+      }
+
+      .servico-hero-overlay p{
+        font-size:18px;
+      }
+
+      .titulo-planos h2{
+        font-size:34px;
+      }
+
+      .card-curriculo{
+        padding:28px;
+      }
+
+      .card-curriculo h3{
+        font-size:26px;
+      }
+
+      .preco{
+        font-size:36px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
+<body>
 
-<div class="servico-hero" style="background-image:url('img/gestao-lideranca.jpg');">
-  <div class="servico-hero-overlay">
-    <h1>Faça Curriculo Conosco</h1>
-    <p>Escolha o Currículo Ideal Para Seu Objetivo Profissional.</p>
-  </div>
-</div>
+  <!-- HEADER -->
 
-<!-- CARDS CURRÍCULOS COREGOV -->
+  <header>
 
-<section class="planos-curriculos">
+    <div class="brand">
 
-  <div class="titulo-planos">
-    <h2>Escolha o Currículo Ideal Para Seu Objetivo Profissional</h2>
+      <img src="/logo-icon.png" alt="COREGOV" class="logo-icon">
 
-    <p>
-      Currículos desenvolvidos com estratégias modernas de recrutamento,
-      linguagem profissional e técnicas utilizadas por RHs e grandes empresas.
-    </p>
-  </div>
-
-  <div class="cards-curriculos">
-
-    <!-- CARD 1 -->
-
-    <div class="card-curriculo">
-
-      <div class="tag-plano">
-        Até R$ 2 Mil
+      <div class="brand-text">
+        <span class="brand-name">COREGOV</span>
+        <span class="brand-sub">Administração, Contabilidade & RH</span>
       </div>
-
-      <h3>Currículo Essencial</h3>
-
-      <span class="metodo">
-        Estratégia CAR
-      </span>
-
-      <p class="descricao">
-        Modelo direto e objetivo para vagas operacionais e primeiro emprego.
-      </p>
-
-      <ul>
-        <li>✔ Estrutura profissional</li>
-        <li>✔ Revisão ortográfica</li>
-        <li>✔ Layout limpo e organizado</li>
-        <li>✔ PDF pronto para envio</li>
-      </ul>
-
-      <div class="preco">
-        R$ 19,90
-      </div>
-
-      <a 
-        href="https://wa.me/5518991888698?text=Olá%20Coregov,%20tenho%20interesse%20no%20Currículo%20Essencial."
-        target="_blank"
-        class="btn-card"
-      >
-        Solicitar Agora
-      </a>
 
     </div>
 
-    <!-- CARD 2 -->
+    <nav>
+      <a href="/index.html">Início</a>
+      <a href="/servicos.html">Serviços</a>
+      <a href="/ferramentas.html" class="active">Ferramentas</a>
+      <a href="/simulador.html">Simulador</a>
+      <a href="/blog/index.html">Blog</a>
+      <a href="/quem-somos.html">Quem Somos</a>
+    </nav>
 
-    <div class="card-curriculo destaque">
+  </header>
 
-      <div class="tag-plano verde">
-        Até R$ 4 Mil
-      </div>
+  <!-- HERO -->
 
-      <h3>Currículo Estratégico</h3>
+  <div class="servico-hero" style="background-image:url('img/gestao-lideranca.jpg');">
 
-      <span class="metodo">
-        Estratégia WHO
-      </span>
+    <div class="servico-hero-overlay">
 
-      <p class="descricao">
-        Desenvolvido para destacar competências, resultados e posicionamento profissional.
+      <h1>Faça Seu Currículo Conosco</h1>
+
+      <p>
+        Escolha o currículo ideal para o seu objetivo profissional.
       </p>
-
-      <ul>
-        <li>✔ Palavras-chave estratégicas</li>
-        <li>✔ Destaque para competências</li>
-        <li>✔ Layout moderno e profissional</li>
-        <li>✔ Melhor posicionamento no RH</li>
-      </ul>
-
-      <div class="preco">
-        R$ 29,90
-      </div>
-
-      <a 
-        href="https://wa.me/5518991888698?text=Olá%20Coregov,%20tenho%20interesse%20no%20Currículo%20Estratégico."
-        target="_blank"
-        class="btn-card"
-      >
-        Solicitar Agora
-      </a>
-
-    </div>
-
-    <!-- CARD 3 -->
-
-    <div class="card-curriculo">
-
-      <div class="tag-plano">
-        Até R$ 7 Mil
-      </div>
-
-      <h3>Currículo Profissional PRO</h3>
-
-      <span class="metodo">
-        Estratégia STAR
-      </span>
-
-      <p class="descricao">
-        Currículo focado em resultados, metas e conquistas profissionais.
-      </p>
-
-      <ul>
-        <li>✔ Estrutura de alto impacto</li>
-        <li>✔ Foco em performance</li>
-        <li>✔ Linguagem corporativa</li>
-        <li>✔ Mais competitividade</li>
-      </ul>
-
-      <div class="preco">
-        R$ 59,90
-      </div>
-
-      <a 
-        href="https://wa.me/5518991888698?text=Olá%20Coregov,%20tenho%20interesse%20no%20Currículo%20Profissional%20PRO."
-        target="_blank"
-        class="btn-card"
-      >
-        Solicitar Agora
-      </a>
-
-    </div>
-
-    <!-- CARD 4 -->
-
-    <div class="card-curriculo premium">
-
-      <div class="tag-plano dourado">
-        Até R$ 12 Mil
-      </div>
-
-      <h3>Currículo Executivo</h3>
-
-      <span class="metodo">
-        Estratégia STAR + WHO
-      </span>
-
-      <p class="descricao">
-        Posicionamento executivo premium para cargos de liderança e gestão.
-      </p>
-
-      <ul>
-        <li>✔ Estrutura executiva</li>
-        <li>✔ Linguagem de autoridade</li>
-        <li>✔ Resultados quantitativos</li>
-        <li>✔ Visual corporativo premium</li>
-      </ul>
-
-      <div class="preco">
-        R$ 97,90
-      </div>
-
-      <a 
-        href="https://wa.me/5518991888698?text=Olá%20Coregov,%20tenho%20interesse%20no%20Currículo%20Executivo."
-        target="_blank"
-        class="btn-card"
-      >
-        Solicitar Agora
-      </a>
-
-    </div>
-
-    <!-- CARD 5 -->
-
-    <div class="card-curriculo black">
-
-      <div class="tag-plano blacktag">
-        Acima de R$ 15 Mil
-      </div>
-
-      <h3>Currículo Alta Performance</h3>
-
-      <span class="metodo">
-        Estratégia STAR Executive
-      </span>
-
-      <p class="descricao">
-        Currículo premium internacional voltado para alta liderança e executivos.
-      </p>
-
-      <ul>
-        <li>✔ Marca profissional</li>
-        <li>✔ Estrutura internacional</li>
-        <li>✔ Otimização ATS + LinkedIn</li>
-        <li>✔ Posicionamento de autoridade</li>
-      </ul>
-
-      <div class="preco">
-        R$ 197,90
-      </div>
-
-      <a 
-        href="https://wa.me/5518991888698?text=Olá%20Coregov,%20tenho%20interesse%20no%20Currículo%20Alta%20Performance."
-        target="_blank"
-        class="btn-card"
-      >
-        Solicitar Agora
-      </a>
 
     </div>
 
   </div>
 
-</section>
+  <!-- CARDS -->
 
+  <section class="planos-curriculos">
 
-  <body>
+    <div class="titulo-planos">
 
-<!-- HEADER -->
-<header>
-  <div class="brand">
-    <img src="/logo-icon.png" alt="COREGOV" class="logo-icon">
-    <div class="brand-text">
-      <span class="brand-name">COREGOV</span>
-      <span class="brand-sub">Administração, Contabilidade & RH</span>
+      <h2>
+        Escolha o Currículo Ideal Para Seu Objetivo Profissional
+      </h2>
+
+      <p>
+        Currículos desenvolvidos com estratégias modernas de recrutamento,
+        linguagem profissional e técnicas utilizadas por RHs e grandes empresas.
+      </p>
+
     </div>
-  </div>
 
-  <nav>
-    <a href="/index.html">Início</a>
-    <a href="/servicos.html">Serviços</a>
-    <a href="/ferramentas.html" class="active">Ferramentas</a>
-    <a href="/simulador.html">Simulador</a>
-    <a href="/blog/index.html">Blog</a>
-    <a href="/quem-somos.html">Quem Somos</a>
-  </nav>
-</header>
+    <div class="cards-curriculos">
+
+      <!-- CARD 1 -->
+
+      <div class="card-curriculo">
+
+        <div class="tag-plano">
+          Até R$ 2 Mil
+        </div>
+
+        <h3>Currículo Essencial</h3>
+
+        <span class="metodo">
+          Estratégia CAR
+        </span>
+
+        <p class="descricao">
+          Modelo direto e objetivo para vagas operacionais e primeiro emprego.
+        </p>
+
+        <ul>
+          <li>✔ Estrutura profissional</li>
+          <li>✔ Revisão ortográfica</li>
+          <li>✔ Layout limpo e organizado</li>
+          <li>✔ PDF pronto para envio</li>
+        </ul>
+
+        <div class="preco">
+          R$ 19,90
+        </div>
+
+        <a 
+          href="https://wa.me/5518991888698?text=Olá%20Coregov,%20tenho%20interesse%20no%20Currículo%20Essencial."
+          target="_blank"
+          class="btn-card"
+        >
+          Solicitar Agora
+        </a>
+
+      </div>
+
+      <!-- CARD 2 -->
+
+      <div class="card-curriculo destaque">
+
+        <div class="tag-plano verde">
+          Até R$ 4 Mil
+        </div>
+
+        <h3>Currículo Estratégico</h3>
+
+        <span class="metodo">
+          Estratégia WHO
+        </span>
+
+        <p class="descricao">
+          Desenvolvido para destacar competências, resultados e posicionamento profissional.
+        </p>
+
+        <ul>
+          <li>✔ Palavras-chave estratégicas</li>
+          <li>✔ Destaque para competências</li>
+          <li>✔ Layout moderno e profissional</li>
+          <li>✔ Melhor posicionamento no RH</li>
+        </ul>
+
+        <div class="preco">
+          R$ 29,90
+        </div>
+
+        <a 
+          href="https://wa.me/5518991888698?text=Olá%20Coregov,%20tenho%20interesse%20no%20Currículo%20Estratégico."
+          target="_blank"
+          class="btn-card"
+        >
+          Solicitar Agora
+        </a>
+
+      </div>
+
+      <!-- CARD 3 -->
+
+      <div class="card-curriculo">
+
+        <div class="tag-plano">
+          Até R$ 7 Mil
+        </div>
+
+        <h3>Currículo Profissional PRO</h3>
+
+        <span class="metodo">
+          Estratégia STAR
+        </span>
+
+        <p class="descricao">
+          Currículo focado em resultados, metas e conquistas profissionais.
+        </p>
+
+        <ul>
+          <li>✔ Estrutura de alto impacto</li>
+          <li>✔ Foco em performance</li>
+          <li>✔ Linguagem corporativa</li>
+          <li>✔ Mais competitividade</li>
+        </ul>
+
+        <div class="preco">
+          R$ 59,90
+        </div>
+
+        <a 
+          href="https://wa.me/5518991888698?text=Olá%20Coregov,%20tenho%20interesse%20no%20Currículo%20Profissional%20PRO."
+          target="_blank"
+          class="btn-card"
+        >
+          Solicitar Agora
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
 
 </body>
+
 </html>
-  
