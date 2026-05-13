@@ -26,6 +26,52 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+  /* Container centralizado */
+.form-container {
+  max-width: 600px;       /* largura máxima */
+  margin: 40px auto;      /* centraliza horizontalmente */
+  background: var(--azul-medio);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* Título centralizado */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--verde);
+}
+
+/* Campos do formulário */
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;            /* ocupa toda a largura */
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+}
+
+/* Botão centralizado */
+.form-container button {
+  display: block;
+  width: 100%;
+  background: var(--verde);
+  color: #000;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background: #00e68f;
+}
+
 
 body {
   background: var(--azul-escuro);
@@ -201,6 +247,7 @@ p {
     <button type="submit">Enviar Currículo</button>
   </form>
 </div>
+
 
   <!-- SDK Supabase via CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
