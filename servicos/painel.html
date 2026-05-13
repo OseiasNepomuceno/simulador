@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel de Candidatos</title>
+</head>
+<body>
+  <h2>Painel Administrativo - Lista de Candidatos</h2>
+  <ul id="listaCandidatos"></ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const supabaseClient = supabase.createClient(
+        'https://SEU-PROJETO.supabase.co',   // URL do seu projeto
+        'SUA-CHAVE-ANON'                     // chave anon (ey...)
+      )
+
+      const lista = document.getElementById('listaCandidatos')
+
+      const { data, error } = await supabaseClient
+        .from('candidatos')
+        .select('*')
+        .order('id', { ascending: false })
+
+      if (error) {
+        lista.innerHTML = `<li>Erro ao carregar candidatos: ${error.message}</li>`
+        return
+      }
+
+      if (!data || data.length === 0) {
+        lista.innerHTML = '<li>Nenhum candidato encontrado.</li>'
+        return
+      }
+
+      lista.innerHTML = data.map(c => {
+        const criadoEm = c.created_at
+          ? new Date(c.created_at).toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })
+          : "—"
+
+        return `
+          <li>
+            <strong>${c.nome}</strong> — ${c.email}<br>
+            Área: ${c.area} | Telefone: ${c.telefone}<br>
+            Experiência: ${c.experiencia}<br>
+            Currículo: ${c.curriculo ? `<a href="https://SEU-PROJETO.supabase.co/storage/v1/object/public/curriculos/${c.curriculo}" target="_blank">Download</a>` : "Não enviado"}<br>
+            Inserido em: ${criadoEm}
+          </li>
+        `
+      }).join('')
+    })
+  </script>
+</body>
+</html>
