@@ -139,7 +139,7 @@
 
     .servico-section{
       max-width:1150px;
-      margin:70px auto;
+      margin:70px auto 40px auto;
       padding:0 20px;
     }
 
@@ -251,6 +251,68 @@
       box-shadow:0 15px 30px rgba(18,140,126,0.40);
     }
 
+    /* 🔥 SEÇÃO DE DEPOIMENTOS ADICIONADA */
+    .depoimentos-section {
+      background: #eef2f7;
+      padding: 70px 20px;
+      text-align: center;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .depoimentos-container {
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .depoimentos-container h2 {
+      font-size: 36px;
+      color:#071b33;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .depoimentos-container p.subtitle {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      text-align: left;
+    }
+
+    .depoimento-card {
+      background: #fff;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+      border-left: 4px solid #071b33;
+      transition: .3s;
+    }
+
+    .depoimento-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    }
+
+    .depoimento-card p {
+      font-style: italic;
+      color: #444;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .depoimento-card span {
+      font-weight: 700;
+      font-size: 14px;
+      color: #071b33;
+      display: block;
+    }
+
     /* RESPONSIVO */
 
     @media(max-width:900px){
@@ -278,8 +340,8 @@
         font-size:18px;
       }
 
-      .servico-section h2{
-        font-size:32px;
+      .servico-section h2, .depoimentos-container h2{
+        font-size:30px;
       }
 
       .curriculo-box{
@@ -307,8 +369,6 @@
 
 <body>
 
-<!-- HEADER -->
-
 <header>
 
   <div class="brand">
@@ -333,8 +393,6 @@
 
 </header>
 
-<!-- HERO -->
-
 <div class="servico-hero" style="background-image:url('img/orientacao-curricular.jpg');">
 
   <div class="servico-hero-overlay">
@@ -348,12 +406,9 @@
       Aprenda como criar um currículo profissional que realmente chama atenção dos recrutadores.
     </p>
 
-   
   </div>
 
 </div>
-
-<!-- CONTEÚDO -->
 
 <section class="servico-section">
 
@@ -404,6 +459,30 @@
 
   </div>
 
+</section>
+
+<section class="depoimentos-section">
+  <div class="depoimentos-container">
+    <h2>Trajetórias transformadas com nossa orientação</h2>
+    <p class="subtitle">Veja o depoimento de profissionais que conquistaram clareza estratégica e destaque no mercado.</p>
+    
+    <div class="depoimentos-grid">
+      <div class="depoimento-card">
+        <p>"O direcionamento abriu meus olhos. Conseguir organizar minha trajetória com foco e clareza mudou meu posicionamento no mercado."</p>
+        <span>— Andressa L., Especialista em Projetos Sociais</span>
+      </div>
+
+      <div class="depoimento-card">
+        <p>"O atendimento é incrivelmente humano e estratégico. Meu currículo finalmente passou a refletir meu real potencial profissional."</p>
+        <span>— Thiago S., Administrador de Empresas</span>
+      </div>
+
+      <div class="depoimento-card">
+        <p>"Uma análise cirúrgica e acolhedora. Me deu a segurança que eu precisava para buscar novas oportunidades de alto nível."</p>
+        <span>— Letícia F., Consultora de RH</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 </body>
