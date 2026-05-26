@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Consultor | CoreGov</title>
+    <title>Painel do Consultor | CoreGov (Modo de Teste)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,16 +22,15 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--bg-principal); color: var(--texto-principal); min-height: 100vh; display: flex; }
 
-        /* TELA DE LOGIN CENTRALIZADA */
+        /* TELA DE LOGIN - ESCONDIDA PARA TESTES */
         #tela-login {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--bg-principal); display: flex; justify-content: center; align-items: center; z-index: 2000;
+            display: none; /* Desativado temporariamente */
         }
+        
         .card-login {
             background: var(--bg-card); border: 1px solid var(--borda-suave);
             padding: 40px; border-radius: 16px; width: 100%; max-width: 420px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
-        .card-login h3 { font-size: 24px; margin-bottom: 24px; text-align: center; }
         
         .campo-grupo { text-align: left; margin-bottom: 20px; }
         .campo-grupo label { display: block; margin-bottom: 8px; font-size: 14px; color: var(--texto-mutado); }
@@ -47,8 +46,8 @@
         }
         .btn-acao:hover { background: #16a34a; transform: translateY(-1px); }
 
-        /* ESTRUTURA DO PAINEL PRIVADO */
-        #ambiente-privado { display: none; width: 100%; min-height: 100vh; }
+        /* ESTRUTURA DO PAINEL PRIVADO - MODIFICADO PARA EXIBIR DIRETO */
+        #ambiente-privado { display: flex; width: 100%; min-height: 100vh; }
         
         .sidebar {
             width: 280px; background: var(--bg-sidebar); border-right: 1px solid var(--borda-suave);
@@ -87,37 +86,22 @@
 </head>
 <body>
 
-    <div id="tela-login">
-        <div class="card-login">
-            <h3>🔑 Acesso ao Painel</h3>
-            <div class="campo-grupo">
-                <label>Usuário</label>
-                <input type="text" id="input-usuario" placeholder="Nome do consultor">
-            </div>
-            <div class="campo-grupo">
-                <label>Senha</label>
-                <input type="password" id="input-senha" placeholder="••••••••">
-            </div>
-            <button class="btn-acao" onclick="executarLoginBackend()">Entrar no Painel</button>
-        </div>
-    </div>
-
     <div id="ambiente-privado">
         <aside class="sidebar">
             <h2>🛰️ CoreGov</h2>
-            <div class="badge-plano">Consultor: <span id="txt-nome-user">...</span> (<span id="txt-plano">...</span>)</div>
+            <div class="badge-plano">Consultor: <span id="txt-nome-user">Ambiente de Teste</span> (<span id="txt-plano">PREMIUM</span>)</div>
             <nav>
                 <div class="menu-item ativo" onclick="mudarModulo('mod-inicio', this)">🏠 Início</div>
                 <div class="menu-item" onclick="mudarModulo('mod-revisor', this)">📜 Revisor de Estatuto</div>
                 <div class="menu-item" onclick="mudarModulo('mod-clientes', this)">💼 Gestão de Clientes</div>
             </nav>
-            <div class="menu-item btn-sair" onclick="logout()">🚪 Sair</div>
+            <div class="menu-item btn-sair" onclick="alert('Modo de teste: login desativado.')">🚪 Sair</div>
         </aside>
 
         <main class="conteudo-principal">
             <section id="mod-inicio" class="modulo-secao ativo">
                 <h1>Painel Operacional Ativo</h1><br>
-                <div class="caixa-info">Selecione uma das ferramentas de inteligência no menu esquerdo para iniciar a operação técnica.</div>
+                <div class="caixa-info">O login está temporariamente desativado. Você pode navegar livremente pelos módulos editando o arquivo HTML.</div>
             </section>
 
             <section id="mod-revisor" class="modulo-secao">
@@ -159,42 +143,21 @@
     </div>
 
     <script>
-        let usuarioPlano = "BÁSICO";
+        // CONFIGURAÇÃO DE TESTE RÁPIDA:
+        // Se quiser ver como o sistema bloqueia o plano básico, mude a linha abaixo para "BÁSICO"
+        let usuarioPlano = "PREMIUM"; 
 
-        async function executarLoginBackend() {
-            const u = document.getElementById('input-usuario').value;
-            const p = document.getElementById('input-senha').value;
-
-            try {
-                const response = await fetch('http://127.0.0.1:5000/api/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ usuario: u, senha: p })
-                });
-                
-                const dados = await response.json();
-                
-                if (dados.sucesso) {
-                    usuarioPlano = dados.plano;
-                    document.getElementById('tela-login').style.display = 'none';
-                    document.getElementById('ambiente-privado').style.display = 'flex';
-                    document.getElementById('txt-nome-user').innerText = u.toUpperCase();
-                    document.getElementById('txt-plano').innerText = usuarioPlano;
-                    
-                    if(usuarioPlano === 'BÁSICO') {
-                        document.getElementById('conteudo-premium').style.display = 'none';
-                        document.getElementById('bloqueio-basico').style.display = 'block';
-                    } else {
-                        document.getElementById('conteudo-premium').style.display = 'block';
-                        document.getElementById('bloqueio-basico').style.display = 'none';
-                    }
-                } else {
-                    alert("Credenciais incorretas ou licença inativa.");
-                }
-            } catch (error) {
-                alert("Erro ao conectar com o serviço de autenticação Python.");
+        // Execução automática de setup ao carregar a página
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('txt-plano').innerText = usuarioPlano;
+            if(usuarioPlano === 'BÁSICO') {
+                document.getElementById('conteudo-premium').style.display = 'none';
+                document.getElementById('bloqueio-basico').style.display = 'block';
+            } else {
+                document.getElementById('conteudo-premium').style.display = 'block';
+                document.getElementById('bloqueio-basico').style.display = 'none';
             }
-        }
+        });
 
         function mudarModulo(idModulo, elemento) {
             document.querySelectorAll('.modulo-secao').forEach(sec => sec.classList.remove('ativo'));
@@ -210,15 +173,13 @@
             elemento.classList.add('ativa');
         }
 
-        function executarAuditoriaHTML() {
+        function ejecutarAuditoriaHTML() {
             const texto = document.getElementById('txt-estatuto').value;
             if(!texto.trim()) return alert("Insira o texto para auditar.");
             const msg = "Olá! Concluí a validação do Estatuto no CoreGov e verifiquei inconformidades com o TransfereGov. Preciso de suporte.";
             document.getElementById('link-whats').href = `https://wa.me/5518991511523?text=${encodeURIComponent(msg)}`;
             document.getElementById('resultado-auditoria').style.display = 'block';
         }
-
-        function logout() { location.reload(); }
     </script>
 </body>
 </html>
