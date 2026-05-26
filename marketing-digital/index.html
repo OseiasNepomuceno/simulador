@@ -1,213 +1,551 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social AI | Automatize suas Redes Sociais com Inteligência Artificial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-principal: #0b0f19;
+            --bg-card: #131c2e;
+            --cor-primaria: #22c55e; /* Verde Sucesso */
+            --cor-secundaria: #2563eb; /* Azul Conexão */
+            --texto-principal: #f8fafc;
+            --texto-mutado: #94a3b8;
+            --borda-suave: rgba(255, 255, 255, 0.05);
+        }
 
-<title>Social AI | Automatize suas redes sociais com IA</title>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
-}
+        /* CONTAINER GLOBAL */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-/* HERO */
+        /* HEADER / NAV */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--borda-suave);
+        }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff 0%, var(--texto-mutado) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo span {
+            color: var(--cor-primaria);
+            -webkit-text-fill-color: initial;
+        }
 
-.hero {
-    padding: 100px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #111827, #0f172a);
-}
+        /* HERO SECTION */
+        .hero {
+            padding: 90px 0 60px 0;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(37, 99, 235, 0.1) 0%, transparent 60%);
+        }
 
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-}
+        .badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            color: var(--cor-primaria);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
 
-.hero p {
-    font-size: 18px;
-    color: #cbd5e1;
-    max-width: 700px;
-    margin: auto;
-}
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            max-width: 850px;
+            margin: 0 auto 24px auto;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-/* BOTÕES */
+        .hero p.subtitle {
+            font-size: 19px;
+            color: var(--texto-mutado);
+            max-width: 750px;
+            margin: 0 auto 40px auto;
+        }
 
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 15px 25px;
-    border-radius: 10px;
-    font-weight: bold;
-    text-decoration: none;
-}
+        /* BOTÕES */
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
 
-.primary {
-    background: #22c55e;
-    color: black;
-}
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
 
-.secondary {
-    background: #2563eb;
-    color: white;
-}
+        .btn-primary {
+            background-color: var(--cor-primaria);
+            color: #052e16;
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+        }
 
-/* SECTIONS */
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(34, 197, 94, 0.4);
+        }
 
-.section {
-    padding: 80px 20px;
-    text-align: center;
-}
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--texto-principal);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
 
-.section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
 
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+        .btn-whatsapp {
+            background-color: #128c7e;
+            color: white;
+            box-shadow: 0 4px 20px rgba(18, 140, 126, 0.3);
+        }
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            background-color: #075e54;
+        }
 
-.card {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 12px;
-    width: 280px;
-}
+        /* SECTIONS COMUNS */
+        .section-padding {
+            padding: 80px 0;
+        }
 
-.card p {
-    color: #cbd5e1;
-}
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
 
-/* CTA FINAL */
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
 
-.cta {
-    background: #111827;
-    padding: 80px 20px;
-    text-align: center;
-}
+        .section-title p {
+            color: var(--texto-mutado);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-.cta h2 {
-    font-size: 32px;
-}
+        /* GRID DE BENEFÍCIOS / CARDS */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
 
-.footer {
-    padding: 20px;
-    text-align: center;
-    font-size: 12px;
-    color: #94a3b8;
-}
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--borda-suave);
+            padding: 32px;
+            border-radius: 12px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
 
-</style>
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
 
+        .card-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--texto-mutado);
+            font-size: 15px;
+        }
+
+        /* MATRIZ DE REDES SOCIAIS (INFORMAÇÃO E QUEBRA DE OBJEÇÃO) */
+        .split-networks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 32px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 500px) {
+            .split-networks { grid-template-columns: 1fr; }
+        }
+
+        .net-box {
+            background: linear-gradient(180deg, #131c2e 0%, #0f172a 100%);
+            border: 1px solid var(--borda-suave);
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .net-box.linkedin-box {
+            border-left: 4px solid var(--cor-secundaria);
+        }
+
+        .net-box.meta-box {
+            border-left: 4px solid #e1306c;
+        }
+
+        .net-badge {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .net-box h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .net-box ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .net-box ul li {
+            color: var(--texto-mutado);
+            margin-bottom: 10px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .net-box ul li::before {
+            content: "✓";
+            color: var(--cor-primaria);
+            font-weight: bold;
+        }
+
+        /* PRICING SECTION */
+        .pricing-section {
+            background-color: rgba(255,255,255,0.01);
+            border-top: 1px solid var(--borda-suave);
+            border-bottom: 1px solid var(--borda-suave);
+        }
+
+        .pricing-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .price-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--borda-suave);
+            border-radius: 16px;
+            padding: 40px;
+            width: 350px;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--cor-primaria);
+            transform: scale(1.03);
+        }
+
+        .price-card.featured .popular-tag {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--cor-primaria);
+            color: #052e16;
+            padding: 4px 16px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .price-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .price-card .price {
+            font-size: 36px;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+
+        .price-card .price span {
+            font-size: 16px;
+            color: var(--texto-mutado);
+            font-weight: 400;
+        }
+
+        /* BANNER DE TREINAMENTO ADICIONAL */
+        .training-banner {
+            background: linear-gradient(90deg, rgba(37,99,235,0.15) 0%, rgba(15,23,42,0) 100%);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+            text-align: left;
+        }
+
+        .training-text h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .training-text p {
+            color: var(--texto-mutado);
+            font-size: 15px;
+            max-width: 700px;
+        }
+
+        /* CTA FINAL */
+        .cta-final {
+            padding: 100px 0;
+            text-align: center;
+            background: radial-gradient(circle at bottom, rgba(34, 197, 94, 0.08) 0%, transparent 50%);
+        }
+
+        .cta-final h2 {
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        .cta-final p {
+            color: var(--texto-mutado);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--borda-suave);
+            text-align: center;
+            font-size: 14px;
+            color: var(--texto-mutado);
+        }
+
+        /* RESPONSIVIDADE ADICIONAL */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p.subtitle { font-size: 16px; }
+            .section-title h2 { font-size: 26px; }
+            .cta-final h2 { font-size: 30px; }
+            .training-banner { text-align: center; justify-content: center; }
+            .price-card.featured { transform: none; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- HERO -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">CoreGov <span>Social AI</span></div>
+            <a href="https://app.coregov.com.br" class="btn btn-secondary" style="padding: 8px 20px; font-size: 14px;">Acessar Painel</a>
+        </div>
+    </header>
 
-<div class="hero">
+    <section class="hero">
+        <div class="container">
+            <div class="badge">✨ Nova Era da Automação Corporativa</div>
+            <h1>Multiplique sua Presença Digital sem gastar horas do seu dia</h1>
+            <p class="subtitle">Nossa Inteligência Artificial cria posts premium completos (texto e imagem) e gerencia suas redes de forma inteligente e estratégica.</p>
+            
+            <div class="cta-group">
+                <a href="https://app.coregov.com.br" class="btn btn-primary">Começar Agora Grátis</a>
+                <a href="#como-funciona" class="btn btn-secondary">Conhecer Recursos</a>
+            </div>
+        </div>
+    </section>
 
-<h1>
-🚀 Automatize suas redes sociais com IA
-</h1>
+    <section id="como-funciona" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>O que o Social AI faz por você</h2>
+                <p>A união perfeita entre copy profissional, inteligência visual e agendamento prático.</p>
+            </div>
 
-<p>
-Crie posts, legendas, hashtags e agende automaticamente conteúdos para Instagram (100% de criação de conteúdo para baixar e publicar manual) e LinkedIn automação 100% pelo nosso app, sem perder tempo.
-</p>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🧠</div>
+                    <h3>Engine de IA Copilot</h3>
+                    <p>Esqueça o bloqueio criativo. Gere copys de alta conversão, hashtags magnéticas e ideias de imagens específicas para o seu nicho corporativo.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📅</div>
+                    <h3>Calendário Preditivo</h3>
+                    <p>Agende e organize 30 dias de conteúdo em blocos rápidos de produção. Ganhe semanas de tempo livre focando no que realmente importa: seu negócio.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Variações sob Demanda</h3>
+                    <p>Nosso motor processa e adapta mídias do banco premium dinamicamente para entregar designs customizados e exclusivos para sua marca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p>
-Oferecemos Treinamento de 01 hora para que possa automatizar o conteúdo gerado na Plataforma Meta Bussines. Maiores informações e valores entre em contato!
-</p>
-    
+    <section class="section-padding" style="background-color: rgba(255,255,255,0.01);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Arquitetura sob medida para cada Rede</h2>
+                <p>Transparência total sobre como atuamos para garantir a melhor performance nas suas páginas.</p>
+            </div>
 
-<a href="https://app.coregov.com.br" class="btn primary">
-Quero acessar o sistema
-</a>
+            <div class="split-networks">
+                <div class="net-box linkedin-box">
+                    <div class="net-badge" style="background-color: rgba(37,99,235,0.1); color: var(--cor-secundaria);">100% Autônomo</div>
+                    <h3>🌐 LinkedIn Automation</h3>
+                    <p>Integração direta e transparente com a rede profissional.</p>
+                    <ul>
+                        <li>Geração inteligente focada no ecossistema B2B.</li>
+                        <li>Agendamento e postagem automática direta pelo nosso app.</li>
+                        <li>Zero necessidade de cliques manuais após a programação.</li>
+                    </ul>
+                </div>
 
-</div>
+                <div class="net-box meta-box">
+                    <div class="net-badge" style="background-color: rgba(225,48,108,0.1); color: #e1306c;">High Performance</div>
+                    <h3>📸 Instagram & Meta Content</h3>
+                    <p>Geração em alta velocidade otimizada para o algoritmo visual.</p>
+                    <ul>
+                        <li>Geração instantânea de artes, carroséis e legendas prontas.</li>
+                        <li>Download rápido para postagem via Meta Business Suite.</li>
+                        <li>Proteção completa da integridade e segurança da sua conta Meta.</li>
+                    </ul>
+                </div>
+            </div>
 
-<!-- BENEFÍCIOS -->
+            <div class="training-banner">
+                <div class="training-text">
+                    <h4>💼 Precisa extrair o máximo do Meta Business Suite?</h4>
+                    <p>Oferecemos uma consultoria/treinamento exclusivo de 01 hora focado em configurar o ecossistema oficial da Meta para turbinar e automatizar a esteira de conteúdo baixada da nossa IA.</p>
+                </div>
+                <a href="https://wa.me/5518991888698" target="_blank" class="btn btn-secondary" style="border-color: rgba(37,99,235,0.4); color: #cbd5e1;">Consultar Valores</a>
+            </div>
+        </div>
+    </section>
 
-<div class="section">
+    <section class="section-padding pricing-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Planos Simples e Transparentes</h2>
+                <p>Escolha a melhor opção para o seu momento e mude o patamar do seu marketing corporativo.</p>
+            </div>
 
-<h2>
-💡 O que o Social AI faz por você
-</h2>
+            <div class="pricing-wrapper">
+                <div class="price-card">
+                    <h3>Plano Inicial</h3>
+                    <p style="color: var(--texto-mutado); font-size: 14px;">Para quem quer validar o sistema.</p>
+                    <div class="price">R$ 0<span>/mês</span></div>
+                    <hr style="border: 0; border-top: 1px solid var(--borda-suave); margin-bottom: 20px;">
+                    <p style="font-size: 14px; margin-bottom: 30px; color: var(--texto-mutado);">Acesso a créditos de teste gratuitos para conhecer o motor e gerar seus primeiros posts profissionais.</p>
+                    <a href="https://app.coregov.com.br" class="btn btn-secondary" style="width: 100%;">Começar Grátis</a>
+                </div>
 
-<div class="cards">
+                <div class="price-card featured">
+                    <div class="popular-tag">Melhor Escolha</div>
+                    <h3>Plano Profissional</h3>
+                    <p style="color: #65a30d; font-size: 14px; font-weight: 600;">Gerações Expandidas + Agendamento</p>
+                    <div class="price">R$ 49,90<span>/mês</span></div>
+                    <hr style="border: 0; border-top: 1px solid var(--borda-suave); margin-bottom: 20px;">
+                    <p style="font-size: 14px; margin-bottom: 30px; color: #cbd5e1;">Desbloqueie o volume ideal para gerenciar suas marcas com esteira de IA ativa e agendamento automático direta no LinkedIn.</p>
+                    <a href="https://app.coregov.com.br" class="btn btn-primary" style="width: 100%;">Assinar Plano Pro</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<h3>🤖 IA de Conteúdo</h3>
-<p>Cria posts completos com copy, hashtags e ideias automaticamente.</p>
-</div>
+    <section class="cta-final">
+        <div class="container">
+            <h2>Pare de gastar horas preciosas do seu dia</h2>
+            <p>Ative seu piloto automático de marketing corporativo agora mesmo e veja a mágica acontecer na primeira publicação.</p>
+            <div class="cta-group">
+                <a href="https://app.coregov.com.br" class="btn btn-primary">Acessar o Social AI Instantaneamente</a>
+                <a href="https://wa.me/5518991888698" target="_blank" class="btn btn-whatsapp">💬 Falar com Suporte no WhatsApp</a>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<h3>📅 Agendamento Automático</h3>
-<p>Organize 30 dias de conteúdo em poucos minutos.</p>
-</div>
-
-<div class="card">
-<h3>🚀 Multi Rede</h3>
-<p>Instagram e LinkedIn com automação inteligente.</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- PROBLEMA -->
-
-<div class="section">
-
-<h2>
-⛔ Você ainda perde tempo criando posts?
-</h2>
-
-<p style="color:#cbd5e1; max-width:700px; margin:auto;">
-Empresas e profissionais gastam horas por semana criando conteúdo. O Social AI resolve isso automaticamente com IA.
-</p>
-
-</div>
-
-<!-- CTA -->
-
-<div class="cta">
-
-<h2>
-🔥 Comece a usar agora
-</h2>
-
-<p style="color:#cbd5e1;">
-Entre no sistema e veja como funciona na prática.
-</p>
-
-<a href="https://app.coregov.com.br" class="btn primary">
-Acessar Social AI
-</a>
-
-<br><br>
-
-<a href="https://wa.me/5518991888698" class="btn secondary">
-Falar no WhatsApp
-</a>
-
-</div>
-
-<!-- FOOTER -->
-
-<div class="footer">
-
-© 2026 CoreGov - Social AI | Todos os direitos reservados
-
-</div>
+    <footer>
+        <div class="container">
+            <p>© 2026 CoreGov - Social AI | Todos os direitos reservados.</p>
+            <p style="font-size: 11px; color: #475569; margin-top: 8px;">Desenvolvido com foco em máxima privacidade, conformidade com os termos das redes parceiras e eficiência sistêmica.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
