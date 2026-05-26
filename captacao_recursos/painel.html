@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Consultor | CoreGov</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-principal: #0b0f19;
+            --bg-card: #131c2e;
+            --bg-sidebar: #0e1626;
+            --cor-primaria: #22c55e;
+            --cor-secundaria: #2563eb;
+            --texto-principal: #f8fafc;
+            --texto-mutado: #94a3b8;
+            --borda-suave: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-principal); color: var(--texto-principal); min-height: 100vh; display: flex; }
+
+        /* TELA DE LOGIN CENTRALIZADA */
+        #tela-login {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-principal); display: flex; justify-content: center; align-items: center; z-index: 2000;
+        }
+        .card-login {
+            background: var(--bg-card); border: 1px solid var(--borda-suave);
+            padding: 40px; border-radius: 16px; width: 100%; max-width: 420px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .card-login h3 { font-size: 24px; margin-bottom: 24px; text-align: center; }
+        
+        .campo-grupo { text-align: left; margin-bottom: 20px; }
+        .campo-grupo label { display: block; margin-bottom: 8px; font-size: 14px; color: var(--texto-mutado); }
+        .campo-grupo input, .campo-grupo textarea {
+            width: 100%; padding: 12px; border-radius: 8px; background: #0b0f19;
+            border: 1px solid var(--borda-suave); color: #fff; font-size: 15px; outline: none;
+        }
+        .campo-grupo input:focus, .campo-grupo textarea:focus { border-color: var(--cor-primaria); }
+
+        .btn-acao {
+            width: 100%; padding: 14px; border-radius: 8px; font-weight: 700;
+            cursor: pointer; border: none; transition: all 0.2s; background: var(--cor-primaria); color: white;
+        }
+        .btn-acao:hover { background: #16a34a; transform: translateY(-1px); }
+
+        /* ESTRUTURA DO PAINEL PRIVADO */
+        #ambiente-privado { display: none; width: 100%; min-height: 100vh; }
+        
+        .sidebar {
+            width: 280px; background: var(--bg-sidebar); border-right: 1px solid var(--borda-suave);
+            padding: 30px 20px; display: flex; flex-direction: column; position: fixed; height: 100vh;
+        }
+        .sidebar h2 { font-size: 22px; margin-bottom: 5px; }
+        .badge-plano { display: inline-block; font-size: 12px; color: var(--cor-primaria); margin-bottom: 30px; }
+
+        .menu-item {
+            padding: 12px 16px; color: var(--texto-mutado); text-decoration: none;
+            border-radius: 8px; margin-bottom: 8px; display: block; font-weight: 500; cursor: pointer;
+        }
+        .menu-item:hover, .menu-item.ativo { background: rgba(255, 255, 255, 0.03); color: white; }
+        .btn-sair { margin-top: auto; color: #ef4444; text-align: center; border: 1px solid rgba(239, 68, 68, 0.2); }
+        .btn-sair:hover { background: rgba(239, 68, 68, 0.1); }
+
+        .conteudo-principal { margin-left: 280px; padding: 60px; width: calc(100% - 280px); }
+        .modulo-secao { display: none; }
+        .modulo-secao.ativo { display: block; }
+
+        /* ELEMENTOS INTERNOS DOS MÓDULOS */
+        .caixa-info { background: rgba(37, 99, 235, 0.05); border: 1px solid rgba(37, 99, 235, 0.1); padding: 20px; border-radius: 8px; margin-bottom: 25px; }
+        .caixa-alerta { background: rgba(239, 68, 68, 0.08); border-left: 4px solid #ef4444; padding: 20px; border-radius: 4px; margin-top: 20px; }
+        
+        .abas-container { display: flex; gap: 15px; border-bottom: 1px solid var(--borda-suave); margin-bottom: 25px; }
+        .aba { padding: 12px 20px; cursor: pointer; color: var(--texto-mutado); }
+        .aba.ativa { color: var(--cor-primaria); border-bottom: 2px solid var(--cor-primaria); font-weight: 600; }
+        .aba-painel { display: none; }
+        .aba-painel.ativa { display: block; }
+
+        .btn-whatsapp-html {
+            display: block; width: 100%; background: #128c7e; color: white; text-align: center;
+            padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="tela-login">
+        <div class="card-login">
+            <h3>🔑 Acesso ao Painel</h3>
+            <div class="campo-grupo">
+                <label>Usuário</label>
+                <input type="text" id="input-usuario" placeholder="Nome do consultor">
+            </div>
+            <div class="campo-grupo">
+                <label>Senha</label>
+                <input type="password" id="input-senha" placeholder="••••••••">
+            </div>
+            <button class="btn-acao" onclick="executarLoginBackend()">Entrar no Painel</button>
+        </div>
+    </div>
+
+    <div id="ambiente-privado">
+        <aside class="sidebar">
+            <h2>🛰️ CoreGov</h2>
+            <div class="badge-plano">Consultor: <span id="txt-nome-user">...</span> (<span id="txt-plano">...</span>)</div>
+            <nav>
+                <div class="menu-item ativo" onclick="mudarModulo('mod-inicio', this)">🏠 Início</div>
+                <div class="menu-item" onclick="mudarModulo('mod-revisor', this)">📜 Revisor de Estatuto</div>
+                <div class="menu-item" onclick="mudarModulo('mod-clientes', this)">💼 Gestão de Clientes</div>
+            </nav>
+            <div class="menu-item btn-sair" onclick="logout()">🚪 Sair</div>
+        </aside>
+
+        <main class="conteudo-principal">
+            <section id="mod-inicio" class="modulo-secao ativo">
+                <h1>Painel Operacional Ativo</h1><br>
+                <div class="caixa-info">Selecione uma das ferramentas de inteligência no menu esquerdo para iniciar a operação técnica.</div>
+            </section>
+
+            <section id="mod-revisor" class="modulo-secao">
+                <h2>📜 Revisor de Estatuto</h2>
+                <p>Auditoria automatizada de conformidade jurídica para OSCs e ONGs (TransfereGov)</p>
+                <div class="campo-grupo">
+                    <textarea id="txt-estatuto" style="height: 250px;" placeholder="Cole aqui as cláusulas do estatuto..."></textarea>
+                </div>
+                <button class="btn-acao" onclick="executarAuditoriaHTML()">🚀 Rodar Auditoria de Elegibilidade</button>
+
+                <div id="resultado-auditoria" style="display:none; margin-top: 30px;">
+                    <h3>📊 Diagnóstico de Elegibilidade - TransfereGov</h3>
+                    <div class="caixa-alerta">
+                        <strong>🚨 STATUS DA ORGANIZAÇÃO: INAPTA PARA RECEBIMENTO DE EMENDAS</strong><br>
+                        Termos obrigatórios ausentes. É necessário emitir emendas de adequação técnica e ata corretiva.
+                    </div>
+                    <a href="#" id="link-whats" target="_blank" class="btn-whatsapp-html">💬 Solicitar Minuta de Adequação</a>
+                </div>
+            </section>
+
+            <section id="mod-clientes" class="modulo-secao">
+                <h2>💼 Gestão de Clientes e Relatórios</h2><br>
+                <div id="bloqueio-basico" style="display: none;" class="caixa-alerta">⚠️ Módulo disponível apenas no Plano Premium.</div>
+                <div id="conteudo-premium">
+                    <div class="abas-container">
+                        <div class="aba ativa" onclick="mudarAba('aba-carteira', this)">👥 Minha Carteira</div>
+                        <div class="aba" onclick="mudarAba('aba-cadastro', this)">➕ Novo Cadastro</div>
+                    </div>
+                    <div id="aba-carteira" class="aba-painel ativa">
+                        <div class="caixa-info">Lista de entidades ativas no banco de dados.</div>
+                    </div>
+                    <div id="aba-cadastro" class="aba-painel">
+                        <div class="campo-grupo"><label>Nome da Instituição</label><input type="text"></div>
+                        <button class="btn-acao" style="width:auto; padding: 12px 30px;">Salvar Registro</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        let usuarioPlano = "BÁSICO";
+
+        async function executarLoginBackend() {
+            const u = document.getElementById('input-usuario').value;
+            const p = document.getElementById('input-senha').value;
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ usuario: u, senha: p })
+                });
+                
+                const dados = await response.json();
+                
+                if (dados.sucesso) {
+                    usuarioPlano = dados.plano;
+                    document.getElementById('tela-login').style.display = 'none';
+                    document.getElementById('ambiente-privado').style.display = 'flex';
+                    document.getElementById('txt-nome-user').innerText = u.toUpperCase();
+                    document.getElementById('txt-plano').innerText = usuarioPlano;
+                    
+                    if(usuarioPlano === 'BÁSICO') {
+                        document.getElementById('conteudo-premium').style.display = 'none';
+                        document.getElementById('bloqueio-basico').style.display = 'block';
+                    } else {
+                        document.getElementById('conteudo-premium').style.display = 'block';
+                        document.getElementById('bloqueio-basico').style.display = 'none';
+                    }
+                } else {
+                    alert("Credenciais incorretas ou licença inativa.");
+                }
+            } catch (error) {
+                alert("Erro ao conectar com o serviço de autenticação Python.");
+            }
+        }
+
+        function mudarModulo(idModulo, elemento) {
+            document.querySelectorAll('.modulo-secao').forEach(sec => sec.classList.remove('ativo'));
+            document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('ativo'));
+            document.getElementById(idModulo).classList.add('ativo');
+            elemento.classList.add('ativo');
+        }
+
+        function mudarAba(idAba, elemento) {
+            document.querySelectorAll('.aba-painel').forEach(p => p.classList.remove('ativa'));
+            document.querySelectorAll('.aba').forEach(a => a.classList.remove('ativa'));
+            document.getElementById(idAba).classList.add('ativa');
+            elemento.classList.add('ativa');
+        }
+
+        function executarAuditoriaHTML() {
+            const texto = document.getElementById('txt-estatuto').value;
+            if(!texto.trim()) return alert("Insira o texto para auditar.");
+            const msg = "Olá! Concluí a validação do Estatuto no CoreGov e verifiquei inconformidades com o TransfereGov. Preciso de suporte.";
+            document.getElementById('link-whats').href = `https://wa.me/5518991511523?text=${encodeURIComponent(msg)}`;
+            document.getElementById('resultado-auditoria').style.display = 'block';
+        }
+
+        function logout() { location.reload(); }
+    </script>
+</body>
+</html>
