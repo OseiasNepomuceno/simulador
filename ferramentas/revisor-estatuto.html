@@ -1,238 +1,421 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Revisor de Estatuto PRO | COREGOV</title>
+    <title>Revisor de Estatuto PRO | COREGOV</title>
 
-<link rel="icon" href="../favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 
-<style>
-:root {
-  --verde:#00FF9F;
-  --azul-escuro:#0B1220;
-  --azul-medio:#111A2E;
-  --branco:#fff;
-  --cinza:#ccc;
-}
+    <style>
+        :root {
+            --bg-principal: #0b0f19;
+            --bg-card: #131c2e;
+            --cor-primaria: #22c55e; /* Verde Sucesso */
+            --cor-secundaria: #2563eb; /* Azul Conexão */
+            --texto-principal: #f8fafc;
+            --texto-mutado: #94a3b8;
+            --borda-suave: rgba(255, 255, 255, 0.05);
+            
+            /* Cores de Alerta do Diagnóstico */
+            --danger: #ef4444;
+            --alert: #f59e0b;
+            --ok: #22c55e;
+        }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-<script src="../supabase.js"></script>
-body{
-  background:var(--azul-escuro);
-  color:var(--branco);
-  padding-top:90px;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-header{
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:15px 10%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(11,18,32,0.6);
-}
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            padding-top: 100px;
+            line-height: 1.6;
+            min-height: 100vh;
+            background: radial-gradient(circle at top, rgba(37, 99, 235, 0.08) 0%, transparent 50%);
+        }
 
-.logo-icon{height:50px;}
+        /* HEADER / NAV */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--borda-suave);
+            z-index: 1000;
+        }
 
-nav a{
-  margin:0 10px;
-  color:var(--cinza);
-  text-decoration:none;
-}
+        .logo-icon {
+            height: 40px;
+        }
 
-nav a:hover{color:var(--verde);}
+        nav a {
+            margin: 0 15px;
+            color: var(--texto-mutado);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
 
-.container{
-  max-width:700px;
-  margin:auto;
-  padding:40px 20px;
-  text-align:center;
-}
+        nav a:hover {
+            color: var(--cor-primaria);
+        }
 
-.card{
-  background:var(--azul-medio);
-  padding:25px;
-  border-radius:12px;
-  margin-top:20px;
-}
+        /* CONTAINER GLOBAL */
+        .container {
+            max-width: 750px;
+            margin: auto;
+            padding: 40px 24px;
+            text-align: center;
+        }
 
-input{
-  width:100%;
-  padding:12px;
-  border-radius:8px;
-  border:none;
-  margin:8px 0;
-}
+        .container h2 {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.btn{
-  background:var(--verde);
-  color:#000;
-  padding:12px;
-  border:none;
-  border-radius:8px;
-  width:100%;
-  font-weight:bold;
-  cursor:pointer;
-  margin-top:10px;
-}
+        .subtitle {
+            color: var(--texto-mutado);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
 
-.result{
-  margin-top:20px;
-  padding:20px;
-  border-radius:10px;
-  background:#1d3557;
-  text-align:left;
-}
+        /* CARD DE OPERAÇÃO */
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--borda-suave);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
 
-.alert{color:#ffcc00;}
-.danger{color:#ff4d4d;}
-.ok{color:#00FF9F;}
-</style>
+        /* INPUTS */
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(11, 15, 25, 0.5);
+            color: var(--texto-principal);
+            font-size: 15px;
+            margin-bottom: 24px;
+            transition: all 0.2s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--cor-secundaria);
+            background: rgba(11, 15, 25, 0.8);
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(11, 15, 25, 0.3);
+            color: var(--texto-mutado);
+            font-size: 14px;
+            margin-bottom: 24px;
+            cursor: pointer;
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            color: var(--texto-principal);
+            margin-right: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        input[type="file"]::-webkit-file-upload-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* BOTÕES */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--cor-primaria);
+            color: #052e16;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(34, 197, 94, 0.3);
+        }
+
+        .btn-whatsapp {
+            background-color: #128c7e;
+            color: white;
+            box-shadow: 0 4px 20px rgba(18, 140, 126, 0.2);
+            margin-top: 16px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #075e54;
+            box-shadow: 0 6px 24px rgba(18, 140, 126, 0.3);
+        }
+
+        /* RESULTADO / DIAGNÓSTICO */
+        .status-loading {
+            text-align: center;
+            padding: 20px;
+            color: var(--texto-mutated);
+            font-weight: 600;
+        }
+
+        .result {
+            margin-top: 32px;
+            padding: 32px;
+            border-radius: 12px;
+            background: linear-gradient(180deg, #131c2e 0%, #0f172a 100%);
+            border: 1px solid var(--borda-suave);
+        }
+
+        .result h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--borda-suave);
+            padding-bottom: 12px;
+            color: var(--texto-principal);
+        }
+
+        .item-group {
+            margin-bottom: 20px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .item-list {
+            list-style: none;
+            padding-left: 4px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .item-list li {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        .danger { color: var(--danger); }
+        .alert { color: var(--alert); }
+        .ok { color: var(--ok); }
+
+        .recommendation {
+            background: rgba(37, 99, 235, 0.05);
+            border-left: 3px solid var(--cor-secundaria);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+            color: #cbd5e1;
+            margin-top: 24px;
+        }
+
+        .recommendation strong {
+            color: var(--texto-principal);
+            display: block;
+            margin-bottom: 4px;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-  <img src="../logo-icon.png" class="logo-icon">
-  
- <nav>
-  <a href="../index.html">Início</a>
-  <a href="../servicos.html">Serviços</a>
-  <a href="../simulador.html">Simulador</a>
-</nav>
-
-  
+    <img src="../logo-icon.png" class="logo-icon" alt="CoreGov">
+    <nav>
+        <a href="../index.html">Início</a>
+        <a href="../servicos.html">Serviços</a>
+        <a href="../simulador.html">Simulador</a>
+    </nav>
 </header>
 
 <div class="container">
 
-<h2>📜 Revisor de Estatuto PRO</h2>
-<p style="color:#ccc;">Análise jurídica automatizada com inteligência estratégica</p>
+    <h2>📜 Revisor de Estatuto PRO</h2>
+    <p class="subtitle">Análise jurídica automatizada com inteligência estratégica</p>
 
-<div class="card">
+    <div class="card">
+        <label class="form-label" for="nome">Nome do Solicitante</label>
+        <input type="text" id="nome" placeholder="Digite seu nome completo">
 
-<input type="text" id="nome" placeholder="Seu nome">
-<input type="file" id="arquivo" accept=".pdf">
+        <label class="form-label" for="arquivo">Documento em PDF</label>
+        <input type="file" id="arquivo" accept=".pdf">
 
-<button class="btn" onclick="analisarPDF()">🚀 Analisar Estatuto</button>
+        <button class="btn" onclick="analisarPDF()">🚀 Analisar Estatuto</button>
 
-<div id="resultado"></div>
-
-</div>
+        <div id="resultado"></div>
+    </div>
 
 </div>
 
 <script>
-
 async function analisarPDF(){
+    let nome = document.getElementById("nome").value;
+    let file = document.getElementById("arquivo").files[0];
 
-let nome = document.getElementById("nome").value;
-let file = document.getElementById("arquivo").files[0];
+    if(!nome || !file){
+        alert("Por favor, preencha o seu nome e selecione um arquivo PDF.");
+        return;
+    }
 
-if(!nome || !file){
-  alert("Preencha os campos");
-  return;
-}
+    document.getElementById("resultado").innerHTML = "<div class='status-loading'>⏳ Processando e extraindo dados do documento...</div>";
 
-document.getElementById("resultado").innerHTML = "⏳ Lendo documento...";
+    const reader = new FileReader();
 
-const reader = new FileReader();
+    reader.onload = async function(){
+        try {
+            const typedarray = new Uint8Array(this.result);
+            const pdf = await pdfjsLib.getDocument(typedarray).promise;
 
-reader.onload = async function(){
+            let textoCompleto = "";
 
-  const typedarray = new Uint8Array(this.result);
-  const pdf = await pdfjsLib.getDocument(typedarray).promise;
+            for(let i = 1; i <= pdf.numPages; i++){
+                const page = await pdf.getPage(i);
+                const content = await page.getTextContent();
+                const strings = content.items.map(item => item.str);
+                textoCompleto += strings.join(" ") + " ";
+            }
 
-  let textoCompleto = "";
+            gerarAnalise(nome, textoCompleto.toUpperCase());
+        } catch (error) {
+            document.getElementById("resultado").innerHTML = "<div class='status-loading danger'>❌ Erro ao ler o arquivo PDF. Verifique se o documento não está corrompido.</div>";
+        }
+    };
 
-  for(let i = 1; i <= pdf.numPages; i++){
-    const page = await pdf.getPage(i);
-    const content = await page.getTextContent();
-    const strings = content.items.map(item => item.str);
-    textoCompleto += strings.join(" ") + " ";
-  }
-
-  gerarAnalise(nome, textoCompleto);
-};
-
-reader.readAsArrayBuffer(file);
+    reader.readAsArrayBuffer(file);
 }
 
 /* 🧠 ANÁLISE INTELIGENTE */
 function gerarAnalise(nome, texto){
+    let riscos = [];
+    let alertas = [];
+    let pontos_ok = [];
 
-let riscos = [];
-let alertas = [];
-let pontos_ok = [];
+    /* REGRAS DE VALIDAÇÃO */
+    if(!texto.includes("ADMINISTRADOR") && !texto.includes("ADMINISTRAÇÃO")){
+        riscos.push("Ausência de cláusula clara de administração e representação legal.");
+    }
 
-/* REGRAS SIMULADAS (base jurídica real) */
+    if(!texto.includes("CAPITAL SOCIAL") && !texto.includes("PATRIMÔNIO SOCIAL")){
+        alertas.push("Capital social ou definição do patrimônio não identificado claramente.");
+    }
 
-if(!texto.includes("ADMINISTRADOR")){
-  riscos.push("Ausência de cláusula clara de administração");
-}
+    if(texto.includes("LUCRO") || texto.includes("DIVIDENDOS") || texto.includes("SUPERÁVIT")){
+        pontos_ok.push("Cláusula de destinação de lucros/superávit identificada.");
+    }
 
-if(!texto.includes("CAPITAL SOCIAL")){
-  alertas.push("Capital social não identificado claramente");
-}
+    if(!texto.includes("RESPONSABILIDADE")){
+        riscos.push("Falta de definição expressa sobre a responsabilidade dos sócios/associados.");
+    }
 
-if(texto.includes("LUCRO")){
-  pontos_ok.push("Cláusula de distribuição de lucro encontrada");
-}
+    /* CONSTRUÇÃO DO HTML ATUALIZADO */
+    let html = `
+    <div class="result">
+        <h3>📊 Diagnóstico Estratégico</h3>
 
-if(!texto.includes("RESPONSABILIDADE")){
-  riscos.push("Falta de definição de responsabilidade dos sócios");
-}
+        <div class="item-group">
+            <span class="item-title danger">⚠️ Riscos Críticos:</span>
+            <ul class="item-list">
+                ${riscos.length ? riscos.map(r => "<li>• " + r + "</li>").join("") : "<li>✔️ Nenhum risco crítico estrutural foi identificado.</li>"}
+            </ul>
+        </div>
 
-/* RESULTADO */
-let html = `
-<div class="result">
+        <div class="item-group">
+            <span class="item-title alert">⚠️ Pontos de Atenção:</span>
+            <ul class="item-list">
+                ${alertas.length ? alertas.map(a => "<li>• " + a + "</li>").join("") : "<li>✔️ Nenhum alerta de conformidade pendente.</li>"}
+            </ul>
+        </div>
 
-<h3>📊 Diagnóstico Estratégico</h3><br>
+        <div class="item-group">
+            <span class="item-title ok">✔️ Pontos Positivos:</span>
+            <ul class="item-list">
+                ${pontos_ok.length ? pontos_ok.map(p => "<li>• " + p + "</li>").join("") : "<li>⚠️ Nenhuma cláusula facilitadora padrão localizada.</li>"}
+            </ul>
+        </div>
 
-<strong class="danger">⚠ Riscos encontrados:</strong><br>
-${riscos.length ? riscos.map(r => "• " + r).join("<br>") : "Nenhum risco crítico identificado"}<br><br>
+        <div class="recommendation">
+            <strong>📌 Recomendação Estratégica:</strong>
+            Revisar pontos de risco apontados junto a um especialista para evitar contingências societárias, fiscais ou administrativas.
+        </div>
+    </div>
 
-<strong class="alert">⚠ Pontos de atenção:</strong><br>
-${alertas.length ? alertas.map(a => "• " + a).join("<br>") : "Nenhum alerta relevante"}<br><br>
+    <button class="btn btn-whatsapp" onclick="whats('${nome}')">
+        💬 Solicitar Revisão com Especialista no WhatsApp
+    </button>
+    `;
 
-<strong class="ok">✔ Pontos positivos:</strong><br>
-${pontos_ok.length ? pontos_ok.map(p => "• " + p).join("<br>") : "Nenhum ponto identificado"}<br><br>
-
-<hr><br>
-
-<strong>📌 Recomendação:</strong><br>
-Revisar cláusulas jurídicas para evitar riscos fiscais e societários.
-
-</div>
-
-<button class="btn" onclick="whats('${nome}')">
-  Falar com especialista
-</button>
-`;
-
-document.getElementById("resultado").innerHTML = html;
+    document.getElementById("resultado").innerHTML = html;
 }
 
 function whats(nome){
-let msg = encodeURIComponent(`Olá, me chamo ${nome}. Usei o Revisor PRO e quero uma análise completa do meu estatuto.`);
-window.open(`https://wa.me/5518991511523?text=${msg}`, "_blank");
+    let msg = encodeURIComponent(`Olá, me chamo ${nome}. Utilizei o Revisor de Estatuto PRO e gostaria de passar para uma análise avançada das cláusulas do meu documento.`);
+    window.open(`https://wa.me/5518991511523?text=${msg}`, "_blank");
 }
-
 </script>
 
-<!-- SCRIPTS (APENAS UMA VEZ) -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="../supabase.js"></script>
 <script src="../login.js"></script>
 
-  
 </body>
 </html>
