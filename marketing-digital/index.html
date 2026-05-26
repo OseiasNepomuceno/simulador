@@ -282,6 +282,62 @@
             font-weight: bold;
         }
 
+        /* 🔥 SEÇÃO DE PROVA SOCIAL (DEPOIMENTOS) */
+        .feedback-section {
+            padding: 80px 0;
+            background: radial-gradient(circle at center, rgba(34, 197, 94, 0.04) 0%, transparent 70%);
+            border-top: 1px solid var(--borda-suave);
+        }
+
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .feedback-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--borda-suave);
+            padding: 32px;
+            border-radius: 16px;
+            position: relative;
+            transition: .3s ease;
+        }
+
+        .feedback-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(34, 197, 94, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .feedback-card p {
+            font-size: 15px;
+            color: #e2e8f0;
+            font-style: italic;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .feedback-card .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feedback-card .user-meta h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--texto-principal);
+        }
+
+        .feedback-card .user-meta span {
+            font-size: 12px;
+            color: var(--cor-primaria);
+            display: block;
+            margin-top: 2px;
+        }
+
         /* PRICING SECTION */
         .pricing-section {
             background-color: rgba(255,255,255,0.01);
@@ -499,6 +555,47 @@
         </div>
     </section>
 
+    <section class="feedback-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Validado por quem constrói autoridade digital</h2>
+                <p>Veja como empreendedores e marcas corporativas destravam o marketing usando a inteligência do Social AI.</p>
+            </div>
+
+            <div class="feedback-grid">
+                <div class="feedback-card">
+                    <p>"Antes eu passava o final de semana inteiro criando posts para o LinkedIn. Ativei a IA da CoreGov e montei um cronograma estratégico completo de 30 dias em minutos."</p>
+                    <div class="user-info">
+                        <div class="user-meta">
+                            <h4>Gustavo B.</h4>
+                            <span>Consultor de Automação B2B</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feedback-card">
+                    <p>"Excelente para quebrar o bloqueio criativo. O motor de copy entende perfeitamente a linguagem corporativa e as hashtags magnéticas de cada nicho."</p>
+                    <div class="user-info">
+                        <div class="user-meta">
+                            <h4>Camila N.</h4>
+                            <span>Especialista em Growth Marketing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feedback-card">
+                    <p>"Comecei testando os créditos gratuitos e me surpreendi. A esteira integrada com o LinkedIn funciona em segundo plano sem falhas. Vale cada centavo do Pro."</p>
+                    <div class="user-info">
+                        <div class="user-meta">
+                            <h4>Felipe D.</h4>
+                            <span>Fundador & CEO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section-padding pricing-section">
         <div class="container">
             <div class="section-title">
@@ -522,7 +619,7 @@
                     <p style="color: #65a30d; font-size: 14px; font-weight: 600;">Gerações Expandidas + Agendamento</p>
                     <div class="price">R$ 49,90<span>/mês</span></div>
                     <hr style="border: 0; border-top: 1px solid var(--borda-suave); margin-bottom: 20px;">
-                    <p style="font-size: 14px; margin-bottom: 30px; color: #cbd5e1;">Desbloqueie o volume ideal para gerenciar suas marcas com esteira de IA ativa e agendamento automático direta no LinkedIn.</p>
+                    <p style="font-size: 14px; margin-bottom: 30px; color: #cbd5e1;">Desbloqueie o volume ideal para gerenciar suas marcas com esteira de IA active e agendamento automático direta no LinkedIn.</p>
                     <a href="https://app.coregov.com.br" class="btn btn-primary" style="width: 100%;">Assinar Plano Pro</a>
                 </div>
             </div>
