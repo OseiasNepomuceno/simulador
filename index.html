@@ -16,6 +16,7 @@
   --verde:#00FF9F;
   --azul:#0B1220;
   --cinza:#CCCCCC;
+  --bg-card:#111A2E;
 }
 
 * {
@@ -101,6 +102,7 @@ nav a:hover {
 .hero h1 {
   font-size:52px;
   margin-bottom:20px;
+  line-height:1.2;
 }
 
 .hero h1 span {
@@ -130,11 +132,11 @@ nav a:hover {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
-  padding:40px 10%;
+  padding:40px 10% 20px 10%;
 }
 
 .card {
-  background:#111A2E;
+  background:var(--bg-card);
   padding:25px;
   border-radius:16px;
   border:1px solid rgba(255,255,255,0.05);
@@ -149,9 +151,66 @@ nav a:hover {
   box-shadow:0 0 25px rgba(0,255,159,0.08);
 }
 
+/* SEÇÃO DE PROVA SOCIAL (DEPOIMENTOS) */
+.testemunhas-section {
+  padding:60px 10% 40px 10%;
+  text-align:center;
+}
+
+.testemunhas-title h2 {
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+.testemunhas-title h2 span {
+  color:var(--verde);
+}
+
+.testemunhas-title p {
+  color:var(--cinza);
+  font-size:16px;
+  margin-bottom:40px;
+}
+
+.testemunhas-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:24px;
+  text-align:left;
+}
+
+.testemunha-card {
+  background:var(--bg-card);
+  border:1px solid rgba(255,255,255,0.05);
+  padding:32px;
+  border-radius:16px;
+  border-top:3px solid var(--verde);
+  transition:.3s;
+}
+
+.testemunha-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.testemunha-card p {
+  font-style:italic;
+  color:#f8fafc;
+  margin-bottom:20px;
+  font-size:15px;
+  line-height:1.6;
+}
+
+.testemunha-card span {
+  font-weight:700;
+  font-size:14px;
+  color:var(--verde);
+  display:block;
+}
+
 /* RECRUTAMENTO */
 .rh-section{
-  padding:80px 10%;
+  padding:60px 10% 80px 10%;
 }
 
 .rh-box{
@@ -230,11 +289,15 @@ nav{
 }
 
 .hero h1{
-  font-size:38px;
+  font-size:36px;
 }
 
 .rh-box h2{
   font-size:32px;
+}
+
+.testemunhas-title h2 {
+  font-size:26px;
 }
 
 }
@@ -267,7 +330,7 @@ nav{
 
 <section class="hero">
   <h1>
-    Gestão inteligente para sua 
+    Gestão inteligente para sua <br>
     <span>empresa crescer</span>
   </h1>
 
@@ -276,7 +339,6 @@ nav{
     desenvolver equipes e aumentar resultados.
   </p>
 
-  <!-- IMAGEM INSERIDA -->
   <img src="/coregov_clientes.png" alt="Clientes COREGOV" class="hero-img">
 
 </section>
@@ -288,7 +350,30 @@ nav{
   <div class="card">👥 Recrutamento & Seleção</div>
 </section>
 
-<!-- RECRUTAMENTO -->
+<section class="testemunhas-section">
+  <div class="testemunhas-title">
+    <h2>Quem confia na <span>COREGOV</span> aprova</h2>
+    <p>Resultados reais de quem transformou a eficiência administrativa e acelerou seus resultados corporativos.</p>
+  </div>
+
+  <div class="testemunhas-grid">
+    <div class="testemunha-card">
+      <p>"Substituímos processos manuais lentos por automação inteligente. O ganho de produtividade foi imediato na nossa operação."</p>
+      <span>— Marcos A., Diretor de Operações</span>
+    </div>
+
+    <div class="testemunha-card">
+      <p>"A inteligência analítica da plataforma mudou nossa forma de gerenciar dados. O que levava dias agora é resolvido em minutos."</p>
+      <span>— Juliana R., Consultora de Gestão</span>
+    </div>
+
+    <div class="testemunha-card">
+      <p>"Uma ferramenta indispensável para quem busca governança digital moderna e processos livres de falhas."</p>
+      <span>— Ricardo M., Gestor de Projetos</span>
+    </div>
+  </div>
+</section>
+
 <section class="rh-section">
 
 <div class="rh-box">
