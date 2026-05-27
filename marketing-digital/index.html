@@ -178,10 +178,10 @@
             margin: 0 auto;
         }
 
-        /* GRID DE BENEFÍCIOS / CARDS */
+        /* GRID DE BENEFÍCIOS / CARDS (Atualizado para suportar 4 colunas de forma limpa) */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 24px;
         }
 
@@ -191,11 +191,24 @@
             padding: 32px;
             border-radius: 12px;
             transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
             transform: translateY(-4px);
             border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        /* Estilo especial destacado para o Card de Afiliados */
+        .card.featured-affiliate:hover {
+            border-color: rgba(34, 197, 94, 0.4);
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.1);
+        }
+
+        .card-content-wrapper {
+            margin-bottom: 20px;
         }
 
         .card-icon {
@@ -214,7 +227,7 @@
             font-size: 15px;
         }
 
-        /* MATRIZ DE REDES SOCIAIS (INFORMAÇÃO E QUEBRA DE OBJEÇÃO) */
+        /* MATRIZ DE REDES SOCIAIS */
         .split-networks {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -282,7 +295,7 @@
             font-weight: bold;
         }
 
-        /* 🔥 SEÇÃO DE PROVA SOCIAL (DEPOIMENTOS) */
+        /* SEÇÃO DE PROVA SOCIAL */
         .feedback-section {
             padding: 80px 0;
             background: radial-gradient(circle at center, rgba(34, 197, 94, 0.04) 0%, transparent 70%);
@@ -496,19 +509,39 @@
 
             <div class="cards-grid">
                 <div class="card">
-                    <div class="card-icon">🧠</div>
-                    <h3>Engine de IA Copilot</h3>
-                    <p>Esqueça o bloqueio criativo. Gere copys de alta conversão, hashtags magnéticas e ideias de imagens específicas para o seu nicho corporativo.</p>
+                    <div class="card-content-wrapper">
+                        <div class="card-icon">🧠</div>
+                        <h3>Engine de IA Copilot</h3>
+                        <p>Esqueça o bloqueio criativo. Gere copys de alta conversão, hashtags magnéticas e ideias de imagens específicas para o seu nicho corporativo.</p>
+                    </div>
                 </div>
+                
                 <div class="card">
-                    <div class="card-icon">📅</div>
-                    <h3>Calendário Preditivo</h3>
-                    <p>Agende e organize 30 dias de conteúdo em blocos rápidos de produção. Ganhe semanas de tempo livre focando no que realmente importa: seu negócio.</p>
+                    <div class="card-content-wrapper">
+                        <div class="card-icon">📅</div>
+                        <h3>Calendário Preditivo</h3>
+                        <p>Agende e organize 30 dias de conteúdo em blocos rápidos de produção. Ganhe semanas de tempo livre focando no que realmente importa: seu negócio.</p>
+                    </div>
                 </div>
+                
                 <div class="card">
-                    <div class="card-icon">⚡</div>
-                    <h3>Variações sob Demanda</h3>
-                    <p>Nosso motor processa e adapta mídias do banco premium dinamicamente para entregar designs customizados e exclusivos para sua marca.</p>
+                    <div class="card-content-wrapper">
+                        <div class="card-icon">⚡</div>
+                        <h3>Variações sob Demanda</h3>
+                        <p>Nosso motor processa e adapta mídias do banco premium dinamicamente para entregar designs customizados e exclusivos para sua marca.</p>
+                    </div>
+                </div>
+
+                <div class="card featured-affiliate">
+                    <div class="card-content-wrapper">
+                        <div class="card-icon">🤝</div>
+                        <h3>Afiliados</h3>
+                        <p>Rentabilize sua audiência e conexões indicando a melhor ferramenta de IA corporativa do mercado. Ganhe comissões recorrentes de forma previsível.</p>
+                    </div>
+                    <div class="card-actions" style="display: flex; flex-direction: column; gap: 10px; margin-top: auto;">
+                        <a href="afiliados.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 16px;">Seja um Afiliado Coregov</a>
+                        <a href="afiliados.html" class="btn btn-secondary" style="font-size: 13px; padding: 10px 16px; border-color: rgba(37, 99, 235, 0.3);">Conhecer Programa</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -564,7 +597,7 @@
 
             <div class="feedback-grid">
                 <div class="feedback-card">
-                    <p>"Antes eu passava o final de semana inteiro criando posts para o LinkedIn. Ativei a IA da CoreGov e montei um cronograma estratégico completo de 30 dias em minutos."</p>
+                    <p>"Antes eu passava o final de semana inteiro criando posts para o LinkedIn. Ativei a IA da CoreGov e montei um cronograma strategic completo de 30 dias em minutos."</p>
                     <div class="user-info">
                         <div class="user-meta">
                             <h4>Gustavo B.</h4>
@@ -619,7 +652,7 @@
                     <p style="color: #65a30d; font-size: 14px; font-weight: 600;">Gerações Expandidas + Agendamento</p>
                     <div class="price">R$ 99,90<span>/mês</span></div>
                     <hr style="border: 0; border-top: 1px solid var(--borda-suave); margin-bottom: 20px;">
-                    <p style="font-size: 14px; margin-bottom: 30px; color: #cbd5e1;">Desbloqueie o volume ideal para gerenciar suas marcas com esteira de IA active e agendamento automático direta no LinkedIn.</p>
+                    <p style="font-size: 14px; margin-bottom: 30px; color: #cbd5e1;">Desbloqueie o volume ideal para gerenciar suas marcas com esteira de IA ativa e agendamento automático direto no LinkedIn.</p>
                     <a href="https://app.coregov.com.br" class="btn btn-primary" style="width: 100%;">Assinar Plano Pro</a>
                 </div>
             </div>
