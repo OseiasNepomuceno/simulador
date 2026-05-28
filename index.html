@@ -91,18 +91,46 @@
             margin: 0 auto 32px auto;
         }
 
+        /* BLOCOS DE BOTÕES */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-group-secondary {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
         /* BOTÕES */
         .btn {
             display: inline-flex;
+            flex-direction: column;
             align-items: center;
-            padding: 12px 28px;
+            justify-content: center;
+            padding: 14px 28px;
             border-radius: 6px;
             font-weight: 700;
             font-size: 15px;
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
+            text-align: center;
         }
+        
+        .btn span {
+            font-size: 11px;
+            font-weight: 400;
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+
         .btn-primary {
             background-color: var(--verde-elegante);
             color: #ffffff;
@@ -112,15 +140,34 @@
             background-color: #1f5f4f;
             transform: translateY(-2px);
         }
+        
         .btn-secondary {
             background-color: transparent;
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            margin-left: 12px;
         }
         .btn-secondary:hover {
             border-color: var(--dourado);
             color: var(--dourado);
+            transform: translateY(-2px);
+        }
+
+        /* Botões de Parcerias (Afiliado / Freelancer) */
+        .btn-partner {
+            background-color: rgba(14, 25, 38, 0.7);
+            color: #f8fafc;
+            border: 1px solid rgba(197, 168, 106, 0.3);
+            font-size: 14px;
+            padding: 10px 22px;
+        }
+        .btn-partner:hover {
+            border-color: var(--dourado);
+            background-color: rgba(197, 168, 106, 0.1);
+            transform: translateY(-2px);
+        }
+        .btn-partner span {
+            color: var(--dourado);
+            font-weight: 600;
         }
 
         /* SERVIÇOS / PILARES */
@@ -186,7 +233,7 @@
     <header>
         <div class="container nav-wrapper">
             <a href="#" class="logo">CORE<span>GOV</span></a>
-            <a href="https://app.coregov.com.br" class="btn btn-secondary" style="padding: 8px 20px; font-size: 14px;">Acessar Painel</a>
+            <a href="https://app.coregov.com.br" class="btn btn-secondary" style="padding: 8px 20px; font-size: 14px; flex-direction: row;">Acessar Painel</a>
         </div>
     </header>
 
@@ -195,9 +242,15 @@
             <div class="tagline">Gestão Inteligente de Dados e Governança</div>
             <h1>Multiplique sua Eficiência sem Desperdiçar Horas do seu Dia</h1>
             <p>Nossa Inteligência Artificial consolida dados complexos, constrói relatórios governamentais premium e monitora oportunidades de forma estratégica e transparente.</p>
-            <div>
-                <a href="#" class="btn btn-primary">Começar Agora Grátis</a>
+            
+            <div class="btn-group">
+                <a href="https://app.coregov.com.br" class="btn btn-primary">Começar Agora Grátis</a>
                 <a href="#" class="btn btn-secondary">Conhecer Recursos</a>
+            </div>
+
+            <div class="btn-group-secondary">
+                <a href="#" class="btn btn-partner">Quero ser Afiliado <span>Ganhe 30% recorrente no Plano Pró</span></a>
+                <a href="#" class="btn btn-partner">Quero ser Freelancer <span>Ganhos de até R$ 6.000,00 mensais</span></a>
             </div>
         </div>
     </section>
