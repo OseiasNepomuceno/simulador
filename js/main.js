@@ -11,6 +11,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Função para abrir o modal
+function abrirModal() {
+    document.getElementById('modalFreelancer').style.display = 'block';
+    // Garante que comece sempre mostrando o formulário
+    document.getElementById('etapaFormulario').style.display = 'block';
+    document.getElementById('etapaSucesso').style.display = 'none';
+}
+
+// Função para fechar o modal
+function fecharModal() {
+    document.getElementById('modalFreelancer').style.display = 'none';
+}
+
+// Fecha o modal se o usuário clicar fora da caixinha preta
+window.onclick = function(event) {
+    let modal = document.getElementById('modalFreelancer');
+    if (event.target == modal) {
+        fecharModal();
+    }
+}
+
+// Função que processa o envio dos dados
+function enviarCadastro(event) {
+    event.preventDefault(); // Impede a página de atualizar
+    
+    // Captura os dados digitados (Útil para salvar depois no banco ou enviar por e-mail)
+    const dados = {
+        nome: document.getElementById('nome').value,
+        whatsapp: document.getElementById('whatsapp').value,
+        email: document.getElementById('email').value,
+        cnpj: document.getElementById('cnpj').value
+    };
+    
+    console.log("Dados do Freelancer capturados com sucesso:", dados);
+    
+    // Transição de telas dentro do modal
+    document.getElementById('etapaFormulario').style.display = 'none';
+    document.getElementById('etapaSucesso').style.display = 'block';
+}
+
   // ===== SUPABASE CLIENT =====
   const supabaseClient = supabase.createClient(
     'https://mztdxodzbwbgtwbelltc.supabase.co',   // URL do projeto
