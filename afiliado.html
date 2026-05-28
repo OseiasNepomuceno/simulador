@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreGov | Programa de Afiliados Premium</title>
+    <meta name="description" content="Seja um Afiliado CoreGov. Ganhe 30% de comissão recorrente todos os meses indicando nossa plataforma de Inteligência Artificial e Governança.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --azul-corporativo: #0d233a;
+            --verde-elegante: #174c3f;
+            --dourado: #c5a86a;
+            --bg-dark: #070e17;
+            --bg-card-dark: #0e1926;
+            --texto-claro: #f8fafc;
+            --texto-mutado: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--texto-claro);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER */
+        header {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(197, 168, 106, 0.15);
+            background-color: var(--bg-dark);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        .logo-text span {
+            color: var(--dourado);
+        }
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        /* BOTÕES */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: var(--verde-elegante);
+            color: #ffffff;
+            border: 1px solid var(--verde-elegante);
+        }
+        .btn-primary:hover {
+            background-color: #1f5f4f;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-secondary:hover {
+            border-color: var(--dourado);
+            color: var(--dourado);
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 90px 0 60px 0;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(13, 35, 58, 0.6) 0%, transparent 70%);
+        }
+        .tagline {
+            display: inline-block;
+            border: 1px solid var(--dourado);
+            color: var(--dourado);
+            padding: 6px 18px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--texto-mutado);
+            max-width: 800px;
+            margin: 0 auto 32px auto;
+        }
+
+        /* SEÇÕES GERAIS */
+        .section {
+            padding: 80px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .section-header p {
+            color: var(--texto-mutado);
+            font-size: 16px;
+        }
+        .section-header .line {
+            width: 60px;
+            height: 3px;
+            background-color: var(--dourado);
+            margin: 16px auto 0 auto;
+        }
+
+        /* GRID DE RECURSOS E BENEFÍCIOS DO AFILIADO */
+        .grid-servicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        .card {
+            background-color: var(--bg-card-dark);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-top: 3px solid var(--dourado);
+            padding: 32px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(197, 168, 106, 0.3);
+        }
+        .card h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 14px;
+        }
+        .card p {
+            font-size: 14px;
+            color: var(--texto-mutado);
+        }
+        .card .destaque-recorrente {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--dourado);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* REGRAS DO PROGRAMA */
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .benefit {
+            background-color: var(--bg-card-dark);
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            color: var(--texto-claro);
+            font-size: 15px;
+        }
+        .benefit span {
+            color: var(--dourado);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: radial-gradient(circle at center, rgba(13, 35, 58, 0.4) 0%, transparent 70%);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+        }
+        .final-cta h2 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin: 0 auto 20px auto;
+            line-height: 1.3;
+        }
+        .final-cta p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 32px auto;
+            color: var(--texto-mutado);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            font-size: 14px;
+            color: var(--texto-mutado);
+        }
+
+        /* RESPONSIVIDADE */
+        @media(max-width:768px){
+            .section-header h2 { font-size: 28px; }
+            .final-cta h2 { font-size: 26px; }
+            .btn { width: 100%; }
+            .header-actions { gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="brand-link">
+                <img src="Inserir um subtítulo (1)_3.jpg" alt="" class="logo-img">
+                <div class="logo-text">CORE<span>GOV</span></div>
+            </a>
+            <div class="header-actions">
+                <a href="index.html" class="btn btn-secondary" style="padding: 8px 16px; font-size: 13px;">Voltar ao Início</a>
+                <a href="https://app.coregov.com.br" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Criar Conta</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="tagline">Programa de Parceiros CoreGov</div>
+            <h1>Monetize sua Rede com Ganhos Recorrentes</h1>
+            <p>Indique nossa plataforma premium de Inteligência Artificial e Governança e garanta 30% de comissão permanente sobre cada assinatura ativa.</p>
+            
+            <div class="header-actions" style="justify-content: center;">
+                <a href="https://app.coregov.com.br" class="btn btn-primary" style="padding: 16px 36px; font-size: 16px;">QUERO SER AFILIADO PRÓ</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recursos & Modelo de Ganhos</h2>
+                <p>Construa um fluxo de caixa previsível e escalável</p>
+                <div class="line"></div>
+            </div>
+
+            <div class="grid-servicos">
+                <div class="card">
+                    <h3>💵 30% de Comissão Real</h3>
+                    <p>Receba uma porcentagem expressiva direto sobre a mensalidade do plano contratado pelo seu indicado.</p>
+                    <span class="destaque-recorrente">✓ Renda Mensal</span>
+                </div>
+                <div class="card">
+                    <h3>🔄 Recorrência Vitalícia</h3>
+                    <p>O lucro é garantido mês após mês: os ganhos serão recorrentes enquanto o indicado manter o pagamento na plataforma.</p>
+                    <span class="destaque-recorrente">✓ Sem Limite de Tempo</span>
+                </div>
+                <div class="card">
+                    <h3>📊 Painel de Controle Completo</h3>
+                    <p>Acompanhe cliques, leads cadastrados, assinaturas ativas e suas comissões acumuladas em tempo real.</p>
+                    <span class="destaque-recorrente">✓ Transparência Total</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Por que ser um Parceiro CoreGov?</h2>
+                <p>Nossa tecnologia de ponta facilita a retenção e conversão dos clientes</p>
+                <div class="line"></div>
+            </div>
+
+            <div class="benefits-list">
+                <div class="benefit"><span>★</span> Alta Retenção (Clientes não cancelam)</div>
+                <div class="benefit"><span>★</span> Atendimento e Suporte Direto</div>
+                <div class="benefit"><span>★</span> Rastreamento por Cookies Seguro</div>
+                <div class="benefit"><span>★</span> Materiais de Divulgação Inclusos</div>
+                <div class="benefit"><span>★</span> Pagamento Mensal Direto na Conta</div>
+                <div class="benefit"><span>★</span> Produto Inovador com Alta Demanda</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Comece a construir sua receita recorrente ainda hoje.</h2>
+            <p>Seus contatos precisam de Inteligência Artificial e Governança de dados. Indique a CoreGov e lucre junto com eles.</p>
+            <a href="https://app.coregov.com.br" class="btn btn-primary">CRIAR MEU LINK DE AFILIADO AGORA</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 CoreGov | Todos os direitos reservados. Programa de Parcerias e Soluções Inteligentes.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
