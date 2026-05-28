@@ -1,436 +1,73 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>COREGOV Administração, Contabilidade & Recrutamento</title>
-
-<meta name="description" content="Gestão, contabilidade, recrutamento e estratégia para aumentar lucro, reduzir impostos e desenvolver empresas em Presidente Prudente.">
-
-<link rel="icon" href="/favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --verde:#00FF9F;
-  --azul:#0B1220;
-  --cinza:#CCCCCC;
-  --bg-card:#111A2E;
-}
-
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
-}
-
-body {
-  background:var(--azul);
-  color:#fff;
-  padding-top:90px;
-}
-
-/* HEADER */
-header {
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:12px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(11,18,32,0.85);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-  border-bottom:1px solid rgba(0,255,159,0.08);
-}
-
-.logo-icon {
-  height:34px;
-}
-
-.brand {
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.brand-name {
-  color:var(--verde);
-  font-weight:700;
-}
-
-.brand-sub {
-  font-size:11px;
-  color:var(--cinza);
-}
-
-nav a {
-  margin:0 8px;
-  color:var(--cinza);
-  text-decoration:none;
-  transition:.3s;
-}
-
-nav a:hover {
-  color:var(--verde);
-}
-
-.btn {
-  background:var(--verde);
-  color:#000;
-  padding:9px 16px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:.3s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 0 20px rgba(0,255,159,0.3);
-}
-
-/* HERO */
-.hero {
-  padding:80px 10%;
-  text-align:center;
-}
-
-.hero h1 {
-  font-size:52px;
-  margin-bottom:20px;
-  line-height:1.2;
-}
-
-.hero h1 span {
-  color:var(--verde);
-}
-
-.hero p{
-  color:var(--cinza);
-  max-width:800px;
-  margin:auto;
-  line-height:1.8;
-  font-size:18px;
-}
-
-/* 🔥 IMAGEM CENTRALIZADA */
-.hero-img {
-  display:block;
-  margin:40px auto 0 auto;
-  max-width:550px;
-  width:100%;
-  border-radius:16px;
-  box-shadow:0 0 40px rgba(0,0,0,0.4);
-}
-
-/* CARDS */
-.cards {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-  padding:40px 10% 20px 10%;
-}
-
-.card {
-  background:var(--bg-card);
-  padding:25px;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,0.05);
-  transition:.3s;
-  font-size:18px;
-  font-weight:600;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(0,255,159,0.3);
-  box-shadow:0 0 25px rgba(0,255,159,0.08);
-}
-
-/* SEÇÃO DE PROVA SOCIAL (DEPOIMENTOS) */
-.testemunhas-section {
-  padding:60px 10% 40px 10%;
-  text-align:center;
-}
-
-.testemunhas-title h2 {
-  font-size:32px;
-  margin-bottom:12px;
-}
-
-.testemunhas-title h2 span {
-  color:var(--verde);
-}
-
-.testemunhas-title p {
-  color:var(--cinza);
-  font-size:16px;
-  margin-bottom:40px;
-}
-
-.testemunhas-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-  gap:24px;
-  text-align:left;
-}
-
-.testemunha-card {
-  background:var(--bg-card);
-  border:1px solid rgba(255,255,255,0.05);
-  padding:32px;
-  border-radius:16px;
-  border-top:3px solid var(--verde);
-  transition:.3s;
-}
-
-.testemunha-card:hover {
-  transform:translateY(-4px);
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
-
-.testemunha-card p {
-  font-style:italic;
-  color:#f8fafc;
-  margin-bottom:20px;
-  font-size:15px;
-  line-height:1.6;
-}
-
-.testemunha-card span {
-  font-weight:700;
-  font-size:14px;
-  color:var(--verde);
-  display:block;
-}
-
-/* RECRUTAMENTO */
-.rh-section{
-  padding:60px 10% 80px 10%;
-}
-
-.rh-box{
-  background:linear-gradient(135deg,#111A2E,#0E1525);
-  border-radius:24px;
-  padding:50px;
-  border:1px solid rgba(0,255,159,0.08);
-  box-shadow:0 0 40px rgba(0,0,0,0.35);
-}
-
-.rh-box h2{
-  font-size:42px;
-  margin-bottom:20px;
-}
-
-.rh-box h2 span{
-  color:var(--verde);
-}
-
-.rh-box p{
-  color:var(--cinza);
-  line-height:1.9;
-  margin-bottom:40px;
-}
-
-.rh-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-
-.rh-card{
-  background:#0B1220;
-  padding:25px;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,0.05);
-  transition:.3s;
-}
-
-.rh-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(0,255,159,0.3);
-}
-
-.rh-card h3{
-  color:var(--verde);
-  margin-bottom:12px;
-}
-
-.rh-btn{
-  margin-top:35px;
-  display:inline-block;
-}
-
-/* FOOTER */
-footer {
-  text-align:center;
-  padding:40px;
-  color:#888;
-  border-top:1px solid rgba(255,255,255,0.05);
-  margin-top:60px;
-}
-
-/* RESPONSIVO */
-@media(max-width:900px){
-
-header{
-  flex-direction:column;
-  gap:15px;
-}
-
-nav{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-.hero h1{
-  font-size:36px;
-}
-
-.rh-box h2{
-  font-size:32px;
-}
-
-.testemunhas-title h2 {
-  font-size:26px;
-}
-
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <div class="brand">
-    <img src="/logo-icon.png" class="logo-icon">
-    <div>
-      <div class="brand-name">COREGOV</div>
-      <div class="brand-sub">Administração, Contabilidade & RH</div>
-    </div>
-  </div>
-
-  <nav>
-    <a href="/index.html">Início</a>
-    <a href="/servicos.html">Serviços</a>
-    <a href="/ferramentas.html">Ferramentas</a>
-    <a href="/simulador.html">Simulador</a>
-    <a href="/servicos/recrutamento-presidente-prudente.html">Recrutamento</a>
-    <a href="/blog/index.html">Blog</a>
-    <a href="/quem-somos.html">Quem Somos</a>
-  </nav>
-
-  <a class="btn" href="https://wa.me/5518991511523">Contato</a>
-</header>
-
-<section class="hero">
-  <h1>
-    Gestão inteligente para sua <br>
-    <span>empresa crescer</span>
-  </h1>
-
-  <p>
-    Contabilidade, recrutamento e estratégia empresarial para reduzir custos,
-    desenvolver equipes e aumentar resultados.
-  </p>
-
-  <img src="/coregov_clientes.png" alt="Clientes COREGOV" class="hero-img">
-
-</section>
-
-<section class="cards">
-  <div class="card">📊 Gestão Financeira</div>
-  <div class="card">📉 Redução de Impostos</div>
-  <div class="card">📈 Crescimento Empresarial</div>
-  <div class="card">👥 Recrutamento & Seleção</div>
-</section>
-
-<section class="testemunhas-section">
-  <div class="testemunhas-title">
-    <h2>Quem confia na <span>COREGOV</span> aprova</h2>
-    <p>Resultados reais de quem transformou a eficiência administrativa e acelerou seus resultados corporativos.</p>
-  </div>
-
-  <div class="testemunhas-grid">
-    <div class="testemunha-card">
-      <p>"Substituímos processos manuais lentos por automação inteligente. O ganho de produtividade foi imediato na nossa operação."</p>
-      <span>— Marcos A., Diretor de Operações</span>
-    </div>
-
-    <div class="testemunha-card">
-      <p>"A inteligência analítica da plataforma mudou nossa forma de gerenciar dados. O que levava dias agora é resolvido em minutos."</p>
-      <span>— Juliana R., Consultora de Gestão</span>
-    </div>
-
-    <div class="testemunha-card">
-      <p>"Uma ferramenta indispensável para quem busca governança digital moderna e processos livres de falhas."</p>
-      <span>— Ricardo M., Gestor de Projetos</span>
-    </div>
-  </div>
-</section>
-
-<section class="rh-section">
-
-<div class="rh-box">
-
-<h2>
-Recrutamento & <span>Seleção Inteligente</span>
-</h2>
-
-<p>
-A CoreGov também atua com recrutamento, seleção e desenvolvimento profissional,
-conectando empresas aos melhores talentos através de estratégias modernas de RH,
-orientação curricular e gestão de liderança.
-</p>
-
-<div class="rh-grid">
-
-<div class="rh-card">
-<h3>📄 Banco de Currículos</h3>
-<p>
-Cadastre talentos e conecte profissionais às oportunidades certas.
-</p>
-</div>
-
-<div class="rh-card">
-<h3>🧠 Orientação Curricular</h3>
-<p>
-Análise gratuita de currículo para fortalecer posicionamento profissional.
-</p>
-</div>
-
-<div class="rh-card">
-<h3>📈 Gestão de Carreira</h3>
-<p>
-Planejamento estratégico para crescimento profissional e desenvolvimento contínuo.
-</p>
-</div>
-
-<div class="rh-card">
-<h3>👔 Gestão de Liderança</h3>
-<p>
-Desenvolvimento de líderes e fortalecimento de equipes de alta performance.
-</p>
-</div>
-
-</div>
-
-<a href="servicos/recrutamento-presidente-prudente.html" class="btn rh-btn">
-Conhecer RH CoreGov
-</a>
-
-</div>
-
-</section>
-
-<footer>
-  © 2026 COREGOV — Administração, Contabilidade & Recrutamento
-</footer>
-
-</body>
-</html>
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
+# Configuração da figura (Simulação do Layout do Site)
+fig, ax = plt.subplots(figsize=(11, 7.5), facecolor='#070e17')
+ax.set_facecolor('#070e17')
+
+# Paleta Dark
+c_navy = '#0d233a'
+c_green = '#174c3f'
+c_gold = '#c5a86a'
+c_card = '#0e1926'
+
+# Header
+ax.add_patch(patches.Rectangle((0, 0.88), 1, 0.12, facecolor=c_navy, alpha=0.4))
+ax.text(0.05, 0.93, "COREGOV", color='white', fontsize=18, fontweight='bold', va='center')
+ax.text(0.18, 0.93, "• Gestão Inteligente", color=c_gold, fontsize=10, va='center', style='italic')
+rect_btn_h = patches.FancyBboxPatch((0.8, 0.91), 0.15, 0.04, boxstyle="round,pad=0.01", facecolor='none', edgecolor='white', linewidth=1)
+ax.add_patch(rect_btn_h)
+ax.text(0.875, 0.93, "Acessar Painel", color='white', fontsize=9, fontweight='bold', ha='center', va='center')
+
+# Hero Section Texts
+ax.text(0.5, 0.77, "GESTÃO INTELIGENTE DE DADOS E GOVERNANÇA", color=c_gold, fontsize=11, fontweight='bold', tracking=2, ha='center')
+ax.text(0.5, 0.68, "Multiplique sua Eficiência sem Desperdiçar\nHoras do seu Dia", color='white', fontsize=22, fontweight='bold', ha='center', linespacing=1.3)
+ax.text(0.5, 0.56, "Nossa Inteligência Artificial consolida dados complexos, constrói relatórios governamentais premium\ne monitora oportunidades de forma estratégica e transparente.", color='#94a3b8', fontsize=10, ha='center', linespacing=1.4)
+
+# Hero Call to Actions
+rect_btn1 = patches.FancyBboxPatch((0.33, 0.46), 0.16, 0.05, boxstyle="round,pad=0.01", facecolor=c_green)
+rect_btn2 = patches.FancyBboxPatch((0.51, 0.46), 0.16, 0.05, boxstyle="round,pad=0.01", facecolor='none', edgecolor='white', linewidth=1)
+ax.add_patch(rect_btn1)
+ax.add_patch(rect_btn2)
+ax.text(0.41, 0.485, "Começar Grátis", color='white', fontsize=10, fontweight='bold', ha='center', va='center')
+ax.text(0.59, 0.485, "Conhecer Recursos", color='white', fontsize=10, fontweight='bold', ha='center', va='center')
+
+# Cards Section Divider
+ax.plot([0.45, 0.55], [0.37, 0.37], color=c_gold, linewidth=2)
+ax.text(0.5, 0.33, "NOSSOS PILARES TECNOLÓGICOS", color='white', fontsize=12, fontweight='bold', ha='center')
+
+# Grid de Cards (Quatro Pilares das imagens)
+pilares = [
+    {"tit": "Dados Confiáveis", "desc": "Processamento estruturado sob rígidas regras de governança e integridade digital."},
+    {"tit": "Decisões Inteligentes", "desc": "Engine de IA voltada para análise preditiva e geração de insights em tempo real."},
+    {"tit": "Governança Eficiente", "desc": "Automatização de fluxos organizacionais para auditoria e compliance."},
+    {"tit": "Resultados Sustentáveis", "desc": "Garantia de escalabilidade operacional com segurança de longo prazo."}
+]
+
+card_w = 0.20
+card_h = 0.18
+gap = 0.03
+start_x = 0.05
+
+for i, pilar in enumerate(pilares):
+    cx = start_x + i * (card_w + gap)
+    cy = 0.10
+    # Sombra/Card
+    ax.add_patch(patches.Rectangle((cx, cy), card_w, card_h, facecolor=c_card, edgecolor='rgba(255,255,255,0.05)', linewidth=1))
+    # Borda superior dourada igual ao código CSS
+    ax.plot([cx, cx + card_w], [cy + card_h, cy + card_h], color=c_gold, linewidth=2.5)
+    # Textos do card
+    ax.text(cx + 0.015, cy + 0.14, pilar["tit"], color='white', fontsize=10, fontweight='bold')
+    
+    # Quebra manual de linha para a descrição do card caber perfeitamente
+    desc_formatada = pilar["desc"].replace(" sob ", "\nsob ").replace(" voltada ", "\nvoltada ").replace(" organizacionais ", "\norganizacionais ").replace(" escalabilidade ", "\nescalabilidade ")
+    ax.text(cx + 0.015, cy + 0.05, desc_formatada, color='#94a3b8', fontsize=8, va='bottom', linespacing=1.3)
+
+# Limpeza de eixos
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.axis('off')
+
+plt.tight_layout()
+plt.savefig('visual_dark_premium.png', dpi=180, facecolor=fig.get_facecolor(), edgecolor='none')
+plt.show()
