@@ -1,73 +1,240 @@
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-
-# Configuração da figura (Simulação do Layout do Site)
-fig, ax = plt.subplots(figsize=(11, 7.5), facecolor='#070e17')
-ax.set_facecolor('#070e17')
-
-# Paleta Dark
-c_navy = '#0d233a'
-c_green = '#174c3f'
-c_gold = '#c5a86a'
-c_card = '#0e1926'
-
-# Header
-ax.add_patch(patches.Rectangle((0, 0.88), 1, 0.12, facecolor=c_navy, alpha=0.4))
-ax.text(0.05, 0.93, "COREGOV", color='white', fontsize=18, fontweight='bold', va='center')
-ax.text(0.18, 0.93, "• Gestão Inteligente", color=c_gold, fontsize=10, va='center', style='italic')
-rect_btn_h = patches.FancyBboxPatch((0.8, 0.91), 0.15, 0.04, boxstyle="round,pad=0.01", facecolor='none', edgecolor='white', linewidth=1)
-ax.add_patch(rect_btn_h)
-ax.text(0.875, 0.93, "Acessar Painel", color='white', fontsize=9, fontweight='bold', ha='center', va='center')
-
-# Hero Section Texts
-ax.text(0.5, 0.77, "GESTÃO INTELIGENTE DE DADOS E GOVERNANÇA", color=c_gold, fontsize=11, fontweight='bold', tracking=2, ha='center')
-ax.text(0.5, 0.68, "Multiplique sua Eficiência sem Desperdiçar\nHoras do seu Dia", color='white', fontsize=22, fontweight='bold', ha='center', linespacing=1.3)
-ax.text(0.5, 0.56, "Nossa Inteligência Artificial consolida dados complexos, constrói relatórios governamentais premium\ne monitora oportunidades de forma estratégica e transparente.", color='#94a3b8', fontsize=10, ha='center', linespacing=1.4)
-
-# Hero Call to Actions
-rect_btn1 = patches.FancyBboxPatch((0.33, 0.46), 0.16, 0.05, boxstyle="round,pad=0.01", facecolor=c_green)
-rect_btn2 = patches.FancyBboxPatch((0.51, 0.46), 0.16, 0.05, boxstyle="round,pad=0.01", facecolor='none', edgecolor='white', linewidth=1)
-ax.add_patch(rect_btn1)
-ax.add_patch(rect_btn2)
-ax.text(0.41, 0.485, "Começar Grátis", color='white', fontsize=10, fontweight='bold', ha='center', va='center')
-ax.text(0.59, 0.485, "Conhecer Recursos", color='white', fontsize=10, fontweight='bold', ha='center', va='center')
-
-# Cards Section Divider
-ax.plot([0.45, 0.55], [0.37, 0.37], color=c_gold, linewidth=2)
-ax.text(0.5, 0.33, "NOSSOS PILARES TECNOLÓGICOS", color='white', fontsize=12, fontweight='bold', ha='center')
-
-# Grid de Cards (Quatro Pilares das imagens)
-pilares = [
-    {"tit": "Dados Confiáveis", "desc": "Processamento estruturado sob rígidas regras de governança e integridade digital."},
-    {"tit": "Decisões Inteligentes", "desc": "Engine de IA voltada para análise preditiva e geração de insights em tempo real."},
-    {"tit": "Governança Eficiente", "desc": "Automatização de fluxos organizacionais para auditoria e compliance."},
-    {"tit": "Resultados Sustentáveis", "desc": "Garantia de escalabilidade operacional com segurança de longo prazo."}
-]
-
-card_w = 0.20
-card_h = 0.18
-gap = 0.03
-start_x = 0.05
-
-for i, pilar in enumerate(pilares):
-    cx = start_x + i * (card_w + gap)
-    cy = 0.10
-    # Sombra/Card
-    ax.add_patch(patches.Rectangle((cx, cy), card_w, card_h, facecolor=c_card, edgecolor='rgba(255,255,255,0.05)', linewidth=1))
-    # Borda superior dourada igual ao código CSS
-    ax.plot([cx, cx + card_w], [cy + card_h, cy + card_h], color=c_gold, linewidth=2.5)
-    # Textos do card
-    ax.text(cx + 0.015, cy + 0.14, pilar["tit"], color='white', fontsize=10, fontweight='bold')
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreGov | Gestão Inteligente de Dados e Governança</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    # Quebra manual de linha para a descrição do card caber perfeitamente
-    desc_formatada = pilar["desc"].replace(" sob ", "\nsob ").replace(" voltada ", "\nvoltada ").replace(" organizacionais ", "\norganizacionais ").replace(" escalabilidade ", "\nescalabilidade ")
-    ax.text(cx + 0.015, cy + 0.05, desc_formatada, color='#94a3b8', fontsize=8, va='bottom', linespacing=1.3)
+    <style>
+        :root {
+            --azul-corporativo: #0d233a;
+            --verde-elegante: #174c3f;
+            --dourado: #c5a86a;
+            --bg-dark: #070e17;
+            --bg-card-dark: #0e1926;
+            --texto-claro: #f8fafc;
+            --texto-mutado: #94a3b8;
+        }
 
-# Limpeza de eixos
-ax.set_xlim(0, 1)
-ax.set_ylim(0, 1)
-ax.axis('off')
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-plt.tight_layout()
-plt.savefig('visual_dark_premium.png', dpi=180, facecolor=fig.get_facecolor(), edgecolor='none')
-plt.show()
+        body {
+            background-color: var(--bg-dark);
+            color: var(--texto-claro);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(197, 168, 106, 0.15);
+        }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--dourado);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 90px 0 60px 0;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(13, 35, 58, 0.6) 0%, transparent 70%);
+        }
+        .tagline {
+            display: inline-block;
+            border: 1px solid var(--dourado);
+            color: var(--dourado);
+            padding: 6px 18px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--texto-mutado);
+            max-width: 800px;
+            margin: 0 auto 32px auto;
+        }
+
+        /* BOTÕES */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: var(--verde-elegante);
+            color: #ffffff;
+            border: 1px solid var(--verde-elegante);
+        }
+        .btn-primary:hover {
+            background-color: #1f5f4f;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-left: 12px;
+        }
+        .btn-secondary:hover {
+            border-color: var(--dourado);
+            color: var(--dourado);
+        }
+
+        /* SERVIÇOS / PILARES */
+        .servicos {
+            padding: 60px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .section-header .line {
+            width: 60px;
+            height: 3px;
+            background-color: var(--dourado);
+            margin: 0 auto;
+        }
+        .grid-servicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+        .card {
+            background-color: var(--bg-card-dark);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-top: 3px solid var(--dourado);
+            padding: 32px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(197, 168, 106, 0.3);
+        }
+        .card h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 14px;
+        }
+        .card p {
+            font-size: 14px;
+            color: var(--texto-mutado);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            font-size: 14px;
+            color: var(--texto-mutado);
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">CORE<span>GOV</span></a>
+            <a href="https://app.coregov.com.br" class="btn btn-secondary" style="padding: 8px 20px; font-size: 14px;">Acessar Painel</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="tagline">Gestão Inteligente de Dados e Governança</div>
+            <h1>Multiplique sua Eficiência sem Desperdiçar Horas do seu Dia</h1>
+            <p>Nossa Inteligência Artificial consolida dados complexos, constrói relatórios governamentais premium e monitora oportunidades de forma estratégica e transparente.</p>
+            <div>
+                <a href="#" class="btn btn-primary">Começar Agora Grátis</a>
+                <a href="#" class="btn btn-secondary">Conhecer Recursos</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="servicos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Pilares Tecnológicos</h2>
+                <div class="line"></div>
+            </div>
+            
+            <div class="grid-servicos">
+                <div class="card">
+                    <h3>Dados Confiáveis</h3>
+                    <p>Processamento e saneamento estruturado de dados sob as mais rígidas regras de governança e integridade digital.</p>
+                </div>
+                <div class="card">
+                    <h3>Decisões Inteligentes</h3>
+                    <p>Engine de Inteligência Artificial voltada para análise preditiva e geração de insights cruciais em tempo real.</p>
+                </div>
+                <div class="card">
+                    <h3>Governança Eficiente</h3>
+                    <p>Automatização e padronização de fluxos organizacionais para auditoria, compliance e gestão transparente.</p>
+                </div>
+                <div class="card">
+                    <h3>Resultados Sustentáveis</h3>
+                    <p>Garantia de escalabilidade operacional com máxima segurança e alinhamento com os objetivos a longo prazo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 CoreGov | Todos os direitos reservados. Gestão Inteligente de Dados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
