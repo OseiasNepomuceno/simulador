@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreGov | Programa de Freelancer e Escala Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --azul-corporativo: #0d233a;
+            --verde-elegante: #174c3f;
+            --dourado: #c5a86a;
+            --bg-dark: #070e17;
+            --bg-card-dark: #0e1926;
+            --texto-claro: #f8fafc;
+            --texto-mutado: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--texto-claro);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER */
+        header {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(197, 168, 106, 0.15);
+        }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        .logo-text span {
+            color: var(--dourado);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 0 50px 0;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(23, 76, 63, 0.3) 0%, transparent 70%);
+        }
+        .tagline {
+            display: inline-block;
+            border: 1px solid var(--dourado);
+            color: var(--dourado);
+            padding: 6px 18px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--texto-mutado);
+            max-width: 800px;
+            margin: 0 auto 32px auto;
+        }
+
+        /* GRID DE CARDS */
+        .secao-cards {
+            padding: 40px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .section-header .line {
+            width: 60px;
+            height: 3px;
+            background-color: var(--dourado);
+            margin: 0 auto;
+        }
+        
+        .grid-freelancer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .card {
+            background-color: var(--bg-card-dark);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-top: 3px solid var(--dourado);
+            padding: 32px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(197, 168, 106, 0.4);
+        }
+        .card h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card p {
+            font-size: 14px;
+            color: var(--texto-mutado);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .card .destaque-financeiro {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--dourado);
+            margin-top: 8px;
+        }
+
+        /* SEÇÃO EXPLICATIVA - PRODUTO PREMIUM */
+        .detalhes-tecnicos {
+            background-color: rgba(14, 25, 38, 0.6);
+            border: 1px solid rgba(197, 168, 106, 0.1);
+            border-radius: 8px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+        .detalhes-tecnicos h3 {
+            color: #fff;
+            font-size: 22px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--verde-elegante);
+            padding-left: 12px;
+        }
+        .detalhes-tecnicos ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .detalhes-tecnicos li {
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: var(--texto-claro);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .detalhes-tecnicos li::before {
+            content: "✓";
+            color: var(--dourado);
+            font-weight: bold;
+        }
+
+        /* BOTÕES */
+        .btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: var(--verde-elegante);
+            color: #ffffff;
+            border: 1px solid var(--verde-elegante);
+            box-shadow: 0 4px 14px rgba(23, 76, 63, 0.4);
+        }
+        .btn-primary:hover {
+            background-color: #1f5f4f;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-left: 16px;
+        }
+        .btn-secondary:hover {
+            border-color: var(--dourado);
+            color: var(--dourado);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            font-size: 14px;
+            color: var(--texto-mutado);
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="brand-link">
+                <img src="logo.png" alt="" class="logo-img">
+                <div class="logo-text">CORE<span>GOV</span></div>
+            </a>
+            <a href="index.html" class="btn btn-secondary" style="padding: 8px 20px; font-size: 14px;">Voltar ao Início</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="tagline">Programa Oficial de Freelancer</div>
+            <h1>Sua Jornada para R$ 6.000,00 Mensais com Inteligência Artificial</h1>
+            <p>Descubra como construir uma receita sólida e escalável oferecendo nossa tecnologia de automação premium para empresas e profissionais de mercado.</p>
+        </div>
+    </section>
+
+    <section class="secao-cards">
+        <div class="container">
+            <div class="section-header">
+                <h2>Como Funciona a Sua Meta</h2>
+                <div class="line"></div>
+            </div>
+            
+            <div class="grid-freelancer">
+                <div class="card">
+                    <div>
+                        <h3>📊 O Plano de Ganhos</h3>
+                        <p>Alcançar uma renda extra de alto nível é puramente matemático através da nossa plataforma.</p>
+                        <p>Você só precisa fechar e gerenciar uma carteira de <strong>60 profissionais ou empresas</strong>.</p>
+                    </div>
+                    <div class="destaque-financeiro">R$ 6.000,00 /mês</div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>💎 Valor Justo e Atrativo</h3>
+                        <p>O serviço oferecido é o nosso <strong>Plano Premium</strong>, estruturado no valor acessível de:</p>
+                        <p>Uma oferta irrecusável para empresas que gastam milhares de reais com agências tradicionais.</p>
+                    </div>
+                    <div class="destaque-financeiro">R$ 300,00 /mês</div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>⚡ Tecnologia de Postagem</h3>
+                        <p>O cliente Premium ganha o poder de inserir e <strong>automatizar postagens em massa com apenas 01 ação única</strong>.</p>
+                        <p>Basta inserir os temas desejados e a ferramenta assume o controle absoluto da distribuição.</p>
+                    </div>
+                    <div class="destaque-financeiro">Ação Única</div>
+                </div>
+            </div>
+
+            <div class="detalhes-tecnicos">
+                <h3>🛠️ O Poder de Escala: ChatGPT + CoreGov</h3>
+                <p>O maior benefício desse modelo de negócio é a velocidade operacional. Você ou seu cliente final não precisam gastar dias criando conteúdo:</p>
+                <ul>
+                    <li><strong>Criação via ChatGPT:</strong> Você pode gerar facilmente os 60 temas dos produtos ou serviços que a empresa pretende anunciar em menos de 2 minutos.</li>
+                    <li><strong>Automação em Massa Inteligente:</strong> Ao colar esses 60 temas no sistema, nossa inteligência artificial processa tudo em lote.</li>
+                    <li><strong>Postagens Humanizadas:</strong> O sistema escolhe de forma totalmente humanizada e inteligente a forma como cada postagem será criada, variando abordagens, termos e layouts de maneira diversificada para garantir autenticidade em 100% das publicações.</li>
+                </ul>
+            </div>
+
+            <div class="btn-container">
+                <a href="https://app.coregov.com.br" class="btn btn-primary">Quero Iniciar como Freelancer</a>
+                <a href="index.html" class="btn btn-secondary">Falar com Suporte</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 CoreGov | Todos os direitos reservados. Gestão Inteligente de Dados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
