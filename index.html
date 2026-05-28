@@ -40,7 +40,7 @@
 
         /* HEADER */
         header {
-            padding: 24px 0;
+            padding: 16px 0;
             border-bottom: 1px solid rgba(197, 168, 106, 0.15);
         }
         .nav-wrapper {
@@ -48,14 +48,25 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo {
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+        .logo-text {
             font-size: 24px;
             font-weight: 800;
             letter-spacing: 1px;
             color: #fff;
-            text-decoration: none;
         }
-        .logo span {
+        .logo-text span {
             color: var(--dourado);
         }
 
@@ -152,7 +163,7 @@
             transform: translateY(-2px);
         }
 
-        /* Botões de Parcerias (Afiliado / Freelancer) */
+        /* Botões de Parcerias */
         .btn-partner {
             background-color: rgba(14, 25, 38, 0.7);
             color: #f8fafc;
@@ -232,7 +243,11 @@
 
     <header>
         <div class="container nav-wrapper">
-            <a href="#" class="logo">CORE<span>GOV</span></a>
+            <!-- LOGO DA IMAGEM E TEXTO INTEGRADOS -->
+            <a href="#" class="brand-link">
+                <img src="Inserir um subtítulo (1)_3.jpg" alt="" class="logo-img">
+                <div class="logo-text">CORE<span>GOV</span></div>
+            </a>
             <a href="https://app.coregov.com.br" class="btn btn-secondary" style="padding: 8px 20px; font-size: 14px; flex-direction: row;">Acessar Painel</a>
         </div>
     </header>
