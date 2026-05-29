@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoreGov | Plataforma Gestão Inteligente de Dados e Governança digital.</title>
     
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -21,481 +20,111 @@
             --texto-mutado: #94a3b8;
         }
 
-        /* Cards Informativos do Hero */
-        .features-hero {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
-            margin: 40px auto;
-            max-width: 900px;
-        }
-        .card-hero {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(197, 168, 106, 0.2);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: left;
-        }
-        .card-hero h4 { color: var(--dourado); margin-bottom: 8px; font-size: 14px; }
-        .card-hero p { font-size: 12px; color: var(--texto-mutado); margin: 0; line-height: 1.4; }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--texto-claro);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-
-        .hero-image-wrapper {
-            margin-top: 40px;
-            padding: 0 20px;
-        }
-        .hero-image-wrapper img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid rgba(197, 168, 106, 0.2);
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-dark); color: var(--texto-claro); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
 
         /* HEADER */
-        header {
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(197, 168, 106, 0.15);
-            background-color: var(--bg-dark);
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-        .nav-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .brand-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-        .logo-img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            border-radius: 4px;
-        }
-        .logo-text {
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: #fff;
-        }
-        .logo-text span {
-            color: var(--dourado);
-        }
-        .header-actions {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
+        header { padding: 16px 0; border-bottom: 1px solid rgba(197, 168, 106, 0.15); position: sticky; top: 0; z-index: 999; background: var(--bg-dark); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .brand-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-text { font-size: 24px; font-weight: 800; color: #fff; }
+        .logo-text span { color: var(--dourado); }
 
-        /* BOTÕES */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 28px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 15px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .btn-primary {
-            background-color: var(--verde-elegante);
-            color: #ffffff;
-            border: 1px solid var(--verde-elegante);
-        }
-        .btn-primary:hover {
-            background-color: #1f5f4f;
-            transform: translateY(-2px);
-        }
-        .btn-secondary {
-            background-color: transparent;
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .btn-secondary:hover {
-            border-color: var(--dourado);
-            color: var(--dourado);
-            transform: translateY(-2px);
-        }
+        /* HERO - PLATAFORMA */
+        .hero { padding: 90px 0 60px 0; text-align: center; background: radial-gradient(circle at top, rgba(13, 35, 58, 0.6) 0%, transparent 70%); }
+        .tagline { border: 1px solid var(--dourado); color: var(--dourado); padding: 6px 18px; border-radius: 100px; font-size: 13px; font-weight: 600; text-transform: uppercase; margin-bottom: 24px; display: inline-block; }
+        .hero h1 { font-size: 46px; margin-bottom: 20px; }
+        .hero p { font-size: 18px; color: var(--texto-mutado); max-width: 800px; margin: 0 auto 32px auto; }
+        .features-hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 40px auto; max-width: 900px; }
+        .card-hero { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 168, 106, 0.2); padding: 20px; border-radius: 8px; text-align: left; }
+        .card-hero h4 { color: var(--dourado); margin-bottom: 8px; }
 
-        /* HERO SECTION */
-        .hero {
-            padding: 90px 0 60px 0;
-            text-align: center;
-            background: radial-gradient(circle at top, rgba(13, 35, 58, 0.6) 0%, transparent 70%);
-        }
-        .tagline {
-            display: inline-block;
-            border: 1px solid var(--dourado);
-            color: var(--dourado);
-            padding: 6px 18px;
-            border-radius: 100px;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 24px;
-        }
-        .hero h1 {
-            font-size: 46px;
-            font-weight: 800;
-            line-height: 1.2;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 18px;
-            color: var(--texto-mutado);
-            max-width: 800px;
-            margin: 0 auto 32px auto;
-        }
-
-        /* FORMULÁRIO / CHECKBOX DE TERMOS */
-        .termos-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            font-size: 14px;
-            color: var(--texto-claro);
-        }
-        .termos-wrapper input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
-            accent-color: var(--dourado);
-        }
-        .termos-wrapper a {
-            color: var(--dourado);
-            text-decoration: underline;
-            transition: color 0.2s;
-        }
-        .termos-wrapper a:hover {
-            color: #fff;
-        }
+        /* DIVISOR */
+        .transition-divider { background: linear-gradient(to bottom, #070e17, #0d233a); padding: 60px 0; text-align: center; border-top: 1px solid rgba(197, 168, 106, 0.1); border-bottom: 1px solid rgba(197, 168, 106, 0.1); }
+        .transition-divider h3 { color: #fff; font-size: 28px; margin-bottom: 10px; }
+        .transition-divider p { color: var(--dourado); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
 
         /* SEÇÕES GERAIS */
-        .section {
-            padding: 80px 0;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        .section-header h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 12px;
-        }
-        .section-header p {
-            color: var(--texto-mutado);
-            font-size: 16px;
-        }
-        .section-header .line {
-            width: 60px;
-            height: 3px;
-            background-color: var(--dourado);
-            margin: 16px auto 0 auto;
-        }
-
-        /* GRID DE RECURSOS */
-        .grid-servicos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-        }
-        .card {
-            background-color: var(--bg-card-dark);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-top: 3px solid var(--dourado);
-            padding: 32px;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(197, 168, 106, 0.3);
-        }
-        .card h3 {
-            font-size: 20px;
-            color: #fff;
-            margin-bottom: 14px;
-        }
-        .card p {
-            font-size: 14px;
-            color: var(--texto-mutado);
-        }
-        .card .destaque-recorrente {
-            display: inline-block;
-            margin-top: 12px;
-            color: var(--dourado);
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* REGRAS DO PROGRAMA */
-        .benefits-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .benefit {
-            background-color: var(--bg-card-dark);
-            padding: 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.02);
-            color: var(--texto-claro);
-            font-size: 15px;
-        }
-        .benefit span {
-            color: var(--dourado);
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        /* FINAL CTA */
-        .final-cta {
-            padding: 100px 0;
-            background: radial-gradient(circle at center, rgba(13, 35, 58, 0.4) 0%, transparent 70%);
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
-        }
-        .final-cta h2 {
-            font-size: 38px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            max-width: 900px;
-            margin: 0 auto 20px auto;
-            line-height: 1.3;
-        }
-        .final-cta p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 32px auto;
-            color: var(--texto-mutado);
-        }
-
-        /* FOOTER */
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            text-align: center;
-            font-size: 14px;
-            color: var(--texto-mutado);
-        }
-        .footer-links {
-            margin-top: 12px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .footer-links a {
-            color: var(--texto-mutado);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .footer-links a:hover {
-            color: var(--dourado);
-        }
-
+        .section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .grid-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+        .card { background-color: var(--bg-card-dark); border: 1px solid rgba(255, 255, 255, 0.03); border-top: 3px solid var(--dourado); padding: 32px; border-radius: 8px; }
+        .destaque-recorrente { display: block; margin-top: 12px; color: var(--dourado); font-weight: 700; text-transform: uppercase; font-size: 13px; }
+        
+        /* CTA E BOTÕES */
+        .btn { padding: 12px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .btn-primary { background-color: var(--verde-elegante); color: #fff; }
+        .termos-wrapper { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 20px 0; }
+        
         /* RESPONSIVIDADE */
-        @media(max-width:768px){
-            .section-header h2 { font-size: 28px; }
-            .final-cta h2 { font-size: 26px; }
-            .btn { width: 100%; }
-            .header-actions { gap: 8px; flex-direction: column; }
-            .termos-wrapper { flex-direction: row; text-align: left; padding: 0 10px; }
-        }
+        @media(max-width:768px){ .hero h1 { font-size: 32px; } }
     </style>
 </head>
 <body>
 
     <header>
         <div class="container nav-wrapper">
-            <a href="index.html" class="brand-link">
-                <img src="logo.png" alt="" class="logo-img">
+            <a href="#" class="brand-link">
                 <div class="logo-text">CORE<span>GOV</span></div>
             </a>
-            <div class="header-actions">
-                <a href="index.html" class="btn btn-secondary" style="padding: 8px 16px; font-size: 13px;">Voltar ao Início</a>
-                <a href="https://app.coregov.com.br" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Criar Conta</a>
-            </div>
+            <a href="https://app.coregov.com.br" class="btn btn-primary" style="font-size: 13px;">Criar Conta</a>
         </div>
     </header>
 
     <section class="hero">
-    <div class="container">
-        <div class="tagline">CoreGov Plataforma Gestão Inteligente de Dados e Governança Digital</div>
-       
-        <p>O fim das postagens manuais, automatize e crie com a IA e agende sua presença digital com inteligencia.</p>
-        
-        <div class="features-hero">
-            <div class="card-hero">
-                <h4>💡 Cadastro Gratuito</h4>
-                <p>Comece hoje mesmo sem custos. Acesse nossa plataforma completa com um Plano Free exclusivo.</p>
-            </div>
-            <div class="card-hero">
-                <h4>🚀 Para Profissionais</h4>
-                <p>Tenha um copiloto de IA para gerar posts de alta conversão e elimine o bloqueio criativo.</p>
-            </div>
-            <div class="card-hero">
-                <h4>🏢 Para Empresas</h4>
-                <p>Centralize canais, reduza o tempo de produção pela metade e blinde sua operação contra erros.</p>
+        <div class="container">
+            <div class="tagline">CoreGov Gestão Inteligente</div>
+            <h1>Automatize sua presença digital com IA</h1>
+            <p>O fim das postagens manuais. Crie com inteligência, agende com precisão e ganhe tempo estratégico.</p>
+            
+            <div class="features-hero">
+                <div class="card-hero"><h4>💡 Cadastro Gratuito</h4><p>Comece hoje sem custos com nosso Plano Free.</p></div>
+                <div class="card-hero"><h4>🚀 Copiloto de IA</h4><p>Gere posts de alta conversão e elimine o bloqueio criativo.</p></div>
+                <div class="card-hero"><h4>🏢 Centralização</h4><p>Reduza o tempo de produção pela metade.</p></div>
             </div>
         </div>
+    </section>
 
-        <div class="features-hero">
+    <section class="transition-divider">
+        <div class="container">
+            <p>Oportunidade de Parceria</p>
+            <h3>Transforme o uso da plataforma em uma fonte de receita</h3>
         </div>
-        
-        <div class="hero-image-wrapper">
-            <img src="coregov01.png" alt="Comparativo: Postagens Manuais vs Automação com Social CoreGov">
-        </div>
-        
-        <div class="termos-wrapper">
-        </div>
-        
-        <div class="termos-wrapper">
-            <input type="checkbox" id="aceita_termos_hero">
-            <label for="aceita_termos_hero">Declaro que li e aceito os <a href="termos-afiliado.html" target="_blank">Termos de Afiliado</a></label>
-        </div>
+    </section>
 
-        <div class="header-actions" style="justify-content: center;">
-            <a href="https://app.coregov.com.br" id="btn_hero" class="btn btn-primary" style="padding: 16px 36px; font-size: 16px;">QUERO SER AFILIADO PRÓ</a>
-        </div>
-    </div>
-</section>
-
-    <section class="section" style="padding-top: 0;">
+    <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Recursos & Modelo de Ganhos</h2>
-                <p>Construa um fluxo de caixa previsível e escalável</p>
-                <div class="line"></div>
+                <h2>Programa de Afiliados Pro</h2>
+                <p>Seus contatos precisam de IA. Indique a CoreGov e lucre recorrentemente.</p>
             </div>
 
             <div class="grid-servicos">
-                <div class="card">
-                    <h3>💵 30% de Comissão Real</h3>
-                    <p>Receba uma porcentagem expressiva direto sobre a mensalidade do plano contratado pelo seu indicado.</p>
-                    <span class="destaque-recorrente">✓ Renda Mensal</span>
-                </div>
-                <div class="card">
-                    <h3>🔄 Recorrência Vitalícia</h3>
-                    <p>O lucro é garantido mês após mês: os ganhos serão recorrentes enquanto o indicado manter o pagamento na plataforma.</p>
-                    <span class="destaque-recorrente">✓ Sem Limite de Tempo</span>
-                </div>
-
-                <!-- Exemplo de como adicionar o link para baixar o material -->
-                <div class="card">
-                    <h3>📂 Kit de Materiais Prontos</h3>
-                    <p>Baixe nosso pacote de artes, banners e modelos de copy para acelerar suas vendas.</p>
-                    <a href="kit-midias.zip" class="btn-secondary" style="display:inline-block; margin-top:10px; padding: 8px 16px;">Baixar .ZIP</a>
-                    <a href="manual-afiliado.pdf" target="_blank" style="display:block; margin-top:5px; color:var(--dourado);">Ver Manual .PDF</a>
-                </div>
-                
-                <div class="card">
-                    <h3>📊 Painel de Controle Completo</h3>
-                    <p>Acompanhe cliques, leads cadastrados, assinaturas ativas e suas comissões acumuladas em tempo real.</p>
-                    <span class="destaque-recorrente">✓ Transparência Total</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="padding-top: 0;">
-        <div class="container">
-            <div class="section-header">
-                <h2>Por que ser um Parceiro CoreGov?</h2>
-                <p>Nossa tecnologia de ponta facilita a retenção e conversão dos clientes</p>
-                <div class="line"></div>
+                <div class="card"><h3>💵 30% de Comissão Real</h3><p>Receba sobre a mensalidade do indicado.</p><span class="destaque-recorrente">✓ Renda Mensal</span></div>
+                <div class="card"><h3>🔄 Recorrência Vitalícia</h3><p>Lucro garantido enquanto o indicado manter a assinatura.</p><span class="destaque-recorrente">✓ Sem Limite de Tempo</span></div>
+                <div class="card"><h3>📂 Materiais Prontos</h3><p>Kit de artes e copies para acelerar suas vendas.</p></div>
             </div>
 
-            <div class="benefits-list">
-                <div class="benefit"><span>★</span> Alta Retenção (Clientes não cancelam)</div>
-                <div class="benefit"><span>★</span> Atendimento e Suporte Direto</div>
-                <div class="benefit"><span>★</span> Rastreamento por Cookies Seguro</div>
-                <div class="benefit"><span>★</span> Materiais de Divulgação Inclusos</div>
-                <div class="benefit"><span>★</span> Pagamento Mensal Direto na Conta</div>
-                <div class="benefit"><span>★</span> Produto Inovador com Alta Demanda</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="final-cta">
-        <div class="container">
-            <h2>Comece a construir sua receita recorrente ainda hoje.</h2>
-            <p>Seus contatos precisam de Inteligência Artificial e Governança de dados. Indique a CoreGov e lucre junto com eles.</p>
-            
-            <!-- Checkbox de Validação no Rodapé do CTA -->
             <div class="termos-wrapper">
                 <input type="checkbox" id="aceita_termos_final">
-                <label for="aceita_termos_final">Declaro que li e aceito os <a href="termos-afiliado.html" target="_blank">Termos de Afiliado</a></label>
+                <label for="aceita_termos_final">Li e aceito os <a href="#">Termos de Afiliado</a></label>
             </div>
-
-            <a href="https://app.coregov.com.br" id="btn_final" class="btn btn-primary">CRIAR MEU LINK DE AFILIADO AGORA</a>
+            <div style="text-align: center;">
+                <a href="https://app.coregov.com.br" id="btn_final" class="btn btn-primary">CRIAR MEU LINK DE AFILIADO</a>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2026 CoreGov | Todos os direitos reservados. Programa de Parcerias e Soluções Inteligentes.</p>
-            <div class="footer-links">
-                <a href="termos-afiliado.html" target="_blank">Termos de Parceria</a>
-                <a href="index.html">Página Principal</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Lógica em JavaScript para validação amigável antes do clique -->
     <script>
-        const btnHero = document.getElementById('btn_hero');
-        const chkHero = document.getElementById('aceita_termos_hero');
         const btnFinal = document.getElementById('btn_final');
         const chkFinal = document.getElementById('aceita_termos_final');
-
-        function gerenciarClique(e, checkbox) {
-            if (!checkbox.checked) {
+        btnFinal.addEventListener('click', (e) => {
+            if (!chkFinal.checked) {
                 e.preventDefault();
-                alert('Por favor, leia e aceite os Termos de Afiliado para continuar.');
-                checkbox.focus();
+                alert('Por favor, aceite os termos para continuar.');
             }
-        }
-
-        btnHero.addEventListener('click', (e) => gerenciarClique(e, chkHero));
-        btnFinal.addEventListener('click', (e) => gerenciarClique(e, chkFinal));
+        });
     </script>
-
 </body>
 </html>
