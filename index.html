@@ -21,6 +21,24 @@
             --texto-mutado: #94a3b8;
         }
 
+        /* Cards Informativos do Hero */
+        .features-hero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+        .card-hero {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(197, 168, 106, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+        }
+        .card-hero h4 { color: var(--dourado); margin-bottom: 8px; font-size: 14px; }
+        .card-hero p { font-size: 12px; color: var(--texto-mutado); margin: 0; line-height: 1.4; }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -326,22 +344,36 @@
     </header>
 
     <section class="hero">
-        <div class="container">
-            <div class="tagline">CoreGov Plataforma Gestão Inteligente de Dados e Governança Digital</div>
-            <h1>CoreGov Plataforma Gestão Inteligente de Dados e Governança Digital</h1>
-            <p>O fim das postagens manuais, automatize e crie com a IA e agende sua presença digital com inteligencia.</p>
-            
-            <!-- Checkbox de Validação no Topo -->
-            <div class="termos-wrapper">
-                <input type="checkbox" id="aceita_termos_hero">
-                <label for="aceita_termos_hero">Declaro que li e aceito os <a href="termos-afiliado.html" target="_blank">Termos de Afiliado</a></label>
+    <div class="container">
+        <div class="tagline">CoreGov Plataforma Gestão Inteligente de Dados e Governança Digital</div>
+        <h1>CoreGov Plataforma Gestão Inteligente de Dados e Governança Digital</h1>
+        <p>O fim das postagens manuais, automatize e crie com a IA e agende sua presença digital com inteligencia.</p>
+        
+        <div class="features-hero">
+            <div class="card-hero">
+                <h4>💡 Cadastro Gratuito</h4>
+                <p>Comece hoje mesmo sem custos. Acesse nossa plataforma completa com um Plano Free exclusivo.</p>
             </div>
-
-            <div class="header-actions" style="justify-content: center;">
-                <a href="https://app.coregov.com.br" id="btn_hero" class="btn btn-primary" style="padding: 16px 36px; font-size: 16px;">QUERO SER AFILIADO PRÓ</a>
+            <div class="card-hero">
+                <h4>🚀 Para Profissionais</h4>
+                <p>Tenha um copiloto de IA para gerar posts de alta conversão e elimine o bloqueio criativo.</p>
+            </div>
+            <div class="card-hero">
+                <h4>🏢 Para Empresas</h4>
+                <p>Centralize canais, reduza o tempo de produção pela metade e blinde sua operação contra erros.</p>
             </div>
         </div>
-    </section>
+
+        <div class="termos-wrapper">
+            <input type="checkbox" id="aceita_termos_hero">
+            <label for="aceita_termos_hero">Declaro que li e aceito os <a href="termos-afiliado.html" target="_blank">Termos de Afiliado</a></label>
+        </div>
+
+        <div class="header-actions" style="justify-content: center;">
+            <a href="https://app.coregov.com.br" id="btn_hero" class="btn btn-primary" style="padding: 16px 36px; font-size: 16px;">QUERO SER AFILIADO PRÓ</a>
+        </div>
+    </div>
+</section>
 
     <section class="section" style="padding-top: 0;">
         <div class="container">
