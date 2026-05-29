@@ -9,6 +9,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
+
+        <style>
+    /* ... seu CSS existente ... */
+
+    /* NOVA CLASSE PARA BOTÕES DE DOWNLOAD */
+    .download-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    .download-buttons .btn {
+        padding: 12px 24px;
+        font-size: 15px;
+        border-radius: 8px;
+        font-weight: 700;
+    }
+</style>
+
         :root {
             --bg-principal: #0b0f19;
             --bg-card: #131c2e;
@@ -669,6 +690,35 @@
             </div>
         </div>
     </section>
+
+    <section class="hero">
+    <div class="container">
+        <div class="badge">✨ Nova Era da Automação Corporativa</div>
+        <h1>Multiplique sua Presença Digital sem gastar horas do seu dia</h1>
+        <p class="subtitle">Nossa Inteligência Artificial cria posts premium completos (texto e imagem) e gerencia suas redes de forma inteligente e estratégica.</p>
+        
+        <div class="cta-group">
+            <a href="https://app.coregov.com.br" class="btn btn-primary">Começar Agora Grátis</a>
+            <a href="#como-funciona" class="btn btn-secondary">Conhecer Recursos</a>
+        </div>
+
+        <!-- BOTÕES DE DOWNLOAD PDF E ZIP -->
+        <div class="download-buttons">
+            <a href="/marketing-digital/🚀 SOCIAL COREGOV_ O Fim das Postagens Manuais.pdf" 
+               download="SOCIAL_COREGOV.pdf" 
+               class="btn btn-primary">
+               📄 Download PDF
+            </a>
+
+            <a href="/marketing-digital/kit do Afiliado Social Coregov.zip" 
+               download="kit_Afiliado_Social_Coregov.zip" 
+               class="btn btn-secondary">
+               📦 Download Kit ZIP
+            </a>
+        </div>
+    </div>
+</section>
+
 
     <footer>
         <div class="container">
