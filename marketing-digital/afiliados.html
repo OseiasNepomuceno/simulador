@@ -96,96 +96,20 @@
             margin: 0 auto;
         }
 
-        /* MATERIAL DE DIVULGAÇÃO (GRID) */
-        .gallery-section {
-            padding: 40px 0 80px 0;
-        }
-
-        .section-title {
-            margin-bottom: 32px;
-            border-left: 4px solid var(--cor-primaria);
-            padding-left: 12px;
-        }
-
-        .section-title h2 {
-            font-size: 22px;
-            font-weight: 700;
-        }
-
-        .section-title p {
-            color: var(--texto-mutado);
-            font-size: 14px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 28px;
-        }
-
-        .media-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--borda-suave);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+        /* NOVA CLASSE PARA BOTÕES DE DOWNLOAD */
+        .download-buttons {
             display: flex;
-            flex-direction: column;
-        }
-
-        .media-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(37, 99, 235, 0.3);
-        }
-
-        .image-container {
-            width: 100%;
-            height: 240px;
-            background-color: #070a12;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            overflow: hidden;
-            border-bottom: 1px solid var(--borda-suave);
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
 
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .media-card:hover .image-container img {
-            transform: scale(1.03);
-        }
-
-        .card-info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .card-info h3 {
-            font-size: 16px;
+        .download-buttons .btn {
+            padding: 12px 24px;
+            font-size: 15px;
+            border-radius: 8px;
             font-weight: 700;
-            margin-bottom: 4px;
-            color: #fff;
-        }
-
-        .card-info .dimensions {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--cor-sucesso);
-            margin-bottom: 10px;
-        }
-
-        .card-info p {
-            font-size: 13px;
-            color: var(--texto-mutado);
-            margin-bottom: 20px;
-            flex-grow: 1;
         }
 
         /* BOTÕES */
@@ -243,29 +167,30 @@
     </header>
 
     <section class="hero">
-    <div class="container">
-        <div class="badge">🤝 QG do Afiliado</div>
-        <h1>Materiais de Divulgação Prontos</h1>
-        <p class="subtitle">Baixe criativos oficiais de alta performance para impulsionar suas conversões na plataforma.</p>
+        <div class="container">
+            <div class="badge">🤝 QG do Afiliado</div>
+            <h1>Materiais de Divulgação Prontos</h1>
+            <p class="subtitle">Baixe criativos oficiais de alta performance para impulsionar suas conversões na plataforma.</p>
 
-        <!-- Botões de download PDF e ZIP centralizados -->
-        <div style="margin-top: 30px; text-align: center;">
-            <a href="/marketing-digital/🚀 SOCIAL COREGOV_ O Fim das Postagens Manuais.pdf" 
-               download="SOCIAL_COREGOV.pdf" 
-               class="btn btn-primary" 
-               style="margin: 0 10px; padding: 12px 20px; font-size: 15px;">
-               📄 Download PDF
-            </a>
+            <!-- Botões de download PDF e ZIP -->
+            <div class="download-buttons">
+                <a href="/marketing-digital/🚀 SOCIAL COREGOV_ O Fim das Postagens Manuais.pdf" 
+                   download="SOCIAL_COREGOV.pdf" 
+                   class="btn btn-primary">
+                   📄 Download PDF
+                </a>
 
-            <a href="/marketing-digital/kit do Afiliado Social Coregov.zip" 
-               download="kit_Afiliado_Social_Coregov.zip" 
-               class="btn btn-secondary" 
-               style="margin: 0 10px; padding: 12px 20px; font-size: 15px;">
-               📦 Download Kit ZIP
-            </a>
+                <a href="/marketing-digital/kit do Afiliado Social Coregov.zip" 
+                   download="kit_Afiliado_Social_Coregov.zip" 
+                   class="btn btn-secondary">
+                   📦 Download Kit ZIP
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- resto do código permanece igual -->
+
 
 
     <section class="gallery-section">
