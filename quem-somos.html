@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Quem Somos - CoreGov</title>
 
-<link rel="icon" href="favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.png" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
 <style>
 :root {
@@ -78,10 +78,17 @@ header.scrolled {
 }
 
 /* NAV */
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav a {
-  margin: 0 10px;
   color: var(--cinza);
   text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 nav a:hover {
@@ -134,6 +141,24 @@ p {
   margin-bottom: 12px;
 }
 
+/* Foto do fundador */
+.foto {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--verde);
+  margin: 0 auto 20px;
+  display: block;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.foto:hover {
+  transform: scale(1.05);
+}
+
 /* CTA CARD */
 .card.cta {
   grid-column: 1 / -1;
@@ -142,7 +167,7 @@ p {
 }
 
 /* RESPONSIVO */
-@media(max-width: 900px){
+@media(max-width: 900px) {
   .container {
     grid-template-columns: 1fr;
   }
@@ -154,17 +179,25 @@ p {
 
 <header>
   <div class="brand">
-    <img src="logo-icon.png" class="logo-icon" alt="Logo CoreGov">
+    <img src="logo-icon.png" class="logo-icon" alt="Logo CoreGov" />
 
     <div class="brand-text">
       <span class="brand-name">COREGOV</span>
       <span class="brand-sub">Automação, Gestão & Transformação Digital</span>
     </div>
   </div>
+
+  <nav>
+    <a href="index.html">Início</a>
+  </nav>
 </header>
 
 <!-- CONTEÚDO -->
 <div class="container">
+
+  <div class="card" style="text-align:center;">
+    <img src="oseias.jpg" alt="Foto Oseias Rodrigues" class="foto" />
+  </div>
 
   <div class="card">
     <h2>Oseias Rodrigues Nepomuceno</h2>
