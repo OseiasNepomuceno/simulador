@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sobre o Fundador - CoreGov</title>
+<title>Quem Somos - CoreGov</title>
 
 <link rel="icon" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -97,7 +97,6 @@ nav a:hover {
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
-  margin-top: 15px;
 }
 
 /* CONTAINER */
@@ -106,6 +105,8 @@ nav a:hover {
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   padding: 80px 10%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* CARD */
@@ -114,7 +115,7 @@ nav a:hover {
   border: 1px solid rgba(255,255,255,0.08);
   backdrop-filter: blur(15px);
   border-radius: 20px;
-  padding: 40px;
+  padding: 30px 35px;
   transition: 0.4s;
   opacity: 0;
   transform: translateY(40px);
@@ -125,25 +126,7 @@ nav a:hover {
   transform: translateY(0);
 }
 
-.foto {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top; /* centraliza melhor o rosto */
-  border: 3px solid var(--verde);
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4); /* dá destaque */
-  transition: transform 0.3s ease;
-}
-
-.foto:hover {
-  transform: scale(1.05); /* leve zoom ao passar o mouse */
-}
-
-
-/* TEXTOS */
-h2 { color: var(--verde); margin-bottom: 10px; }
+h2 { color: var(--verde); margin-bottom: 8px; }
 h3 { color: var(--cinza); margin-bottom: 15px; }
 
 p {
@@ -151,10 +134,11 @@ p {
   margin-bottom: 12px;
 }
 
-/* CTA */
-.cta {
+/* CTA CARD */
+.card.cta {
+  grid-column: 1 / -1;
   text-align: center;
-  margin-top: 40px;
+  padding: 40px 20px;
 }
 
 /* RESPONSIVO */
@@ -170,100 +154,75 @@ p {
 
 <header>
   <div class="brand">
-    <img src="logo-icon.png" class="logo-icon">
+    <img src="logo-icon.png" class="logo-icon" alt="Logo CoreGov">
 
     <div class="brand-text">
       <span class="brand-name">COREGOV</span>
       <span class="brand-sub">Automação, Gestão & Transformação Digital</span>
     </div>
   </div>
-
-
 </header>
 
 <!-- CONTEÚDO -->
 <div class="container">
 
- 
-  <!-- OSEIAS -->
   <div class="card">
-   <!-- OSEIAS -->
+    <h2>Oseias Rodrigues Nepomuceno</h2>
+    <h3>Fundador da CoreGov | Estratégia, Gestão e Transformação Digital</h3>
+  </div>
 
-<div class="card">
+  <div class="card">
+    <p>Profissional com trajetória construída ao longo de mais de 30 anos atuando nas áreas comercial, administrativa, gestão de pessoas, empreendedorismo e desenvolvimento organizacional.</p>
+  </div>
 
-```
-<img src="oseias.jpg" class="foto">
+  <div class="card">
+    <p>Fundador da CoreGov, empresa especializada na transformação digital de pequenos negócios através da automação de processos gerenciais, financeiros e operacionais, utilizando inteligência artificial, análise de dados e tecnologia aplicada à gestão empresarial.</p>
+  </div>
 
-<h2>Oseias Rodrigues Nepomuceno</h2>
+  <div class="card">
+    <p>Possui experiência na implantação de rotinas administrativas, desenvolvimento de indicadores, organização financeira, estruturação de processos internos e criação de soluções voltadas para aumento de produtividade, eficiência operacional e redução de custos.</p>
+  </div>
 
-<h3>Fundador da CoreGov | Estratégia, Gestão e Transformação Digital</h3>
+  <div class="card">
+    <p>Atuou durante 4 anos junto ao PAE – Programa de Auto Emprego, através da Pronager/Brasília e SERT – Secretaria do Emprego e Relações do Trabalho, em projeto desenvolvido com recursos da FAO/ONU, contribuindo para capacitação e orientação de empreendedores e pequenos negócios.</p>
+  </div>
 
-<p>
-    Profissional com trajetória construída ao longo de mais de 30 anos atuando nas áreas comercial, administrativa, gestão de pessoas, empreendedorismo e desenvolvimento organizacional.
-</p>
+  <div class="card">
+    <p>Também possui experiência na elaboração e adequação de estatutos, governança organizacional e processos de regularização institucional voltados à captação de recursos, desenvolvimento de entidades e fortalecimento organizacional.</p>
+  </div>
 
-<p>
-    Fundador da CoreGov, empresa especializada na transformação digital de pequenos negócios através da automação de processos gerenciais, financeiros e operacionais, utilizando inteligência artificial, análise de dados e tecnologia aplicada à gestão empresarial.
-</p>
+  <div class="card">
+    <p>Atualmente lidera o desenvolvimento de soluções digitais da CoreGov, incluindo plataformas de automação, inteligência artificial aplicada ao marketing, gestão empresarial, análise de dados, automação financeira e projetos voltados à inovação para micro e pequenas empresas.</p>
+  </div>
 
-<p>
-    Possui experiência na implantação de rotinas administrativas, desenvolvimento de indicadores, organização financeira, estruturação de processos internos e criação de soluções voltadas para aumento de produtividade, eficiência operacional e redução de custos.
-</p>
+  <div class="card">
+    <p>A missão da CoreGov é ajudar empresas a crescerem através da organização, tecnologia e automação inteligente, transformando tarefas manuais em processos eficientes que geram mais produtividade, controle e resultados.</p>
+  </div>
 
-<p>
-    Atuou durante 4 anos junto ao PAE – Programa de Auto Emprego, através da Pronager/Brasília e SERT – Secretaria do Emprego e Relações do Trabalho, em projeto desenvolvido com recursos da FAO/ONU, contribuindo para capacitação e orientação de empreendedores e pequenos negócios.
-</p>
-
-<p>
-    Também possui experiência na elaboração e adequação de estatutos, governança organizacional e processos de regularização institucional voltados à captação de recursos, desenvolvimento de entidades e fortalecimento organizacional.
-</p>
-
-<p>
-    Atualmente lidera o desenvolvimento de soluções digitais da CoreGov, incluindo plataformas de automação, inteligência artificial aplicada ao marketing, gestão empresarial, análise de dados, automação financeira e projetos voltados à inovação para micro e pequenas empresas.
-</p>
-
-<p>
-    A missão da CoreGov é ajudar empresas a crescerem através da organização, tecnologia e automação inteligente, transformando tarefas manuais em processos eficientes que geram mais produtividade, controle e resultados.
-</p>
-
-<a class="btn"
-   href="https://wa.me/5518991888698?text=Olá Oseias, conheci sua trajetória através do site da CoreGov e gostaria de conversar sobre transformação digital para minha empresa."
-   target="_blank">
-   Falar com o Oseias
-</a>
-```
-
-</div>
-
-    <a class="btn" href="https://wa.me/5518991888698?text=Olá Oseias, vi seu perfil no site e gostaria de melhorar a gestão da minha empresa." target="_blank">
-      Falar com o Oseias
-    </a>
+  <div class="card cta">
+    <a class="btn" href="https://wa.me/5518991888698?text=Olá Oseias, vi seu perfil no site e gostaria de melhorar a gestão da minha empresa." target="_blank" rel="noopener noreferrer">Falar com o Oseias</a>
   </div>
 
 </div>
 
-<div class="cta">
-  <h2>Quer melhorar os resultados da sua empresa?</h2>
-  <br>
-  <a href="servicos.html" class="btn">Ver soluções</a>
-</div>
-
 <script>
-const cards = document.querySelectorAll('.card');
+  // Animação dos cards ao scroll
+  const cards = document.querySelectorAll('.card');
 
-window.addEventListener('scroll', () => {
-  cards.forEach(card => {
-    if(card.getBoundingClientRect().top < window.innerHeight - 100){
-      card.classList.add('show');
-    }
+  window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+      if(card.getBoundingClientRect().top < window.innerHeight - 100){
+        card.classList.add('show');
+      }
+    });
   });
-});
 
-const header = document.querySelector("header");
+  // Cabeçalho muda ao scroll
+  const header = document.querySelector("header");
 
-window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 50);
-});
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 50);
+  });
 </script>
 
 </body>
