@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Roteiros TikTok - CoreGov</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Roteiros TikTok</h1>
+        <p>Confira os roteiros prontos para gravação, mantendo o padrão CoreGov.</p>
+    </header>
+
+    <main>
+        <section>
+            {% for roteiro in roteiros %}
+                <article class="card">
+                    <h2>{{ roteiro.titulo }}</h2>
+                    <p>{{ roteiro.conteudo }}</p>
+                    <small>Publicado em: {{ roteiro.criado_em }}</small>
+                </article>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <p>CoreGov © 2026</p>
+    </footer>
+</body>
+</html>
 
