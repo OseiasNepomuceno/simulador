@@ -370,6 +370,18 @@ nav a.active{
 }
 
 /* =========================================
+   RODAPÉ
+========================================= */
+
+footer{
+  background:var(--azul-medio);
+  color:var(--cinza);
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+
+/* =========================================
    RESPONSIVO
 ========================================= */
 
