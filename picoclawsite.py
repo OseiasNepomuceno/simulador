@@ -29,6 +29,31 @@ def gerar_roteiro_tiktok(tema: str):
     print(f"Roteiro gerado e salvo: {tema}")
     return roteiro
 
+# CTAs
+@app.get("/ctas", response_class=HTMLResponse)
+def listar_ctas(request: Request):
+    response = supabase.table("conteudos").select("*").eq("tipo", "cta").eq("status", "publicado").execute()
+    return templates.TemplateResponse("ctas.html", {"request": request, "ctas": response.data})
+
+# E-books
+@app.get("/e-books", response_class=HTMLResponse)
+def listar_ebooks(request: Request):
+    response = supabase.table("conteudos").select("*").eq("tipo", "ebook").eq("status", "publicado").execute()
+    return templates.TemplateResponse("e-books.html", {"request": request, "ebooks": response.data})
+
+# Infográficos
+@app.get("/infografico", response_class=HTMLResponse)
+def listar_infograficos(request: Request):
+    response = supabase.table("conteudos").select("*").eq("tipo", "infografico").eq("status", "publicado").execute()
+    return templates.TemplateResponse("infografico.html", {"request": request, "infograficos": response.data})
+
+# Posts
+@app.get("/posts", response_class=HTMLResponse)
+def listar_posts(request: Request):
+    response = supabase.table("conteudos").select("*").eq("tipo", "post").eq("status", "publicado").execute()
+    return templates.TemplateResponse("posts.html", {"request": request, "posts": response.data})
+
+
 
 @app.get("/roteiros-tiktok")
 def listar_roteiros():
