@@ -1,37 +1,49 @@
 from fastapi import FastAPI
 from supabase import create_client
 import os
+import schedule
+import time
+import threading
+import requests
 
-app = FastAPI()
-
+# Configuração do Supabase
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
+app = FastAPI()
 
-@app.post("/gerar-roteiro-tiktok")
+# Função para gerar roteiro TikTok
 def gerar_roteiro_tiktok(tema: str):
-    roteiro = chamar_picoclaw(f"Crie um roteiro de vídeo TikTok sobre {tema}")
+    # Aqui você chama o Picoclaw (pode ser API ou função interna)
+    roteiro = f"Roteiro TikTok sobre {tema}: introdução rápida, 3 dicas, CTA final."
+    
+    # Salva no Supabase
     supabase.table("conteudos").insert({
         "titulo": tema,
         "tipo": "roteiro_tiktok",
-        "conteudo": roteiro["texto"],
+        "conteudo": roteiro,
         "status": "rascunho"
     }).execute()
-    return {"status": "ok", "roteiro": roteiro["texto"]}
+    
+    print(f"Roteiro gerado e salvo: {tema}")
+    return roteiro
 
+# Endpoint manual (se quiser chamar via API)
+@app.post("/gerar-roteiro-tiktok")
+def gerar_roteiro_endpoint(tema: str):
+    roteiro = gerar_roteiro_tiktok(tema)
+    return {"status": "ok", "roteiro": roteiro}
 
-@app.post("/gerar-conteudo")
-def gerar_conteudo(titulo: str, tipo: str):
-    # chama Picoclaw
-    resultado = chamar_picoclaw(f"Crie um {tipo} sobre {titulo}")
-    if resultado.get("success"):
-        conteudo = resultado["conteudo"]
-        supabase.table("conteudos").insert({
-            "titulo": titulo,
-            "tipo": tipo,
-            "conteudo": conteudo,
-            "status": "rascunho"
-        }).execute()
-        return {"status": "ok", "conteudo": conteudo}
-    return {"status": "erro"}
+# Scheduler para rodar automaticamente
+def job_scheduler():
+    schedule.every().day.at("09:00").do(gerar_roteiro_tiktok, tema="Automação às 9h")
+    schedule.every().day.at("12:00").do(gerar_roteiro_tiktok, tema="Automação às 12h")
+    schedule.every().day.at("15:00").do(gerar_roteiro_tiktok, tema="Automação às 15h")
+
+    while True:
+        schedule.run_pending()
+        time.sleep(60)
+
+# Thread para rodar o scheduler junto com FastAPI
+threading.Thread(target=job_scheduler, daemon=True).start()
