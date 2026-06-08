@@ -1,10 +1,24 @@
-<section>
-    {% for post in posts %}
-        <article class="card">
-            <h2>{{ post.titulo }}</h2>
-            <p>{{ post.conteudo }}</p>
-            <small>Publicado em: {{ post.criado_em }}</small>
-        </article>
-    {% endfor %}
-</section>
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts - CoreGov</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header><h1>Posts</h1></header>
+    <main>
+        <section class="cards-grid">
+            {% for post in posts %}
+                <article class="card">
+                    <h2>{{ post.titulo }}</h2>
+                    <p>{{ post.conteudo }}</p>
+                    <small>Publicado em: {{ post.criado_em }}</small>
+                </article>
+            {% endfor %}
+        </section>
+    </main>
+    <footer><p>CoreGov © 2026</p></footer>
+</body>
+</html>
