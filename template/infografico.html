@@ -1,10 +1,24 @@
-<section>
-    {% for infografico in infograficos %}
-        <article class="card">
-            <h2>{{ infografico.titulo }}</h2>
-            <img src="{{ infografico.imagem_url }}" alt="{{ infografico.titulo }}">
-            <small>Publicado em: {{ infografico.criado_em }}</small>
-        </article>
-    {% endfor %}
-</section>
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Infográficos - CoreGov</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header><h1>Infográficos</h1></header>
+    <main>
+        <section class="cards-grid">
+            {% for infografico in infograficos %}
+                <article class="card">
+                    <h2>{{ infografico.titulo }}</h2>
+                    <img src="{{ infografico.imagem_url }}" alt="{{ infografico.titulo }}">
+                    <small>Publicado em: {{ infografico.criado_em }}</small>
+                </article>
+            {% endfor %}
+        </section>
+    </main>
+    <footer><p>CoreGov © 2026</p></footer>
+</body>
+</html>
