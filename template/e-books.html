@@ -1,1 +1,11 @@
+<section>
+    {% for ebook in ebooks %}
+        <article class="card">
+            <h2>{{ ebook.titulo }}</h2>
+            <p>{{ ebook.descricao }}</p>
+            <a href="{{ ebook.link }}" class="btn">Baixar e-book</a>
+            <small>Publicado em: {{ ebook.criado_em }}</small>
+        </article>
+    {% endfor %}
+</section>
 
