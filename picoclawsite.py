@@ -29,6 +29,20 @@ def gerar_roteiro_tiktok(tema: str):
     print(f"Roteiro gerado e salvo: {tema}")
     return roteiro
 
+
+@app.get("/roteiros-tiktok")
+def listar_roteiros():
+    # Busca todos os roteiros publicados no Supabase
+    response = supabase.table("conteudos") \
+        .select("*") \
+        .eq("tipo", "roteiro_tiktok") \
+        .eq("status", "publicado") \
+        .execute()
+    
+    roteiros = response.data
+    return {"roteiros": roteiros}
+
+
 # Endpoint manual (se quiser chamar via API)
 @app.post("/gerar-roteiro-tiktok")
 def gerar_roteiro_endpoint(tema: str):
