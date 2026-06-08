@@ -1,1 +1,10 @@
+<section>
+    {% for infografico in infograficos %}
+        <article class="card">
+            <h2>{{ infografico.titulo }}</h2>
+            <img src="{{ infografico.imagem_url }}" alt="{{ infografico.titulo }}">
+            <small>Publicado em: {{ infografico.criado_em }}</small>
+        </article>
+    {% endfor %}
+</section>
 
