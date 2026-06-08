@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
+
 from supabase import create_client
 import os
 import schedule
