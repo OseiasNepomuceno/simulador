@@ -1,11 +1,33 @@
-<section>
-    {% for cta in ctas %}
-        <article class="card">
-            <h2>{{ cta.titulo }}</h2>
-            <p>{{ cta.conteudo }}</p>
-            <a href="{{ cta.link }}" class="btn">Acessar</a>
-            <small>Publicado em: {{ cta.criado_em }}</small>
-        </article>
-    {% endfor %}
-</section>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>CTAs - CoreGov</title>
+    <!-- Fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Chamadas para Ação</h1>
+    </header>
 
+    <main>
+        <section class="cards-grid">
+            {% for cta in ctas %}
+                <article class="card">
+                    <h2>{{ cta.titulo }}</h2>
+                    <p>{{ cta.conteudo }}</p>
+                    <a href="{{ cta.link }}" class="btn">Acessar</a>
+                    <small>Publicado em: {{ cta.criado_em }}</small>
+                </article>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <p>CoreGov © 2026</p>
+    </footer>
+</body>
+</html>
