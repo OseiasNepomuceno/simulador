@@ -8,6 +8,19 @@ SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
+
+@app.post("/gerar-roteiro-tiktok")
+def gerar_roteiro_tiktok(tema: str):
+    roteiro = chamar_picoclaw(f"Crie um roteiro de vídeo TikTok sobre {tema}")
+    supabase.table("conteudos").insert({
+        "titulo": tema,
+        "tipo": "roteiro_tiktok",
+        "conteudo": roteiro["texto"],
+        "status": "rascunho"
+    }).execute()
+    return {"status": "ok", "roteiro": roteiro["texto"]}
+
+
 @app.post("/gerar-conteudo")
 def gerar_conteudo(titulo: str, tipo: str):
     # chama Picoclaw
