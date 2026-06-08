@@ -1,1 +1,11 @@
+<section>
+    {% for cta in ctas %}
+        <article class="card">
+            <h2>{{ cta.titulo }}</h2>
+            <p>{{ cta.conteudo }}</p>
+            <a href="{{ cta.link }}" class="btn">Acessar</a>
+            <small>Publicado em: {{ cta.criado_em }}</small>
+        </article>
+    {% endfor %}
+</section>
 
