@@ -1,11 +1,25 @@
-<section>
-    {% for ebook in ebooks %}
-        <article class="card">
-            <h2>{{ ebook.titulo }}</h2>
-            <p>{{ ebook.descricao }}</p>
-            <a href="{{ ebook.link }}" class="btn">Baixar e-book</a>
-            <small>Publicado em: {{ ebook.criado_em }}</small>
-        </article>
-    {% endfor %}
-</section>
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>E-books - CoreGov</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header><h1>E-books</h1></header>
+    <main>
+        <section class="cards-grid">
+            {% for ebook in ebooks %}
+                <article class="card">
+                    <h2>{{ ebook.titulo }}</h2>
+                    <p>{{ ebook.descricao }}</p>
+                    <a href="{{ ebook.link }}" class="btn">Baixar e-book</a>
+                    <small>Publicado em: {{ ebook.criado_em }}</small>
+                </article>
+            {% endfor %}
+        </section>
+    </main>
+    <footer><p>CoreGov © 2026</p></footer>
+</body>
+</html>
