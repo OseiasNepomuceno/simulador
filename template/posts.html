@@ -1,1 +1,10 @@
+<section>
+    {% for post in posts %}
+        <article class="card">
+            <h2>{{ post.titulo }}</h2>
+            <p>{{ post.conteudo }}</p>
+            <small>Publicado em: {{ post.criado_em }}</small>
+        </article>
+    {% endfor %}
+</section>
 
