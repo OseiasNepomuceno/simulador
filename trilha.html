@@ -90,6 +90,96 @@ nav a:hover{
     color:var(--verde);
 }
 
+/* KIWIFY CARD - TOPO */
+
+.kiwify-cta-topo{
+    max-width:1200px;
+    margin:30px auto 0;
+    padding:0 10%;
+}
+
+.kiwify-card{
+    background:linear-gradient(135deg,#00FF9F15,#00FF9F05);
+    border:2px solid var(--verde);
+    border-radius:20px;
+    padding:35px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    flex-wrap:wrap;
+    transition:.3s;
+    box-shadow:0 0 30px rgba(0,255,159,.08);
+}
+
+.kiwify-card:hover{
+    box-shadow:0 0 50px rgba(0,255,159,.18);
+    transform:translateY(-3px);
+}
+
+.kiwify-card-left{
+    flex:1;
+    min-width:250px;
+}
+
+.kiwify-card-left .tag{
+    display:inline-block;
+    background:var(--verde);
+    color:#000;
+    font-size:11px;
+    font-weight:700;
+    padding:5px 14px;
+    border-radius:30px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:12px;
+}
+
+.kiwify-card-left h3{
+    color:var(--verde);
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+.kiwify-card-left p{
+    color:#cfcfcf;
+    line-height:1.7;
+    font-size:15px;
+}
+
+.kiwify-card-right{
+    flex-shrink:0;
+}
+
+.btn-kiwify{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--verde);
+    color:#000;
+    text-decoration:none;
+    padding:16px 32px;
+    border-radius:12px;
+    font-weight:700;
+    font-size:16px;
+    transition:.3s;
+    border:2px solid var(--verde);
+}
+
+.btn-kiwify:hover{
+    background:transparent;
+    color:var(--verde);
+}
+
+.btn-kiwify .arrow{
+    font-size:20px;
+    transition:.3s;
+}
+
+.btn-kiwify:hover .arrow{
+    transform:translateX(5px);
+}
+
 /* HERO */
 
 .hero{
@@ -304,6 +394,21 @@ nav a:hover{
 
 @media(max-width:768px){
 
+.kiwify-card{
+    flex-direction:column;
+    text-align:center;
+    padding:25px 20px;
+}
+
+.kiwify-card-left h3{
+    font-size:22px;
+}
+
+.btn-kiwify{
+    width:100%;
+    justify-content:center;
+}
+
 .hero h1{
     font-size:34px;
 }
@@ -337,6 +442,43 @@ nav a:hover{
 </nav>
 
 </header>
+
+<!-- ============================================ -->
+<!-- 🟢 CARD KIWIFY - LOGO NO INÍCIO DA PÁGINA 🟢 -->
+<!-- ============================================ -->
+
+<section class="kiwify-cta-topo">
+
+<a href="https://pay.kiwify.com.br/VzmvLyY" target="_blank" class="kiwify-card" style="text-decoration:none;display:flex;">
+
+<div class="kiwify-card-left">
+
+<div class="tag">🔥 OFERTA EXCLUSIVA</div>
+
+<h3>🚀 Organização Pessoal e Empresarial</h3>
+
+<p>
+Acesse agora o curso completo e aprenda na prática como organizar
+sua vida pessoal e empresarial com métodos comprovados. Bônus exclusivos + certificado!
+</p>
+
+</div>
+
+<div class="kiwify-card-right">
+
+<span class="btn-kiwify">
+QUERO ACESSAR <span class="arrow">→</span>
+</span>
+
+</div>
+
+</a>
+
+</section>
+
+<!-- ============================================ -->
+<!-- FIM CARD KIWIFY                              -->
+<!-- ============================================ -->
 
 <section class="hero">
 
@@ -529,6 +671,41 @@ Aprenda a utilizar o monitor de oportunidades e automatizar pesquisas.
 
 </div>
 
+<!-- ============================================ -->
+<!-- 🆕 NOVO CARD: ORGANIZAÇÃO PESSOAL E EMPRESARIAL -->
+<!-- ============================================ -->
+
+<div class="video-card">
+
+<div class="video-thumb">📋</div>
+
+<div class="video-info">
+
+<div class="video-category">Gestão Empresarial</div>
+
+<h3>Organização Pessoal e Empresarial</h3>
+
+<p>
+Métodos práticos para organizar sua rotina, priorizar tarefas e aumentar
+a produtividade no trabalho e na vida pessoal.
+</p>
+
+<div class="materials">
+<span class="material">Vídeo Aula</span>
+<span class="material">PDF</span>
+<span class="material">Checklist</span>
+</div>
+
+<a href="https://pay.kiwify.com.br/VzmvLyY" target="_blank" class="btn">Acessar Curso</a>
+
+</div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- FIM NOVO CARD                                -->
+<!-- ============================================ -->
+
 </div>
 
 </section>
@@ -563,5 +740,3 @@ header.classList.toggle("scrolled",window.scrollY>50);
 
 </body>
 </html>
-```
-
