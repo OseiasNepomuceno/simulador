@@ -252,279 +252,11 @@
             .btn-mobile-filtros { display: none; }
         }
 
-        /* PLANOS DE ACESSO */
-        .planos-section {
-            padding: 60px 24px;
-            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .planos-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-        .planos-inner {
-            max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
-        }
-        .planos-header {
-            text-align: center; margin-bottom: 40px;
-        }
-        .planos-header h2 {
-            color: white; font-size: 2rem; margin-bottom: 8px;
-        }
-        .planos-header p {
-            color: rgba(255,255,255,0.7); font-size: 1.05rem;
-        }
-        .planos-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-        }
-        .plano-card {
-            background: rgba(255,255,255,0.06);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 28px 24px;
-            text-align: center;
-            transition: all 0.3s;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-        .plano-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.1);
-        }
-        .plano-card.destacado {
-            border-color: var(--gold);
-            background: rgba(245,197,24,0.08);
-            transform: scale(1.03);
-        }
-        .plano-card.destacado:hover {
-            transform: scale(1.03) translateY(-5px);
-        }
-        .plano-card .plano-emoji {
-            font-size: 2.5rem; margin-bottom: 12px;
-        }
-        .plano-card .plano-nome {
-            color: white; font-size: 1.3rem; font-weight: 800; margin-bottom: 4px;
-        }
-        .plano-card .plano-faixa {
-            color: var(--gold); font-size: 0.85rem; font-weight: 600;
-            margin-bottom: 12px; padding: 4px 12px;
-            background: rgba(245,197,24,0.15);
-            border-radius: 20px; display: inline-block;
-        }
-        .plano-card .plano-preco {
-            color: white; font-size: 2.2rem; font-weight: 800; margin: 12px 0 4px;
-        }
-        .plano-card .plano-preco small {
-            font-size: 0.9rem; font-weight: 400; opacity: 0.6;
-        }
-        .plano-card .plano-periodo {
-            color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 16px;
-        }
-        .plano-card .plano-itens {
-            list-style: none; padding: 0; margin: 0 0 20px;
-            text-align: left; flex: 1;
-        }
-        .plano-card .plano-itens li {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-            padding: 6px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .plano-card .plano-itens li:last-child {
-            border-bottom: none;
-        }
-        .plano-card .plano-itens li .check { color: var(--green); font-weight: 700; }
-        .plano-card .plano-itens li .xmark { color: var(--accent); opacity: 0.5; }
-        .plano-card .btn-plano {
-            display: inline-block;
-            padding: 14px 24px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            margin-top: auto;
-        }
-        .plano-card .btn-plano.btn-free {
-            background: rgba(255,255,255,0.1);
-            color: white;
-        }
-        .plano-card .btn-plano.btn-free:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        .plano-card .btn-plano.btn-prata {
-            background: #a0a0a0;
-            color: #1a1a2e;
-        }
-        .plano-card .btn-plano.btn-prata:hover {
-            background: #c0c0c0;
-            transform: translateY(-2px);
-        }
-        .plano-card .btn-plano.btn-ouro {
-            background: var(--gold);
-            color: var(--primary-dark);
-        }
-        .plano-card .btn-plano.btn-ouro:hover {
-            background: #ffd700;
-            transform: translateY(-2px);
-        }
-        .plano-card .btn-plano.btn-diamante {
-            background: linear-gradient(135deg, #4fc3f7, #29b6f6, #0288d1);
-            color: white;
-            box-shadow: 0 4px 15px rgba(41,182,246,0.3);
-        }
-        .plano-card .btn-plano.btn-diamante:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(41,182,246,0.5);
-        }
-        .plano-card .plano-badge-popular {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gold);
-            color: var(--primary-dark);
-            font-size: 0.75rem;
-            font-weight: 800;
-            padding: 4px 16px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .plano-gratis-card {
-            background: rgba(255,255,255,0.04);
-            border: 2px dashed rgba(255,255,255,0.2);
-        }
-        .plano-gratis-card:hover {
-            border-color: var(--green);
-            background: rgba(46,204,113,0.06);
-        }
+        
 
-        /* badge de plano na vaga */
-        .vaga-plano-badge {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-left: 6px;
-        }
-        .vaga-plano-badge.livre {
-            background: rgba(46,204,113,0.15);
-            color: #2ecc71;
-        }
-        .vaga-plano-badge.bronze {
-            background: rgba(205,127,50,0.2);
-            color: #cd7f32;
-        }
-        .vaga-plano-badge.prata {
-            background: rgba(192,192,192,0.2);
-            color: #c0c0c0;
-        }
-        .vaga-plano-badge.ouro {
-            background: rgba(245,197,24,0.2);
-            color: var(--gold);
-        }
-        .vaga-plano-badge.diamante {
-            background: rgba(41,182,246,0.2);
-            color: #29b6f6;
-        }
-
-        .vaga-bloqueio-msg {
-            background: rgba(233,69,96,0.08);
-            border: 1px dashed rgba(233,69,96,0.3);
-            border-radius: 8px;
-            padding: 10px 14px;
-            font-size: 0.85rem;
-            color: var(--accent);
-            text-align: center;
-            margin-top: 10px;
-            line-height: 1.4;
-        }
-        .vaga-bloqueio-msg .btn-assinar-bloqueio {
-            display: inline-block;
-            margin-top: 8px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 6px 16px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .vaga-bloqueio-msg .btn-assinar-bloqueio:hover {
+                        .vaga-bloqueio-msg .btn-assinar-bloqueio:hover {
             background: var(--accent-hover);
             transform: translateY(-1px);
-        }
-
-        /* modal de assinatura */
-        .modal-assinar-overlay {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6); z-index: 300;
-            align-items: center; justify-content: center;
-            padding: 24px;
-        }
-        .modal-assinar-overlay.active { display: flex; }
-        .modal-assinar {
-            background: white; border-radius: 24px; max-width: 480px; width: 100%;
-            padding: 40px 36px; text-align: center;
-            animation: modalIn 0.3s ease; position: relative;
-        }
-        .modal-assinar .modal-close {
-            position: absolute; top: 16px; right: 20px; font-size: 1.5rem;
-            cursor: pointer; color: var(--text-light); background: none; border: none;
-        }
-        .modal-assinar .modal-close:hover { color: var(--accent); }
-        .modal-assinar .assinar-icone { font-size: 4rem; margin-bottom: 12px; }
-        .modal-assinar h2 { color: var(--primary); margin-bottom: 8px; }
-        .modal-assinar .assinar-preco {
-            font-size: 2.5rem; font-weight: 800; color: var(--primary);
-            margin: 16px 0 4px;
-        }
-        .modal-assinar .assinar-preco small {
-            font-size: 1rem; font-weight: 400; color: var(--text-light);
-        }
-        .modal-assinar .assinar-plano-nome {
-            color: var(--accent); font-weight: 700; font-size: 1.1rem;
-            margin-bottom: 16px;
-        }
-        .modal-assinar .assinar-desc {
-            color: var(--text-light); font-size: 0.95rem; margin-bottom: 24px;
-            line-height: 1.6;
-        }
-        .modal-assinar .btn-assinar-modal {
-            background: var(--primary); color: white; border: none;
-            padding: 16px 40px; border-radius: 12px; font-weight: 700;
-            font-size: 1.1rem; cursor: pointer; transition: all 0.3s;
-            width: 100%; text-decoration: none; display: inline-block;
-        }
-        .modal-assinar .btn-assinar-modal:hover {
-            background: var(--primary-light); transform: translateY(-2px);
-        }
-        .modal-assinar .assinar-beneficios {
-            text-align: left; margin: 16px 0;
-        }
-        .modal-assinar .assinar-beneficios li {
-            padding: 6px 0; font-size: 0.9rem;
-            display: flex; align-items: center; gap: 8px;
         }
 
         @media (max-width: 1100px) {
@@ -542,279 +274,11 @@
             .plano-card { max-width: 350px; margin: 0 auto; }
         }
 
-        /* PLANOS DE ACESSO */
-        .planos-section {
-            padding: 60px 24px;
-            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .planos-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-        .planos-inner {
-            max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
-        }
-        .planos-header {
-            text-align: center; margin-bottom: 40px;
-        }
-        .planos-header h2 {
-            color: white; font-size: 2rem; margin-bottom: 8px;
-        }
-        .planos-header p {
-            color: rgba(255,255,255,0.7); font-size: 1.05rem;
-        }
-        .planos-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-        }
-        .plano-card {
-            background: rgba(255,255,255,0.06);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 28px 24px;
-            text-align: center;
-            transition: all 0.3s;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-        .plano-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.1);
-        }
-        .plano-card.destacado {
-            border-color: var(--gold);
-            background: rgba(245,197,24,0.08);
-            transform: scale(1.03);
-        }
-        .plano-card.destacado:hover {
-            transform: scale(1.03) translateY(-5px);
-        }
-        .plano-card .plano-emoji {
-            font-size: 2.5rem; margin-bottom: 12px;
-        }
-        .plano-card .plano-nome {
-            color: white; font-size: 1.3rem; font-weight: 800; margin-bottom: 4px;
-        }
-        .plano-card .plano-faixa {
-            color: var(--gold); font-size: 0.85rem; font-weight: 600;
-            margin-bottom: 12px; padding: 4px 12px;
-            background: rgba(245,197,24,0.15);
-            border-radius: 20px; display: inline-block;
-        }
-        .plano-card .plano-preco {
-            color: white; font-size: 2.2rem; font-weight: 800; margin: 12px 0 4px;
-        }
-        .plano-card .plano-preco small {
-            font-size: 0.9rem; font-weight: 400; opacity: 0.6;
-        }
-        .plano-card .plano-periodo {
-            color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 16px;
-        }
-        .plano-card .plano-itens {
-            list-style: none; padding: 0; margin: 0 0 20px;
-            text-align: left; flex: 1;
-        }
-        .plano-card .plano-itens li {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-            padding: 6px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .plano-card .plano-itens li:last-child {
-            border-bottom: none;
-        }
-        .plano-card .plano-itens li .check { color: var(--green); font-weight: 700; }
-        .plano-card .plano-itens li .xmark { color: var(--accent); opacity: 0.5; }
-        .plano-card .btn-plano {
-            display: inline-block;
-            padding: 14px 24px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            margin-top: auto;
-        }
-        .plano-card .btn-plano.btn-free {
-            background: rgba(255,255,255,0.1);
-            color: white;
-        }
-        .plano-card .btn-plano.btn-free:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        .plano-card .btn-plano.btn-prata {
-            background: #a0a0a0;
-            color: #1a1a2e;
-        }
-        .plano-card .btn-plano.btn-prata:hover {
-            background: #c0c0c0;
-            transform: translateY(-2px);
-        }
-        .plano-card .btn-plano.btn-ouro {
-            background: var(--gold);
-            color: var(--primary-dark);
-        }
-        .plano-card .btn-plano.btn-ouro:hover {
-            background: #ffd700;
-            transform: translateY(-2px);
-        }
-        .plano-card .btn-plano.btn-diamante {
-            background: linear-gradient(135deg, #4fc3f7, #29b6f6, #0288d1);
-            color: white;
-            box-shadow: 0 4px 15px rgba(41,182,246,0.3);
-        }
-        .plano-card .btn-plano.btn-diamante:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(41,182,246,0.5);
-        }
-        .plano-card .plano-badge-popular {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gold);
-            color: var(--primary-dark);
-            font-size: 0.75rem;
-            font-weight: 800;
-            padding: 4px 16px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .plano-gratis-card {
-            background: rgba(255,255,255,0.04);
-            border: 2px dashed rgba(255,255,255,0.2);
-        }
-        .plano-gratis-card:hover {
-            border-color: var(--green);
-            background: rgba(46,204,113,0.06);
-        }
+        
 
-        /* badge de plano na vaga */
-        .vaga-plano-badge {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-left: 6px;
-        }
-        .vaga-plano-badge.livre {
-            background: rgba(46,204,113,0.15);
-            color: #2ecc71;
-        }
-        .vaga-plano-badge.bronze {
-            background: rgba(205,127,50,0.2);
-            color: #cd7f32;
-        }
-        .vaga-plano-badge.prata {
-            background: rgba(192,192,192,0.2);
-            color: #c0c0c0;
-        }
-        .vaga-plano-badge.ouro {
-            background: rgba(245,197,24,0.2);
-            color: var(--gold);
-        }
-        .vaga-plano-badge.diamante {
-            background: rgba(41,182,246,0.2);
-            color: #29b6f6;
-        }
-
-        .vaga-bloqueio-msg {
-            background: rgba(233,69,96,0.08);
-            border: 1px dashed rgba(233,69,96,0.3);
-            border-radius: 8px;
-            padding: 10px 14px;
-            font-size: 0.85rem;
-            color: var(--accent);
-            text-align: center;
-            margin-top: 10px;
-            line-height: 1.4;
-        }
-        .vaga-bloqueio-msg .btn-assinar-bloqueio {
-            display: inline-block;
-            margin-top: 8px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 6px 16px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .vaga-bloqueio-msg .btn-assinar-bloqueio:hover {
+                        .vaga-bloqueio-msg .btn-assinar-bloqueio:hover {
             background: var(--accent-hover);
             transform: translateY(-1px);
-        }
-
-        /* modal de assinatura */
-        .modal-assinar-overlay {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6); z-index: 300;
-            align-items: center; justify-content: center;
-            padding: 24px;
-        }
-        .modal-assinar-overlay.active { display: flex; }
-        .modal-assinar {
-            background: white; border-radius: 24px; max-width: 480px; width: 100%;
-            padding: 40px 36px; text-align: center;
-            animation: modalIn 0.3s ease; position: relative;
-        }
-        .modal-assinar .modal-close {
-            position: absolute; top: 16px; right: 20px; font-size: 1.5rem;
-            cursor: pointer; color: var(--text-light); background: none; border: none;
-        }
-        .modal-assinar .modal-close:hover { color: var(--accent); }
-        .modal-assinar .assinar-icone { font-size: 4rem; margin-bottom: 12px; }
-        .modal-assinar h2 { color: var(--primary); margin-bottom: 8px; }
-        .modal-assinar .assinar-preco {
-            font-size: 2.5rem; font-weight: 800; color: var(--primary);
-            margin: 16px 0 4px;
-        }
-        .modal-assinar .assinar-preco small {
-            font-size: 1rem; font-weight: 400; color: var(--text-light);
-        }
-        .modal-assinar .assinar-plano-nome {
-            color: var(--accent); font-weight: 700; font-size: 1.1rem;
-            margin-bottom: 16px;
-        }
-        .modal-assinar .assinar-desc {
-            color: var(--text-light); font-size: 0.95rem; margin-bottom: 24px;
-            line-height: 1.6;
-        }
-        .modal-assinar .btn-assinar-modal {
-            background: var(--primary); color: white; border: none;
-            padding: 16px 40px; border-radius: 12px; font-weight: 700;
-            font-size: 1.1rem; cursor: pointer; transition: all 0.3s;
-            width: 100%; text-decoration: none; display: inline-block;
-        }
-        .modal-assinar .btn-assinar-modal:hover {
-            background: var(--primary-light); transform: translateY(-2px);
-        }
-        .modal-assinar .assinar-beneficios {
-            text-align: left; margin: 16px 0;
-        }
-        .modal-assinar .assinar-beneficios li {
-            padding: 6px 0; font-size: 0.9rem;
-            display: flex; align-items: center; gap: 8px;
         }
 
         @media (max-width: 1100px) {
@@ -1031,86 +495,9 @@
         }
         .modal .btn-candidatar-modal:hover { background: var(--primary-light); }
     
-        /* EMAIL CAPTURE MODAL */
-        .modal-email-overlay {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6); z-index: 400;
-            align-items: center; justify-content: center; padding: 24px;
-        }
-        .modal-email-overlay.active { display: flex; }
-        .modal-email {
-            background: white; border-radius: 24px; max-width: 440px; width: 100%;
-            padding: 40px 36px; text-align: center;
-            animation: modalIn 0.3s ease; position: relative;
-        }
-        .modal-email .modal-close {
-            position: absolute; top: 16px; right: 20px; font-size: 1.5rem;
-            cursor: pointer; color: var(--text-light); background: none; border: none;
-        }
-        .modal-email .modal-close:hover { color: var(--accent); }
-        .modal-email h2 { color: var(--primary); margin-bottom: 8px; }
-        .modal-email p { color: var(--text-light); margin-bottom: 20px; font-size: 0.95rem; }
-        .modal-email .plano-label {
-            display: inline-block; background: var(--gold); color: var(--primary-dark);
-            padding: 4px 16px; border-radius: 20px; font-weight: 700;
-            font-size: 0.85rem; margin-bottom: 16px;
-        }
-        .modal-email input[type="email"] {
-            width: 100%; padding: 14px 16px; border: 2px solid var(--border);
-            border-radius: 12px; font-size: 1rem; outline: none;
-            transition: all 0.2s; margin-bottom: 12px;
-        }
-        .modal-email input[type="email"]:focus {
-            border-color: var(--primary); box-shadow: 0 0 0 3px rgba(15,52,96,0.1);
-        }
-        .modal-email .btn-email-submit {
-            width: 100%; background: var(--primary); color: white; border: none;
-            padding: 14px; border-radius: 12px; font-weight: 700;
-            font-size: 1rem; cursor: pointer; transition: all 0.3s;
-        }
-        .modal-email .btn-email-submit:hover { background: var(--primary-light); transform: translateY(-2px); }
-        .modal-email .btn-email-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-        .modal-email .email-erro { color: var(--accent); font-size: 0.85rem; margin-top: 8px; display: none; }
-        .modal-email .email-erro.show { display: block; }
-        .modal-email .email-sucesso { color: var(--green); font-size: 0.9rem; margin-top: 8px; display: none; }
-        .modal-email .email-sucesso.show { display: block; }
+        
 
-        /* VERIFICAR ACESSO SECTION */
-        .verificar-section {
-            background: var(--bg); padding: 40px 24px; border-bottom: 1px solid var(--border);
-            text-align: center;
-        }
-        .verificar-inner { max-width: 500px; margin: 0 auto; }
-        .verificar-inner h3 { color: var(--primary); font-size: 1.3rem; margin-bottom: 8px; }
-        .verificar-inner p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 16px; }
-        .verificar-inner .input-group {
-            display: flex; gap: 8px; max-width: 400px; margin: 0 auto;
-        }
-        .verificar-inner .input-group input {
-            flex: 1; padding: 12px 16px; border: 2px solid var(--border);
-            border-radius: 10px; font-size: 0.95rem; outline: none;
-        }
-        .verificar-inner .input-group input:focus { border-color: var(--primary); }
-        .verificar-inner .input-group button {
-            background: var(--primary); color: white; border: none;
-            padding: 12px 24px; border-radius: 10px; font-weight: 700;
-            cursor: pointer; transition: all 0.2s; white-space: nowrap;
-        }
-        .verificar-inner .input-group button:hover { background: var(--primary-light); }
-        .verificar-result {
-            margin-top: 12px; padding: 12px; border-radius: 10px;
-            font-size: 0.95rem; display: none;
-        }
-        .verificar-result.ativo {
-            display: block; background: rgba(46,204,113,0.1);
-            border: 1px solid var(--green); color: #1a7a3a;
-        }
-        .verificar-result.inativo {
-            display: block; background: rgba(233,69,96,0.08);
-            border: 1px dashed var(--accent); color: var(--accent);
-        }
-
-    </style>
+        </style>
 </head>
 <body>
 
@@ -1466,23 +853,6 @@
 </footer>
 
 
-<!-- MODAL CAPTURA EMAIL -->
-<div class="modal-email-overlay" id="modalEmail" onclick="if(event.target===this)fecharModalEmail()">
-    <div class="modal-email">
-        <button class="modal-close" onclick="fecharModalEmail()">&times;</button>
-        <div style="font-size:3rem;margin-bottom:12px;" id="modalEmailIcon">🥉</div>
-        <h2 id="modalEmailTitle">Assinar Plano</h2>
-        <span class="plano-label" id="modalEmailPlano">BRONZE</span>
-        <p id="modalEmailDesc">Digite seu email para receber o link de pagamento e ativar seu acesso.</p>
-        <input type="email" id="inputEmail" placeholder="seu@email.com" autocomplete="email">
-        <div class="email-erro" id="emailErro">Por favor, insira um email válido.</div>
-        <div class="email-sucesso" id="emailSucesso"></div>
-        <button class="btn-email-submit" id="btnEmailSubmit" onclick="enviarEmail()">
-            📨 Continuar para Pagamento
-        </button>
-    </div>
-</div>
-
 <!-- MODAL -->
 <div class="modal-overlay" id="modalVaga" onclick="if(event.target===this)fecharModal()">
     <div class="modal">
@@ -1575,24 +945,9 @@ function getUnidadeLabel(unidade) {
     return 'CORPORATIVO';
 }
 
-function getPlanoVaga(salario) {
-    if (salario === null) return null;
-    if (salario <= 3000) return { nome: 'Livre', icone: '🆓', classe: 'livre' };
-    if (salario <= 5000) return { nome: 'Bronze', icone: '🥉', classe: 'bronze' };
-    if (salario <= 8000) return { nome: 'Prata', icone: '🥈', classe: 'prata' };
-    if (salario <= 10000) return { nome: 'Ouro', icone: '🥇', classe: 'ouro' };
-    return { nome: 'Diamante', icone: '💎', classe: 'diamante' };
-}
 
-function getPlanoLink(classe) {
-    const links = {
-        bronze: 'https://mpago.la/2UmiPMV',
-        prata: 'https://mpago.la/1XWEeC6',
-        ouro: 'https://mpago.la/2mSYs6U',
-        diamante: 'https://mpago.la/2fCg4C2'
-    };
-    return links[classe] || '#';
-}
+
+
 
 // ===== FUNCOES DE FILTRO E RENDER =====
 function filtrarVagas() {
@@ -1647,27 +1002,14 @@ function renderizarVagas(resultado) {
         const unidadeLabel = getUnidadeLabel(v.unidade);
         const dias = getDiasAtras(v.data);
         const novoLabel = dias <= 2 ? '<span class="vaga-tag novo">🆕 Nova</span>' : '';
-        const plano = getPlanoVaga(v.salario);
-        const isLivre = !plano || plano.nome === 'Livre';
-        const planoBadge = plano ? `<span class="vaga-plano-badge ${plano.classe}">${plano.icone} ${plano.nome}</span>` : '';
-        const empresaHtml = isLivre ? `<div class="vaga-empresa">${v.empresa}</div>` : '';
-        const actionsHtml = isLivre
-            ? `<div class="vaga-actions">
-                    <a href="${v.link}" target="_blank" class="btn-candidatar" onclick="event.stopPropagation()">📝 Candidatar-se</a>
-                    <a href="https://app.coregov.com.br" target="_blank" class="btn-rastrear" onclick="event.stopPropagation()">🛰️ Rastrear</a>
-               </div>`
-            : `<div class="vaga-bloqueio-msg">🔒 Assine <strong>Plano ${plano.nome}</strong> para ver empresa e se candidatar
-                <br><a href="${getPlanoLink(plano.classe)}" target="_blank" class="btn-assinar-bloqueio" onclick="event.stopPropagation()">🔓 Assinar ${plano.nome}</a>
-               </div>`;
         return \`
             <div class="vaga-card" onclick="abrirModal(${v.id})">
                 <div>
                     <span class="vaga-tag ${tagClass}">${unidadeLabel}</span>
                     ${novoLabel}
-                    ${planoBadge}
                 </div>
                 <h3>${v.cargo}</h3>
-                ${empresaHtml}
+                <div class="vaga-empresa">${v.empresa}</div>
                 <div class="vaga-desc">${v.descricao}</div>
                 <div class="vaga-meta">
                     <span>📍 ${v.local}</span>
@@ -1675,7 +1017,10 @@ function renderizarVagas(resultado) {
                     <span class="salario">${formatarSalario(v.salario)}</span>
                     <span class="data">📅 ${formatarData(v.data)}</span>
                 </div>
-                ${actionsHtml}
+                <div class="vaga-actions">
+                    <a href="${v.link}" target="_blank" class="btn-candidatar" onclick="event.stopPropagation()">📝 Candidatar-se</a>
+                    <a href="https://app.coregov.com.br" target="_blank" class="btn-rastrear" onclick="event.stopPropagation()">🛰️ Rastrear</a>
+                </div>
             </div>
         \`;
     }).join('');
@@ -1766,119 +1111,15 @@ function limparFiltros() {
 // ===== ASSINATURA VAGAS - CAPTURA DE EMAIL =====
 let planoSelecionado = '';
 
-const PLANOS_INFO = {
-    bronze: { nome: 'Bronze', icone: '🥉', faixa: 'R$ 3.001 ~ R$ 5.000', preco: 'R$ 9,90/trimestre', link: 'https://mpago.la/2UmiPMV' },
-    prata: { nome: 'Prata', icone: '🥈', faixa: 'R$ 5.001 ~ R$ 8.000', preco: 'R$ 15,00/trimestre', link: 'https://mpago.la/1XWEeC6' },
-    ouro: { nome: 'Ouro', icone: '🥇', faixa: 'R$ 8.001 ~ R$ 10.000', preco: 'R$ 35,00/trimestre', link: 'https://mpago.la/2mSYs6U' },
-    diamante: { nome: 'Diamante', icone: '💎', faixa: 'Acima de R$ 10.000', preco: 'R$ 69,90/trimestre', link: 'https://mpago.la/2fCg4C2' }
-};
 
-function abrirModalEmail(plano) {
-    planoSelecionado = plano;
-    const info = PLANOS_INFO[plano];
-    if (!info) return;
 
-    document.getElementById('modalEmailIcon').textContent = info.icone;
-    document.getElementById('modalEmailTitle').textContent = 'Assinar ' + info.nome;
-    document.getElementById('modalEmailPlano').textContent = info.nome.toUpperCase() + ' - ' + info.faixa;
-    document.getElementById('modalEmailDesc').textContent = 'Apenas ' + info.preco + '. Digite seu email e siga para o pagamento no Mercado Pago.';
-    document.getElementById('inputEmail').value = '';
-    document.getElementById('emailErro').classList.remove('show');
-    document.getElementById('emailSucesso').classList.remove('show');
-    document.getElementById('btnEmailSubmit').disabled = false;
-    document.getElementById('btnEmailSubmit').textContent = '📨 Continuar para Pagamento';
 
-    document.getElementById('modalEmail').classList.add('active');
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => { document.getElementById('inputEmail').focus(); }, 300);
-}
 
-function fecharModalEmail() {
-    document.getElementById('modalEmail').classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
 
-function enviarEmail() {
-    const email = document.getElementById('inputEmail').value.trim();
-    if (!email || !email.includes('@') || !email.includes('.')) {
-        document.getElementById('emailErro').textContent = 'Por favor, insira um email válido.';
-        document.getElementById('emailErro').classList.add('show');
-        return;
-    }
 
-    document.getElementById('emailErro').classList.remove('show');
-    document.getElementById('btnEmailSubmit').disabled = true;
-    document.getElementById('btnEmailSubmit').textContent = '⏳ Registrando...';
 
-    // Salvar email no localStorage
-    localStorage.setItem('coregov_email', email);
-    localStorage.setItem('coregov_plano_' + planoSelecionado, 'pending');
 
-    // Enviar para o backend
-    fetch('https://app.coregov.com.br/api/vagas/capturar-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, plano: planoSelecionado })
-    })
-    .then(r => r.json())
-    .then(data => {
-        if (data.success && data.ja_assinante) {
-            document.getElementById('emailSucesso').textContent = '✅ ' + data.mensagem;
-            document.getElementById('emailSucesso').classList.add('show');
-            document.getElementById('btnEmailSubmit').textContent = '🔗 Ir para vagas';
-            document.getElementById('btnEmailSubmit').onclick = function() { fecharModalEmail(); window.location.reload(); };
-            return;
-        }
 
-        // Redirecionar para o MP
-        document.getElementById('emailSucesso').textContent = '✅ Email registrado! Redirecionando...';
-        document.getElementById('emailSucesso').classList.add('show');
-        document.getElementById('btnEmailSubmit').textContent = '⏳ Redirecionando...';
-
-        const link = data.redirect_url || PLANOS_INFO[planoSelecionado].link;
-        setTimeout(() => { window.location.href = link; }, 800);
-    })
-    .catch(err => {
-        // Fallback: redirecionar direto
-        const link = PLANOS_INFO[planoSelecionado].link;
-        window.location.href = link;
-    });
-}
-
-function verificarAcesso() {
-    const email = document.getElementById('inputVerificarEmail').value.trim();
-    const resultEl = document.getElementById('verificarResult');
-
-    if (!email || !email.includes('@')) {
-        resultEl.className = 'verificar-result inativo';
-        resultEl.textContent = 'Por favor, digite um email válido.';
-        return;
-    }
-
-    resultEl.className = 'verificar-result';
-    resultEl.textContent = '⏳ Verificando...';
-    resultEl.style.display = 'block';
-
-    fetch('https://app.coregov.com.br/api/vagas/verificar-acesso?email=' + encodeURIComponent(email))
-    .then(r => r.json())
-    .then(data => {
-        if (data.acesso) {
-            resultEl.className = 'verificar-result ativo';
-            resultEl.innerHTML = '✅ <strong>Acesso Liberado!</strong> Plano ' + data.plano.charAt(0).toUpperCase() + data.plano.slice(1) + '.<br>As vagas do seu plano já estão visíveis com empresa e contato.';
-            localStorage.setItem('coregov_email', email);
-            localStorage.setItem('coregov_plano_' + data.plano, 'ativo');
-            // Recarregar para aplicar
-            setTimeout(() => { window.location.reload(); }, 1500);
-        } else {
-            resultEl.className = 'verificar-result inativo';
-            resultEl.innerHTML = '🔒 ' + (data.mensagem || 'Nenhuma assinatura ativa encontrada.') + '<br><a href="#planos" style="color:var(--accent);font-weight:700;">👉 Assinar agora</a>';
-        }
-    })
-    .catch(err => {
-        resultEl.className = 'verificar-result inativo';
-        resultEl.textContent = 'Erro ao verificar. Tente novamente.';
-    });
-}
 
 // Auto-verificar se email salvo
 (function() {
