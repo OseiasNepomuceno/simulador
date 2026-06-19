@@ -1073,8 +1073,8 @@
 <section class="planos-section" id="planos">
     <div class="planos-inner">
         <div class="planos-header">
-            <h2>📊 Escolha seu Plano de Acesso</h2>
-            <p>Quanto maior o salário da vaga, maior o plano necessário. Pagamento <strong>trimestral</strong> — acesso liberado imediatamente.</p>
+            <h2>📊 Planos de Acesso</h2>
+            <p><strong>Todas as vagas são 100% gratuitas e abertas.</strong> Os planos abaixo oferecem recursos extras como rastreamento inteligente, alertas em tempo real e relatórios. Veja o que cada nível oferece:</p>
         </div>
 
         <div class="planos-grid">
@@ -1082,12 +1082,12 @@
             <div class="plano-card plano-gratis-card">
                 <div class="plano-emoji">🆓</div>
                 <div class="plano-nome">Livre</div>
-                <div class="plano-faixa">💰 Até R$ 3.000</div>
+                <div class="plano-faixa">🎯 Todas as vagas</div>
                 <div class="plano-preco">Grátis</div>
                 <div class="plano-periodo">acesso público · sem login</div>
                 <ul class="plano-itens">
-                    <li><span class="check">✅</span> Ver vagas de até R$ 3.000</li>
-                    <li><span class="check">✅</span> Candidatura direta</li>
+                    <li><span class="check">✅</span> Ver todas as vagas disponíveis</li>
+                    <li><span class="check">✅</span> Candidatura direta no site oficial</li>
                     <li><span class="check">✅</span> Busca e filtros completos</li>
                     <li><span class="xmark">—</span> Rastreamento de vagas</li>
                     <li><span class="xmark">—</span> Alertas em tempo real</li>
@@ -1103,7 +1103,7 @@
                 <div class="plano-preco">R$ 15,00 <small>/trimestre</small></div>
                 <div class="plano-periodo">R$ 5/mês • acesso via login</div>
                 <ul class="plano-itens">
-                    <li><span class="check">✅</span> Todas as vagas livres</li>
+                    <li><span class="check">✅</span> Todas as vagas gratuitas</li>
                     <li><span class="check">✅</span> Vagas de R$ 3.001 a R$ 5.000</li>
                     <li><span class="check">✅</span> Rastreamento de até 10 vagas</li>
                     <li><span class="check">✅</span> Alertas por email</li>
@@ -1421,13 +1421,12 @@ function renderizarVagas(resultado) {
         const dias = getDiasAtras(v.data);
         const novoLabel = dias <= 2 ? '<span class="vaga-tag novo">🆕 Nova</span>' : '';
         const plano = getPlanoVaga(v.salario);
-        const planoBadge = plano ? `<span class="vaga-plano-badge ${plano.classe}">${plano.icone} ${plano.nome}</span>` : '';
+        const planoBadge = '';
         return `
             <div class="vaga-card" onclick="abrirModal(${v.id})">
                 <div>
                     <span class="vaga-tag ${tagClass}">${unidadeLabel}</span>
                     ${novoLabel}
-                    ${planoBadge}
                 </div>
                 <h3>${v.cargo}</h3>
                 <div class="vaga-empresa">${v.empresa}</div>
