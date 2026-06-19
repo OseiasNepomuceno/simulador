@@ -1250,33 +1250,7 @@
                     <li><span class="xmark">—</span> Vagas acima de R$ 3.000</li>
                     <li><span class="xmark">—</span> Rastreamento de vagas</li>
                 </ul>
-                <a href="#" class="btn-plano btn-free" onclick="event.preventDefault();filtrarVagas();window.scrollTo({top:0,behavior:'smooth'});">🔎 Ver vagas gratuitas</a>';
-        }
-    })
-    .catch(err => {
-        resultEl.className = 'verificar-result inativo';
-        resultEl.textContent = 'Erro ao verificar. Tente novamente.';
-    });
-}
-
-// Auto-verificar se email salvo
-(function() {
-    const savedEmail = localStorage.getItem('coregov_email');
-    if (savedEmail) {
-        // Verificar se tem alguma assinatura ativa
-        fetch('https://app.coregov.com.br/api/vagas/verificar-acesso?email=' + encodeURIComponent(savedEmail))
-        .then(r => r.json())
-        .then(data => {
-            if (data.acesso) {
-                localStorage.setItem('coregov_plano_' + data.plano, 'ativo');
-            }
-        })
-        .catch(() => {});
-    }
-})();
-
-
-filtrarVagas(); window.scrollTo({top: 0, behavior: 'smooth'});">🔎 Ver vagas gratuitas</a>
+                <a href="#" class="btn-plano btn-free" onclick="event.preventDefault();filtrarVagas();window.scrollTo({top:0,behavior:'smooth'});">🔎 Ver vagas gratuitas</a>
             </div>
 
             <!-- BRONZE -->
