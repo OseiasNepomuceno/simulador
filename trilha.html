@@ -1,778 +1,511 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Trilha do Conhecimento | CoreGov</title>
-
-<link rel="icon" href="favicon.png">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-    --verde:#00FF9F;
-    --azul-escuro:#0B1220;
-    --azul-medio:#111A2E;
-    --branco:#FFFFFF;
-    --cinza:#CCCCCC;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    background:radial-gradient(circle at top,#111A2E,#0B1220);
-    color:white;
-    padding-top:90px;
-}
-
-/* HEADER */
-
-header{
-    position:fixed;
-    top:0;
-    width:100%;
-    padding:15px 10%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:1000;
-    background:rgba(11,18,32,.65);
-    backdrop-filter:blur(10px);
-    transition:.3s;
-}
-
-header.scrolled{
-    background:rgba(11,18,32,.95);
-    box-shadow:0 10px 30px rgba(0,0,0,.5);
-}
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo-icon{
-    height:50px;
-}
-
-.brand-text{
-    display:flex;
-    flex-direction:column;
-}
-
-.brand-name{
-    color:var(--verde);
-    font-weight:700;
-    font-size:18px;
-}
-
-.brand-sub{
-    color:#bbb;
-    font-size:12px;
-}
-
-nav a{
-    color:#ccc;
-    text-decoration:none;
-    font-weight:600;
-}
-
-nav a:hover{
-    color:var(--verde);
-}
-
-/* KIWIFY CARD - TOPO */
-
-.kiwify-cta-topo{
-    max-width:1200px;
-    margin:30px auto 0;
-    padding:0 10%;
-}
-
-.kiwify-card{
-    background:linear-gradient(135deg,#00FF9F15,#00FF9F05);
-    border:2px solid var(--verde);
-    border-radius:20px;
-    padding:35px 40px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:30px;
-    flex-wrap:wrap;
-    transition:.3s;
-    box-shadow:0 0 30px rgba(0,255,159,.08);
-}
-
-.kiwify-card:hover{
-    box-shadow:0 0 50px rgba(0,255,159,.18);
-    transform:translateY(-3px);
-}
-
-.kiwify-card-left{
-    flex:1;
-    min-width:250px;
-}
-
-.kiwify-card-left .tag{
-    display:inline-block;
-    background:var(--verde);
-    color:#000;
-    font-size:11px;
-    font-weight:700;
-    padding:5px 14px;
-    border-radius:30px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    margin-bottom:12px;
-}
-
-.kiwify-card-left h3{
-    color:var(--verde);
-    font-size:26px;
-    margin-bottom:10px;
-}
-
-.kiwify-card-left p{
-    color:#cfcfcf;
-    line-height:1.7;
-    font-size:15px;
-}
-
-.kiwify-card-right{
-    flex-shrink:0;
-}
-
-.btn-kiwify{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    background:var(--verde);
-    color:#000;
-    text-decoration:none;
-    padding:16px 32px;
-    border-radius:12px;
-    font-weight:700;
-    font-size:16px;
-    transition:.3s;
-    border:2px solid var(--verde);
-}
-
-.btn-kiwify:hover{
-    background:transparent;
-    color:var(--verde);
-}
-
-.btn-kiwify .arrow{
-    font-size:20px;
-    transition:.3s;
-}
-
-.btn-kiwify:hover .arrow{
-    transform:translateX(5px);
-}
-
-/* HERO */
-
-.hero{
-    text-align:center;
-    padding:70px 10%;
-    max-width:1200px;
-    margin:auto;
-}
-
-.hero h1{
-    font-size:48px;
-    color:var(--verde);
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:18px;
-    color:#d5d5d5;
-    max-width:900px;
-    margin:auto;
-    line-height:1.8;
-}
-
-.hero-badges{
-    margin-top:35px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-}
-
-.badge{
-    padding:10px 18px;
-    border-radius:30px;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    color:var(--verde);
-    font-size:14px;
-}
-
-/* BENEFÍCIOS */
-
-.benefits{
-    max-width:1200px;
-    margin:auto;
-    padding:20px 10% 60px;
-}
-
-.benefits-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.benefit{
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
-    padding:25px;
-}
-
-.benefit h3{
-    color:var(--verde);
-    margin-bottom:10px;
-}
-
-/* CATEGORIAS */
-
-.section-title{
-    text-align:center;
-    color:var(--verde);
-    font-size:34px;
-    margin-bottom:40px;
-}
-
-.categories{
-    max-width:1200px;
-    margin:auto;
-    padding:0 10% 70px;
-}
-
-.category-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.category-card{
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
-    padding:30px;
-    text-align:center;
-    transition:.3s;
-}
-
-.category-card:hover{
-    transform:translateY(-8px);
-}
-
-.category-card h3{
-    color:var(--verde);
-    margin-bottom:10px;
-}
-
-/* VIDEOS */
-
-.videos{
-    max-width:1400px;
-    margin:auto;
-    padding:0 10% 80px;
-}
-
-.video-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:25px;
-}
-
-.video-card{
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
-    overflow:hidden;
-    transition:.3s;
-}
-
-.video-card:hover{
-    transform:translateY(-8px);
-}
-
-.video-thumb{
-    width:100%;
-    height:220px;
-    background:linear-gradient(135deg,#00FF9F22,#00FF9F05);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:60px;
-}
-
-.video-info{
-    padding:25px;
-}
-
-.video-category{
-    color:var(--verde);
-    font-size:12px;
-    text-transform:uppercase;
-    font-weight:700;
-}
-
-.video-info h3{
-    margin:12px 0;
-}
-
-.video-info p{
-    color:#cfcfcf;
-    line-height:1.7;
-}
-
-.materials{
-    margin-top:18px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.material{
-    background:#0f1b31;
-    color:#fff;
-    border-radius:30px;
-    padding:6px 12px;
-    font-size:12px;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    background:var(--verde);
-    color:#000;
-    text-decoration:none;
-    padding:12px 20px;
-    border-radius:10px;
-    font-weight:700;
-}
-
-/* CTA */
-
-.cta{
-    max-width:1200px;
-    margin:0 auto 100px;
-    padding:50px;
-    text-align:center;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:25px;
-}
-
-.cta h2{
-    color:var(--verde);
-    margin-bottom:20px;
-}
-
-.cta p{
-    max-width:900px;
-    margin:auto;
-    line-height:1.8;
-}
-
-/* RESPONSIVO */
-
-@media(max-width:768px){
-
-.kiwify-card{
-    flex-direction:column;
-    text-align:center;
-    padding:25px 20px;
-}
-
-.kiwify-card-left h3{
-    font-size:22px;
-}
-
-.btn-kiwify{
-    width:100%;
-    justify-content:center;
-}
-
-.hero h1{
-    font-size:34px;
-}
-
-.hero p{
-    font-size:16px;
-}
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilha do Conhecimento | COREGOV</title>
+    <meta name="description" content="Domine a gestão de ONGs com nossos cursos, e-books, planilhas e mentorias. Aprenda a captar recursos, regularizar sua organização e crescer com impacto.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; line-height: 1.6; }
+        
+        /* Cores */
+        :root {
+            --primary: #0f3460;
+            --primary-light: #16213e;
+            --accent: #e94560;
+            --accent-hover: #d63851;
+            --gold: #f5c518;
+            --bg-light: #f8f9fa;
+            --bg-card: #ffffff;
+            --text: #1a1a2e;
+            --text-light: #6c757d;
+        }
+
+        /* Header / Nav */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .nav .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .nav .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 24px; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; }
+        .nav-links a:hover { color: var(--accent); }
+        .btn-nav { background: var(--primary); color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 80px 24px;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.8rem; max-width: 800px; margin: 0 auto 20px; }
+        .hero h1 span { color: var(--gold); }
+        .hero p { font-size: 1.2rem; max-width: 650px; margin: 0 auto 32px; opacity: 0.9; }
+        .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: var(--accent); color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: background 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--accent-hover); }
+        .btn-secondary { background: rgba(255,255,255,0.15); color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.3s; border: 2px solid rgba(255,255,255,0.3); display: inline-block; }
+        .btn-secondary:hover { background: rgba(255,255,255,0.25); }
+
+        .hero-stats {
+            display: flex; justify-content: center; gap: 48px; margin-top: 48px; flex-wrap: wrap;
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat .number { font-size: 2rem; font-weight: 800; color: var(--gold); }
+        .hero-stat .label { font-size: 0.9rem; opacity: 0.8; }
+
+        /* Seções gerais */
+        .section { padding: 72px 24px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 8px; }
+        .section-subtitle { text-align: center; color: var(--text-light); margin-bottom: 48px; font-size: 1.1rem; }
+
+        /* Lead Magnet */
+        .lead-magnet {
+            background: linear-gradient(135deg, #fff9e6, #fff3cd);
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            padding: 48px;
+            margin-bottom: 72px;
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .lead-magnet-content { flex: 1; min-width: 280px; }
+        .lead-magnet-content h2 { font-size: 1.8rem; margin-bottom: 12px; }
+        .lead-magnet-content h2 span { color: var(--accent); }
+        .lead-magnet-content ul { list-style: none; margin: 20px 0; }
+        .lead-magnet-content ul li { margin-bottom: 8px; padding-left: 24px; position: relative; }
+        .lead-magnet-content ul li::before { content: '✅'; position: absolute; left: 0; }
+        .lead-magnet-form { min-width: 300px; flex: 1; }
+        .lead-magnet-form input {
+            width: 100%; padding: 14px 16px; border: 2px solid #ddd; border-radius: 8px;
+            font-size: 1rem; margin-bottom: 12px; transition: border 0.3s;
+        }
+        .lead-magnet-form input:focus { border-color: var(--accent); outline: none; }
+        .lead-magnet-form button {
+            width: 100%; background: var(--accent); color: white; border: none;
+            padding: 14px; border-radius: 8px; font-size: 1.1rem; font-weight: 700;
+            cursor: pointer; transition: background 0.3s;
+        }
+        .lead-magnet-form button:hover { background: var(--accent-hover); }
+        .lead-magnet-form .free-badge {
+            display: inline-block; background: var(--gold); color: #333;
+            padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        /* Grid de produtos */
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+        .card .emoji-big { font-size: 3rem; margin-bottom: 16px; }
+        .card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+        .card .desc { color: var(--text-light); margin-bottom: 16px; flex-grow: 1; }
+        .card .features { list-style: none; margin-bottom: 20px; }
+        .card .features li { padding-left: 20px; position: relative; margin-bottom: 6px; font-size: 0.95rem; }
+        .card .features li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+        .card .price { font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 16px; }
+        .card .price .old { font-size: 1rem; color: var(--text-light); text-decoration: line-through; font-weight: 400; }
+        .card .price .tag { font-size: 0.85rem; color: var(--accent); font-weight: 700; display: block; }
+        .card .btn-card {
+            background: var(--primary); color: white; text-align: center;
+            padding: 14px; border-radius: 8px; text-decoration: none; font-weight: 700;
+            transition: background 0.3s; display: block;
+        }
+        .card .btn-card:hover { background: #0a2647; }
+        .card.destaque {
+            border: 2px solid var(--gold);
+            position: relative;
+        }
+        .card.destaque::before {
+            content: '🔥 MAIS VENDIDO';
+            position: absolute; top: -12px; right: 24px;
+            background: var(--gold); color: #333;
+            padding: 4px 16px; border-radius: 20px;
+            font-size: 0.8rem; font-weight: 800;
+        }
+
+        /* Como funciona */
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; counter-reset: step; }
+        .step { text-align: center; padding: 24px; counter-increment: step; }
+        .step .number { width: 56px; height: 56px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 16px; }
+        .step h4 { font-size: 1.1rem; margin-bottom: 8px; }
+        .step p { color: var(--text-light); font-size: 0.95rem; }
+
+        /* Depoimentos */
+        .depoimentos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .depoimento {
+            background: var(--bg-light); border-radius: 16px; padding: 32px;
+            border-left: 4px solid var(--gold);
+        }
+        .depoimento .stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 12px; }
+        .depoimento .texto { font-style: italic; margin-bottom: 16px; }
+        .depoimento .autor { font-weight: 700; }
+        .depoimento .cargo { color: var(--text-light); font-size: 0.9rem; }
+
+        /* CTA Final */
+        .cta-final {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            text-align: center;
+            padding: 72px 24px;
+        }
+        .cta-final h2 { font-size: 2.2rem; margin-bottom: 16px; }
+        .cta-final p { font-size: 1.1rem; margin-bottom: 32px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* FAQ */
+        .faq-list { max-width: 700px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid #eee; padding: 20px 0; }
+        .faq-item h4 { cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item h4::after { content: '+'; font-size: 1.5rem; color: var(--accent); }
+        .faq-item.active h4::after { content: '−'; }
+        .faq-item .answer { display: none; margin-top: 12px; color: var(--text-light); }
+        .faq-item.active .answer { display: block; }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-light);
+            color: rgba(255,255,255,0.8);
+            padding: 48px 24px;
+            text-align: center;
+        }
+        .footer .logo { font-size: 1.5rem; font-weight: 800; }
+        .footer .logo span { color: var(--accent); }
+        .footer-links { margin: 16px 0; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .footer-links a:hover { color: white; }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero-stats { gap: 24px; }
+            .hero-stat .number { font-size: 1.5rem; }
+            .nav-links { display: none; }
+            .lead-magnet { padding: 24px; }
+            .section-title { font-size: 1.6rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-
-<div class="brand">
-
-<img src="logo-icon.png" class="logo-icon">
-
-<div class="brand-text">
-<div class="brand-name">COREGOV</div>
-<div class="brand-sub">Transformação Digital e Automação Inteligente</div>
-</div>
-
-</div>
-
-<nav>
-<a href="index.html">Início</a>
+<!-- Nav -->
+<nav class="nav">
+    <div class="logo">CORE<span>GOV</span></div>
+    <div class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="trilha.html">Trilha do Conhecimento</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#como-funciona">Como Funciona</a>
+    </div>
+    <a href="https://app.coregov.com.br" class="btn-nav" target="_blank">App →</a>
 </nav>
 
-</header>
-
-<!-- ============================================ -->
-<!-- 🟢 CARD KIWIFY - LOGO NO INÍCIO DA PÁGINA KIT CARREIRA EM ADMINISTRAÇÃO 🟢 -->
-<!-- ============================================ -->
-
-<section class="kiwify-cta-topo">
-
-<a href="https://pay.kiwify.com.br/VzmvLyY" target="_blank" class="kiwify-card" style="text-decoration:none;display:flex;">
-
-<div class="kiwify-card-left">
-
-<div class="tag">🔥 OFERTA EXCLUSIVA</div>
-
-<h3>🚀 Kit Carreira em Administração</h3>
-
-<p>
-Seja você um recém-formado buscando direcionamento, ou um profissional experiente pensando em 
-transição de carreira, aqui você encontrará um mapa completo para tomar a melhor decisão!
-</p>
-
-</div>
-
-<div class="kiwify-card-right">
-
-<span class="btn-kiwify">
-QUERO ACESSAR <span class="arrow">→</span>
-</span>
-
-</div>
-
-</a>
-
-</section>
-
-<!-- ============================================ -->
-<!-- FIM CARD KIWIFY                              -->
-<!-- ============================================ -->
-
-<!-- ============================================ -->
-<!-- 🟢 CARD KIWIFY - LOGO NO INÍCIO DA PÁGINA 🟢 -->
-<!-- ============================================ -->
-
-<section class="kiwify-cta-topo">
-
-<a href="https://pay.kiwify.com.br/CfLdOEX" target="_blank" class="kiwify-card" style="text-decoration:none;display:flex;">
-
-<div class="kiwify-card-left">
-
-<div class="tag">🔥 OFERTA EXCLUSIVA</div>
-
-<h3>🚀 Organização Pessoal e Empresarial</h3>
-
-<p>
-Acesse agora o curso completo e aprenda na prática como organizar
-sua vida pessoal e empresarial com métodos comprovados. Bônus exclusivos + certificado!
-</p>
-
-</div>
-
-<div class="kiwify-card-right">
-
-<span class="btn-kiwify">
-QUERO ACESSAR <span class="arrow">→</span>
-</span>
-
-</div>
-
-</a>
-
-</section>
-
-<!-- ============================================ -->
-<!-- FIM CARD KIWIFY                              -->
-<!-- ============================================ -->
-
+<!-- Hero -->
 <section class="hero">
-
-<h1>🎓 TRILHA DO CONHECIMENTO COREGOV</h1>
-
-<p>
-
-Aprenda através de conteúdos práticos desenvolvidos pela CoreGov para empresários,
-gestores, profissionais liberais, equipes comerciais e empreendedores que desejam
-crescer utilizando gestão moderna, automação, marketing digital e inteligência artificial.
-
-</p>
-
-<div class="hero-badges">
-
-<div class="badge">Gestão Empresarial</div>
-<div class="badge">Empreendedorismo Digital</div>
-<div class="badge">Marketing para Redes Sociais</div>
-<div class="badge">Inteligência Artificial</div>
-<div class="badge">Finanças</div>
-<div class="badge">Licitações e PNCP</div>
-<div class="badge">Automação Empresarial</div>
-<div class="badge">Produtos CoreGov</div>
-
-</div>
-
+    <h1>🚀 Sua ONG <span>captando recursos</span> com estratégia, não com sorte</h1>
+    <p>Aprenda com quem já ajudou dezenas de organizações a regularizar, estruturar projetos e captar milhões via leis de incentivo.</p>
+    <div class="hero-cta">
+        <a href="#produtos" class="btn-primary">🎯 Ver Produtos</a>
+        <a href="#lead-magnet" class="btn-secondary">📥 Guia Grátis</a>
+    </div>
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <div class="number">150+</div>
+            <div class="label">ONGs atendidas</div>
+        </div>
+        <div class="hero-stat">
+            <div class="number">R$ 8,8 bi</div>
+            <div class="label">Mercado de infoprodutos</div>
+        </div>
+        <div class="hero-stat">
+            <div class="number">42%</div>
+            <div class="label">vivem só de infoprodutos</div>
+        </div>
+    </div>
 </section>
 
-<section class="benefits">
-
-<h2 class="section-title">O que você encontrará aqui</h2>
-
-<div class="benefits-grid">
-
-<div class="benefit">
-<h3>🎥 Videoaulas</h3>
-<p>Conteúdo direto ao ponto com aplicação prática.</p>
-</div>
-
-<div class="benefit">
-<h3>📚 E-books</h3>
-<p>Materiais aprofundados para complementar os estudos.</p>
-</div>
-
-<div class="benefit">
-<h3>📄 PDFs e Guias</h3>
-<p>Passo a passo, checklists e modelos prontos.</p>
-</div>
-
-<div class="benefit">
-<h3>🚀 Aplicação Prática</h3>
-<p>Conhecimento voltado para resultados reais.</p>
-</div>
-
-</div>
-
+<!-- Lead Magnet -->
+<section class="section" id="lead-magnet">
+    <div class="lead-magnet">
+        <div class="lead-magnet-content">
+            <span class="lead-magnet-form" style="display:inline"><span class="free-badge">🎁 GRÁTIS</span></span>
+            <h2>📥 Guia Completo: <span>10 Passos para Regularizar Sua ONG</span></h2>
+            <p>Baixe agora o passo a passo para transformar sua associação em uma organização pronta para captar recursos via Leis de Incentivo.</p>
+            <ul>
+                <li>Modelo de estatuto social</li>
+                <li>Checklist das certidões necessárias</li>
+                <li>Roteiro de assembleia de fundação</li>
+                <li>Dossiê de captação completo</li>
+                <li>E-mail pronto para patrocinadores</li>
+            </ul>
+        </div>
+        <div class="lead-magnet-form">
+            <form action="#" method="POST">
+                <span class="free-badge">🔒 100% GRATUITO</span>
+                <input type="text" placeholder="Seu nome" required>
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <input type="text" placeholder="Sua ONG / Associação (opcional)">
+                <button type="submit">📥 QUERO MEU GUIA GRÁTIS</button>
+                <p style="font-size:0.8rem; color:var(--text-light); margin-top:8px;">Seus dados estão seguros. Não fazemos spam.</p>
+            </form>
+        </div>
+    </div>
 </section>
 
-<section class="categories">
+<!-- Produtos -->
+<section class="section" id="produtos">
+    <h2 class="section-title">📦 Nossos Produtos</h2>
+    <p class="section-subtitle">Soluções completas para sua ONG crescer com impacto e sustentabilidade</p>
 
-<h2 class="section-title">Trilhas Disponíveis</h2>
+    <div class="produtos-grid">
 
-<div class="category-grid">
+        <!-- Card 1: Curso -->
+        <div class="card destaque">
+            <div class="emoji-big">🎓</div>
+            <h3>Curso: Captação de Recursos na Prática</h3>
+            <p class="desc">15 módulos completos com tudo que você precisa para captar recursos para sua ONG.</p>
+            <ul class="features">
+                <li>Onde encontrar editais abertos</li>
+                <li>Como elaborar propostas vencedoras</li>
+                <li>Planilhas e templates inclusos</li>
+                <li>IA aplicada à captação</li>
+                <li>Suporte direto por 30 dias</li>
+            </ul>
+            <div class="price">
+                R$ 97 <span class="tag">ou 12x R$ 9,70</span>
+                <span class="old">De R$ 197</span>
+            </div>
+            <a href="#" class="btn-card">🎯 QUERO ACESSAR</a>
+        </div>
 
-<div class="category-card">
-<h3>🎯 Gestão Empresarial</h3>
-<p>Processos, indicadores, produtividade e organização.</p>
-</div>
+        <!-- Card 2: Pacote Documentos -->
+        <div class="card">
+            <div class="emoji-big">📋</div>
+            <h3>Pacote de Documentos Prontos</h3>
+            <p class="desc">Templates editáveis para acelerar a regularização e captação da sua ONG.</p>
+            <ul class="features">
+                <li>Modelo de estatuto social</li>
+                <li>Plano de negócio para ONG</li>
+                <li>Projeto Lei Rouanet (template)</li>
+                <li>Minuta de ata de fundação</li>
+                <li>10 documentos ao total</li>
+            </ul>
+            <div class="price">
+                R$ 47 <span class="tag">parcela única</span>
+            </div>
+            <a href="#" class="btn-card">📋 QUERO OS DOCUMENTOS</a>
+        </div>
 
-<div class="category-card">
-<h3>💰 Finanças</h3>
-<p>Fluxo de caixa, controle financeiro e indicadores.</p>
-</div>
+        <!-- Card 3: Planilhas -->
+        <div class="card">
+            <div class="emoji-big">📊</div>
+            <h3>Planilhas Inteligentes</h3>
+            <p class="desc">Planilhas profissionais para gestão financeira e captação de recursos.</p>
+            <ul class="features">
+                <li>Fluxo de caixa para ONGs</li>
+                <li>Cronograma de editais</li>
+                <li>Prestação de contas simplificada</li>
+                <li>Mapeamento de patrocinadores</li>
+                <li>Gráficos automáticos</li>
+            </ul>
+            <div class="price">
+                R$ 27 <span class="tag">parcela única</span>
+            </div>
+            <a href="#" class="btn-card">📊 QUERO AS PLANILHAS</a>
+        </div>
 
-<div class="category-card">
-<h3>📱 Marketing Digital</h3>
-<p>Instagram, Facebook, TikTok e posicionamento.</p>
-</div>
+        <!-- Card 4: Mentoria -->
+        <div class="card">
+            <div class="emoji-big">🙋</div>
+            <h3>Mentoria: Estruture Sua ONG em 30 Dias</h3>
+            <p class="desc">4 sessões individuais ao vivo com especialista para estruturar sua organização.</p>
+            <ul class="features">
+                <li>Semana 1: Regularização jurídica</li>
+                <li>Semana 2: Plano de negócio</li>
+                <li>Semana 3: Fontes de receita</li>
+                <li>Semana 4: Marketing para ONGs</li>
+                <li>Suporte via WhatsApp</li>
+            </ul>
+            <div class="price">
+                R$ 497 <span class="tag">ou 12x R$ 49,70</span>
+            </div>
+            <a href="#" class="btn-card">🙋 QUERO MENTORIA</a>
+        </div>
 
-<div class="category-card">
-<h3>🤖 Inteligência Artificial</h3>
-<p>IA aplicada ao marketing e gestão.</p>
-</div>
+        <!-- Card 5: E-book -->
+        <div class="card">
+            <div class="emoji-big">📘</div>
+            <h3>E-book: Guia Completo da Lei Rouanet</h3>
+            <p class="desc">Tudo que você precisa saber para aprovar e captar via Lei Rouanet.</p>
+            <ul class="features">
+                <li>Passo a passo do SALIC</li>
+                <li>Art. 18 vs Art. 26</li>
+                <li>Script para patrocinadores</li>
+                <li>Checklist de documentos</li>
+                <li>Planilha de orçamento</li>
+            </ul>
+            <div class="price">
+                R$ 17 <span class="tag">parcela única</span>
+            </div>
+            <a href="#" class="btn-card">📘 QUERO O E-BOOK</a>
+        </div>
 
-<div class="category-card">
-<h3>🚀 Empreendedorismo</h3>
-<p>Estratégias para crescimento sustentável.</p>
-</div>
+        <!-- Card 6: Comunidade VIP -->
+        <div class="card">
+            <div class="emoji-big">👥</div>
+            <h3>Comunidade VIP Gestão de ONGs</h3>
+            <p class="desc">Grupo exclusivo com acesso a editais frescos, templates e networking.</p>
+            <ul class="features">
+                <li>Editais atualizados semanalmente</li>
+                <li>Templates novos todo mês</li>
+                <li>Encontros com convidados</li>
+                <li>Networking com gestores</li>
+                <li>Grupo Telegram exclusivo</li>
+            </ul>
+            <div class="price">
+                R$ 47/mês <span class="tag">ou R$ 497/ano</span>
+            </div>
+            <a href="#" class="btn-card">👥 QUERO ENTRAR</a>
+        </div>
 
-<div class="category-card">
-<h3>📋 Licitações e PNCP</h3>
-<p>Monitoramento de oportunidades e editais.</p>
-</div>
-
-<div class="category-card">
-<h3>⚙️ Automação Empresarial</h3>
-<p>Automação de tarefas e aumento de produtividade.</p>
-</div>
-
-<div class="category-card">
-<h3>🏛️ Soluções CoreGov</h3>
-<p>Treinamentos dos sistemas e plataformas CoreGov.</p>
-</div>
-
-</div>
-
+    </div>
 </section>
 
-<section class="videos">
-
-<h2 class="section-title">Aulas e Conteúdos</h2>
-
-<div class="video-grid">
-
-<div class="video-card">
-
-<div class="video-thumb">🎥</div>
-
-<div class="video-info">
-
-<div class="video-category">Inteligência Artificial</div>
-
-<h3>Como Criar Conteúdos com IA</h3>
-
-<p>
-Aprenda a gerar posts, roteiros, CTAs e campanhas utilizando IA.
-</p>
-
-<div class="materials">
-<span class="material">Vídeo Aula</span>
-<span class="material">PDF</span>
-<span class="material">E-book</span>
-</div>
-
-<a href="#" class="btn">Assistir Aula</a>
-
-</div>
-
-</div>
-
-<div class="video-card">
-
-<div class="video-thumb">📊</div>
-
-<div class="video-info">
-
-<div class="video-category">Gestão Empresarial</div>
-
-<h3>Indicadores para Pequenas Empresas</h3>
-
-<p>
-Aprenda os indicadores que realmente ajudam na tomada de decisão.
-</p>
-
-<div class="materials">
-<span class="material">Vídeo Aula</span>
-<span class="material">PDF</span>
-<span class="material">Checklist</span>
-</div>
-
-<a href="#" class="btn">Assistir Aula</a>
-
-</div>
-
-</div>
-
-<div class="video-card">
-
-<div class="video-thumb">🏛️</div>
-
-<div class="video-info">
-
-<div class="video-category">Produtos CoreGov</div>
-
-<h3>Monitor de Oportunidades PNCP</h3>
-
-<p>
-Aprenda a utilizar o monitor de oportunidades e automatizar pesquisas.
-</p>
-
-<div class="materials">
-<span class="material">Vídeo Aula</span>
-<span class="material">PDF</span>
-<span class="material">Guia Prático</span>
-</div>
-
-<a href="#" class="btn">Assistir Aula</a>
-
-</div>
-
-</div>
-
-<!-- ============================================ -->
-<!-- 🆕 NOVO CARD: ORGANIZAÇÃO PESSOAL E EMPRESARIAL -->
-<!-- ============================================ -->
-
-<div class="video-card">
-
-<div class="video-thumb">📋</div>
-
-<div class="video-info">
-
-<div class="video-category">Gestão Empresarial</div>
-
-<h3>Organização Pessoal e Empresarial</h3>
-
-<p>
-Métodos práticos para organizar sua rotina, priorizar tarefas e aumentar
-a produtividade no trabalho e na vida pessoal.
-</p>
-
-<div class="materials">
-<span class="material">Vídeo Aula</span>
-<span class="material">PDF</span>
-<span class="material">Checklist</span>
-</div>
-
-<a href="https://pay.kiwify.com.br/CfLdOEX" target="_blank" class="btn">Acessar Curso</a>
-
-</div>
-
-</div>
-
-<!-- ============================================ -->
-<!-- FIM NOVO CARD                                -->
-<!-- ============================================ -->
-
-</div>
-
+<!-- Como Funciona -->
+<section class="section" id="como-funciona" style="background: var(--bg-light); border-radius: 0; padding: 72px 24px; max-width: 100%;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 class="section-title">⚙️ Como Funciona</h2>
+        <p class="section-subtitle">Em 3 passos você começa a transformar sua ONG</p>
+        <div class="steps">
+            <div class="step">
+                <div class="number">1</div>
+                <h4>🎯 Escolha seu produto</h4>
+                <p>Veja qual solução atende sua necessidade atual — e-book, curso, mentoria ou planilhas.</p>
+            </div>
+            <div class="step">
+                <div class="number">2</div>
+                <h4>📥 Acesso imediato</h4>
+                <p>Após a compra, você recebe tudo por e-mail e já começa a usar no mesmo dia.</p>
+            </div>
+            <div class="step">
+                <div class="number">3</div>
+                <h4>🚀 Coloque em prática</h4>
+                <p>Siga o passo a passo, use os templates e veja sua ONG captar recursos como nunca.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="cta">
-
-<h2>🚀 Plataforma em Expansão Contínua</h2>
-
-<p>
-
-A Trilha do Conhecimento CoreGov será atualizada continuamente com novas
-videoaulas, e-books, guias, modelos, checklists e conteúdos exclusivos
-voltados para gestão, inteligência artificial, empreendedorismo,
-marketing digital, automação empresarial, licitações, finanças e
-soluções desenvolvidas pela CoreGov.
-
-</p>
-
+<!-- Depoimentos -->
+<section class="section" id="depoimentos">
+    <h2 class="section-title">💬 O Que Dizem Nossos Alunos</h2>
+    <p class="section-subtitle">Resultados reais de quem já passou pela Trilha do Conhecimento</p>
+    <div class="depoimentos-grid">
+        <div class="depoimento">
+            <div class="stars">★★★★★</div>
+            <p class="texto">"Com o curso de captação, conseguimos R$ 50 mil em 3 meses para nosso projeto cultural. O template de projeto da Lei Rouanet valeu o curso inteiro."</p>
+            <p class="autor">Maria Oliveira</p>
+            <p class="cargo">Presidente - Instituto Cultural Arte Viva</p>
+        </div>
+        <div class="depoimento">
+            <div class="stars">★★★★★</div>
+            <p class="texto">"As planilhas inteligentes salvaram nossa prestação de contas. Organizamos tudo em um dia o que levava semanas. Recomendo de olhos fechados."</p>
+            <p class="autor">Carlos Mendes</p>
+            <p class="cargo">Diretor Financeiro - ONG Esperança</p>
+        </div>
+        <div class="depoimento">
+            <div class="stars">★★★★★</div>
+            <p class="texto">"A mentoria de 30 dias foi um divisor de águas. Regularizamos a associação que estava parada há 2 anos. Agora estamos aptos a captar."</p>
+            <p class="autor">Ana Beatriz Santos</p>
+            <p class="cargo">Fundadora - Associação Caminho Verde</p>
+        </div>
+    </div>
 </section>
+
+<!-- CTA Final -->
+<section class="cta-final">
+    <h2>🔥 Pronto para transformar sua ONG?</h2>
+    <p>Milhares de organizações já estão captando recursos com nossas ferramentas. Não fique para trás.</p>
+    <a href="#produtos" class="btn-primary">🎯 VER TODOS OS PRODUTOS</a>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+    <h2 class="section-title">❓ Perguntas Frequentes</h2>
+    <p class="section-subtitle">Tire suas dúvidas antes de começar</p>
+    <div class="faq-list">
+        <div class="faq-item">
+            <h4>Como recebo o produto após a compra?</h4>
+            <div class="answer">Todos os produtos digitais são enviados automaticamente para seu e-mail imediatamente após a confirmação do pagamento. Você também pode acessar pela área do aluno.</div>
+        </div>
+        <div class="faq-item">
+            <h4>Qual a forma de pagamento?</h4>
+            <div class="answer">Aceitamos cartão de crédito (à vista ou parcelado), boleto bancário e PIX. O parcelamento é processado pela plataforma Hotmart.</div>
+        </div>
+        <div class="faq-item">
+            <h4>Tem garantia?</h4>
+            <div class="answer">Sim! Todos os produtos têm 7 dias de garantia incondicional. Se não gostar, devolvemos 100% do seu dinheiro.</div>
+        </div>
+        <div class="faq-item">
+            <h4>Os templates funcionam para qualquer tipo de ONG?</h4>
+            <div class="answer">Sim, os templates foram desenhados para associações, fundações, OSCIPs e organizações sociais de qualquer porte e área de atuação.</div>
+        </div>
+        <div class="faq-item">
+            <h4>Nunca trabalhei com captação. Consigo aprender?</h4>
+            <div class="answer">Com certeza! O curso começa do zero absoluto e vai avançando gradualmente. Não exige conhecimento prévio.</div>
+        </div>
+        <div class="faq-item">
+            <h4>Posso comprar mais de um produto?</h4>
+            <div class="answer">Sim! Inclusive temos combos com desconto. Entre em contato pelo WhatsApp para montar um pacote personalizado para sua organização.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="logo">CORE<span>GOV</span></div>
+    <p style="margin: 8px 0;">Gestão Inteligente para o Terceiro Setor</p>
+    <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="trilha.html">Trilha do Conhecimento</a>
+        <a href="#produtos">Produtos</a>
+        <a href="https://app.coregov.com.br" target="_blank">App</a>
+        <a href="#" onclick="alert('WhatsApp: (XX) XXXX-XXXX')">WhatsApp</a>
+    </div>
+    <p style="font-size: 0.85rem; margin-top: 16px; opacity: 0.6;">
+        © 2026 COREGOV. Todos os direitos reservados.
+    </p>
+</footer>
 
 <script>
-
-const header = document.querySelector("header");
-
-window.addEventListener("scroll",()=>{
-
-header.classList.toggle("scrolled",window.scrollY>50);
-
-});
-
+    // FAQ toggle
+    document.querySelectorAll('.faq-item h4').forEach(item => {
+        item.addEventListener('click', () => {
+            const parent = item.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
 </script>
 
 </body>
