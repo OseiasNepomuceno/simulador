@@ -1250,116 +1250,7 @@
                     <li><span class="xmark">—</span> Vagas acima de R$ 3.000</li>
                     <li><span class="xmark">—</span> Rastreamento de vagas</li>
                 </ul>
-                <a href="#" class="btn-plano btn-free" onclick="event.preventDefault(); 
-// ===== ASSINATURA VAGAS - CAPTURA DE EMAIL =====
-let planoSelecionado = '';
-
-const PLANOS_INFO = {
-    bronze: { nome: 'Bronze', icone: '🥉', faixa: 'R$ 3.001 ~ R$ 5.000', preco: 'R$ 9,90/trimestre', link: 'https://mpago.la/2UmiPMV' },
-    prata: { nome: 'Prata', icone: '🥉Z', faixa: 'R$ 5.001 ~ R$ 8.000', preco: 'R$ 15,00/trimestre', link: 'https://mpago.la/1XWEeC6' },
-    ouro: { nome: 'Ouro', icone: '🥉'Z', faixa: 'R$ 8.001 ~ R$ 10.000', preco: 'R$ 35,00/trimestre', link: 'https://mpago.la/2mSYs6U' },
-    diamante: { nome: 'Diamante', icone: '🥉''', faixa: 'Acima de R$ 10.000', preco: 'R$ 69,90/trimestre', link: 'https://mpago.la/2fCg4C2' }
-};
-
-function abrirModalEmail(plano) {
-    planoSelecionado = plano;
-    const info = PLANOS_INFO[plano];
-    if (!info) return;
-
-    document.getElementById('modalEmailIcon').textContent = info.icone;
-    document.getElementById('modalEmailTitle').textContent = 'Assinar ' + info.nome;
-    document.getElementById('modalEmailPlano').textContent = info.nome.toUpperCase() + ' - ' + info.faixa;
-    document.getElementById('modalEmailDesc').textContent = 'Apenas ' + info.preco + '. Digite seu email e siga para o pagamento no Mercado Pago.';
-    document.getElementById('inputEmail').value = '';
-    document.getElementById('emailErro').classList.remove('show');
-    document.getElementById('emailSucesso').classList.remove('show');
-    document.getElementById('btnEmailSubmit').disabled = false;
-    document.getElementById('btnEmailSubmit').textContent = '📨 Continuar para Pagamento';
-
-    document.getElementById('modalEmail').classList.add('active');
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => { document.getElementById('inputEmail').focus(); }, 300);
-}
-
-function fecharModalEmail() {
-    document.getElementById('modalEmail').classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-function enviarEmail() {
-    const email = document.getElementById('inputEmail').value.trim();
-    if (!email || !email.includes('@') || !email.includes('.')) {
-        document.getElementById('emailErro').textContent = 'Por favor, insira um email válido.';
-        document.getElementById('emailErro').classList.add('show');
-        return;
-    }
-
-    document.getElementById('emailErro').classList.remove('show');
-    document.getElementById('btnEmailSubmit').disabled = true;
-    document.getElementById('btnEmailSubmit').textContent = '⏳ Registrando...';
-
-    // Salvar email no localStorage
-    localStorage.setItem('coregov_email', email);
-    localStorage.setItem('coregov_plano_' + planoSelecionado, 'pending');
-
-    // Enviar para o backend
-    fetch('https://app.coregov.com.br/api/vagas/capturar-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, plano: planoSelecionado })
-    })
-    .then(r => r.json())
-    .then(data => {
-        if (data.success && data.ja_assinante) {
-            document.getElementById('emailSucesso').textContent = '✅ ' + data.mensagem;
-            document.getElementById('emailSucesso').classList.add('show');
-            document.getElementById('btnEmailSubmit').textContent = '🔗 Ir para vagas';
-            document.getElementById('btnEmailSubmit').onclick = function() { fecharModalEmail(); window.location.reload(); };
-            return;
-        }
-
-        // Redirecionar para o MP
-        document.getElementById('emailSucesso').textContent = '✅ Email registrado! Redirecionando...';
-        document.getElementById('emailSucesso').classList.add('show');
-        document.getElementById('btnEmailSubmit').textContent = '⏳ Redirecionando...';
-
-        const link = data.redirect_url || PLANOS_INFO[planoSelecionado].link;
-        setTimeout(() => { window.location.href = link; }, 800);
-    })
-    .catch(err => {
-        // Fallback: redirecionar direto
-        const link = PLANOS_INFO[planoSelecionado].link;
-        window.location.href = link;
-    });
-}
-
-function verificarAcesso() {
-    const email = document.getElementById('inputVerificarEmail').value.trim();
-    const resultEl = document.getElementById('verificarResult');
-
-    if (!email || !email.includes('@')) {
-        resultEl.className = 'verificar-result inativo';
-        resultEl.textContent = 'Por favor, digite um email válido.';
-        return;
-    }
-
-    resultEl.className = 'verificar-result';
-    resultEl.textContent = '⏳ Verificando...';
-    resultEl.style.display = 'block';
-
-    fetch('https://app.coregov.com.br/api/vagas/verificar-acesso?email=' + encodeURIComponent(email))
-    .then(r => r.json())
-    .then(data => {
-        if (data.acesso) {
-            resultEl.className = 'verificar-result ativo';
-            resultEl.innerHTML = '✅ <strong>Acesso Liberado!</strong> Plano ' + data.plano.charAt(0).toUpperCase() + data.plano.slice(1) + '.<br>As vagas do seu plano já estão visíveis com empresa e contato.';
-            localStorage.setItem('coregov_email', email);
-            localStorage.setItem('coregov_plano_' + data.plano, 'ativo');
-            // Recarregar para aplicar
-            setTimeout(() => { window.location.reload(); }, 1500);
-        } else {
-            resultEl.className = 'verificar-result inativo';
-            resultEl.innerHTML = '🔒 ' + (data.mensagem || 'Nenhuma assinatura ativa encontrada.') + '<br><a href="#planos" style="color:var(--accent);font-weight:700;">👉 Assinar agora</a>';
+                <a href="#" class="btn-plano btn-free" onclick="event.preventDefault();filtrarVagas();window.scrollTo({top:0,behavior:'smooth'});">🔎 Ver vagas gratuitas</a>';
         }
     })
     .catch(err => {
@@ -1636,6 +1527,7 @@ filtrarVagas(); window.scrollTo({top: 0, behavior: 'smooth'});">🔎 Ver vagas g
 </div>
 
 <script>
+
 // ===== DADOS DAS VAGAS =====
 const vagas = [
     { id: 1, cargo: "Pesquisador I – Simulação Numérica Computacional (CFD)", empresa: "SESI SENAI SP", unidade: "SESI SENAI SP", local: "São Bernardo do Campo, SP", modalidade: "Presencial", salario: 10407.71, data: "2026-06-18", tipo: "Efetiva", descricao: "Atuar na execução de projetos de pesquisa aplicada, propondo e desenvolvendo soluções inovadoras. Trabalhar sob orientação direta, com foco em melhorar produtos e serviços existentes através de pesquisa aplicada em simulação computacional (CFD).", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
@@ -1676,7 +1568,7 @@ const vagas = [
     { id: 36, cargo: "Banco de Talentos - Professor de Atividades Esportivas", empresa: "SESI SP", unidade: "SESI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-04-13", tipo: "Banco de Talentos", descricao: "O SESI SP está em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de São Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" }
 ];
 
-// ===== LÓGICA =====
+// ===== FUNCOES UTILITARIAS =====
 let paginaAtual = 1;
 const porPagina = 10;
 
@@ -1709,6 +1601,7 @@ function getUnidadeLabel(unidade) {
     return 'CORPORATIVO';
 }
 
+// ===== FUNCOES DE FILTRO E RENDER =====
 function filtrarVagas() {
     const busca = document.getElementById('inputBusca').value.toLowerCase();
     const local = document.getElementById('inputLocal').value.toLowerCase();
@@ -1773,7 +1666,7 @@ function renderizarVagas(resultado) {
             : `<div class="vaga-bloqueio-msg">🔒 Assine <strong>Plano ${plano.nome}</strong> para ver empresa e se candidatar
                 <br><a href="${getPlanoLink(plano.classe)}" target="_blank" class="btn-assinar-bloqueio" onclick="event.stopPropagation()">🔓 Assinar ${plano.nome}</a>
                </div>`;
-        return `
+        return \`
             <div class="vaga-card" onclick="abrirModal(${v.id})">
                 <div>
                     <span class="vaga-tag ${tagClass}">${unidadeLabel}</span>
@@ -1791,7 +1684,7 @@ function renderizarVagas(resultado) {
                 </div>
                 ${actionsHtml}
             </div>
-        `;
+        \`;
     }).join('');
 
     if (paginadas.length === 0) {
@@ -1860,6 +1753,8 @@ function mudarPagina(pagina) {
 }
 
 function limparFiltros() {
+
+
     document.getElementById('inputBusca').value = '';
     document.getElementById('inputLocal').value = '';
     document.getElementById('filtroUnidade').value = '';
@@ -1869,15 +1764,20 @@ function limparFiltros() {
     document.getElementById('tipoEfetiva').checked = false;
     document.getElementById('filtroPeriodo').value = '';
     document.getElementById('sortSelect').value = 'data';
-    
+    filtrarVagas();
+}
+
+
+
+// ===== DADOS DAS VAGAS =====
 // ===== ASSINATURA VAGAS - CAPTURA DE EMAIL =====
 let planoSelecionado = '';
 
 const PLANOS_INFO = {
     bronze: { nome: 'Bronze', icone: '🥉', faixa: 'R$ 3.001 ~ R$ 5.000', preco: 'R$ 9,90/trimestre', link: 'https://mpago.la/2UmiPMV' },
-    prata: { nome: 'Prata', icone: '🥉Z', faixa: 'R$ 5.001 ~ R$ 8.000', preco: 'R$ 15,00/trimestre', link: 'https://mpago.la/1XWEeC6' },
-    ouro: { nome: 'Ouro', icone: '🥉'Z', faixa: 'R$ 8.001 ~ R$ 10.000', preco: 'R$ 35,00/trimestre', link: 'https://mpago.la/2mSYs6U' },
-    diamante: { nome: 'Diamante', icone: '🥉''', faixa: 'Acima de R$ 10.000', preco: 'R$ 69,90/trimestre', link: 'https://mpago.la/2fCg4C2' }
+    prata: { nome: 'Prata', icone: '🥈', faixa: 'R$ 5.001 ~ R$ 8.000', preco: 'R$ 15,00/trimestre', link: 'https://mpago.la/1XWEeC6' },
+    ouro: { nome: 'Ouro', icone: '🥇', faixa: 'R$ 8.001 ~ R$ 10.000', preco: 'R$ 35,00/trimestre', link: 'https://mpago.la/2mSYs6U' },
+    diamante: { nome: 'Diamante', icone: '💎', faixa: 'Acima de R$ 10.000', preco: 'R$ 69,90/trimestre', link: 'https://mpago.la/2fCg4C2' }
 };
 
 function abrirModalEmail(plano) {
@@ -2003,206 +1903,10 @@ function verificarAcesso() {
     }
 })();
 
-
-filtrarVagas();
-}
-
-function abrirModal(id) {
-    const v = vagas.find(x => x.id === id);
-    if (!v) return;
-    const plano = getPlanoVaga(v.salario);
-    const isLivre = !plano || plano.nome === 'Livre';
-    
-    document.getElementById('modalTitulo').textContent = v.cargo;
-    
-    if (isLivre) {
-        document.getElementById('modalEmpresa').textContent = v.empresa;
-        document.getElementById('modalEmpresa').style.display = 'block';
-    } else {
-        document.getElementById('modalEmpresa').textContent = '';
-        document.getElementById('modalEmpresa').style.display = 'none';
-    }
-    
-    document.getElementById('modalLocal').textContent = v.local;
-    document.getElementById('modalModalidade').textContent = v.modalidade;
-    document.getElementById('modalSalario').textContent = formatarSalario(v.salario);
-    document.getElementById('modalData').textContent = new Date(v.data + 'T12:00:00').toLocaleDateString('pt-BR');
-    
-    if (isLivre) {
-        document.getElementById('modalDescricao').textContent = v.descricao;
-        document.getElementById('modalLink').href = v.link;
-        document.getElementById('modalLink').textContent = '📝 Candidatar-se no site oficial';
-        document.getElementById('modalLink').style.display = 'block';
-    } else {
-        document.getElementById('modalDescricao').textContent = v.descricao + '\n\n🔒 Esta vaga requer o Plano ' + plano.nome + ' para acesso completo. Assine e tenha acesso a empresa, contato e link de candidatura.';
-        document.getElementById('modalLink').href = getPlanoLink(plano.classe);
-        document.getElementById('modalLink').textContent = '🔓 Assinar ' + plano.nome;
-        document.getElementById('modalLink').style.display = 'block';
-    }
-    
-    document.getElementById('modalVaga').classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function fecharModal() {
-    document.getElementById('modalVaga').classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-function getPlanoVaga(salario) {
-    if (!salario || salario === 0) return null;
-    if (salario <= 3000) return { nome: 'Livre', icone: '🆓', classe: 'livre' };
-    if (salario <= 5000) return { nome: 'Bronze', icone: '🥉', classe: 'bronze' };
-    if (salario <= 8000) return { nome: 'Prata', icone: '🥈', classe: 'prata' };
-    if (salario <= 10000) return { nome: 'Ouro', icone: '🥇', classe: 'ouro' };
-    return { nome: 'Diamante', icone: '💎', classe: 'diamante' };
-}
-
-// Links de pagamento Mercado Pago
-const PLANO_MP_LINKS = {
-    vip: 'https://mpago.la/2UmiPMV'
-};
-function getPlanoLink(classe) {
-    return PLANO_MP_LINKS[classe] || ('https://app.coregov.com.br/assinar/' + classe);
-}
-
-
-// ===== ASSINATURA VAGAS - CAPTURA DE EMAIL =====
-let planoSelecionado = '';
-
-const PLANOS_INFO = {
-    bronze: { nome: 'Bronze', icone: '🥉', faixa: 'R$ 3.001 ~ R$ 5.000', preco: 'R$ 9,90/trimestre', link: 'https://mpago.la/2UmiPMV' },
-    prata: { nome: 'Prata', icone: '🥉Z', faixa: 'R$ 5.001 ~ R$ 8.000', preco: 'R$ 15,00/trimestre', link: 'https://mpago.la/1XWEeC6' },
-    ouro: { nome: 'Ouro', icone: '🥉'Z', faixa: 'R$ 8.001 ~ R$ 10.000', preco: 'R$ 35,00/trimestre', link: 'https://mpago.la/2mSYs6U' },
-    diamante: { nome: 'Diamante', icone: '🥉''', faixa: 'Acima de R$ 10.000', preco: 'R$ 69,90/trimestre', link: 'https://mpago.la/2fCg4C2' }
-};
-
-function abrirModalEmail(plano) {
-    planoSelecionado = plano;
-    const info = PLANOS_INFO[plano];
-    if (!info) return;
-
-    document.getElementById('modalEmailIcon').textContent = info.icone;
-    document.getElementById('modalEmailTitle').textContent = 'Assinar ' + info.nome;
-    document.getElementById('modalEmailPlano').textContent = info.nome.toUpperCase() + ' - ' + info.faixa;
-    document.getElementById('modalEmailDesc').textContent = 'Apenas ' + info.preco + '. Digite seu email e siga para o pagamento no Mercado Pago.';
-    document.getElementById('inputEmail').value = '';
-    document.getElementById('emailErro').classList.remove('show');
-    document.getElementById('emailSucesso').classList.remove('show');
-    document.getElementById('btnEmailSubmit').disabled = false;
-    document.getElementById('btnEmailSubmit').textContent = '📨 Continuar para Pagamento';
-
-    document.getElementById('modalEmail').classList.add('active');
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => { document.getElementById('inputEmail').focus(); }, 300);
-}
-
-function fecharModalEmail() {
-    document.getElementById('modalEmail').classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-function enviarEmail() {
-    const email = document.getElementById('inputEmail').value.trim();
-    if (!email || !email.includes('@') || !email.includes('.')) {
-        document.getElementById('emailErro').textContent = 'Por favor, insira um email válido.';
-        document.getElementById('emailErro').classList.add('show');
-        return;
-    }
-
-    document.getElementById('emailErro').classList.remove('show');
-    document.getElementById('btnEmailSubmit').disabled = true;
-    document.getElementById('btnEmailSubmit').textContent = '⏳ Registrando...';
-
-    // Salvar email no localStorage
-    localStorage.setItem('coregov_email', email);
-    localStorage.setItem('coregov_plano_' + planoSelecionado, 'pending');
-
-    // Enviar para o backend
-    fetch('https://app.coregov.com.br/api/vagas/capturar-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, plano: planoSelecionado })
-    })
-    .then(r => r.json())
-    .then(data => {
-        if (data.success && data.ja_assinante) {
-            document.getElementById('emailSucesso').textContent = '✅ ' + data.mensagem;
-            document.getElementById('emailSucesso').classList.add('show');
-            document.getElementById('btnEmailSubmit').textContent = '🔗 Ir para vagas';
-            document.getElementById('btnEmailSubmit').onclick = function() { fecharModalEmail(); window.location.reload(); };
-            return;
-        }
-
-        // Redirecionar para o MP
-        document.getElementById('emailSucesso').textContent = '✅ Email registrado! Redirecionando...';
-        document.getElementById('emailSucesso').classList.add('show');
-        document.getElementById('btnEmailSubmit').textContent = '⏳ Redirecionando...';
-
-        const link = data.redirect_url || PLANOS_INFO[planoSelecionado].link;
-        setTimeout(() => { window.location.href = link; }, 800);
-    })
-    .catch(err => {
-        // Fallback: redirecionar direto
-        const link = PLANOS_INFO[planoSelecionado].link;
-        window.location.href = link;
-    });
-}
-
-function verificarAcesso() {
-    const email = document.getElementById('inputVerificarEmail').value.trim();
-    const resultEl = document.getElementById('verificarResult');
-
-    if (!email || !email.includes('@')) {
-        resultEl.className = 'verificar-result inativo';
-        resultEl.textContent = 'Por favor, digite um email válido.';
-        return;
-    }
-
-    resultEl.className = 'verificar-result';
-    resultEl.textContent = '⏳ Verificando...';
-    resultEl.style.display = 'block';
-
-    fetch('https://app.coregov.com.br/api/vagas/verificar-acesso?email=' + encodeURIComponent(email))
-    .then(r => r.json())
-    .then(data => {
-        if (data.acesso) {
-            resultEl.className = 'verificar-result ativo';
-            resultEl.innerHTML = '✅ <strong>Acesso Liberado!</strong> Plano ' + data.plano.charAt(0).toUpperCase() + data.plano.slice(1) + '.<br>As vagas do seu plano já estão visíveis com empresa e contato.';
-            localStorage.setItem('coregov_email', email);
-            localStorage.setItem('coregov_plano_' + data.plano, 'ativo');
-            // Recarregar para aplicar
-            setTimeout(() => { window.location.reload(); }, 1500);
-        } else {
-            resultEl.className = 'verificar-result inativo';
-            resultEl.innerHTML = '🔒 ' + (data.mensagem || 'Nenhuma assinatura ativa encontrada.') + '<br><a href="#planos" style="color:var(--accent);font-weight:700;">👉 Assinar agora</a>';
-        }
-    })
-    .catch(err => {
-        resultEl.className = 'verificar-result inativo';
-        resultEl.textContent = 'Erro ao verificar. Tente novamente.';
-    });
-}
-
-// Auto-verificar se email salvo
-(function() {
-    const savedEmail = localStorage.getItem('coregov_email');
-    if (savedEmail) {
-        // Verificar se tem alguma assinatura ativa
-        fetch('https://app.coregov.com.br/api/vagas/verificar-acesso?email=' + encodeURIComponent(savedEmail))
-        .then(r => r.json())
-        .then(data => {
-            if (data.acesso) {
-                localStorage.setItem('coregov_plano_' + data.plano, 'ativo');
-            }
-        })
-        .catch(() => {});
-    }
-})();
-
-
+// ===== INICIALIZACAO =====
 filtrarVagas();
 </script>
+
 
 </body>
 </html>
