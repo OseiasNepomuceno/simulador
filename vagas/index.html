@@ -1575,6 +1575,25 @@ function getUnidadeLabel(unidade) {
     return 'CORPORATIVO';
 }
 
+function getPlanoVaga(salario) {
+    if (salario === null) return null;
+    if (salario <= 3000) return { nome: 'Livre', icone: '🆓', classe: 'livre' };
+    if (salario <= 5000) return { nome: 'Bronze', icone: '🥉', classe: 'bronze' };
+    if (salario <= 8000) return { nome: 'Prata', icone: '🥈', classe: 'prata' };
+    if (salario <= 10000) return { nome: 'Ouro', icone: '🥇', classe: 'ouro' };
+    return { nome: 'Diamante', icone: '💎', classe: 'diamante' };
+}
+
+function getPlanoLink(classe) {
+    const links = {
+        bronze: 'https://mpago.la/2UmiPMV',
+        prata: 'https://mpago.la/1XWEeC6',
+        ouro: 'https://mpago.la/2mSYs6U',
+        diamante: 'https://mpago.la/2fCg4C2'
+    };
+    return links[classe] || '#';
+}
+
 // ===== FUNCOES DE FILTRO E RENDER =====
 function filtrarVagas() {
     const busca = document.getElementById('inputBusca').value.toLowerCase();
