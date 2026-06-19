@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -186,7 +186,7 @@
         }
         .vaga-card .btn-rastrear:hover { background: var(--accent); color: white; }
 
-        /* PAGINAÇÃO */
+        /* PAGINAÃ‡ÃƒO */
         .paginacao {
             display: flex; justify-content: center; align-items: center;
             gap: 8px; margin-top: 32px;
@@ -202,7 +202,7 @@
         .paginacao .active { background: var(--primary); color: white; border-color: var(--primary); }
         .paginacao .next { font-weight: 700; }
 
-        /* SEÇÃO RASTREAMENTO */
+        /* SEÃ‡ÃƒO RASTREAMENTO */
         .rastreio-section {
             background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
             color: white; padding: 56px 24px; text-align: center;
@@ -459,11 +459,11 @@
     <div class="nav-inner">
         <div class="logo">CORE<span>GOV</span></div>
         <div class="nav-links">
-            <a href="../index.html">Início</a>
+            <a href="../index.html">InÃ­cio</a>
             <a href="../trilha.html">Trilha</a>
             <a href="index.html" style="color: var(--gold);">Vagas</a>
-            <a href="#homeoffice">🌐 Home Office</a>
-            <a href="https://app.coregov.com.br" class="btn-nav" target="_blank">App →</a>
+            <a href="#homeoffice">ðŸŒ Home Office</a>
+            <a href="https://app.coregov.com.br" class="btn-nav" target="_blank">App â†’</a>
         </div>
     </div>
 </nav>
@@ -471,17 +471,17 @@
 <!-- HERO BUSCA -->
 <section class="hero-busca">
     <div class="hero-busca-inner">
-        <h1>🔍 Encontre sua próxima oportunidade</h1>
-        <p>Vagas de emprego reais do SESI, SENAI e muito mais — tudo em um só lugar</p>
+        <h1>ðŸ” Encontre sua prÃ³xima oportunidade</h1>
+        <p>Vagas de emprego reais do SESI, SENAI e muito mais â€” tudo em um sÃ³ lugar</p>
         <div class="busca-bar">
             <input type="text" id="inputBusca" placeholder="Cargo, palavra-chave...">
-            <input type="text" id="inputLocal" placeholder="Cidade ou região...">
-            <button class="btn-search" onclick="filtrarVagas()">🔎 Buscar</button>
+            <input type="text" id="inputLocal" placeholder="Cidade ou regiÃ£o...">
+            <button class="btn-search" onclick="filtrarVagas()">ðŸ”Ž Buscar</button>
         </div>
         <div class="stats-bar">
-            <span>📋 <strong id="totalVagas">44</strong> vagas disponíveis</span>
-            <span>🏢 <strong>36</strong> anúncios ativos</span>
-            <span>💰 Salários de <strong>R$ 2.213</strong> até <strong>R$ 18.077</strong></span>
+            <span>ðŸ“‹ <strong id="totalVagas">44</strong> vagas disponÃ­veis</span>
+            <span>ðŸ¢ <strong>36</strong> anÃºncios ativos</span>
+            <span>ðŸ’° SalÃ¡rios de <strong>R$ 2.213</strong> atÃ© <strong>R$ 18.077</strong></span>
         </div>
     </div>
 </section>
@@ -490,7 +490,7 @@
 <div class="main-layout">
     <!-- FILTROS LATERAL -->
     <aside class="filtros" id="filtros">
-        <h3>📌 Filtros</h3>
+        <h3>ðŸ“Œ Filtros</h3>
 
         <div class="filtro-grupo">
             <label>Unidade</label>
@@ -507,11 +507,11 @@
             <label>Cidade</label>
             <select id="filtroCidade">
                 <option value="">Todas</option>
-                <option value="São Paulo">São Paulo</option>
-                <option value="São Bernardo do Campo">São Bernardo do Campo</option>
+                <option value="SÃ£o Paulo">SÃ£o Paulo</option>
+                <option value="SÃ£o Bernardo do Campo">SÃ£o Bernardo do Campo</option>
                 <option value="Campinas">Campinas</option>
-                <option value="Santo André">Santo André</option>
-                <option value="São Caetano do Sul">São Caetano do Sul</option>
+                <option value="Santo AndrÃ©">Santo AndrÃ©</option>
+                <option value="SÃ£o Caetano do Sul">SÃ£o Caetano do Sul</option>
                 <option value="Bauru">Bauru</option>
                 <option value="Barretos">Barretos</option>
                 <option value="Americana">Americana</option>
@@ -530,33 +530,33 @@
         </div>
 
         <div class="filtro-grupo">
-            <label>Período</label>
+            <label>PerÃ­odo</label>
             <select id="filtroPeriodo" onchange="filtrarVagas()">
                 <option value="">Todos</option>
-                <option value="7">Últimos 7 dias</option>
-                <option value="14">Últimos 14 dias</option>
-                <option value="30">Últimos 30 dias</option>
-                <option value="60">Últimos 60 dias</option>
+                <option value="7">Ãšltimos 7 dias</option>
+                <option value="14">Ãšltimos 14 dias</option>
+                <option value="30">Ãšltimos 30 dias</option>
+                <option value="60">Ãšltimos 60 dias</option>
             </select>
         </div>
 
-        <button class="btn-filtrar" onclick="filtrarVagas()">🔎 Filtrar Vagas</button>
-        <button class="btn-limpar" onclick="limparFiltros()">⟲ Limpar Filtros</button>
+        <button class="btn-filtrar" onclick="filtrarVagas()">ðŸ”Ž Filtrar Vagas</button>
+        <button class="btn-limpar" onclick="limparFiltros()">âŸ² Limpar Filtros</button>
     </aside>
 
     <!-- LISTAGEM -->
     <main>
         <button class="btn-mobile-filtros" onclick="document.getElementById('filtros').classList.toggle('mobile-show')">
-            📌 Mostrar / Ocultar Filtros
+            ðŸ“Œ Mostrar / Ocultar Filtros
         </button>
 
         <div class="vagas-header">
-            <h2>📋 Resultados <span class="total" id="resultadoCount">(44 vagas encontradas)</span></h2>
+            <h2>ðŸ“‹ Resultados <span class="total" id="resultadoCount">(44 vagas encontradas)</span></h2>
             <div class="sort">
                 <select id="sortSelect" onchange="filtrarVagas()">
                     <option value="data">Mais Recentes</option>
-                    <option value="salario-desc">Maior Salário</option>
-                    <option value="salario-asc">Menor Salário</option>
+                    <option value="salario-desc">Maior SalÃ¡rio</option>
+                    <option value="salario-asc">Menor SalÃ¡rio</option>
                 </select>
             </div>
         </div>
@@ -567,11 +567,11 @@
     </main>
 </div>
 
-<!-- SEÇÃO HOME OFFICE & PJ — REFERÊNCIAS -->
+<!-- SEÃ‡ÃƒO HOME OFFICE & PJ â€” REFERÃŠNCIAS -->
 <section class="homeoffice-section" id="homeoffice">
     <div class="homeoffice-inner">
         <div class="ho-header">
-            <h2>🌐 Vagas Home Office & PJ — Referências</h2>
+            <h2>ðŸŒ Vagas Home Office & PJ â€” ReferÃªncias</h2>
             <p>Os melhores portais para encontrar trabalho remoto, freelancer e PJ. Links diretos e curadoria feita em junho/2026.</p>
         </div>
 
@@ -579,180 +579,179 @@
             <!-- PLATAFORMAS GERAIS -->
             <div class="ho-card">
                 <div class="ho-card-header">
-                    <span class="ho-icon">📊</span>
+                    <span class="ho-icon">ðŸ“Š</span>
                     <h3>Plataformas Gerais</h3>
-                    <span class="ho-badge">CLT • PJ • Remoto</span>
+                    <span class="ho-badge">CLT â€¢ PJ â€¢ Remoto</span>
                 </div>
                 <div class="ho-links">
-                    <a href="https://indeed.com.br" target="_blank" class="ho-link"><span>Indeed</span> <small>indeed.com.br</small> ↗</a>
-                    <a href="https://linkedin.com" target="_blank" class="ho-link"><span>LinkedIn</span> <small>linkedin.com</small> ↗</a>
-                    <a href="https://glassdoor.com.br" target="_blank" class="ho-link"><span>Glassdoor</span> <small>glassdoor.com.br</small> ↗</a>
-                    <a href="https://infojobs.com.br" target="_blank" class="ho-link"><span>Infojobs</span> <small>infojobs.com.br</small> ↗</a>
-                    <a href="https://catho.com.br" target="_blank" class="ho-link"><span>Catho</span> <small>catho.com.br</small> ↗</a>
-                    <a href="https://portal.gupy.io" target="_blank" class="ho-link"><span>Gupy</span> <small>portal.gupy.io</small> ↗</a>
-                    <a href="https://melhoresempregos.com/remoto/" target="_blank" class="ho-link"><span>Melhores Empregos</span> <small>35k+ vagas</small> ↗</a>
+                    <a href="https://indeed.com.br" target="_blank" class="ho-link"><span>Indeed</span> <small>indeed.com.br</small> â†—</a>
+                    <a href="https://linkedin.com" target="_blank" class="ho-link"><span>LinkedIn</span> <small>linkedin.com</small> â†—</a>
+                    <a href="https://glassdoor.com.br" target="_blank" class="ho-link"><span>Glassdoor</span> <small>glassdoor.com.br</small> â†—</a>
+                    <a href="https://infojobs.com.br" target="_blank" class="ho-link"><span>Infojobs</span> <small>infojobs.com.br</small> â†—</a>
+                    <a href="https://catho.com.br" target="_blank" class="ho-link"><span>Catho</span> <small>catho.com.br</small> â†—</a>
+                    <a href="https://portal.gupy.io" target="_blank" class="ho-link"><span>Gupy</span> <small>portal.gupy.io</small> â†—</a>
+                    <a href="https://melhoresempregos.com/remoto/" target="_blank" class="ho-link"><span>Melhores Empregos</span> <small>35k+ vagas</small> â†—</a>
                 </div>
             </div>
 
             <!-- EXCLUSIVAS HOME OFFICE -->
             <div class="ho-card">
                 <div class="ho-card-header">
-                    <span class="ho-icon">🏠</span>
+                    <span class="ho-icon">ðŸ </span>
                     <h3>Exclusivas Home Office</h3>
-                    <span class="ho-badge">Remoto • Freelancer</span>
+                    <span class="ho-badge">Remoto â€¢ Freelancer</span>
                 </div>
                 <div class="ho-links">
-                    <a href="https://remotar.com.br" target="_blank" class="ho-link"><span>Remotar</span> <small>remotar.com.br</small> ↗</a>
-                    <a href="https://homeofficebr.com" target="_blank" class="ho-link"><span>Home Office BR</span> <small>homeofficebr.com</small> ↗</a>
-                    <a href="https://remoteok.com" target="_blank" class="ho-link"><span>Remote OK</span> <small>🌎 remoteok.com</small> ↗</a>
-                    <a href="https://weworkremotely.com" target="_blank" class="ho-link"><span>We Work Remotely</span> <small>🌎 curadoria</small> ↗</a>
-                    <a href="https://remote.co" target="_blank" class="ho-link"><span>Remote.co</span> <small>🌎 vagas + artigos</small> ↗</a>
-                    <a href="https://flexjobs.com" target="_blank" class="ho-link"><span>FlexJobs</span> <small>🌎 vagas verificadas</small> ↗</a>
+                    <a href="https://remotar.com.br" target="_blank" class="ho-link"><span>Remotar</span> <small>remotar.com.br</small> â†—</a>
+                    <a href="https://homeofficebr.com" target="_blank" class="ho-link"><span>Home Office BR</span> <small>homeofficebr.com</small> â†—</a>
+                    <a href="https://remoteok.com" target="_blank" class="ho-link"><span>Remote OK</span> <small>ðŸŒŽ remoteok.com</small> â†—</a>
+                    <a href="https://weworkremotely.com" target="_blank" class="ho-link"><span>We Work Remotely</span> <small>ðŸŒŽ curadoria</small> â†—</a>
+                    <a href="https://remote.co" target="_blank" class="ho-link"><span>Remote.co</span> <small>ðŸŒŽ vagas + artigos</small> â†—</a>
+                    <a href="https://flexjobs.com" target="_blank" class="ho-link"><span>FlexJobs</span> <small>ðŸŒŽ vagas verificadas</small> â†—</a>
                 </div>
             </div>
 
             <!-- FREELAS / PJ -->
             <div class="ho-card">
                 <div class="ho-card-header">
-                    <span class="ho-icon">💰</span>
+                    <span class="ho-icon">ðŸ’°</span>
                     <h3>Freelas & PJ</h3>
-                    <span class="ho-badge">Projetos • Contratos</span>
+                    <span class="ho-badge">Projetos â€¢ Contratos</span>
                 </div>
                 <div class="ho-links">
-                    <a href="https://workana.com" target="_blank" class="ho-link"><span>Workana</span> <small>workana.com</small> ↗</a>
-                    <a href="https://99freelas.com.br" target="_blank" class="ho-link"><span>99Freelas</span> <small>🇧🇷 projetos remotos</small> ↗</a>
-                    <a href="https://fiverr.com" target="_blank" class="ho-link"><span>Fiverr</span> <small>🌎 gigs internacionais</small> ↗</a>
-                    <a href="https://upwork.com" target="_blank" class="ho-link"><span>Upwork</span> <small>🌎 maior plataforma</small> ↗</a>
-                    <a href="https://br.jooble.org/vagas-de-emprego-pj/Home-office" target="_blank" class="ho-link"><span>Jooble PJ</span> <small>259k+ vagas</small> ↗</a>
+                    <a href="https://workana.com" target="_blank" class="ho-link"><span>Workana</span> <small>workana.com</small> â†—</a>
+                    <a href="https://99freelas.com.br" target="_blank" class="ho-link"><span>99Freelas</span> <small>ðŸ‡§ðŸ‡· projetos remotos</small> â†—</a>
+                    <a href="https://fiverr.com" target="_blank" class="ho-link"><span>Fiverr</span> <small>ðŸŒŽ gigs internacionais</small> â†—</a>
+                    <a href="https://upwork.com" target="_blank" class="ho-link"><span>Upwork</span> <small>ðŸŒŽ maior plataforma</small> â†—</a>
+                    <a href="https://br.jooble.org/vagas-de-emprego-pj/Home-office" target="_blank" class="ho-link"><span>Jooble PJ</span> <small>259k+ vagas</small> â†—</a>
                 </div>
             </div>
 
-            <!-- ÁREAS EM ALTA -->
+            <!-- ÃREAS EM ALTA -->
             <div class="ho-card ho-card-full">
                 <div class="ho-card-header">
-                    <span class="ho-icon">🚀</span>
-                    <h3>Áreas com mais vagas Home Office PJ</h3>
+                    <span class="ho-icon">ðŸš€</span>
+                    <h3>Ãreas com mais vagas Home Office PJ</h3>
                     <span class="ho-badge">Junho/2026</span>
                 </div>
                 <div class="ho-grid-areas">
-                    <span class="ho-area">💻 Tecnologia</span>
-                    <span class="ho-area">📱 Marketing Digital</span>
-                    <span class="ho-area">🎨 Design</span>
-                    <span class="ho-area">📞 Vendas</span>
-                    <span class="ho-area">📋 Administrativo</span>
-                    <span class="ho-area">🎧 Atendimento</span>
-                    <span class="ho-area">📚 Educação</span>
-                    <span class="ho-area">✍️ Redação/Tradução</span>
+                    <span class="ho-area">ðŸ’» Tecnologia</span>
+                    <span class="ho-area">ðŸ“± Marketing Digital</span>
+                    <span class="ho-area">ðŸŽ¨ Design</span>
+                    <span class="ho-area">ðŸ“ž Vendas</span>
+                    <span class="ho-area">ðŸ“‹ Administrativo</span>
+                    <span class="ho-area">ðŸŽ§ Atendimento</span>
+                    <span class="ho-area">ðŸ“š EducaÃ§Ã£o</span>
+                    <span class="ho-area">âœï¸ RedaÃ§Ã£o/TraduÃ§Ã£o</span>
                 </div>
             </div>
 
             <!-- CUIDADOS -->
             <div class="ho-card ho-card-full ho-card-warning">
                 <div class="ho-card-header">
-                    <span class="ho-icon">🛡️</span>
-                    <h3>Dicas de Segurança</h3>
+                    <span class="ho-icon">ðŸ›¡ï¸</span>
+                    <h3>Dicas de SeguranÃ§a</h3>
                     <span class="ho-badge">Evite golpes</span>
                 </div>
                 <div class="ho-dicas">
-                    <p>✅ Nunca pague taxa para se candidatar</p>
-                    <p>✅ Verifique o CNPJ da empresa no site oficial</p>
-                    <p>✅ Pesquise no Glassdoor / Reclame Aqui antes</p>
-                    <p>✅ Desconfie de promessas de dinheiro fácil</p>
-                    <p>✅ Prefira plataformas conhecidas (as listadas acima)</p>
+                    <p>âœ… Verifique o CNPJ da empresa no site oficial</p>
+                    <p>âœ… Pesquise no Glassdoor / Reclame Aqui antes</p>
+                    <p>âœ… Desconfie de promessas de dinheiro fÃ¡cil</p>
+                    <p>âœ… Prefira plataformas conhecidas (as listadas acima)</p>
                 </div>
             </div>
         </div>
 
         <div class="ho-cta">
-            <p>⚡ Quer automatizar suas candidaturas? <a href="https://app.coregov.com.br" target="_blank">Ative o rastreamento inteligente 🛰️</a></p>
+            <p>âš¡ Quer automatizar suas candidaturas? <a href="https://app.coregov.com.br" target="_blank">Ative o rastreamento inteligente ðŸ›°ï¸</a></p>
         </div>
     </div>
 </section>
 
-<!-- SEÇÃO RASTREAMENTO -->
+<!-- SEÃ‡ÃƒO RASTREAMENTO -->
 <section class="rastreio-section" id="rastrear">
     <div class="rastreio-inner">
-        <h2>🛰️ Rastreamento Inteligente de Vagas</h2>
-        <p>Cadastre seu perfil no App COREGOV e receba alertas personalizados quando novas vagas compatíveis com seu perfil forem publicadas. Filtre por área, salário, cidade e muito mais.</p>
+        <h2>ðŸ›°ï¸ Rastreamento Inteligente de Vagas</h2>
+        <p>Cadastre seu perfil no App COREGOV e receba alertas personalizados quando novas vagas compatÃ­veis com seu perfil forem publicadas. Filtre por Ã¡rea, salÃ¡rio, cidade e muito mais.</p>
         <a href="https://app.coregov.com.br" class="btn-app" target="_blank">
-            🚀 ATIVAR RASTREAMENTO
+            ðŸš€ ATIVAR RASTREAMENTO
         </a>
-        <p style="margin-top: 16px; opacity: 0.6; font-size: 0.9rem;">🔔 Notificações em tempo real • Grátis para começar</p>
+        <p style="margin-top: 16px; opacity: 0.6; font-size: 0.9rem;">ðŸ”” NotificaÃ§Ãµes em tempo real â€¢ GrÃ¡tis para comeÃ§ar</p>
     </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
     <div class="logo">CORE<span>GOV</span></div>
-    <p style="margin: 8px 0;">Gestão Inteligente para o Terceiro Setor</p>
+    <p style="margin: 8px 0;">GestÃ£o Inteligente para o Terceiro Setor</p>
     <div class="footer-links">
-        <a href="../index.html">Início</a>
+        <a href="../index.html">InÃ­cio</a>
         <a href="../trilha.html">Trilha do Conhecimento</a>
         <a href="index.html">Vagas</a>
         <a href="https://app.coregov.com.br" target="_blank">App</a>
     </div>
-    <p style="font-size: 0.85rem; margin-top: 16px; opacity: 0.6;">© 2026 COREGOV. Todos os direitos reservados.</p>
+    <p style="font-size: 0.85rem; margin-top: 16px; opacity: 0.6;">Â© 2026 COREGOV. Todos os direitos reservados.</p>
 </footer>
 
 <!-- MODAL -->
 <div class="modal-overlay" id="modalVaga" onclick="if(event.target===this)fecharModal()">
     <div class="modal">
-        <button class="modal-close" onclick="fecharModal()">✕</button>
+        <button class="modal-close" onclick="fecharModal()">âœ•</button>
         <h2 id="modalTitulo"></h2>
         <p class="modal-empresa" id="modalEmpresa"></p>
         <div class="modal-info">
-            <div class="info-item"><div class="label">📍 Local</div><div class="value" id="modalLocal"></div></div>
-            <div class="info-item"><div class="label">💼 Modalidade</div><div class="value" id="modalModalidade"></div></div>
-            <div class="info-item"><div class="label">💰 Salário</div><div class="value" id="modalSalario"></div></div>
-            <div class="info-item"><div class="label">📅 Publicação</div><div class="value" id="modalData"></div></div>
+            <div class="info-item"><div class="label">ðŸ“ Local</div><div class="value" id="modalLocal"></div></div>
+            <div class="info-item"><div class="label">ðŸ’¼ Modalidade</div><div class="value" id="modalModalidade"></div></div>
+            <div class="info-item"><div class="label">ðŸ’° SalÃ¡rio</div><div class="value" id="modalSalario"></div></div>
+            <div class="info-item"><div class="label">ðŸ“… PublicaÃ§Ã£o</div><div class="value" id="modalData"></div></div>
         </div>
         <div class="modal-body" id="modalDescricao"></div>
-        <a id="modalLink" href="#" target="_blank" class="btn-candidatar-modal">📝 Candidatar-se no site oficial</a>
+        <a id="modalLink" href="#" target="_blank" class="btn-candidatar-modal">ðŸ“ Candidatar-se no site oficial</a>
     </div>
 </div>
 
 <script>
 // ===== DADOS DAS VAGAS =====
 const vagas = [
-    { id: 1, cargo: "Pesquisador I – Simulação Numérica Computacional (CFD)", empresa: "SESI SENAI SP", unidade: "SESI SENAI SP", local: "São Bernardo do Campo, SP", modalidade: "Presencial", salario: 10407.71, data: "2026-06-18", tipo: "Efetiva", descricao: "Atuar na execução de projetos de pesquisa aplicada, propondo e desenvolvendo soluções inovadoras. Trabalhar sob orientação direta, com foco em melhorar produtos e serviços existentes através de pesquisa aplicada em simulação computacional (CFD).", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 2, cargo: "Banco de Talentos - Cuidador Escolar", empresa: "SESI SP", unidade: "SESI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: 2213.72, data: "2026-06-18", tipo: "Banco de Talentos", descricao: "O SESI SP está em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de São Paulo. Venha transformar o futuro da educação e da indústria.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 3, cargo: "Assistente de Tecnologia - Automotiva", empresa: "SENAI SP", unidade: "SENAI SP", local: "Ipiranga, São Paulo, SP", modalidade: "Presencial", salario: 4457.89, data: "2026-06-17", tipo: "Efetiva", descricao: "Suporte técnico e administrativo relacionado à assistência técnica automotiva. Interpretação de literatura técnica de serviços, além de raciocínio lógico.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 4, cargo: "Consultor em Tecnologia II - Programação de CLP e Realidades Imersivas", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Bernardo do Campo, SP", modalidade: "Presencial", salario: 10407.71, data: "2026-06-17", tipo: "Efetiva", descricao: "Assessorar pesquisas aplicadas, desenvolvimento e validação de produtos, processos e protótipos, identificando e visitando clientes, participando de eventos para divulgar ações e realizar prospecção tecnológica.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 5, cargo: "Fonoaudiólogo Ocupacional", empresa: "SESI SP", unidade: "SESI SP", local: "Santo André, SP", modalidade: "Presencial", salario: 4583.86, data: "2026-06-17", tipo: "Efetiva", descricao: "Implantar estratégias de programas de promoção de saúde auditiva e implementar programas de conservação auditiva para os trabalhadores expostos.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 6, cargo: "Banco de Talentos - Professor de Educação Básica I, II e III", empresa: "SESI SP", unidade: "SESI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-17", tipo: "Banco de Talentos", descricao: "O SESI está em busca de profissionais para compor nosso Banco de Talentos de Professores de Educação Básica em todo o Estado de São Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 7, cargo: "Bolsista - Economia", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: 4700, data: "2026-06-17", tipo: "Efetiva", descricao: "O bolsista deverá possuir formação sólida em Economia e elevada capacidade analítica, responsável por estudos estruturados de competitividade setorial com foco em transformação tecnológica e inovação.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 8, cargo: "Consultor em Tecnologia I - Digitalização e Indústria 4.0", empresa: "SENAI SP", unidade: "SENAI SP", local: "Campinas, SP", modalidade: "Presencial", salario: 8174.85, data: "2026-06-16", tipo: "Efetiva", descricao: "Participar de eventos para divulgar ações do SENAI e prospecção tecnológica, atuando como multiplicador na capacitação dos profissionais da rede, prestando serviços de assessoria técnica e tecnológica.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 9, cargo: "Consultor em Tecnologia II - Gestão de Desempenho", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: 10407.71, data: "2026-06-16", tipo: "Efetiva", descricao: "Assessorar pesquisas aplicadas, desenvolvimento e validação de produtos, processos e protótipos, identificando e visitando clientes, participando de eventos para divulgar ações e realizar prospecção tecnológica.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 10, cargo: "Enfermeiro do Trabalho", empresa: "SESI SP", unidade: "SESI SP", local: "Bauru, SP", modalidade: "Presencial", salario: 6050.71, data: "2026-06-16", tipo: "Efetiva", descricao: "Responsabilizar-se pelos assuntos ligados ao PCMSO das empresas atendidas. Realizar visitas no ambiente laboral e prestar esclarecimentos sobre saúde ocupacional.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 11, cargo: "Operador Técnico de Teatro", empresa: "SESI SP", unidade: "SESI SP", local: "Barretos, SP", modalidade: "Presencial", salario: 6789.32, data: "2026-06-16", tipo: "Efetiva", descricao: "Montar e operar equipamentos de áudio, luz, vídeo, acessórios e periféricos. Zelar pela organização e manutenção dos equipamentos. Cotar preços de materiais.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 12, cargo: "Nutricionista", empresa: "SESI SP", unidade: "SESI SP", local: "Americana e Pederneiras, SP", modalidade: "Presencial", salario: 7334.18, data: "2026-06-16", tipo: "Efetiva", descricao: "Responsável pela criação, gestão e operacionalização dos cardápios, além de atividades relacionadas à nutrição e alimentação escolar nas unidades do SESI-SP.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 13, cargo: "Pesquisador III - Robótica Humanoide", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Bernardo do Campo, SP", modalidade: "Presencial", salario: 18077.64, data: "2026-06-15", tipo: "Efetiva", descricao: "Atuar na execução de projetos de pesquisa aplicada, propondo e desenvolvendo soluções inovadoras. Orientando equipes quanto aos aspectos técnicos e procedimentos internos estabelecidos.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 14, cargo: "Auxiliar Técnico de Inclusão - Deficiência Intelectual", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: 5390.17, data: "2026-06-15", tipo: "Banco de Talentos", descricao: "O SENAI SP está em busca de profissionais para formação de Banco de Talentos em todo o Estado de São Paulo para a área de educação inclusiva.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 15, cargo: "Contrarregra - Teatro", empresa: "SESI SP", unidade: "SESI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: 4292.36, data: "2026-06-15", tipo: "Efetiva", descricao: "Executar montagens e desmontagens de cenários, movimentar cenário e objetos cenográficos. Acionar o sinal sonoro indicando o início dos espetáculos.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 16, cargo: "Analista de Tecnologia - Gestão de Processos e Serviços Tecnológicos", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Caetano do Sul, SP", modalidade: "Presencial", salario: 6326.06, data: "2026-06-08", tipo: "Efetiva", descricao: "Prestar serviços tecnológicos para a indústria. Executar atividades de suporte ao planejamento, acompanhamento e controle dos serviços tecnológicos.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 17, cargo: "Professor de Educação Superior e Acadêmico - Tecnologia da Informação", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Caetano do Sul, SP", modalidade: "Presencial", salario: null, data: "2026-06-08", tipo: "Banco de Talentos", descricao: "O SENAI SP está em busca de profissionais para atuar como professor de Tecnologia da Informação na cidade de São Caetano do Sul.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 18, cargo: "Banco de Talentos - Inspetor de Alunos I", empresa: "SESI SP", unidade: "SESI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: 2213.72, data: "2026-06-08", tipo: "Banco de Talentos", descricao: "O SESI SP está em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de São Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 19, cargo: "Banco de Talentos - Guarda Vidas", empresa: "SESI SP", unidade: "SESI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: 3642.05, data: "2026-06-08", tipo: "Banco de Talentos", descricao: "O SESI SP está em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de São Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 20, cargo: "Banco de Talentos - Auxiliar de Expediente (PcD)", empresa: "SESI SENAI SP - CORPORATIVO", unidade: "SESI SENAI SP - CORPORATIVO", local: "São Paulo, SP", modalidade: "Presencial", salario: 2213.72, data: "2026-06-08", tipo: "Banco de Talentos", descricao: "Banco de Talentos exclusivo para Pessoas com Deficiência. O SESI e SENAI SP está em busca de profissionais para compor nosso Banco de Talentos.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 21, cargo: "Banco de Talentos - Oficial de Serviços de Manutenção e Conservação I", empresa: "SESI SENAI SP - CORPORATIVO", unidade: "SESI SENAI SP - CORPORATIVO", local: "São Paulo, SP", modalidade: "Presencial", salario: 2637.09, data: "2026-06-03", tipo: "Banco de Talentos", descricao: "O SESI e SENAI SP está em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de São Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 22, cargo: "Instrutor de Formação Profissional - Construção Civil", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP está em busca de profissionais para formação de Banco de Talentos. Se você é da área de Construção Civil e tem habilidade para compartilhar o seu conhecimento, inscreva-se.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 23, cargo: "Instrutor de Formação Profissional - Segurança do Trabalho", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP está em busca de profissionais para formação de Banco de Talentos. Se você é da área de Segurança do Trabalho e tem habilidade para compartilhar o seu conhecimento, inscreva-se.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 24, cargo: "Instrutor de Formação Profissional - Metalmecânica e Manutenção Mecânica", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP está em busca de profissionais para formação de Banco de Talentos para a área de Metalmecânica e Manutenção Mecânica.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 25, cargo: "Instrutor de Formação Profissional - Gestão e Logística", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP está em busca de profissionais para formação de Banco de Talentos para a área de Gestão e Logística.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 26, cargo: "Instrutor de Formação Profissional - Têxtil e Vestuário", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP está em busca de profissionais para formação de Banco de Talentos para a área de Têxtil e Vestuário.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 27, cargo: "Instrutor de Formação Profissional - Tecnologia da Informação", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP está em busca de profissionais para formação de Banco de Talentos para a área de Tecnologia da Informação.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 28, cargo: "Instrutor de Formação Profissional - Automação e Eletroeletrônica", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP está em busca de profissionais para formação de Banco de Talentos para a área de Automação e Eletroeletrônica.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 29, cargo: "Instrutor de Formação Profissional - Alimentos", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP está em busca de profissionais para formação de Banco de Talentos para a área de Alimentos e Bebidas.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 30, cargo: "Instrutor de Formação Profissional - Automotiva", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP está em busca de profissionais para formação de Banco de Talentos para a área Automotiva.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 31, cargo: "Instrutor de Formação Profissional - Metalurgia", empresa: "SENAI SP", unidade: "SENAI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP está em busca de profissionais para formação de Banco de Talentos para a área de Metalurgia.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 32, cargo: "Banco de Talentos - Professor de Atividade Acadêmica e Docente", empresa: "SESI SP", unidade: "SESI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-05-29", tipo: "Banco de Talentos", descricao: "A Faculdade SESI de Educação está em busca de profissionais para compor o Banco de Talentos de Professor de Atividade Acadêmica e/ou Professor de Atividade Docente.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 33, cargo: "Banco de Talentos - Auxiliar de Cozinha", empresa: "SESI SP", unidade: "SESI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: 2535.31, data: "2026-05-29", tipo: "Banco de Talentos", descricao: "O SESI SP está em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de São Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 34, cargo: "Banco de Talentos - Professor Facilitador de Educação Inclusiva", empresa: "SESI SP", unidade: "SESI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: 6214.73, data: "2026-05-14", tipo: "Banco de Talentos", descricao: "O SESI SP está em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de São Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 35, cargo: "Banco de Talentos - Assistente de Serviços Administrativos", empresa: "SESI SENAI SP - CORPORATIVO", unidade: "SESI SENAI SP - CORPORATIVO", local: "São Paulo, SP", modalidade: "Presencial", salario: 3642.05, data: "2026-04-28", tipo: "Banco de Talentos", descricao: "O SESI e SENAI SP está em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de São Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
-    { id: 36, cargo: "Banco de Talentos - Professor de Atividades Esportivas", empresa: "SESI SP", unidade: "SESI SP", local: "São Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-04-13", tipo: "Banco de Talentos", descricao: "O SESI SP está em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de São Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" }
+    { id: 1, cargo: "Pesquisador I â€“ SimulaÃ§Ã£o NumÃ©rica Computacional (CFD)", empresa: "SESI SENAI SP", unidade: "SESI SENAI SP", local: "SÃ£o Bernardo do Campo, SP", modalidade: "Presencial", salario: 10407.71, data: "2026-06-18", tipo: "Efetiva", descricao: "Atuar na execuÃ§Ã£o de projetos de pesquisa aplicada, propondo e desenvolvendo soluÃ§Ãµes inovadoras. Trabalhar sob orientaÃ§Ã£o direta, com foco em melhorar produtos e serviÃ§os existentes atravÃ©s de pesquisa aplicada em simulaÃ§Ã£o computacional (CFD).", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 2, cargo: "Banco de Talentos - Cuidador Escolar", empresa: "SESI SP", unidade: "SESI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: 2213.72, data: "2026-06-18", tipo: "Banco de Talentos", descricao: "O SESI SP estÃ¡ em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de SÃ£o Paulo. Venha transformar o futuro da educaÃ§Ã£o e da indÃºstria.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 3, cargo: "Assistente de Tecnologia - Automotiva", empresa: "SENAI SP", unidade: "SENAI SP", local: "Ipiranga, SÃ£o Paulo, SP", modalidade: "Presencial", salario: 4457.89, data: "2026-06-17", tipo: "Efetiva", descricao: "Suporte tÃ©cnico e administrativo relacionado Ã  assistÃªncia tÃ©cnica automotiva. InterpretaÃ§Ã£o de literatura tÃ©cnica de serviÃ§os, alÃ©m de raciocÃ­nio lÃ³gico.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 4, cargo: "Consultor em Tecnologia II - ProgramaÃ§Ã£o de CLP e Realidades Imersivas", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Bernardo do Campo, SP", modalidade: "Presencial", salario: 10407.71, data: "2026-06-17", tipo: "Efetiva", descricao: "Assessorar pesquisas aplicadas, desenvolvimento e validaÃ§Ã£o de produtos, processos e protÃ³tipos, identificando e visitando clientes, participando de eventos para divulgar aÃ§Ãµes e realizar prospecÃ§Ã£o tecnolÃ³gica.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 5, cargo: "FonoaudiÃ³logo Ocupacional", empresa: "SESI SP", unidade: "SESI SP", local: "Santo AndrÃ©, SP", modalidade: "Presencial", salario: 4583.86, data: "2026-06-17", tipo: "Efetiva", descricao: "Implantar estratÃ©gias de programas de promoÃ§Ã£o de saÃºde auditiva e implementar programas de conservaÃ§Ã£o auditiva para os trabalhadores expostos.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 6, cargo: "Banco de Talentos - Professor de EducaÃ§Ã£o BÃ¡sica I, II e III", empresa: "SESI SP", unidade: "SESI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-17", tipo: "Banco de Talentos", descricao: "O SESI estÃ¡ em busca de profissionais para compor nosso Banco de Talentos de Professores de EducaÃ§Ã£o BÃ¡sica em todo o Estado de SÃ£o Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 7, cargo: "Bolsista - Economia", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: 4700, data: "2026-06-17", tipo: "Efetiva", descricao: "O bolsista deverÃ¡ possuir formaÃ§Ã£o sÃ³lida em Economia e elevada capacidade analÃ­tica, responsÃ¡vel por estudos estruturados de competitividade setorial com foco em transformaÃ§Ã£o tecnolÃ³gica e inovaÃ§Ã£o.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 8, cargo: "Consultor em Tecnologia I - DigitalizaÃ§Ã£o e IndÃºstria 4.0", empresa: "SENAI SP", unidade: "SENAI SP", local: "Campinas, SP", modalidade: "Presencial", salario: 8174.85, data: "2026-06-16", tipo: "Efetiva", descricao: "Participar de eventos para divulgar aÃ§Ãµes do SENAI e prospecÃ§Ã£o tecnolÃ³gica, atuando como multiplicador na capacitaÃ§Ã£o dos profissionais da rede, prestando serviÃ§os de assessoria tÃ©cnica e tecnolÃ³gica.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 9, cargo: "Consultor em Tecnologia II - GestÃ£o de Desempenho", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: 10407.71, data: "2026-06-16", tipo: "Efetiva", descricao: "Assessorar pesquisas aplicadas, desenvolvimento e validaÃ§Ã£o de produtos, processos e protÃ³tipos, identificando e visitando clientes, participando de eventos para divulgar aÃ§Ãµes e realizar prospecÃ§Ã£o tecnolÃ³gica.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 10, cargo: "Enfermeiro do Trabalho", empresa: "SESI SP", unidade: "SESI SP", local: "Bauru, SP", modalidade: "Presencial", salario: 6050.71, data: "2026-06-16", tipo: "Efetiva", descricao: "Responsabilizar-se pelos assuntos ligados ao PCMSO das empresas atendidas. Realizar visitas no ambiente laboral e prestar esclarecimentos sobre saÃºde ocupacional.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 11, cargo: "Operador TÃ©cnico de Teatro", empresa: "SESI SP", unidade: "SESI SP", local: "Barretos, SP", modalidade: "Presencial", salario: 6789.32, data: "2026-06-16", tipo: "Efetiva", descricao: "Montar e operar equipamentos de Ã¡udio, luz, vÃ­deo, acessÃ³rios e perifÃ©ricos. Zelar pela organizaÃ§Ã£o e manutenÃ§Ã£o dos equipamentos. Cotar preÃ§os de materiais.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 12, cargo: "Nutricionista", empresa: "SESI SP", unidade: "SESI SP", local: "Americana e Pederneiras, SP", modalidade: "Presencial", salario: 7334.18, data: "2026-06-16", tipo: "Efetiva", descricao: "ResponsÃ¡vel pela criaÃ§Ã£o, gestÃ£o e operacionalizaÃ§Ã£o dos cardÃ¡pios, alÃ©m de atividades relacionadas Ã  nutriÃ§Ã£o e alimentaÃ§Ã£o escolar nas unidades do SESI-SP.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 13, cargo: "Pesquisador III - RobÃ³tica Humanoide", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Bernardo do Campo, SP", modalidade: "Presencial", salario: 18077.64, data: "2026-06-15", tipo: "Efetiva", descricao: "Atuar na execuÃ§Ã£o de projetos de pesquisa aplicada, propondo e desenvolvendo soluÃ§Ãµes inovadoras. Orientando equipes quanto aos aspectos tÃ©cnicos e procedimentos internos estabelecidos.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 14, cargo: "Auxiliar TÃ©cnico de InclusÃ£o - DeficiÃªncia Intelectual", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: 5390.17, data: "2026-06-15", tipo: "Banco de Talentos", descricao: "O SENAI SP estÃ¡ em busca de profissionais para formaÃ§Ã£o de Banco de Talentos em todo o Estado de SÃ£o Paulo para a Ã¡rea de educaÃ§Ã£o inclusiva.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 15, cargo: "Contrarregra - Teatro", empresa: "SESI SP", unidade: "SESI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: 4292.36, data: "2026-06-15", tipo: "Efetiva", descricao: "Executar montagens e desmontagens de cenÃ¡rios, movimentar cenÃ¡rio e objetos cenogrÃ¡ficos. Acionar o sinal sonoro indicando o inÃ­cio dos espetÃ¡culos.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 16, cargo: "Analista de Tecnologia - GestÃ£o de Processos e ServiÃ§os TecnolÃ³gicos", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Caetano do Sul, SP", modalidade: "Presencial", salario: 6326.06, data: "2026-06-08", tipo: "Efetiva", descricao: "Prestar serviÃ§os tecnolÃ³gicos para a indÃºstria. Executar atividades de suporte ao planejamento, acompanhamento e controle dos serviÃ§os tecnolÃ³gicos.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 17, cargo: "Professor de EducaÃ§Ã£o Superior e AcadÃªmico - Tecnologia da InformaÃ§Ã£o", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Caetano do Sul, SP", modalidade: "Presencial", salario: null, data: "2026-06-08", tipo: "Banco de Talentos", descricao: "O SENAI SP estÃ¡ em busca de profissionais para atuar como professor de Tecnologia da InformaÃ§Ã£o na cidade de SÃ£o Caetano do Sul.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 18, cargo: "Banco de Talentos - Inspetor de Alunos I", empresa: "SESI SP", unidade: "SESI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: 2213.72, data: "2026-06-08", tipo: "Banco de Talentos", descricao: "O SESI SP estÃ¡ em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de SÃ£o Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 19, cargo: "Banco de Talentos - Guarda Vidas", empresa: "SESI SP", unidade: "SESI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: 3642.05, data: "2026-06-08", tipo: "Banco de Talentos", descricao: "O SESI SP estÃ¡ em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de SÃ£o Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 20, cargo: "Banco de Talentos - Auxiliar de Expediente (PcD)", empresa: "SESI SENAI SP - CORPORATIVO", unidade: "SESI SENAI SP - CORPORATIVO", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: 2213.72, data: "2026-06-08", tipo: "Banco de Talentos", descricao: "Banco de Talentos exclusivo para Pessoas com DeficiÃªncia. O SESI e SENAI SP estÃ¡ em busca de profissionais para compor nosso Banco de Talentos.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 21, cargo: "Banco de Talentos - Oficial de ServiÃ§os de ManutenÃ§Ã£o e ConservaÃ§Ã£o I", empresa: "SESI SENAI SP - CORPORATIVO", unidade: "SESI SENAI SP - CORPORATIVO", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: 2637.09, data: "2026-06-03", tipo: "Banco de Talentos", descricao: "O SESI e SENAI SP estÃ¡ em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de SÃ£o Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 22, cargo: "Instrutor de FormaÃ§Ã£o Profissional - ConstruÃ§Ã£o Civil", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP estÃ¡ em busca de profissionais para formaÃ§Ã£o de Banco de Talentos. Se vocÃª Ã© da Ã¡rea de ConstruÃ§Ã£o Civil e tem habilidade para compartilhar o seu conhecimento, inscreva-se.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 23, cargo: "Instrutor de FormaÃ§Ã£o Profissional - SeguranÃ§a do Trabalho", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP estÃ¡ em busca de profissionais para formaÃ§Ã£o de Banco de Talentos. Se vocÃª Ã© da Ã¡rea de SeguranÃ§a do Trabalho e tem habilidade para compartilhar o seu conhecimento, inscreva-se.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 24, cargo: "Instrutor de FormaÃ§Ã£o Profissional - MetalmecÃ¢nica e ManutenÃ§Ã£o MecÃ¢nica", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP estÃ¡ em busca de profissionais para formaÃ§Ã£o de Banco de Talentos para a Ã¡rea de MetalmecÃ¢nica e ManutenÃ§Ã£o MecÃ¢nica.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 25, cargo: "Instrutor de FormaÃ§Ã£o Profissional - GestÃ£o e LogÃ­stica", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP estÃ¡ em busca de profissionais para formaÃ§Ã£o de Banco de Talentos para a Ã¡rea de GestÃ£o e LogÃ­stica.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 26, cargo: "Instrutor de FormaÃ§Ã£o Profissional - TÃªxtil e VestuÃ¡rio", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP estÃ¡ em busca de profissionais para formaÃ§Ã£o de Banco de Talentos para a Ã¡rea de TÃªxtil e VestuÃ¡rio.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 27, cargo: "Instrutor de FormaÃ§Ã£o Profissional - Tecnologia da InformaÃ§Ã£o", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP estÃ¡ em busca de profissionais para formaÃ§Ã£o de Banco de Talentos para a Ã¡rea de Tecnologia da InformaÃ§Ã£o.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 28, cargo: "Instrutor de FormaÃ§Ã£o Profissional - AutomaÃ§Ã£o e EletroeletrÃ´nica", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP estÃ¡ em busca de profissionais para formaÃ§Ã£o de Banco de Talentos para a Ã¡rea de AutomaÃ§Ã£o e EletroeletrÃ´nica.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 29, cargo: "Instrutor de FormaÃ§Ã£o Profissional - Alimentos", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP estÃ¡ em busca de profissionais para formaÃ§Ã£o de Banco de Talentos para a Ã¡rea de Alimentos e Bebidas.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 30, cargo: "Instrutor de FormaÃ§Ã£o Profissional - Automotiva", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP estÃ¡ em busca de profissionais para formaÃ§Ã£o de Banco de Talentos para a Ã¡rea Automotiva.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 31, cargo: "Instrutor de FormaÃ§Ã£o Profissional - Metalurgia", empresa: "SENAI SP", unidade: "SENAI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-06-01", tipo: "Banco de Talentos", descricao: "O SENAI SP estÃ¡ em busca de profissionais para formaÃ§Ã£o de Banco de Talentos para a Ã¡rea de Metalurgia.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 32, cargo: "Banco de Talentos - Professor de Atividade AcadÃªmica e Docente", empresa: "SESI SP", unidade: "SESI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-05-29", tipo: "Banco de Talentos", descricao: "A Faculdade SESI de EducaÃ§Ã£o estÃ¡ em busca de profissionais para compor o Banco de Talentos de Professor de Atividade AcadÃªmica e/ou Professor de Atividade Docente.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 33, cargo: "Banco de Talentos - Auxiliar de Cozinha", empresa: "SESI SP", unidade: "SESI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: 2535.31, data: "2026-05-29", tipo: "Banco de Talentos", descricao: "O SESI SP estÃ¡ em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de SÃ£o Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 34, cargo: "Banco de Talentos - Professor Facilitador de EducaÃ§Ã£o Inclusiva", empresa: "SESI SP", unidade: "SESI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: 6214.73, data: "2026-05-14", tipo: "Banco de Talentos", descricao: "O SESI SP estÃ¡ em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de SÃ£o Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 35, cargo: "Banco de Talentos - Assistente de ServiÃ§os Administrativos", empresa: "SESI SENAI SP - CORPORATIVO", unidade: "SESI SENAI SP - CORPORATIVO", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: 3642.05, data: "2026-04-28", tipo: "Banco de Talentos", descricao: "O SESI e SENAI SP estÃ¡ em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de SÃ£o Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" },
+    { id: 36, cargo: "Banco de Talentos - Professor de Atividades Esportivas", empresa: "SESI SP", unidade: "SESI SP", local: "SÃ£o Paulo, SP", modalidade: "Presencial", salario: null, data: "2026-04-13", tipo: "Banco de Talentos", descricao: "O SESI SP estÃ¡ em busca de profissionais para compor nosso Banco de Talentos em todo o Estado de SÃ£o Paulo.", link: "https://sesisenaisp.empregare.com/pt-br/vagas" }
 ];
 
-// ===== LÓGICA =====
+// ===== LÃ“GICA =====
 let paginaAtual = 1;
 const porPagina = 10;
 
@@ -836,7 +835,7 @@ function renderizarVagas(resultado) {
         const tagClass = getTagUnidade(v.unidade);
         const unidadeLabel = getUnidadeLabel(v.unidade);
         const dias = getDiasAtras(v.data);
-        const novoLabel = dias <= 2 ? '<span class="vaga-tag novo">🆕 Nova</span>' : '';
+        const novoLabel = dias <= 2 ? '<span class="vaga-tag novo">ðŸ†• Nova</span>' : '';
         return `
             <div class="vaga-card" onclick="abrirModal(${v.id})">
                 <div>
@@ -847,21 +846,21 @@ function renderizarVagas(resultado) {
                 <div class="vaga-empresa">${v.empresa}</div>
                 <div class="vaga-desc">${v.descricao}</div>
                 <div class="vaga-meta">
-                    <span>📍 ${v.local}</span>
-                    <span>💼 ${v.modalidade}</span>
+                    <span>ðŸ“ ${v.local}</span>
+                    <span>ðŸ’¼ ${v.modalidade}</span>
                     <span class="salario">${formatarSalario(v.salario)}</span>
-                    <span class="data">📅 ${formatarData(v.data)}</span>
+                    <span class="data">ðŸ“… ${formatarData(v.data)}</span>
                 </div>
                 <div class="vaga-actions">
-                    <a href="${v.link}" target="_blank" class="btn-candidatar" onclick="event.stopPropagation()">📝 Candidatar-se</a>
-                    <a href="https://app.coregov.com.br" target="_blank" class="btn-rastrear" onclick="event.stopPropagation()">🛰️ Rastrear</a>
+                    <a href="${v.link}" target="_blank" class="btn-candidatar" onclick="event.stopPropagation()">ðŸ“ Candidatar-se</a>
+                    <a href="https://app.coregov.com.br" target="_blank" class="btn-rastrear" onclick="event.stopPropagation()">ðŸ›°ï¸ Rastrear</a>
                 </div>
             </div>
         `;
     }).join('');
 
     if (paginadas.length === 0) {
-        container.innerHTML = '<div style="text-align:center;padding:60px 24px;color:var(--text-light)"><div style="font-size:4rem;margin-bottom:16px;">🔍</div><h3>Nenhuma vaga encontrada</h3><p style="margin-top:8px;">Tente ajustar os filtros ou buscar por outros termos.</p></div>';
+        container.innerHTML = '<div style="text-align:center;padding:60px 24px;color:var(--text-light)"><div style="font-size:4rem;margin-bottom:16px;">ðŸ”</div><h3>Nenhuma vaga encontrada</h3><p style="margin-top:8px;">Tente ajustar os filtros ou buscar por outros termos.</p></div>';
     }
 
     renderizarPaginacao(totalPaginas);
@@ -872,7 +871,7 @@ function renderizarPaginacao(total) {
     if (total <= 1) { el.innerHTML = ''; return; }
 
     let html = '';
-    html += `<a href="#" onclick="mudarPagina(${paginaAtual - 1});return false" style="${paginaAtual === 1 ? 'opacity:0.4;pointer-events:none' : ''}">‹</a>`;
+    html += `<a href="#" onclick="mudarPagina(${paginaAtual - 1});return false" style="${paginaAtual === 1 ? 'opacity:0.4;pointer-events:none' : ''}">â€¹</a>`;
     for (let i = 1; i <= total; i++) {
         if (i === paginaAtual) {
             html += `<span class="active">${i}</span>`;
@@ -880,7 +879,7 @@ function renderizarPaginacao(total) {
             html += `<a href="#" onclick="mudarPagina(${i});return false">${i}</a>`;
         }
     }
-    html += `<a href="#" onclick="mudarPagina(${paginaAtual + 1});return false" style="${paginaAtual === total ? 'opacity:0.4;pointer-events:none' : ''}">›</a>`;
+    html += `<a href="#" onclick="mudarPagina(${paginaAtual + 1});return false" style="${paginaAtual === total ? 'opacity:0.4;pointer-events:none' : ''}">â€º</a>`;
     el.innerHTML = html;
 }
 
