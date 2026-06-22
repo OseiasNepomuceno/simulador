@@ -27,6 +27,11 @@
             --danger: #ef4444;
             --alert: #f59e0b;
             --ok: #22c55e;
+
+            /* COREGOV */
+            --azul: #0f3460;
+            --vermelho: #e94560;
+            --dourado: #f5c518;
         }
 
         * {
@@ -42,7 +47,6 @@
             padding-top: 120px;
             line-height: 1.6;
             min-height: 100vh;
-            /* Corrigido: Fundo dark sólido sem degradê invasivo que atrapalha a leitura */
             background: var(--bg-principal);
         }
 
@@ -277,6 +281,121 @@
             display: block;
             margin-bottom: 4px;
         }
+
+        /* 🦞 SEÇÃO DE OPORTUNIDADES DE CAPTAÇÃO */
+        .oportunidades {
+            background: rgba(245, 197, 24, 0.05);
+            border: 2px solid var(--dourado);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 28px 0;
+            text-align: left;
+        }
+        .oportunidades h3 {
+            color: var(--dourado);
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            border: none;
+            padding: 0;
+        }
+        .oportunidades .stats-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .oportunidades .stat-box {
+            background: rgba(15, 52, 96, 0.4);
+            border-radius: 8px;
+            padding: 12px 20px;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+        .oportunidades .stat-box .big {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--dourado);
+        }
+        .oportunidades .stat-box .big.red {
+            color: var(--vermelho);
+        }
+        .oportunidades .stat-box .label {
+            font-size: 11px;
+            color: var(--texto-mutado);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+        .oportunidades .alerta {
+            background: var(--vermelho);
+            color: white;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .oportunidades table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 13px;
+        }
+        .oportunidades th {
+            background: rgba(15, 52, 96, 0.8);
+            color: white;
+            padding: 8px 12px;
+            text-align: left;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .oportunidades td {
+            padding: 8px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: var(--texto-mutado);
+        }
+        .oportunidades .valor-cell {
+            color: var(--cor-primaria);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .oportunidades .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+        .oportunidades .badge-red { background: rgba(233,69,96,0.2); color: #ef4444; }
+        .oportunidades .badge-yellow { background: rgba(245,197,24,0.2); color: var(--dourado); }
+        .oportunidades .badge-green { background: rgba(34,197,94,0.2); color: var(--cor-primaria); }
+        .oportunidades .btn-editais {
+            display: block;
+            background: var(--vermelho);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 16px;
+            text-align: center;
+            transition: background 0.2s;
+        }
+        .oportunidades .btn-editais:hover {
+            background: #c73a52;
+        }
+        .oportunidades .footer-editais {
+            font-size: 11px;
+            color: var(--texto-mutado);
+            font-style: italic;
+            margin-top: 12px;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -287,6 +406,7 @@
     <nav>
         <a href="../index.html">Início</a>
         <a href="../servicos.html">Serviços</a>
+        <a href="../editais/">Editais</a>
         <a href="../simulador.html">Simulador</a>
     </nav>
 </header>
@@ -311,6 +431,22 @@
 </div>
 
 <script>
+// ═══════════════════════════════════════════════════
+// 🦞 DADOS DE EDITAIS (carregados automaticamente)
+// ═══════════════════════════════════════════════════
+let DADOS_EDITAIS = null;
+
+async function carregarEditais() {
+    try {
+        const resp = await fetch('../editais/dados_editais.json?_=' + Date.now());
+        DADOS_EDITAIS = await resp.json();
+        console.log(`📋 ${DADOS_EDITAIS.resumo_estrategico.editais_abertos} editais carregados`);
+    } catch (e) {
+        console.log('ℹ️ Banco de editais não disponível');
+    }
+}
+carregarEditais();
+
 async function analisarPDF(){
     let nome = document.getElementById("nome").value;
     let file = document.getElementById("arquivo").files[0];
@@ -383,6 +519,83 @@ function gerarAnalise(nome, texto){
         pontos_ok.push("Referência ao princípio da publicidade e transparência corporativa localizada.");
     }
 
+    /* 🦞 GERAR SEÇÃO DE OPORTUNIDADES COM EDITAIS */
+    let htmlOportunidades = '';
+    if (DADOS_EDITAIS) {
+        const r = DADOS_EDITAIS.resumo_estrategico;
+        const editais = DADOS_EDITAIS.editais;
+
+        // Top 5 mais urgentes (com prazo mais curto)
+        const comPrazo = editais.filter(e => e.dias_restantes !== null && e.prazo !== 'Aberto');
+        comPrazo.sort((a, b) => (a.dias_restantes || 999) - (b.dias_restantes || 999));
+        const top5 = comPrazo.slice(0, 5);
+
+        let linhasTabela = '';
+        for (const e of top5) {
+            const dias = e.dias_restantes;
+            let badgeClass = 'badge-green';
+            let badgeText = '';
+            if (dias <= 15) { badgeClass = 'badge-red'; badgeText = '🔴 ' + dias + ' dias'; }
+            else if (dias <= 36) { badgeClass = 'badge-yellow'; badgeText = '🟡 ' + dias + ' dias'; }
+            else { badgeClass = 'badge-green'; badgeText = '🟢 ' + dias + ' dias'; }
+
+            linhasTabela += `<tr>
+                <td>${e.titulo}</td>
+                <td class="valor-cell">${e.valor_str}</td>
+                <td><span class="badge ${badgeClass}">${badgeText}</span></td>
+            </tr>`;
+        }
+
+        htmlOportunidades = `
+        <div class="oportunidades">
+            <h3>🔥 Oportunidades de Captação Disponível</h3>
+            <div class="stats-row">
+                <div class="stat-box">
+                    <div class="big red">${r.editais_abertos}</div>
+                    <div class="label">Editais Abertos</div>
+                </div>
+                <div class="stat-box">
+                    <div class="big">${r.soma_valores_humano}</div>
+                    <div class="label">Em Recursos Disponíveis</div>
+                </div>
+                <div class="stat-box">
+                    <div class="big red">${r.editais_para_ong}</div>
+                    <div class="label">Para ONGs/OSCs</div>
+                </div>
+            </div>
+            <div class="alerta">
+                ⚠️ Com o estatuto social inadequado, sua organização NÃO pode acessar esses recursos!
+            </div>
+            <p style="font-size:14px;color:var(--texto-mutado);margin-bottom:8px;">
+                ⚠️ <strong style="color:var(--dourado);">Prévia das oportunidades.</strong> Os valores e prazos acima são indicativos. 
+                Os detalhes completos de cada edital e a orientação personalizada são fornecidos 
+                <strong style="color:white;">exclusivamente aos clientes</strong> que contratam a adequação do estatuto.
+            </p>
+            <p style="font-size:14px;color:var(--texto-mutado);margin-bottom:12px;">
+                Após fechar o contrato, nossa equipe encaminha sua organização para os editais certos 
+                e define <strong style="color:var(--cor-primaria);">exatamente quanto submeter</strong> em cada projeto. 🎯
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Edital</th>
+                        <th>Valor</th>
+                        <th>Prazo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${linhasTabela}
+                </tbody>
+            </table>
+            <a href="../editais/" class="btn-editais">
+                📋 Ver lista completa de ${r.editais_abertos} editais →
+            </a>
+            <div class="footer-editais">
+                Dados atualizados automaticamente. Fontes: capitaai.com.br, editalong.com, capta.org.br
+            </div>
+        </div>`;
+    }
+
     /* CONSTRUÇÃO DO DIAGNÓSTICO COM ESTRATÉGIA DE RETENÇÃO COMERCIAL */
     let html = `
     <div class="result">
@@ -419,6 +632,8 @@ function gerarAnalise(nome, texto){
         </div>
     </div>
 
+    ${htmlOportunidades}
+
     <button class="btn btn-whatsapp" onclick="whats('${nome}')">
         🛠️ Solicitar Minuta de Adequação e Regularizar Entidade
     </button>
@@ -428,7 +643,12 @@ function gerarAnalise(nome, texto){
 }
 
 function whats(nome){
-    let msg = encodeURIComponent(`Olá! Me chamo ${nome}. Utilizei o Revisor Unificado e o relatório apontou falhas de adequação no estatuto perante as portarias do TransfereGov (424/2016 e atualizações recentes). Preciso de suporte especializado e orçamento para emissão da ata e cláusulas corretivas.`);
+    let editaisMsg = '';
+    if (DADOS_EDITAIS) {
+        const r = DADOS_EDITAIS.resumo_estrategico;
+        editaisMsg = ` Vi que existem ${r.editais_abertos} editais abertos com ${r.soma_valores_humano} disponíveis e meu estatuto me impede de captar. Quero saber como sua empresa pode me orientar sobre quais editais são ideais para meu perfil e quanto submeter em cada projeto.`;
+    }
+    let msg = encodeURIComponent(`Olá! Me chamo ${nome}. Utilizei o Revisor de Estatuto PRO e o relatório apontou falhas de adequação no estatuto perante as portarias do TransfereGov (424/2016 e atualizações recentes).${editaisMsg} Preciso de suporte especializado e orçamento para emissão da ata e cláusulas corretivas.`);
     window.open(`https://wa.me/5518991888698?text=${msg}`, "_blank");
 }
 </script>
