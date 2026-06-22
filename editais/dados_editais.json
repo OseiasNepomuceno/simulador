@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "versao": "1.0",
+    "data_coleta": "2026-06-22T17:42:00",
+    "fontes": ["capitaai.com.br", "editalong.com", "capta.org.br"],
+    "total_editais": 12
+  },
+  "resumo_estrategico": {
+    "total_editais": 12,
+    "editais_abertos": 8,
+    "soma_valores_total": 584120000.0,
+    "soma_valores_humano": "R$ 584.1 milhões",
+    "editais_para_ong": 10,
+    "soma_valores_ong": 583000000.0,
+    "soma_valores_ong_humano": "R$ 583.0 milhões",
+    "fontes_monitoradas": 3,
+    "data_atualizacao": "2026-06-22T17:42:00",
+    "mensagem_urgencia": "🔥 Existem 12 editais ativos hoje com mais de R$ 584 milhões disponíveis. Desses, 10 são diretamente para ONGs/OSCs, totalizando R$ 583 milhões. Sua organização pode estar perdendo essas oportunidades.",
+    "mensagem_vendas": "Após a adequação do seu estatuto social, sua ONG estará apta a captar recursos de TODOS esses editais. Não perca mais tempo — enquanto seu estatuto não estiver em conformidade, você está deixando milhões na mesa."
+  },
+  "editais": [
+    {
+      "fonte": "capitaai.com.br",
+      "titulo": "Edital Ambev Brasilidades 2026",
+      "valor_str": "R$ 67 milhões",
+      "valor_numerico": 67000000.0,
+      "tipo_organizacao": "ONGs e OSCs",
+      "categoria": "cultura",
+      "prazo": "30/09/2026",
+      "dias_restantes": 100,
+      "descricao": "Edital da Cervejaria Ambev para projetos de impacto social nas áreas de arte, cultura e desenvolvimento comunitário.",
+      "data_coleta": "2026-06-22T17:42:00"
+    },
+    {
+      "fonte": "capitaai.com.br",
+      "titulo": "Finep Mais Inovação Brasil – Rodada 2 – Transição Energética",
+      "valor_str": "R$ 500 milhões",
+      "valor_numerico": 500000000.0,
+      "tipo_organizacao": "ONGs e OSCs",
+      "categoria": "meio ambiente",
+      "prazo": "31/08/2026",
+      "dias_restantes": 70,
+      "descricao": "Financiadora de Estudos e Projetos - edital para projetos de transição energética e inovação sustentável.",
+      "data_coleta": "2026-06-22T17:42:00"
+    },
+    {
+      "fonte": "capitaai.com.br",
+      "titulo": "Chamada FAPEMIG 007/2026 — Organização de Eventos Técnico-Científicos",
+      "valor_str": "R$ 7,5 milhões",
+      "valor_numerico": 7500000.0,
+      "tipo_organizacao": "ONGs e OSCs",
+      "categoria": "educação",
+      "prazo": "28/07/2026",
+      "dias_restantes": 36,
+      "descricao": "FAPEMIG - edital para organização de eventos de caráter técnico-científico.",
+      "data_coleta": "2026-06-22T17:42:00"
+    },
+    {
+      "fonte": "capitaai.com.br",
+      "titulo": "Chamada FAPEMIG 08/2026 - Bolsas de Pós-Graduação",
+      "valor_str": "R$ 8,2 milhões",
+      "valor_numerico": 8200000.0,
+      "tipo_organizacao": "ONGs e OSCs",
+      "categoria": "educação",
+      "prazo": "06/07/2026",
+      "dias_restantes": 14,
+      "descricao": "Bolsas de Pós-Graduação, Doutorado Sanduíche e Estágio Pós-Doutoral no Exterior.",
+      "data_coleta": "2026-06-22T17:42:00"
+    },
+    {
+      "fonte": "capitaai.com.br",
+      "titulo": "Seleção de Projetos - Restauro do Patrimônio Mineiro 2026",
+      "valor_str": "R$ 950 mil",
+      "valor_numerico": 950000.0,
+      "tipo_organizacao": "ONGs e OSCs",
+      "categoria": "cultura",
+      "prazo": "08/09/2026",
+      "dias_restantes": 78,
+      "descricao": "CEMIG - edital para restauro de patrimônio histórico e cultural em Minas Gerais.",
+      "data_coleta": "2026-06-22T17:42:00"
+    },
+    {
+      "fonte": "capitaai.com.br",
+      "titulo": "Edital Mães Cientistas de Pernambuco nº 16/2026",
+      "valor_str": "R$ 120 mil",
+      "valor_numerico": 120000.0,
+      "tipo_organizacao": "ONGs e OSCs",
+      "categoria": "educação",
+      "prazo": "31/08/2026",
+      "dias_restantes": 70,
+      "descricao": "Facepe - edital para mães cientistas e pesquisa científica.",
+      "data_coleta": "2026-06-22T17:42:00"
+    },
+    {
+      "fonte": "capitaai.com.br",
+      "titulo": "Chamada Pública Teia da Sociobiodiversidade – 2025",
+      "valor_str": "R$ 100 mil",
+      "valor_numerico": 100000.0,
+      "tipo_organizacao": "ONGs e OSCs",
+      "categoria": "meio ambiente",
+      "prazo": "Aberto",
+      "dias_restantes": null,
+      "descricao": "Fundo Casa Socioambiental - projetos de sociobiodiversidade e desenvolvimento sustentável.",
+      "data_coleta": "2026-06-22T17:42:00"
+    },
+    {
+      "fonte": "capitaai.com.br",
+      "titulo": "Edital Educação e Trabalho 2026 – Escola e Território",
+      "valor_str": "R$ 80 mil",
+      "valor_numerico": 80000.0,
+      "tipo_organizacao": "ONGs e OSCs",
+      "categoria": "educação",
+      "prazo": "Aberto",
+      "dias_restantes": null,
+      "descricao": "Itaú Social - edital para identificar, reconhecer e apoiar boas práticas em Educação Profissional e Tecnológica.",
+      "data_coleta": "2026-06-22T17:42:00"
+    },
+    {
+      "fonte": "capitaai.com.br",
+      "titulo": "Chamada – Zayed Sustainability Prize 2027",
+      "valor_str": "R$ 7,2 milhões",
+      "valor_numerico": 7200000.0,
+      "tipo_organizacao": "ONGs e OSCs",
+      "categoria": "meio ambiente",
+      "prazo": "15/07/2026",
+      "dias_restantes": 23,
+      "descricao": "Zayed Sustainability Prize / Erth Zayed Philanthropies - prêmio internacional de sustentabilidade.",
+      "data_coleta": "2026-06-22T17:42:00"
+    },
+    {
+      "fonte": "editalong.com",
+      "titulo": "Instituto Neoenergia — Programa de Editais 2025-2026",
+      "valor_str": "R$ Variável",
+      "valor_numerico": 0,
+      "tipo_organizacao": "ONGs e OSCs",
+      "categoria": "geral",
+      "prazo": "30/06/2026",
+      "dias_restantes": 8,
+      "descricao": "Programa de credenciamento para projetos de impacto social: arte, esporte, saúde, assistência social.",
+      "data_coleta": "2026-06-22T17:42:00"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Programa de Apoio a Projetos Sociais – PAPS 2027",
+      "valor_str": "R$ 70 mil a R$ 380 mil",
+      "valor_numerico": 380000.0,
+      "tipo_organizacao": "ONGs e OSCs",
+      "categoria": "social",
+      "prazo": "13/07/2026",
+      "dias_restantes": 21,
+      "descricao": "Fundação Salvador Arena - fortalece OSCs que atuam com populações em vulnerabilidade social. Valores de R$ 70 mil a R$ 380 mil por projeto + até R$ 50 mil por unidade habitacional.",
+      "data_coleta": "2026-06-22T17:42:00"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Fundo Social Cresol 2026",
+      "valor_str": "R$ Variável",
+      "valor_numerico": 0,
+      "tipo_organizacao": "ONGs e OSCs",
+      "categoria": "social",
+      "prazo": "01/07/2026",
+      "dias_restantes": 9,
+      "descricao": "Fundo Social Cresol RS - apoia projetos de organizações sem fins lucrativos nas áreas de educação, cultura, saúde, geração de renda, sustentabilidade e desenvolvimento comunitário.",
+      "data_coleta": "2026-06-22T17:42:00"
+    }
+  ]
+}
