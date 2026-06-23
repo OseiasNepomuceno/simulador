@@ -127,7 +127,6 @@
         tbody tr:hover { background: var(--bg-alt); }
         .titulo-edital { font-weight: 600; color: var(--azul); font-size: 15px; }
         .desc-edital { font-size: 12px; color: var(--texto-suave); margin-top: 4px; line-height: 1.5; }
-        .fonte-edital { font-size: 11px; color: var(--texto-suave); margin-top: 4px; opacity: 0.7; }
         .valor { font-weight: 700; color: var(--verde); white-space: nowrap; font-size: 15px; }
         .prazo { white-space: nowrap; }
         .badge-urgencia {
@@ -274,8 +273,6 @@
     </div>
 
     <div class="footer-info">
-        📡 Dados atualizados automaticamente de capitaai.com.br, editalong.com e capta.org.br
-        <br>
         ⚠️ Os editais listados são uma prévia do mercado. Clientes COREGOV recebem orientação personalizada sobre quais oportunidades são ideais para seu perfil e quanto submeter em cada projeto.
         <br>
         <span class="picolaw">🦞 Desenvolvido por PicoClaw COREGOV</span>
@@ -386,7 +383,6 @@ function renderizarTabela(editais) {
                 <td>
                     <div class="titulo-edital">${categoriaIcon} ${e.titulo}</div>
                     <div class="desc-edital">${e.descricao || ''}</div>
-                    <div class="fonte-edital">📡 ${e.fonte}</div>
                 </td>
                 <td class="valor">${e.valor_str}</td>
                 <td class="prazo">
