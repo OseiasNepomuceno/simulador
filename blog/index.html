@@ -4,80 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Blog COREGOV | Gestão, MEI e Contabilidade</title>
+<title>Blog COREGOV | ONGs, Captação de Recursos e Gestão</title>
 
-<meta name="description" content="Conteúdos sobre MEI, impostos, contabilidade e gestão financeira para pequenas empresas.">
+<meta name="description" content="Conteúdos sobre ONGs, estatutos, captação de recursos, editais, leis de incentivo, terceiro setor e gestão para organizações sociais.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {font-family:Poppins;background:#0b1220;color:#fff;margin:0;padding:0}
-header {display:flex;justify-content:space-between;align-items:center;padding:15px 10%;background:#111a2e}
-a {color:#00ff9f;text-decoration:none}
-.container {
-  max-width:900px;
-  margin:120px auto 40px auto;
-  padding:40px;
+:root {
+  --verde:#00FF9F;
+  --azul:#0B1220;
+  --azul-medio:#111A2E;
+  --cinza:#CCCCCC;
 }
-ul {line-height:1.8}
-h1 span{color:#00ff9f}
-
-/* HEADER */
-header {
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:12px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(11,18,32,0.85);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-}
-
-.logo-icon {
-  height:34px;
-}
-
-.brand {
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.brand-name {
-  color:var(--verde);
-  font-weight:700;
-}
-
-.brand-sub {
-  font-size:11px;
-  color:var(--cinza);
-}
-
-nav a {
-  margin:0 8px;
-  color:var(--cinza);
-  text-decoration:none;
-}
-
-nav a:hover {
-  color:var(--verde);
-}
-
-.btn {
-  background:var(--verde);
-  color:#000;
-  padding:9px 16px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-}
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body {background:var(--azul);color:#fff;padding-top:90px;}
+header {position:fixed;top:0;width:100%;padding:12px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(11,18,32,0.85);backdrop-filter:blur(10px);z-index:1000;}
+.logo-icon {height:34px;}
+.brand {display:flex;align-items:center;gap:10px;}
+.brand-name {color:var(--verde);font-weight:700;}
+.brand-sub {font-size:11px;color:var(--cinza);}
+nav a {margin:0 8px;color:var(--cinza);text-decoration:none;}
+nav a:hover {color:var(--verde);}
+nav a.active {color:var(--verde);font-weight:bold;}
+.btn {background:var(--verde);color:#000;padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:bold;}
+.container {max-width:900px;margin:120px auto 40px auto;padding:40px;}
+h1 span{color:var(--verde)}
+h2 {color:var(--verde);margin-top:40px;margin-bottom:15px;}
+ul {line-height:2.0;margin-bottom:30px;}
+ul li a {color:#00ff9f;text-decoration:none;}
+ul li a:hover {text-decoration:underline;}
+.tag {display:inline-block;background:var(--azul-medio);color:var(--cinza);font-size:11px;padding:2px 8px;border-radius:4px;margin-left:5px;}
+footer {text-align:center;padding:30px;color:#888;}
 </style>
-
 </head>
-
 <body>
 
 <header>
@@ -85,29 +45,41 @@ nav a:hover {
     <img src="/logo-icon.png" class="logo-icon">
     <div>
       <div class="brand-name">COREGOV</div>
-      <div class="brand-sub">Administração & Contabilidade</div>
+      <div class="brand-sub">Consultoria para ONGs</div>
     </div>
   </div>
-
   <nav>
     <a href="/index.html">Início</a>
     <a href="/servicos.html">Serviços</a>
-    <a href="/ferramentas.html">Ferramentas</a>
-    <a href="/simulador.html">Simulador</a>
     <a href="/blog/index.html" class="active">Blog</a>
     <a href="/quem-somos.html">Quem Somos</a>
   </nav>
-
   <a class="btn" href="https://wa.me/5518991511523">Contato</a>
 </header>
 
 <div class="container">
 
-<h1>Blog COREGOV - Gestão para <span>MEI e Pequenas Empresas</span></h1>
+<h1>Blog COREGOV — <span>Terceiro Setor & Gestão</span></h1>
 
-<p>Conteúdos práticos sobre gestão financeira, contabilidade, impostos e crescimento empresarial.</p>
+<p>Conteúdos práticos sobre ONGs, estatutos, captação de recursos, editais, leis de incentivo e administração para organizações sociais.</p>
 
-<h2>Artigos recentes</h2>
+<h2>📌 ONGs e Captação de Recursos</h2>
+
+<ul>
+  <li><a href="/blog/por-que-sua-ong-precisa-de-estatuto.html">Por que sua ONG precisa de um estatuto social bem feito</a> <span class="tag">estatuto</span></li>
+  <li><a href="/blog/captacao-de-recursos-para-ongs-guia-completo.html">Captação de Recursos para ONGs: Guia Completo 2026</a> <span class="tag">captação</span></li>
+  <li><a href="/blog/editais-publicos-como-acessar-recursos.html">Editais Públicos: Como sua ONG pode acessar milhões em recursos</a> <span class="tag">editais</span></li>
+  <li><a href="/blog/lei-rouanet-para-ongs.html">Lei Rouanet para ONGs: Como captar recursos via incentivo fiscal</a> <span class="tag">leis de incentivo</span></li>
+  <li><a href="/blog/lei-de-incentivo-ao-esporte-para-ongs.html">Lei de Incentivo ao Esporte: Captação para projetos esportivos</a> <span class="tag">leis de incentivo</span></li>
+  <li><a href="/blog/emendas-parlamentares-para-ongs.html">Emendas Parlamentares para ONGs: Como acessar recursos</a> <span class="tag">emendas</span></li>
+  <li><a href="/blog/plano-de-negocio-social-para-ongs.html">Plano de Negócio Social: O documento que convence investidores</a> <span class="tag">planejamento</span></li>
+  <li><a href="/blog/regularizacao-de-ongs-passo-a-passo.html">Regularização de ONGs: Passo a passo para estar 100% legal</a> <span class="tag">regularização</span></li>
+  <li><a href="/blog/como-responder-edital-sem-ser-desclassificado.html">Como responder a um edital e não ser desclassificado</a> <span class="tag">editais</span></li>
+  <li><a href="/blog/prestacao-de-contas-para-ongs.html">Prestação de Contas para ONGs: O que o governo exige</a> <span class="tag">prestação de contas</span></li>
+  <li><a href="/blog/governanca-em-ongs-gestao-profissional.html">Governança em ONGs: Como estruturar uma gestão profissional</a> <span class="tag">gestão</span></li>
+</ul>
+
+<h2>📌 MEI e Pequenas Empresas</h2>
 
 <ul>
   <li><a href="/blog/o-que-e-mei-e-como-funciona.html">O que é MEI e como funciona</a></li>
@@ -123,6 +95,10 @@ nav a:hover {
 </ul>
 
 </div>
+
+<footer>
+  © 2026 COREGOV — Consultoria para ONGs
+</footer>
 
 </body>
 </html>
