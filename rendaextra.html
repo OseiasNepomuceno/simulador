@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livre Essência | Perfumes Similares de Qualidade</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Livre Essência: perfumes similares com 30% de óleo, fixação de 5 a 8h. Seja revendedor e ganhe mais de R$5.000/mês. Kit inicial com margem de 40%.">
+    <meta name="keywords" content="perfume similar, revenda de perfumes, renda extra, perfume atacado, livr essencia">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Livre Essência">
+    <link rel="canonical" href="https://coregov.com.br/rendaextra">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Livre Essência | Perfumes Similares de Qualidade">
+    <meta property="og:description" content="Perfumes similares premium com 30% de óleo. Seja revendedor e conquiste sua liberdade financeira.">
+    <meta property="og:url" content="https://coregov.com.br/rendaextra">
+    <meta property="og:image" content="https://coregov.com.br/coregov01.png">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Livre Essência">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        :root {
+            --azul: #0f3460;
+            --azul-escuro: #091c33;
+            --azul-claro: #1a4f8a;
+            --dourado: #f5c518;
+            --dourado-claro: #fce78a;
+            --branco: #ffffff;
+            --bg: #f8fafc;
+            --bg-alt: #f1f5f9;
+            --bg-creme: #fdf8f0;
+            --texto: #1e293b;
+            --texto-suave: #64748b;
+            --borda: #e2e8f0;
+            --sombra: 0 4px 20px rgba(15, 52, 96, 0.08);
+            --sombra-hover: 0 8px 32px rgba(15, 52, 96, 0.15);
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--branco);
+            color: var(--texto);
+            line-height: 1.7;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 28px;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.55);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--borda);
+            transition: var(--transition);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+
+        .logo-livre {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--azul);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-livre i {
+            color: var(--dourado);
+            font-size: 20px;
+        }
+        .logo-livre span { color: var(--dourado); }
+
+        nav { display: flex; align-items: center; gap: 8px; }
+
+        nav a {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--texto-suave);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        nav a:hover {
+            color: var(--azul);
+            background: rgba(15, 52, 96, 0.06);
+        }
+
+        .nav-cta {
+            background: var(--dourado);
+            color: var(--azul-escuro) !important;
+            padding: 10px 20px !important;
+            font-weight: 700;
+            border-radius: 8px;
+        }
+        .nav-cta:hover {
+            background: #e0b010 !important;
+            color: var(--azul-escuro) !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--azul);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* ===== HERO ===== */
+        #hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(160deg, #0f3460 0%, #091c33 40%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(245, 197, 24, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        #hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(245, 197, 24, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--dourado);
+            background: rgba(245, 197, 24, 0.15);
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--branco);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .hero-title span {
+            color: var(--dourado);
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 520px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--dourado);
+            color: var(--azul-escuro);
+        }
+        .btn-primary:hover {
+            background: #e0b010;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245, 197, 24, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--branco);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        .btn-outline:hover {
+            border-color: var(--dourado);
+            color: var(--dourado);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: #fff;
+        }
+        .btn-whatsapp:hover {
+            background: #1ebe5a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-perfume-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px 40px 30px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-height: 260px;
+            object-fit: contain;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .hero-perfume-card h3 {
+            font-size: 20px;
+            color: var(--branco);
+            margin-bottom: 8px;
+        }
+
+        .hero-perfume-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        /* ===== PRODUCT IMAGES ===== */
+        .produto-img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            background: var(--bg);
+            padding: 8px;
+        }
+
+        /* ===== SECTION ===== */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--dourado);
+            background: rgba(245, 197, 24, 0.12);
+            padding: 4px 14px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--azul);
+            margin-bottom: 16px;
+            line-height: 1.25;
+        }
+
+        .section-sub {
+            font-size: 18px;
+            color: var(--texto-suave);
+            max-width: 640px;
+            line-height: 1.7;
+        }
+
+        .text-center { text-align: center; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+
+        /* ===== QUALIDADE ===== */
+        #qualidade {
+            background: var(--branco);
+        }
+
+        .qualidade-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .qualidade-card {
+            background: var(--bg);
+            border: 1px solid var(--borda);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .qualidade-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sombra-hover);
+        }
+
+        .qualidade-card i {
+            font-size: 40px;
+            color: var(--dourado);
+            margin-bottom: 16px;
+        }
+
+        .qualidade-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--azul);
+            margin-bottom: 8px;
+        }
+
+        .qualidade-card p {
+            font-size: 14px;
+            color: var(--texto-suave);
+            line-height: 1.6;
+        }
+
+        /* ===== PRODUTOS ===== */
+        #produtos {
+            background: var(--bg-creme);
+        }
+
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .produto-card {
+            background: var(--branco);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            text-align: center;
+            border: 1px solid var(--borda);
+            transition: var(--transition);
+        }
+        .produto-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sombra-hover);
+        }
+
+        .produto-card i {
+            font-size: 48px;
+            color: var(--azul-claro);
+            margin-bottom: 16px;
+        }
+
+        .produto-card .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            margin-bottom: 12px;
+        }
+        .tag-perfume { background: rgba(15, 52, 96, 0.1); color: var(--azul); }
+        .tag-body { background: rgba(245, 197, 24, 0.15); color: #8a7000; }
+        .tag-creme { background: rgba(26, 79, 138, 0.1); color: var(--azul-claro); }
+
+        .produto-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--azul);
+            margin-bottom: 4px;
+        }
+        .produto-card .fixacao {
+            font-size: 13px;
+            color: var(--texto-suave);
+            margin-bottom: 12px;
+        }
+        .produto-card p {
+            font-size: 14px;
+            color: var(--texto-suave);
+            line-height: 1.6;
+        }
+
+        /* ===== REVENDA ===== */
+        #revenda {
+            background: var(--azul);
+            color: var(--branco);
+        }
+        #revenda .section-title { color: var(--branco); }
+        #revenda .section-sub { color: rgba(255,255,255,0.7); }
+
+        .revenda-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .revenda-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .revenda-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .revenda-card i {
+            font-size: 40px;
+            color: var(--dourado);
+            margin-bottom: 16px;
+        }
+
+        .revenda-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .revenda-card .destaque-numero {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dourado);
+            margin: 12px 0;
+        }
+
+        .revenda-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* ===== CTA ===== */
+        #cta {
+            background: var(--bg-creme);
+            text-align: center;
+        }
+
+        .cta-box {
+            background: var(--branco);
+            border: 2px solid var(--dourado);
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-box h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--azul);
+            margin-bottom: 16px;
+        }
+
+        .cta-box p {
+            font-size: 17px;
+            color: var(--texto-suave);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--azul-escuro);
+            color: rgba(255,255,255,0.6);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer .logo-livre {
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .hero-sub { margin: 0 auto 32px; }
+            .hero-buttons { justify-content: center; }
+            .hero-title { font-size: 38px; }
+            .hero-perfume-card { margin: 0 auto; }
+
+            .qualidade-grid,
+            .produtos-grid,
+            .revenda-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section-title { font-size: 28px; }
+
+            .menu-toggle { display: block; }
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--branco);
+                border-bottom: 1px solid var(--borda);
+                padding: 16px;
+                gap: 4px;
+            }
+            nav.open { display: flex; }
+            nav a { padding: 12px 16px; }
+        }
+
+        @media (max-width: 600px) {
+            .qualidade-grid,
+            .produtos-grid,
+            .revenda-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title { font-size: 30px; }
+            .cta-box { padding: 40px 24px; }
+            .cta-box h2 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== WHATSAPP FLOAT ===== -->
+    <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Livre%20Ess%C3%AAncia%20e%20como%20ser%20revendedor(a)." target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo-livre">
+                <i class="fas fa-spray-can-sparkles"></i>
+                Livre <span>Essência</span>
+            </div>
+            <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <a href="#qualidade">Qualidade</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#revenda">Revenda</a>
+                <a href="#cta" class="nav-cta">Quero Revender</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <div class="hero-tag">✨ Nova Marca</div>
+                <h1 class="hero-title">
+                    Perfumes Similares<br>
+                    <span>Premium</span> pra Quem<br>
+                    Quer <span>Lucrar</span>
+                </h1>
+                <p class="hero-sub">
+                    30% de óleo essencial. Fixação de 5 a 8 horas. Frascos de vidro de 50 ml. 
+                    Fragrâncias dos melhores importados — com margem de lucro que transforma 
+                    sua revenda em um negócio de verdade.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Livre%20Ess%C3%AAncia%20e%20como%20ser%20revendedor(a)." target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Fale Conosco
+                    </a>
+                    <a href="#cta" class="btn btn-outline">
+                        Quero Revender <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-perfume-card">
+                    <img src="perfumes/grupo.jpg" alt="Livre Essência - Perfumes Similares Premium" class="hero-img" loading="lazy">
+                    <h3>Livre Essência</h3>
+                    <p>50 ml • 30% de óleo • 5 a 8h de fixação</p>
+                    <br>
+                    <p style="color: var(--dourado); font-weight: 600;">
+                        <i class="fas fa-star"></i> Qualidade que fala por si
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== QUALIDADE ===== -->
+    <section id="qualidade">
+        <div class="container text-center">
+            <div class="section-tag">Por que Escolher</div>
+            <h2 class="section-title">Qualidade que <span style="color: var(--dourado);">Conquista</span></h2>
+            <p class="section-sub mx-auto">
+                Nossos produtos são desenvolvidos com alta concentração de óleo e fragrâncias 
+                selecionadas dos melhores importados. Resultado: perfumes que fixam, projetam 
+                e vendem sozinhos.
+            </p>
+        </div>
+        <div class="container qualidade-grid">
+            <div class="qualidade-card">
+                <i class="fas fa-flask"></i>
+                <h3>30% de Óleo</h3>
+                <p>Concentração muito acima da média dos similares convencionais. Garante fixação prolongada e projeção marcante.</p>
+            </div>
+            <div class="qualidade-card">
+                <i class="fas fa-clock"></i>
+                <h3>5 a 8h de Fixação</h3>
+                <p>Perfumes que duram o dia inteiro. Body splash com 4h de fixação. Seus clientes vão sentir a diferença.</p>
+            </div>
+            <div class="qualidade-card">
+                <i class="fas fa-wine-bottle"></i>
+                <h3>Frascos de Vidro 50ml</h3>
+                <p>Embalagem premium que valoriza o produto na prateleira. Visual sofisticado que justifica o valor de revenda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUTOS ===== -->
+    <section id="produtos">
+        <div class="container text-center">
+            <div class="section-tag">Nossos Produtos</div>
+            <h2 class="section-title">Linha <span style="color: var(--dourado);">Livre Essência</span></h2>
+            <p class="section-sub mx-auto">
+                Três linhas completas para você montar kits irresistíveis e fidelizar seus clientes.
+            </p>
+        </div>
+        <div class="container produtos-grid">
+            <div class="produto-card">
+                <span class="tag tag-perfume">Perfume</span>
+                <img src="perfumes/perfume1.jpg" alt="Perfume Similar Livre Essência 50ml" class="produto-img" loading="lazy">
+                <h3>Perfume Similar 50ml</h3>
+                <p class="fixacao"><i class="fas fa-clock"></i> Fixação: 5 a 8 horas</p>
+                <p>Fragrâncias dos melhores importados. 30% de óleo. Frasco de vidro premium.</p>
+            </div>
+            <div class="produto-card">
+                <span class="tag tag-body">Body Splash</span>
+                <img src="perfumes/body.jpg" alt="Body Splash Livre Essência 50ml" class="produto-img" loading="lazy">
+                <h3>Body Splash 50ml</h3>
+                <p class="fixacao"><i class="fas fa-clock"></i> Fixação: 4 horas</p>
+                <p>Leve, refrescante e com fragrância marcante. Perfeito para o dia a dia e para quem prefere algo mais suave.</p>
+            </div>
+            <div class="produto-card">
+                <span class="tag tag-creme">Hidratante</span>
+                <img src="perfumes/creme.jpg" alt="Creme Hidratante Livre Essência" class="produto-img" loading="lazy">
+                <h3>Creme Hidratante</h3>
+                <p class="fixacao"><i class="fas fa-star"></i> Com fragrância dos importados</p>
+                <p>Hidratação profunda com o mesmo perfume dos nossos frascos. Combinação perfeita com os perfumes da linha.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REVENDA ===== -->
+    <section id="revenda">
+        <div class="container text-center">
+            <div class="section-tag" style="background: rgba(245, 197, 24, 0.15);">Seja Revendedor</div>
+            <h2 class="section-title">Troque o CLT pela <span style="color: var(--dourado);">Liberdade</span></h2>
+            <p class="section-sub mx-auto">
+                Enquanto um CLT ganha R$ 2.000 por mês trabalhando 44h semanais, 
+                você pode ganhar R$ 5.000+ revendendo perfumes no conforto da sua casa, 
+                no seu horário. Veja como:
+            </p>
+        </div>
+        <div class="container" style="text-align: center; margin-top: 10px; margin-bottom: 0;">
+            <img src="perfumes/kit.jpg" alt="Kit Revendedor Livre Essência" style="max-width: 500px; width: 100%; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);" loading="lazy">
+        </div>
+        <div class="container revenda-grid">
+            <div class="revenda-card">
+                <i class="fas fa-box-open"></i>
+                <h3>Kit Inicial</h3>
+                <div class="destaque-numero">R$ 350</div>
+                <p>Investimento inicial com 10 perfumes, 5 cremes e 5 body splash. Tudo que você precisa pra começar.</p>
+            </div>
+            <div class="revenda-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Margem de Lucro</h3>
+                <div class="destaque-numero">40%+</div>
+                <p>Compre no atacado por preço baixo e revenda com margem de 40% ou mais. Cada frasco rende de R$ 25 a R$ 40 de lucro.</p>
+            </div>
+            <div class="revenda-card">
+                <i class="fas fa-trophy"></i>
+                <h3>Meta Mensal</h3>
+                <div class="destaque-numero">R$ 5.000+</div>
+                <p>Revendendo 50 frascos por mês (menos de 2 por dia), você já ultrapassa o salário de um CLT. Trabalhando de casa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section id="cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Quer Começar?</h2>
+                <p>
+                    Chama no WhatsApp ou garanta seu kit inicial direto pelo Mercado Pago. 
+                    Pagamento seguro e entrega rápida. Comece hoje mesmo a construir sua liberdade financeira!
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Quero%20ser%20revendedor(a)%20Livre%20Ess%C3%AAncia!" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Fale no WhatsApp
+                    </a>
+                    <a href="https://mpago.la/1X2cBr7" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-credit-card"></i> Comprar Kit pelo Mercado Pago
+                    </a>
+                </div>
+                <p style="margin-top: 20px; font-size: 13px; color: var(--texto-suave);">
+                    <i class="fas fa-shield-alt"></i> Pagamento 100% seguro via Mercado Pago
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="logo-livre" style="justify-content: center;">
+                <i class="fas fa-spray-can-sparkles"></i>
+                Livre <span>Essência</span>
+            </div>
+            <p>© 2026 Livre Essência. Todos os direitos reservados.</p>
+            <p style="margin-top: 8px; font-size: 12px;">
+                Uma parceria com <a href="https://coregov.com.br" style="color: var(--dourado);">CoreGov</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
