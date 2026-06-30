@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação | Material Didático com IA — COREGOV</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Produção de material didático com Inteligência Artificial para professores. Planos de aula, atividades, provas e slides alinhados à BNCC em 30 segundos. Economize 15h por semana.">
+    <meta name="keywords" content="material didático, inteligência artificial, educação, professores, BNCC, plano de aula, atividades pedagógicas, coregov">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://coregov.com.br/educacao">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Educação | Material Didático com IA — COREGOV">
+    <meta property="og:description" content="Produção de material didático com IA para professores. Planos de aula, atividades, provas e slides em 30 segundos.">
+    <meta property="og:url" content="https://coregov.com.br/educacao">
+    <meta property="og:image" content="https://coregov.com.br/coregov01.png">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="COREGOV">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Educação | Material Didático com IA — COREGOV">
+    <meta name="twitter:description" content="Produção de material didático com IA para professores.">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="favicon.png">
+
+    <style>
+        :root {
+            --azul: #0f3460;
+            --azul-escuro: #091c33;
+            --dourado: #f5c518;
+            --vermelho: #e94560;
+            --bg: #f8fafc;
+            --bg-alt: #f1f5f9;
+            --branco: #ffffff;
+            --texto: #1e293b;
+            --texto-suave: #64748b;
+            --borda: #e2e8f0;
+            --sombra: 0 4px 20px rgba(15, 52, 96, 0.08);
+            --sombra-hover: 0 8px 32px rgba(15, 52, 96, 0.15);
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--texto);
+            line-height: 1.7;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed; bottom: 24px; right: 24px; z-index: 999;
+            width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 28px;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37, 211, 102, 0.55); }
+
+        /* Header */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--borda); transition: var(--transition);
+        }
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between; height: 68px;
+        }
+        .logo { font-size: 26px; font-weight: 800; color: var(--azul); letter-spacing: -0.5px; }
+        .logo span { color: var(--dourado); }
+        nav { display: flex; align-items: center; gap: 8px; }
+        nav a {
+            padding: 8px 16px; font-size: 14px; font-weight: 500;
+            color: var(--texto-suave); border-radius: 8px; transition: var(--transition);
+        }
+        nav a:hover { color: var(--azul); background: rgba(15,52,96,0.06); }
+        nav a.active { color: var(--azul); font-weight: 600; background: rgba(15,52,96,0.08); }
+        .nav-cta {
+            background: var(--azul); color: #fff !important; padding: 10px 20px !important; font-weight: 600;
+        }
+        .nav-cta:hover { background: var(--azul-escuro) !important; color: #fff !important; }
+        .menu-toggle { display: none; background: none; border: none; font-size: 24px; color: var(--azul); cursor: pointer; padding: 4px; }
+
+        /* Sections */
+        section { padding: 100px 0; }
+        .section-tag {
+            display: inline-block; font-size: 12px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 2px; color: var(--dourado);
+            background: rgba(245,197,24,0.12); padding: 4px 14px; border-radius: 100px; margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: 36px; font-weight: 800; color: var(--azul); margin-bottom: 16px; line-height: 1.2;
+        }
+        .section-sub {
+            font-size: 18px; color: var(--texto-suave); max-width: 640px; line-height: 1.6;
+        }
+        .text-center { text-align: center; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+
+        /* Hero */
+        #hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8edf5 50%, #eef2f7 100%);
+            position: relative; overflow: hidden;
+        }
+        #hero::before {
+            content: ''; position: absolute; top: -40%; right: -20%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(15,52,96,0.04) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none;
+        }
+        #hero::after {
+            content: ''; position: absolute; bottom: -30%; left: -10%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(245,197,24,0.05) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none;
+        }
+        .hero-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(15,52,96,0.08); color: var(--azul);
+            font-size: 13px; font-weight: 600; padding: 6px 16px 6px 8px; border-radius: 100px; margin-bottom: 24px;
+        }
+        .hero-badge i { font-size: 14px; }
+        .hero-title {
+            font-size: 46px; font-weight: 800; color: var(--azul); line-height: 1.15; margin-bottom: 20px;
+        }
+        .hero-title span { color: var(--vermelho); }
+        .hero-text { font-size: 18px; color: var(--texto-suave); margin-bottom: 32px; line-height: 1.7; }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 14px 28px; border-radius: 10px; font-size: 15px; font-weight: 600;
+            transition: var(--transition); cursor: pointer; border: none;
+        }
+        .btn-primary { background: var(--azul); color: #fff; }
+        .btn-primary:hover { background: var(--azul-escuro); transform: translateY(-2px); box-shadow: var(--sombra-hover); }
+        .btn-outline { border: 2px solid var(--azul); color: var(--azul); background: transparent; }
+        .btn-outline:hover { background: rgba(15,52,96,0.06); transform: translateY(-2px); }
+        .btn-dourado { background: var(--dourado); color: var(--azul-escuro); }
+        .btn-dourado:hover { background: #e0b014; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,197,24,0.4); }
+
+        .hero-stats {
+            display: flex; gap: 32px; margin-top: 40px; padding-top: 32px;
+            border-top: 1px solid var(--borda);
+        }
+        .stat-number { font-size: 28px; font-weight: 800; color: var(--azul); }
+        .stat-label { font-size: 13px; color: var(--texto-suave); }
+
+        .hero-image {
+            background: var(--branco); border-radius: 20px; padding: 40px;
+            box-shadow: var(--sombra); text-align: center;
+        }
+        .hero-image i { font-size: 80px; color: var(--dourado); margin-bottom: 20px; }
+        .hero-image h3 { color: var(--azul); font-size: 22px; margin-bottom: 10px; }
+        .hero-image p { color: var(--texto-suave); font-size: 15px; max-width: 400px; margin: 0 auto; }
+
+        /* Problem Section */
+        #problema {
+            background: var(--branco); border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda);
+        }
+        .problem-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+        }
+        .problem-list { list-style: none; }
+        .problem-list li {
+            display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--borda);
+        }
+        .problem-list li:last-child { border-bottom: none; }
+        .problem-list li i { font-size: 20px; color: var(--vermelho); margin-top: 4px; flex-shrink: 0; }
+        .problem-list li strong { color: var(--azul); }
+
+        .solution-box {
+            background: linear-gradient(135deg, var(--azul) 0%, #1a4a7a 100%);
+            color: #fff; border-radius: 20px; padding: 40px; position: relative; overflow: hidden;
+        }
+        .solution-box::before {
+            content: '"'; position: absolute; top: -20px; right: 20px;
+            font-size: 120px; opacity: 0.1; font-weight: 800; line-height: 1;
+        }
+        .solution-box h3 { font-size: 24px; margin-bottom: 16px; }
+        .solution-box .big-number { font-size: 56px; font-weight: 800; color: var(--dourado); line-height: 1; }
+        .solution-box .big-label { font-size: 16px; opacity: 0.9; }
+
+        /* Services */
+        #servicos {
+            background: var(--bg-alt);
+        }
+        .services-grid {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 48px;
+        }
+        .service-card {
+            background: var(--branco); border-radius: var(--radius); padding: 36px;
+            box-shadow: var(--sombra); transition: var(--transition); border: 1px solid var(--borda);
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: var(--sombra-hover); }
+        .service-icon {
+            width: 56px; height: 56px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; margin-bottom: 20px;
+        }
+        .service-icon.blue { background: rgba(15,52,96,0.1); color: var(--azul); }
+        .service-icon.gold { background: rgba(245,197,24,0.15); color: #c7a000; }
+        .service-icon.red { background: rgba(233,69,96,0.1); color: var(--vermelho); }
+        .service-card h3 { font-size: 20px; color: var(--azul); margin-bottom: 12px; }
+        .service-card p { color: var(--texto-suave); font-size: 15px; line-height: 1.6; }
+        .service-card .service-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            margin-top: 16px; color: var(--azul); font-weight: 600; font-size: 14px;
+        }
+        .service-card .service-link:hover { color: var(--vermelho); }
+
+        /* How it works */
+        #como-funciona { background: var(--branco); }
+        .steps-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px;
+        }
+        .step-card {
+            text-align: center; padding: 32px 20px; position: relative;
+        }
+        .step-number {
+            width: 48px; height: 48px; border-radius: 50%;
+            background: var(--azul); color: #fff; font-size: 20px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; position: relative; z-index: 1;
+        }
+        .step-card h4 { color: var(--azul); font-size: 16px; margin-bottom: 8px; }
+        .step-card p { color: var(--texto-suave); font-size: 14px; line-height: 1.5; }
+
+        /* Plans */
+        #planos { background: var(--bg-alt); }
+        .plans-grid {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 48px;
+        }
+        .plan-card {
+            background: var(--branco); border-radius: var(--radius); padding: 36px;
+            box-shadow: var(--sombra); border: 1px solid var(--borda); transition: var(--transition);
+            position: relative; display: flex; flex-direction: column;
+        }
+        .plan-card:hover { transform: translateY(-4px); box-shadow: var(--sombra-hover); }
+        .plan-card.featured {
+            border-color: var(--dourado); transform: scale(1.03);
+        }
+        .plan-card.featured:hover { transform: scale(1.03) translateY(-4px); }
+        .plan-card.featured::before {
+            content: '⭐ MAIS VENDIDO'; position: absolute; top: -12px; left: 50%;
+            transform: translateX(-50%); background: var(--dourado); color: var(--azul-escuro);
+            font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 20px;
+            white-space: nowrap;
+        }
+        .plan-card h3 { font-size: 20px; color: var(--azul); }
+        .plan-card .price { font-size: 38px; font-weight: 800; color: var(--azul); margin: 16px 0 8px; }
+        .plan-card .price span { font-size: 16px; color: var(--texto-suave); font-weight: 400; }
+        .plan-card .price-desc { font-size: 14px; color: var(--texto-suave); margin-bottom: 20px; }
+        .plan-card ul { list-style: none; margin: 0 0 24px; flex: 1; }
+        .plan-card ul li { padding: 8px 0; font-size: 14px; color: var(--texto); display: flex; gap: 10px; }
+        .plan-card ul li i { color: #22c55e; font-size: 14px; margin-top: 4px; width: 18px; }
+        .plan-card .btn { width: 100%; justify-content: center; }
+
+        /* CTA */
+        #cta-final {
+            background: linear-gradient(135deg, var(--azul) 0%, #1a4a7a 100%);
+            color: #fff; text-align: center;
+        }
+        #cta-final h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+        #cta-final p { font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto 32px; }
+        #cta-final .btn { font-size: 18px; padding: 18px 36px; }
+
+        /* FAQ */
+        #faq { background: var(--branco); }
+        .faq-grid { max-width: 720px; margin: 48px auto 0; }
+        .faq-item {
+            background: var(--bg); border-radius: var(--radius); padding: 24px; margin-bottom: 12px;
+            border: 1px solid var(--borda); cursor: pointer; transition: var(--transition);
+        }
+        .faq-item:hover { border-color: var(--azul); }
+        .faq-question {
+            display: flex; justify-content: space-between; align-items: center;
+            font-weight: 600; color: var(--azul); font-size: 16px;
+        }
+        .faq-question i { transition: var(--transition); color: var(--texto-suave); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--azul); }
+        .faq-answer {
+            max-height: 0; overflow: hidden; transition: 0.3s ease;
+            color: var(--texto-suave); font-size: 15px; line-height: 1.6;
+        }
+        .faq-item.active .faq-answer { max-height: 300px; padding-top: 16px; }
+
+        /* Footer */
+        footer {
+            background: var(--azul-escuro); color: rgba(255,255,255,0.7);
+            padding: 60px 0 40px;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+        }
+        .footer-brand .logo { color: #fff; }
+        .footer-brand p { margin-top: 16px; font-size: 14px; line-height: 1.7; }
+        footer h4 { color: #fff; font-size: 16px; margin-bottom: 16px; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer ul li a { font-size: 14px; transition: var(--transition); }
+        footer ul li a:hover { color: var(--dourado); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px;
+            padding-top: 24px; text-align: center; font-size: 13px;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .hero-title { font-size: 32px; }
+            .hero-stats { justify-content: center; }
+            .hero-actions { justify-content: center; }
+            .hero-image { order: -1; }
+            .problem-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr 1fr; }
+            .plans-grid { grid-template-columns: 1fr; }
+            .plan-card.featured { transform: none; }
+            .plan-card.featured:hover { transform: translateY(-4px); }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+            .section-title { font-size: 28px; }
+
+            nav { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0;
+                   background: rgba(255,255,255,0.98); padding: 16px; box-shadow: var(--sombra); gap: 4px; }
+            nav.open { display: flex; }
+            nav a { padding: 12px 16px; }
+            .menu-toggle { display: block; }
+        }
+        @media(max-width: 480px) {
+            .steps-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 16px; }
+            .hero-title { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20educacionais%20COREGOV" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- HEADER -->
+<header>
+    <div class="container header-inner">
+        <a href="index.html" class="logo">Core<span>Gov</span></a>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
+        <nav id="navMenu">
+            <a href="index.html">Início</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="educacao.html" class="active">Educação</a>
+            <a href="quem-somos.html">Quem Somos</a>
+            <a href="https://wa.me/5518991888698" target="_blank"><i class="fab fa-whatsapp"></i> Contato</a>
+            <a href="professorpro.html" class="nav-cta"><i class="fas fa-rocket"></i> ProfessorPro</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <div class="hero-badge"><i class="fas fa-graduation-cap"></i> COREGOV Educação</div>
+                <h1 class="hero-title">Material didático <span>com IA</span> para professores</h1>
+                <p class="hero-text">Produza planos de aula, atividades, provas e slides prontos em 30 segundos. Alinhado à BNCC. Sem complicação, sem perder hora extra em casa.</p>
+                <div class="hero-actions">
+                    <a href="professorpro.html" class="btn btn-primary"><i class="fas fa-rocket"></i> Testar Grátis</a>
+                    <a href="#como-funciona" class="btn btn-outline"><i class="fas fa-play-circle"></i> Como Funciona</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="stat-number">30s</div>
+                        <div class="stat-label">para gerar material</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">15h</div>
+                        <div class="stat-label">economizadas por semana</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">alinhado à BNCC</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-robot"></i>
+                <h3>🧑‍🏫 Imagine ter um assistente de IA dedicado</h3>
+                <p>Você escolhe o tema, a série, a disciplina — e o material sai pronto em segundos. PDF formatado, com imagens e exercícios.</p>
+                <div style="margin-top: 24px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <span style="background: #f1f5f9; padding: 6px 14px; border-radius: 8px; font-size: 13px; color: var(--texto-suave);">📋 Plano de Aula</span>
+                    <span style="background: #f1f5f9; padding: 6px 14px; border-radius: 8px; font-size: 13px; color: var(--texto-suave);">📝 Atividades</span>
+                    <span style="background: #f1f5f9; padding: 6px 14px; border-radius: 8px; font-size: 13px; color: var(--texto-suave);">📄 Provas</span>
+                    <span style="background: #f1f5f9; padding: 6px 14px; border-radius: 8px; font-size: 13px; color: var(--texto-suave);">📽️ Slides</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema">
+    <div class="container">
+        <div class="problem-grid">
+            <div>
+                <span class="section-tag">🔥 Realidade do Professor</span>
+                <h2 class="section-title">O problema que todo professor conhece</h2>
+                <ul class="problem-list">
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div><strong>Falta de tempo</strong><br>Entre aulas, correção de provas e reuniões, sobra pouco tempo para preparar material de qualidade.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-file-alt"></i>
+                        <div><strong>Conteúdo genérico</strong><br>Materiais prontos da internet não atendem exatamente o que você precisa para sua turma.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-book"></i>
+                        <div><strong>BNCC complexa</strong><br>Alinhar cada atividade às habilidades BNCC dá um trabalho enorme — e é obrigatório.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-brain"></i>
+                        <div><strong>Cansaço criativo</strong><br>Depois de horas de aula, sua criatividade já era. Preparar mais material parece impossível.</div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <span class="section-tag" style="background: rgba(15,52,96,0.1); color: var(--azul);">✅ Nossa Solução</span>
+                <div class="solution-box">
+                    <h3><i class="fas fa-magic" style="color: var(--dourado);"></i> ProfessorPro — COREGOV</h3>
+                    <p style="margin-bottom: 24px; opacity: 0.95;">Um assistente de IA que entende o que você precisa. Escolheu o tema? O material sai prontinho, com imagens, BNCC incluso e design profissional.</p>
+                    <div style="display: flex; gap: 24px; align-items: center;">
+                        <div>
+                            <div class="big-number">R$67</div>
+                            <div class="big-label">/mês — materiais ilimitados</div>
+                        </div>
+                        <div style="border-left: 1px solid rgba(255,255,255,0.2); padding-left: 24px;">
+                            <div class="big-number">30s</div>
+                            <div class="big-label">para ficar pronto</div>
+                        </div>
+                    </div>
+                    <a href="professorpro.html" class="btn btn-dourado" style="margin-top: 24px;"><i class="fas fa-arrow-right"></i> Quero Testar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona">
+    <div class="container text-center">
+        <span class="section-tag">⚡ Simples e Rápido</span>
+        <h2 class="section-title">Como funciona</h2>
+        <p class="section-sub mx-auto">Em 3 passos você tem seu material didático pronto para usar em sala de aula.</p>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h4>📝 Escolha os detalhes</h4>
+                <p>Série, disciplina, tema e tipo de material. Tudo em uma tela simples.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h4>🤖 IA gera o conteúdo</h4>
+                <p>Nossa inteligência artificial produz o material completo com imagens e BNCC.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h4>📥 Baixe o PDF</h4>
+                <p>Pronto! Material formatado, ilustrado e alinhado à BNCC. Use na hora.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h4>🎯 Aplique em sala</h4>
+                <p>Seu material personalizado para a sua turma. Economizou horas de preparo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+    <div class="container text-center">
+        <span class="section-tag">🎯 Serviços</span>
+        <h2 class="section-title">Soluções educacionais COREGOV</h2>
+        <p class="section-sub mx-auto">Da produção de material ao suporte pedagógico completo.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon blue"><i class="fas fa-magic"></i></div>
+                <h3>🎯 ProfessorPro</h3>
+                <p>Gere planos de aula, atividades, provas e slides com IA em 30 segundos. Alinhado à BNCC. Ilimitado.</p>
+                <a href="professorpro.html" class="service-link">Acessar ferramenta <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon gold"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3>📚 Consultoria Pedagógica</h3>
+                <p>Adequação de currículos, planos de ensino e projetos pedagógicos alinhados à BNCC com suporte de IA.</p>
+                <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20consultoria%20pedag%C3%B3gica" class="service-link" target="_blank">Consultar <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon red"><i class="fas fa-graduation-cap"></i></div>
+                <h3>🏫 Formação de Professores</h3>
+                <p>Capacitação prática para professores usarem IA no dia a dia: material didático, planejamento e avaliações.</p>
+                <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20forma%C3%A7%C3%A3o%20de%20professores" class="service-link" target="_blank">Solicitar proposta <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos">
+    <div class="container text-center">
+        <span class="section-tag">💰 Planos</span>
+        <h2 class="section-title">Invista na sua aula</h2>
+        <p class="section-sub mx-auto">Menos de R$2 por dia por materiais ilimitados de qualidade.</p>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <h3>📚 Teste</h3>
+                <div class="price">Grátis</div>
+                <div class="price-desc">3 materiais para testar</div>
+                <ul>
+                    <li><i class="fas fa-check"></i> 3 materiais completos</li>
+                    <li><i class="fas fa-check"></i> Plano de aula, atividade ou prova</li>
+                    <li><i class="fas fa-check"></i> Com imagens</li>
+                    <li><i class="fas fa-check"></i> Alinhamento BNCC</li>
+                    <li><i class="fas fa-check"></i> Download em PDF</li>
+                </ul>
+                <a href="professorpro.html" class="btn btn-outline">Testar Agora</a>
+            </div>
+
+            <div class="plan-card featured">
+                <h3>⭐ Mensal</h3>
+                <div class="price">R$67 <span>/mês</span></div>
+                <div class="price-desc">Materiais ilimitados</div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Materiais ILIMITADOS</li>
+                    <li><i class="fas fa-check"></i> Todos os tipos (plano, atividade, prova, slides)</li>
+                    <li><i class="fas fa-check"></i> Imagens e emojis inclusos</li>
+                    <li><i class="fas fa-check"></i> BNCC automático</li>
+                    <li><i class="fas fa-check"></i> Cancele quando quiser</li>
+                </ul>
+                <a href="https://wa.me/5518991888698?text=Quero%20assinar%20o%20ProfessorPro%20Mensal%20-%20R%2467" class="btn btn-primary" target="_blank">Assinar</a>
+            </div>
+
+            <div class="plan-card">
+                <h3>🏆 Anual</h3>
+                <div class="price">R$497 <span>/ano</span></div>
+                <div class="price-desc">Menos de R$42/mês</div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Tudo do Mensal</li>
+                    <li><i class="fas fa-check"></i> 2 meses grátis (R$804 → R$497)</li>
+                    <li><i class="fas fa-check"></i> Suporte prioritário WhatsApp</li>
+                    <li><i class="fas fa-check"></i> Acesso a novos recursos primeiro</li>
+                    <li><i class="fas fa-check"></i> Materiais em lote (turma toda)</li>
+                </ul>
+                <a href="https://wa.me/5518991888698?text=Quero%20assinar%20o%20ProfessorPro%20Anual%20-%20R%24497" class="btn btn-dourado" target="_blank">Assinar Anual</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+    <div class="container">
+        <h2>🧑‍🏫 Chega de passar horas preparando material</h2>
+        <p>Em 30 segundos seu plano de aula, atividade ou prova está pronto. Teste grátis agora.</p>
+        <a href="professorpro.html" class="btn btn-dourado"><i class="fas fa-rocket"></i> Testar Grátis</a>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <div class="container text-center">
+        <span class="section-tag">❓ FAQ</span>
+        <h2 class="section-title">Dúvidas Frequentes</h2>
+        <div class="faq-grid">
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>🤔 Como funciona na prática?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">Você acessa o ProfessorPro, escolhe a série, disciplina, tema e tipo de material. Nossa IA gera todo o conteúdo automaticamente em cerca de 30 segundos. Você baixa o PDF pronto — com imagens, BNCC incluso e design formatado. Nunca precisa escrever um prompt.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>📖 É alinhado à BNCC?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">Sim! Selecionamos automaticamente as habilidades BNCC correspondentes à série e disciplina escolhidas. Você pode marcar ou desmarcar as habilidades que quiser incluir no material.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>🖼️ Vem com imagens?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">Sim! O material inclui imagens reais relacionadas ao tema, emojis e design moderno — tudo pronto para usar em sala de aula ou imprimir.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>📱 Posso testar antes de assinar?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">Sim! Oferecemos um teste grátis com 3 materiais completos. Sem cartão de crédito. Acesse o ProfessorPro e teste agora.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>🏫 Minha escola pode assinar para vários professores?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">Sim! Temos planos institucionais para escolas e secretarias de educação. Entre em contato pelo WhatsApp para solicitar um orçamento personalizado.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">Core<span style="color: var(--dourado);">Gov</span></div>
+                <p>Tecnologia e inteligência artificial para transformar a educação, gestão pública e o terceiro setor.</p>
+            </div>
+            <div>
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="professorpro.html">ProfessorPro</a></li>
+                    <li><a href="educacao.html">Educação</a></li>
+                    <li><a href="servicos.html">Consultoria ONGs</a></li>
+                    <li><a href="servicos.html">Captação de Recursos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="blog/">Blog</a></li>
+                    <li><a href="termos-afiliado.html">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="https://wa.me/5518991888698" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> contato@coregov.com.br</a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>COREGOV © 2026 — Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById('navMenu').classList.toggle('open');
+}
+
+function toggleFaq(el) {
+    el.classList.toggle('active');
+}
+
+// Fechar menu ao clicar fora
+document.addEventListener('click', function(e) {
+    const nav = document.getElementById('navMenu');
+    const toggle = document.querySelector('.menu-toggle');
+    if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('open');
+    }
+});
+
+// FAQ - fechar outros ao abrir um
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', function() {
+        document.querySelectorAll('.faq-item').forEach(i => {
+            if (i !== this) i.classList.remove('active');
+        });
+    });
+});
+</script>
+
+</body>
+</html>
