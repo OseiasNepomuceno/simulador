@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -93,7 +93,7 @@ input, select{
   border-radius:8px;
 }
 
-/* BOTÃO */
+/* BOTÃƒO */
 button{
   width:100%;
   padding:14px;
@@ -135,17 +135,17 @@ button{
   </div>
 
   <nav>
-    <a href="../index.html">Início</a>
-    <a href="../servicos.html">Serviços</a>
+    <a href="../index.html">InÃ­cio</a>
+    <a href="../servicos.html">ServiÃ§os</a>
     <a href="../simulador.html">Simulador</a>
   </nav>
 
-  <a class="btn" href="https://wa.me/5518991511523">Contato</a>
+  <a class="btn" href="https://wa.me/5518991888698">Contato</a>
 </header>
 
 <div class="container">
 
-<h2>📊 Simulador de Impostos (IBS + CBS vs Simples)</h2>
+<h2>ðŸ“Š Simulador de Impostos (IBS + CBS vs Simples)</h2>
 
 <div class="card">
 
@@ -168,9 +168,9 @@ button{
 </div>
 
 <div class="cta">
-  <h3>📌 Seu novo imposto pode aumentar ou reduzir sua margem em até 30%</h3>
+  <h3>ðŸ“Œ Seu novo imposto pode aumentar ou reduzir sua margem em atÃ© 30%</h3>
   <br>
-  <a class="btn" href="https://wa.me/5518991511523?text=Quero uma análise real da minha empresa">Quero uma análise real da minha empresa</a>
+  <a class="btn" href="https://wa.me/5518991888698?text=Quero uma anÃ¡lise real da minha empresa">Quero uma anÃ¡lise real da minha empresa</a>
 </div>
 
 </div>
@@ -190,14 +190,14 @@ function calcular(){
   let perc = (dif/atual)*100;
 
   let cor = "green";
-  let msg = "Cenário saudável";
+  let msg = "CenÃ¡rio saudÃ¡vel";
 
   if(perc > 30){
     cor="red";
-    msg="⚠ Alto risco tributário — revisão urgente necessária";
+    msg="âš  Alto risco tributÃ¡rio â€” revisÃ£o urgente necessÃ¡ria";
   } else if(perc > 0){
     cor="yellow";
-    msg="⚠ Aumento moderado — precisa de planejamento";
+    msg="âš  Aumento moderado â€” precisa de planejamento";
   }
 
   document.getElementById("resultado").innerHTML = `
@@ -205,20 +205,20 @@ function calcular(){
     <div class="result blue">IBS + CBS: R$ ${novo.toFixed(2)}</div>
 
     <div class="result ${cor}">
-      Diferença: R$ ${dif.toFixed(2)} (${perc.toFixed(2)}%)<br><br>
+      DiferenÃ§a: R$ ${dif.toFixed(2)} (${perc.toFixed(2)}%)<br><br>
       <b>${msg}</b>
     </div>
 
     <div class="result">
-      📌 Impacto direto na margem de lucro<br>
-      📌 Necessidade de reestruturação tributária<br>
-      📌 Possível mudança de regime
+      ðŸ“Œ Impacto direto na margem de lucro<br>
+      ðŸ“Œ Necessidade de reestruturaÃ§Ã£o tributÃ¡ria<br>
+      ðŸ“Œ PossÃ­vel mudanÃ§a de regime
     </div>
   `;
 }
 </script>
 
-<!-- ✅ PADRÃO FINAL CORRETO -->
+<!-- âœ… PADRÃƒO FINAL CORRETO -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="../supabase.js"></script>
 <script src="../login.js"></script>

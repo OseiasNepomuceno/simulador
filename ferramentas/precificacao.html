@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Precificação Inteligente | COREGOV</title>
+<title>PrecificaÃ§Ã£o Inteligente | COREGOV</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -83,17 +83,17 @@ button{
 <header>
   
   <nav>
-  <a href="../index.html">Início</a>
-  <a href="../servicos.html">Serviços</a>
+  <a href="../index.html">InÃ­cio</a>
+  <a href="../servicos.html">ServiÃ§os</a>
   <a href="../simulador.html">Simulador</a>
 </nav>
   
-  <a class="btn" href="https://wa.me/5518991511523">Contato</a>
+  <a class="btn" href="https://wa.me/5518991888698">Contato</a>
 </header>
 
 <div class="container">
 
-<h2>💰 Precificação Inteligente</h2>
+<h2>ðŸ’° PrecificaÃ§Ã£o Inteligente</h2>
 
 <div class="card">
 
@@ -103,13 +103,13 @@ button{
 <label>Impostos (%)</label>
 <input type="number" id="imposto" value="8">
 
-<label>Comissão (%)</label>
+<label>ComissÃ£o (%)</label>
 <input type="number" id="comissao" value="40">
 
 <label>Margem de Lucro Desejada (%)</label>
 <input type="number" id="lucro" value="30">
 
-<button onclick="calcular()">Calcular Preço Ideal</button>
+<button onclick="calcular()">Calcular PreÃ§o Ideal</button>
 
 <div id="resultado"></div>
 
@@ -133,30 +133,30 @@ function calcular(){
   let margem = (lucroReal/preco)*100;
 
   let cor="green";
-  let msg="Preço saudável";
+  let msg="PreÃ§o saudÃ¡vel";
 
   if(margem < 10){
     cor="red";
-    msg="⚠ Margem muito baixa — risco de prejuízo";
+    msg="âš  Margem muito baixa â€” risco de prejuÃ­zo";
   } else if(margem < 20){
     cor="yellow";
-    msg="⚠ Margem apertada — atenção";
+    msg="âš  Margem apertada â€” atenÃ§Ã£o";
   }
 
   document.getElementById("resultado").innerHTML=`
     <div class="result ${cor}">
-      💰 Preço ideal: R$ ${preco.toFixed(2)}<br><br>
-      📊 Margem real: ${margem.toFixed(2)}%<br><br>
+      ðŸ’° PreÃ§o ideal: R$ ${preco.toFixed(2)}<br><br>
+      ðŸ“Š Margem real: ${margem.toFixed(2)}%<br><br>
       <b>${msg}</b>
     </div>
 
     <div class="result">
-      📌 Ajustar preço pode aumentar lucro sem vender mais<br>
-      📌 Precificação errada é o principal motivo de prejuízo
+      ðŸ“Œ Ajustar preÃ§o pode aumentar lucro sem vender mais<br>
+      ðŸ“Œ PrecificaÃ§Ã£o errada Ã© o principal motivo de prejuÃ­zo
     </div>
 
-    <a class="btn" href="https://wa.me/5518991511523?text=Quero ajuda para melhorar minha precificação">
-      Quero ajuda com minha precificação
+    <a class="btn" href="https://wa.me/5518991888698?text=Quero ajuda para melhorar minha precificaÃ§Ã£o">
+      Quero ajuda com minha precificaÃ§Ã£o
     </a>
   `;
 }

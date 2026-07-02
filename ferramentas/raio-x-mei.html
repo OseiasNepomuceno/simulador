@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -55,7 +55,7 @@ button{
 
 <div class="container">
 
-<h2>📊 Raio-X Financeiro do MEI</h2>
+<h2>ðŸ“Š Raio-X Financeiro do MEI</h2>
 
 <label>Faturamento Mensal (R$)</label>
 <input type="number" id="fat" value="10000">
@@ -66,7 +66,7 @@ button{
 <label>Despesas Fixas (R$)</label>
 <input type="number" id="fixos" value="2000">
 
-<button onclick="analisar()">Gerar Análise</button>
+<button onclick="analisar()">Gerar AnÃ¡lise</button>
 
 <div id="res"></div>
 
@@ -85,29 +85,29 @@ function analisar(){
   let margem = (lucro/fat)*100;
 
   let cor="green";
-  let msg="Negócio saudável";
+  let msg="NegÃ³cio saudÃ¡vel";
 
   if(margem < 10){
     cor="red";
-    msg="⚠ Alto risco financeiro";
+    msg="âš  Alto risco financeiro";
   } else if(margem < 20){
     cor="yellow";
-    msg="⚠ Margem baixa";
+    msg="âš  Margem baixa";
   }
 
   document.getElementById("res").innerHTML=`
     <div class="result ${cor}">
-      💰 Lucro: R$ ${lucro.toFixed(2)}<br>
-      📊 Margem: ${margem.toFixed(2)}%<br><br>
+      ðŸ’° Lucro: R$ ${lucro.toFixed(2)}<br>
+      ðŸ“Š Margem: ${margem.toFixed(2)}%<br><br>
       <b>${msg}</b>
     </div>
 
     <div class="result">
-      📌 Ajustar custos pode aumentar lucro imediato<br>
-      📌 Falta de controle gera prejuízo invisível
+      ðŸ“Œ Ajustar custos pode aumentar lucro imediato<br>
+      ðŸ“Œ Falta de controle gera prejuÃ­zo invisÃ­vel
     </div>
 
-    <a href="https://wa.me/5518991511523?text=Quero análise completa do meu MEI">
+    <a href="https://wa.me/5518991888698?text=Quero anÃ¡lise completa do meu MEI">
       Falar com especialista
     </a>
   `;

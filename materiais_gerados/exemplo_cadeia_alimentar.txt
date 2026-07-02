@@ -1,0 +1,278 @@
+╔══════════════════════════════════════════════════════════════╗
+║                    🎯 PROFESSORPRO                           ║
+║         Material Didático Gerado por IA                      ║
+╚══════════════════════════════════════════════════════════════╝
+
+📚 Série: 6º ano Ensino Fundamental
+🧪 Disciplina: Ciências
+📌 Tema: Cadeia Alimentar
+📅 Data: 30/06/2026
+
+🖼️ Imagem ilustrativa: https://cdn.pixabay.com/photo/2017/08/07/17/29/food-chain-2604874_1280.jpg
+
+──────────────────────────────────────────────────────────────────────
+
+# 🌿 CADEIA ALIMENTAR — Material Completo
+
+## 🎯 OBJETIVOS DE APRENDIZAGEM
+
+Ao final desta aula, o aluno será capaz de:
+- 🔹 **Identificar** os componentes de uma cadeia alimentar (produtores, consumidores, decompositores)
+- 🔹 **Diferenciar** cadeia alimentar de teia alimentar
+- 🔹 **Classificar** os seres vivos por seu nível trófico
+- 🔹 **Analisar** o fluxo de energia e matéria nos ecossistemas
+- 🔹 **Relacionar** o equilíbrio ecológico com as cadeias alimentares
+
+## 📋 HABILIDADES BNCC
+
+✅ **EF06CI01** — Classificar seres vivos por critérios (cadeias alimentares)
+✅ **EF06CI02** — Identificar e descrever cadeias alimentares em ecossistemas
+
+──────────────────────────────────────────────────────────────────────
+
+# 📖 PLANO DE AULA
+
+## ⏱️ DURAÇÃO: 2 aulas (50 min cada)
+
+## 🎯 Objetivo Geral
+Compreender o conceito de cadeia alimentar e o fluxo de energia nos ecossistemas.
+
+## 📚 Conteúdos
+1. 🌱 Produtores: plantas e algas (autótrofos)
+2. 🐇 Consumidores: primários, secundários, terciários (heterótrofos)
+3. 🍄 Decompositores: fungos e bactérias
+4. ⚡ Fluxo de energia e matéria
+5. 🕸️ Teia alimentar vs Cadeia alimentar
+
+## 🛠️ Recursos Necessários
+- 📺 Projetor ou lousa digital
+- 📝 Folhas de atividade impressas
+- 🖼️ Imagens de ecossistemas (fornecidas)
+- 🎲 Cartões com figuras de seres vivos
+- 📱 Acesso a vídeos curtos (opcional)
+
+## 👩‍🏫 Metodologia
+
+### 🔹 Aula 1 — Introdução (50 min)
+
+| Tempo | Atividade | Descrição |
+|-------|-----------|-----------|
+| 0-10 min | 🎬 **Abertura** | Pergunta disparadora: "O que aconteceria se todos os insetos desaparecessem?" |
+| 10-25 min | 👩‍🏫 **Exposição** | Explicar produtores → consumidores → decompositores com exemplos visuais |
+| 25-35 min | 🎲 **Jogo interativo** | Alunos organizam cartões de seres vivos em cadeia alimentar |
+| 35-45 min | 📝 **Registro** | Desenhar uma cadeia alimentar no caderno |
+| 45-50 min | 💬 **Encerramento** | Socializar desenhos e tirar dúvidas |
+
+### 🔹 Aula 2 — Aprofundamento (50 min)
+
+| Tempo | Atividade | Descrição |
+|-------|-----------|-----------|
+| 0-10 min | 🔄 **Retomada** | Revisão rápida com perguntas orais |
+| 10-25 min | 🌐 **Teia Alimentar** | Explicar que na natureza as cadeias se interligam |
+| 25-40 min | 👥 **Atividade em grupo** | Montar uma teia alimentar coletiva na lousa |
+| 40-50 min | 🏁 **Fechamento** | "O que aprendemos?" — roda de conversa |
+
+## 📊 Avaliação
+- ✅ Participação nas atividades
+- ✅ Correção dos desenhos de cadeia alimentar
+- ✅ Respostas nas atividades escritas
+
+──────────────────────────────────────────────────────────────────────
+
+# ✏️ ATIVIDADES
+
+## 🧩 Atividade 1 — Complete a Cadeia
+
+Complete com os nomes dos seres vivos:
+
+```
+🌞 Sol
+   ↓
+(_____________) → Produtor
+   ↓
+(_____________) → Consumidor primário
+   ↓
+(_____________) → Consumidor secundário
+   ↓
+(_____________) → Decompositor
+```
+
+## 🧩 Atividade 2 — Classifique
+
+Classifique cada ser vivo abaixo em:
+- **P** = Produtor
+- **C1** = Consumidor primário
+- **C2** = Consumidor secundário
+- **D** = Decompositor
+
+| Ser vivo | Classificação |
+|----------|--------------|
+| Capim | ____ |
+| Fungo | ____ |
+| Gavião | ____ |
+| Alface | ____ |
+| Sapo | ____ |
+| Gafanhoto | ____ |
+| Minhoca | ____ |
+| Cobra | ____ |
+
+## 🧩 Atividade 3 — Verdadeiro ou Falso
+
+(V) ou (F):
+
+1. ( ) Produtores fabricam seu próprio alimento pela fotossíntese
+2. ( ) Os decompositores estão no topo da cadeia alimentar
+3. ( ) Quanto mais próximo do sol, menos energia disponível
+4. ( ) A teia alimentar é formada por várias cadeias interligadas
+5. ( ) Carnívoros são sempre consumidores primários
+
+## 🧩 Atividade 4 — Desafio do Equilíbrio
+
+🌿 **Situação:** Em uma floresta, caçadores eliminaram todos os lobos.
+
+**Pergunta:** O que pode acontecer com:
+a) A população de coelhos? _______________
+b) A vegetação da floresta? _______________
+c) Explique por quê: _________________________
+
+## 🧩 Atividade 5 — Crie Sua Cadeia
+
+🎨 Desenhe uma cadeia alimentar com **pelo menos 4 níveis** de um ecossistema brasileiro (Amazônia, Pantanal, Caatinga, etc.).
+
+──────────────────────────────────────────────────────────────────────
+
+# 📄 PROVA — CADEIA ALIMENTAR
+
+**Nome:** ________________________ **Data:** ____/____/______
+**Turma:** 6º ano
+
+---
+
+### 🔹 Questão 1 (0,5 pt)
+O que são produtores em uma cadeia alimentar?
+a) ( ) Animais que caçam outros animais
+b) ( ) Seres que produzem seu próprio alimento (fotossíntese)
+c) ( ) Animais que comem plantas
+d) ( ) Fungos e bactérias
+
+### 🔹 Questão 2 (0,5 pt)
+Qual o papel dos decompositores?
+a) ( ) Produzir alimento para todos
+b) ( ) Decompor matéria orgânica em nutrientes
+c) ( ) Caçar presas
+d) ( ) Realizar fotossíntese
+
+### 🔹 Questão 3 (0,5 pt)
+Complete: "Gafanhoto → Sapo → Cobra → Gavião" é um exemplo de:
+a) ( ) Teia alimentar
+b) ( ) Pirâmide ecológica
+c) ( ) Cadeia alimentar
+d) ( ) Ciclo biogeoquímico
+
+### 🔹 Questão 4 (0,5 pt)
+Qual ser vivo é consumidor primário na cadeia: Capim → Gafanhoto → Sapo → Cobra?
+a) ( ) Capim
+b) ( ) Gafanhoto
+c) ( ) Sapo
+d) ( ) Cobra
+
+### 🔹 Questão 5 (1,0 pt)
+Explique a diferença entre cadeia alimentar e teia alimentar:
+
+________________________________________________________________
+
+________________________________________________________________
+
+________________________________________________________________
+
+### 🔹 Questões 6-10 (1,0 pt cada)
+
+**6.** Uma cadeia alimentar NÃO pode começar com:
+a) ( ) Grama
+b) ( ) Alga
+c) ( ) Gato
+d) ( ) Planta aquática
+
+**7.** Se todos os sapos de uma região morrerem, o que pode acontecer?
+a) ( ) Aumento de gafanhotos
+b) ( ) Aumento de cobras
+c) ( ) Aumento de capim
+d) ( ) Nada muda
+
+**8.** As plantas são chamadas de produtores porque:
+a) ( ) Produzem filhotes
+b) ( ) Produzem oxigênio e alimento pela fotossíntese
+c) ( ) Produzem sombra
+d) ( ) Produzem sementes
+
+**9.** Os fungos são importantes na natureza pois:
+a) ( ) Servem de alimento para herbívoros
+b) ( ) Reciclam nutrientes dos seres mortos
+c) ( ) Produzem veneno
+d) ( ) Competem com as plantas
+
+**10.** Em uma cadeia alimentar, a energia:
+a) ( ) Aumenta a cada nível
+b) ( ) Diminui a cada nível
+c) ( ) Permanece igual
+d) ( ) Desaparece no decompositor
+
+---
+
+### ✅ GABARITO
+
+| Q | Resposta |
+|---|----------|
+| 1 | B |
+| 2 | B |
+| 3 | C |
+| 4 | B |
+| 5 | Cadeia alimentar é linear; teia alimentar é o conjunto de várias cadeias interligadas na natureza |
+| 6 | C |
+| 7 | A |
+| 8 | B |
+| 9 | B |
+| 10 | B |
+
+──────────────────────────────────────────────────────────────────────
+
+# 📽️ SLIDES — ROTEIRO
+
+### Slide 1 — Capa
+> 🌿 **CADEIA ALIMENTAR**
+> Ciências — 6º ano
+
+### Slide 2 — O que é?
+> Definição + imagem de cadeia alimentar
+
+### Slide 3 — Produtores 🌱
+> Seres autótrofos (plantas, algas)
+
+### Slide 4 — Consumidores 🐇🦊🦁
+> Primários (herbívoros), secundários (carnívoros), terciários
+
+### Slide 5 — Decompositores 🍄
+> Fungos e bactérias — reciclam nutrientes
+
+### Slide 6 — Fluxo de Energia ⚡
+> Sol → Produtor → Consumidor primário → Consumidor secundário
+
+### Slide 7 — Cadeia vs Teia 🕸️
+> A teia alimentar mostra relações mais complexas
+
+### Slide 8 — Para Refletir 🤔
+> "O que acontece se uma espécie desaparece?"
+
+### Slide 9 — Atividade 🎲
+> Monte sua própria cadeia alimentar!
+
+### Slide 10 — Resumo 📝
+> Mapa mental dos conceitos principais
+
+──────────────────────────────────────────────────────────────────────
+
+╔══════════════════════════════════════════════════════════════╗
+║            📚 ProfessorPro — by COREGOV                     ║
+║               coregov.com.br/professorpro                    ║
+║         📲 Dúvidas? WhatsApp: (18) 9 9188-8698                ║
+╚══════════════════════════════════════════════════════════════╝

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -68,7 +68,7 @@
         .modulo-secao { display: none; }
         .modulo-secao.ativo { display: block; }
 
-        /* ELEMENTOS INTERNOS DOS MÓDULOS */
+        /* ELEMENTOS INTERNOS DOS MÃ“DULOS */
         .caixa-info { background: rgba(37, 99, 235, 0.05); border: 1px solid rgba(37, 99, 235, 0.1); padding: 20px; border-radius: 8px; margin-bottom: 25px; }
         .caixa-alerta { background: rgba(239, 68, 68, 0.08); border-left: 4px solid #ef4444; padding: 20px; border-radius: 4px; margin-top: 20px; }
         
@@ -88,53 +88,53 @@
 
     <div id="ambiente-privado">
         <aside class="sidebar">
-            <h2>🛰️ CoreGov</h2>
+            <h2>ðŸ›°ï¸ CoreGov</h2>
             <div class="badge-plano">Consultor: <span id="txt-nome-user">Ambiente de Teste</span> (<span id="txt-plano">PREMIUM</span>)</div>
             <nav>
-                <div class="menu-item ativo" onclick="mudarModulo('mod-inicio', this)">🏠 Início</div>
-                <div class="menu-item" onclick="mudarModulo('mod-revisor', this)">📜 Revisor de Estatuto</div>
-                <div class="menu-item" onclick="mudarModulo('mod-clientes', this)">💼 Gestão de Clientes</div>
+                <div class="menu-item ativo" onclick="mudarModulo('mod-inicio', this)">ðŸ  InÃ­cio</div>
+                <div class="menu-item" onclick="mudarModulo('mod-revisor', this)">ðŸ“œ Revisor de Estatuto</div>
+                <div class="menu-item" onclick="mudarModulo('mod-clientes', this)">ðŸ’¼ GestÃ£o de Clientes</div>
             </nav>
-            <div class="menu-item btn-sair" onclick="alert('Modo de teste: login desativado.')">🚪 Sair</div>
+            <div class="menu-item btn-sair" onclick="alert('Modo de teste: login desativado.')">ðŸšª Sair</div>
         </aside>
 
         <main class="conteudo-principal">
             <section id="mod-inicio" class="modulo-secao ativo">
                 <h1>Painel Operacional Ativo</h1><br>
-                <div class="caixa-info">O login está temporariamente desativado. Você pode navegar livremente pelos módulos editando o arquivo HTML.</div>
+                <div class="caixa-info">O login estÃ¡ temporariamente desativado. VocÃª pode navegar livremente pelos mÃ³dulos editando o arquivo HTML.</div>
             </section>
 
             <section id="mod-revisor" class="modulo-secao">
-                <h2>📜 Revisor de Estatuto</h2>
-                <p>Auditoria automatizada de conformidade jurídica para OSCs e ONGs (TransfereGov)</p>
+                <h2>ðŸ“œ Revisor de Estatuto</h2>
+                <p>Auditoria automatizada de conformidade jurÃ­dica para OSCs e ONGs (TransfereGov)</p>
                 <div class="campo-grupo">
-                    <textarea id="txt-estatuto" style="height: 250px;" placeholder="Cole aqui as cláusulas do estatuto..."></textarea>
+                    <textarea id="txt-estatuto" style="height: 250px;" placeholder="Cole aqui as clÃ¡usulas do estatuto..."></textarea>
                 </div>
-                <button class="btn-acao" onclick="executarAuditoriaHTML()">🚀 Rodar Auditoria de Elegibilidade</button>
+                <button class="btn-acao" onclick="executarAuditoriaHTML()">ðŸš€ Rodar Auditoria de Elegibilidade</button>
 
                 <div id="resultado-auditoria" style="display:none; margin-top: 30px;">
-                    <h3>📊 Diagnóstico de Elegibilidade - TransfereGov</h3>
+                    <h3>ðŸ“Š DiagnÃ³stico de Elegibilidade - TransfereGov</h3>
                     <div class="caixa-alerta">
-                        <strong>🚨 STATUS DA ORGANIZAÇÃO: INAPTA PARA RECEBIMENTO DE EMENDAS</strong><br>
-                        Termos obrigatórios ausentes. É necessário emitir emendas de adequação técnica e ata corretiva.
+                        <strong>ðŸš¨ STATUS DA ORGANIZAÃ‡ÃƒO: INAPTA PARA RECEBIMENTO DE EMENDAS</strong><br>
+                        Termos obrigatÃ³rios ausentes. Ã‰ necessÃ¡rio emitir emendas de adequaÃ§Ã£o tÃ©cnica e ata corretiva.
                     </div>
-                    <a href="#" id="link-whats" target="_blank" class="btn-whatsapp-html">💬 Solicitar Minuta de Adequação</a>
+                    <a href="#" id="link-whats" target="_blank" class="btn-whatsapp-html">ðŸ’¬ Solicitar Minuta de AdequaÃ§Ã£o</a>
                 </div>
             </section>
 
             <section id="mod-clientes" class="modulo-secao">
-                <h2>💼 Gestão de Clientes e Relatórios</h2><br>
-                <div id="bloqueio-basico" style="display: none;" class="caixa-alerta">⚠️ Módulo disponível apenas no Plano Premium.</div>
+                <h2>ðŸ’¼ GestÃ£o de Clientes e RelatÃ³rios</h2><br>
+                <div id="bloqueio-basico" style="display: none;" class="caixa-alerta">âš ï¸ MÃ³dulo disponÃ­vel apenas no Plano Premium.</div>
                 <div id="conteudo-premium">
                     <div class="abas-container">
-                        <div class="aba ativa" onclick="mudarAba('aba-carteira', this)">👥 Minha Carteira</div>
-                        <div class="aba" onclick="mudarAba('aba-cadastro', this)">➕ Novo Cadastro</div>
+                        <div class="aba ativa" onclick="mudarAba('aba-carteira', this)">ðŸ‘¥ Minha Carteira</div>
+                        <div class="aba" onclick="mudarAba('aba-cadastro', this)">âž• Novo Cadastro</div>
                     </div>
                     <div id="aba-carteira" class="aba-painel ativa">
                         <div class="caixa-info">Lista de entidades ativas no banco de dados.</div>
                     </div>
                     <div id="aba-cadastro" class="aba-painel">
-                        <div class="campo-grupo"><label>Nome da Instituição</label><input type="text"></div>
+                        <div class="campo-grupo"><label>Nome da InstituiÃ§Ã£o</label><input type="text"></div>
                         <button class="btn-acao" style="width:auto; padding: 12px 30px;">Salvar Registro</button>
                     </div>
                 </div>
@@ -143,14 +143,14 @@
     </div>
 
     <script>
-        // CONFIGURAÇÃO DE TESTE RÁPIDA:
-        // Se quiser ver como o sistema bloqueia o plano básico, mude a linha abaixo para "BÁSICO"
+        // CONFIGURAÃ‡ÃƒO DE TESTE RÃPIDA:
+        // Se quiser ver como o sistema bloqueia o plano bÃ¡sico, mude a linha abaixo para "BÃSICO"
         let usuarioPlano = "PREMIUM"; 
 
-        // Execução automática de setup ao carregar a página
+        // ExecuÃ§Ã£o automÃ¡tica de setup ao carregar a pÃ¡gina
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('txt-plano').innerText = usuarioPlano;
-            if(usuarioPlano === 'BÁSICO') {
+            if(usuarioPlano === 'BÃSICO') {
                 document.getElementById('conteudo-premium').style.display = 'none';
                 document.getElementById('bloqueio-basico').style.display = 'block';
             } else {
@@ -176,8 +176,8 @@
         function ejecutarAuditoriaHTML() {
             const texto = document.getElementById('txt-estatuto').value;
             if(!texto.trim()) return alert("Insira o texto para auditar.");
-            const msg = "Olá! Concluí a validação do Estatuto no CoreGov e verifiquei inconformidades com o TransfereGov. Preciso de suporte.";
-            document.getElementById('link-whats').href = `https://wa.me/5518991511523?text=${encodeURIComponent(msg)}`;
+            const msg = "OlÃ¡! ConcluÃ­ a validaÃ§Ã£o do Estatuto no CoreGov e verifiquei inconformidades com o TransfereGov. Preciso de suporte.";
+            document.getElementById('link-whats').href = `https://wa.me/5518991888698?text=${encodeURIComponent(msg)}`;
             document.getElementById('resultado-auditoria').style.display = 'block';
         }
     </script>

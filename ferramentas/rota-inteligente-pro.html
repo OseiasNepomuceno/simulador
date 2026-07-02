@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -114,16 +114,16 @@ select{
   <img src="../logo-icon.png" class="logo-icon">
 
 <nav>
-  <a href="../index.html">Início</a>
-  <a href="../servicos.html">Serviços</a>
+  <a href="../index.html">InÃ­cio</a>
+  <a href="../servicos.html">ServiÃ§os</a>
   <a href="../simulador.html">Simulador</a>
 </nav>
 </header>
 
 <div class="container">
 
-<h2>🚀 Rota Inteligente PRO</h2>
-<p style="color:#ccc;">Descubra onde estão as melhores oportunidades para negócios B2B</p>
+<h2>ðŸš€ Rota Inteligente PRO</h2>
+<p style="color:#ccc;">Descubra onde estÃ£o as melhores oportunidades para negÃ³cios B2B</p>
 
 <div class="card">
 
@@ -143,14 +143,14 @@ select{
 
 let dados = [];
 
-/* 🔥 DETECTOR INTELIGENTE DE SEPARADOR */
+/* ðŸ”¥ DETECTOR INTELIGENTE DE SEPARADOR */
 function detectarSeparador(linha){
   if(linha.includes("\t")) return "\t";
   if(linha.includes(";")) return ";";
   return ",";
 }
 
-/* 🔥 CARREGAR BASE */
+/* ðŸ”¥ CARREGAR BASE */
 fetch("../base-empresas.csv")
 .then(res => {
   if(!res.ok) throw new Error("Erro ao carregar base");
@@ -176,7 +176,7 @@ fetch("../base-empresas.csv")
     let partes = endereco.split("-");
     let bairro = partes[partes.length - 1]?.trim() || "";
 
-    /* PADRONIZAÇÃO */
+    /* PADRONIZAÃ‡ÃƒO */
     if(bairro.includes("ANA JACINTA")) bairro = "C. H. ANA JACINTA";
     if(bairro.includes("HUMBERTO SALVADOR")) bairro = "C. H. HUMBERTO SALVADOR";
     if(bairro.includes("BOSQUE")) bairro = "JARDIM DO BOSQUE";
@@ -251,16 +251,16 @@ let ranking = Object.entries(ruas)
 })
 .sort((a,b) => b.score - a.score);
 
-let html = `<h3>📊 Melhor rota em ${bairro}</h3>`;
+let html = `<h3>ðŸ“Š Melhor rota em ${bairro}</h3>`;
 
 ranking.slice(0,3).forEach(r => {
 
   html += `
   <div class="card">
-    <strong>📍 ${r.rua}</strong> (${r.total} empresas)
+    <strong>ðŸ“ ${r.rua}</strong> (${r.total} empresas)
     <br>
     ME: ${r.me} | EPP: ${r.epp}
-    <span class="badge">Alta conversão</span>
+    <span class="badge">Alta conversÃ£o</span>
   `;
 
   let lista = ruas[r.rua];
@@ -273,7 +273,7 @@ ranking.slice(0,3).forEach(r => {
       <div class="item">
         ${emp.empresa} - ${emp.porte}
         <br>
-        <a href="${link}" target="_blank">🗺️ Ver no mapa</a>
+        <a href="${link}" target="_blank">ðŸ—ºï¸ Ver no mapa</a>
       </div>
     `;
   });
@@ -283,18 +283,18 @@ ranking.slice(0,3).forEach(r => {
 
 html += `
 <div class="lock">
-  <h3>🔒 Versão PRO</h3>
+  <h3>ðŸ”’ VersÃ£o PRO</h3>
 
   <p style="color:#ccc;">
-    Você está vendo apenas uma amostra dos dados
+    VocÃª estÃ¡ vendo apenas uma amostra dos dados
   </p>
 
-  <p>✔ Lista completa de empresas</p>
-  <p>✔ Rota otimizada por conversão</p>
-  <p>✔ Priorização por perfil de cliente</p>
-  <p>✔ Exportação de leads</p>
+  <p>âœ” Lista completa de empresas</p>
+  <p>âœ” Rota otimizada por conversÃ£o</p>
+  <p>âœ” PriorizaÃ§Ã£o por perfil de cliente</p>
+  <p>âœ” ExportaÃ§Ã£o de leads</p>
 
-  <a href="https://wa.me/5518991511523?text=Quero acesso PRO da Rota Inteligente"
+  <a href="https://wa.me/5518991888698?text=Quero acesso PRO da Rota Inteligente"
      class="btn" target="_blank">
      Liberar acesso PRO
   </a>

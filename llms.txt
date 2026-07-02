@@ -1,0 +1,42 @@
+# llms.txt — CoreGov
+# https://llmstxt.org/
+# Este arquivo ajuda agentes de inteligência artificial a entenderem e navegarem pelo site da CoreGov.
+
+# Sobre a CoreGov
+A CoreGov é uma consultoria especializada em ONGs (estatutos, planos de negócio, captação de recursos), prefeituras (recursos federais via Transferegov) e agentes de IA para automatizar processos. Fundada por profissional com mais de 25 anos em projetos sociais e geração de emprego e renda.
+
+# Nossos Serviços Principais
+- Elaboração/Adequação de Estatutos para ONGs
+- Plano de Negócio Social
+- Curadoria de Patrocinadores
+- Recursos Federais para Prefeituras (Transferegov)
+- Agentes de IA e Automação de Processos
+- CoreGov App (plataforma de IA para gestão de conteúdo digital)
+
+# Links Importantes
+Site: https://coregov.com.br/
+Blog: https://coregov.com.br/blog/
+App: https://app.coregov.com.br/
+Editais: https://coregov.com.br/editais/
+Serviços: https://coregov.com.br/servicos.html
+Quem Somos: https://coregov.com.br/quem-somos.html
+Contato (WhatsApp): https://wa.me/5518991888698
+
+# Páginas do Blog
+- Por que sua ONG precisa de um estatuto social bem feito: /blog/por-que-sua-ong-precisa-de-estatuto.html
+- Captação de Recursos para ONGs: Guia Completo 2026: /blog/captacao-de-recursos-para-ongs-guia-completo.html
+- Editais Públicos: Como sua ONG pode acessar milhões: /blog/editais-publicos-como-acessar-recursos.html
+- Plano de Negócio Social: /blog/plano-de-negocio-social-para-ongs.html
+- Regularização de ONGs: /blog/regularizacao-de-ongs-passo-a-passo.html
+- Seu site está preparado para agentes de IA?: /blog/site-preparado-para-agentes-de-ia.html
+
+# Redes Sociais
+LinkedIn: https://www.linkedin.com/company/coregov
+WhatsApp: https://wa.me/5518991888698
+
+# Informações de Contato
+E-mail: contato@coregov.com.br
+WhatsApp: (18) 99188-8698
+
+# Palavras-chave
+CoreGov, consultoria ONG, estatuto ONG, captação de recursos, plano de negócio social, Transferegov, arborização urbana, agentes de IA, automação de processos, projetos para prefeituras, terceiro setor, recursos federais, leis de incentivo

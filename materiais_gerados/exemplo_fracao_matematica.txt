@@ -1,0 +1,272 @@
+╔══════════════════════════════════════════════════════════════╗
+║                    PROFESSORPRO                             ║
+║         Material Didático Gerado por IA                      ║
+╚══════════════════════════════════════════════════════════════╝
+
+Série: 6º ano Ensino Fundamental
+Disciplina: Matemática
+Tema: Fração
+Data: 30/06/2026
+
+──────────────────────────────────────────────────────────────────────
+
+# FRAÇÃO -- Material Completo
+
+## OBJETIVOS DE APRENDIZAGEM
+
+Ao final desta aula, o aluno será capaz de:
+- Identificar o que é uma fração e seus elementos (numerador e denominador)
+- Ler e escrever frações corretamente
+- Representar graficamente frações
+- Comparar frações com mesmo denominador
+- Resolver problemas simples envolvendo frações
+
+## HABILIDADES BNCC
+
+- EF06MA03 -- Frações: significados (parte/todo, quociente), equivalência, comparação
+- EF06MA04 -- Operações com frações (adição e subtração com mesmo denominador)
+
+──────────────────────────────────────────────────────────────────────
+
+# PLANO DE AULA
+
+## Duração: 2 aulas (50 min cada)
+
+## Objetivo Geral
+Compreender o conceito de fração como parte de um todo.
+
+## Conteúdos
+1. O que é uma fração? (parte/todo)
+2. Numerador e denominador
+3. Leitura de frações (meio, terça, quarta, etc.)
+4. Representação gráfica (pizza, barra, conjunto)
+5. Comparação de frações com mesmo denominador
+
+## Recursos Necessários
+- Pizza de papelão ou imagens de pizzas divididas
+- Barras de chocolate (ou desenhos)
+- Folhas de atividade impressas
+- Material dourado (opcional)
+
+## Metodologia
+
+### Aula 1 -- Introdução (50 min)
+
+| Tempo | Atividade | Descrição |
+|-------|-----------|-----------|
+| 0-10 min | Abertura | Pergunta: "Se eu comer 1 pedaço de uma pizza de 8, quanto comi?" |
+| 10-25 min | Exposição | Explicar numerador/denominador com exemplos visuais |
+| 25-35 min | Atividade prática | Dividir figuras em partes iguais e pintar frações |
+| 35-45 min | Registro | Desenhar e escrever frações no caderno |
+| 45-50 min | Encerramento | Socializar respostas |
+
+### Aula 2 -- Aprofundamento (50 min)
+
+| Tempo | Atividade | Descrição |
+|-------|-----------|-----------|
+| 0-10 min | Retomada | Revisão com perguntas orais |
+| 10-25 min | Comparação | Comparar frações com mesmo denominador |
+| 25-40 min | Atividade em grupo | Jogo de cartas com frações |
+| 40-50 min | Fechamento | "O que aprendemos?" -- roda de conversa |
+
+## Avaliação
+- Participação nas atividades
+- Correção dos exercícios
+- Respostas nas atividades escritas
+
+──────────────────────────────────────────────────────────────────────
+
+# ATIVIDADES
+
+## Atividade 1 -- Pinte a Fração
+
+Pinte a quantidade indicada em cada figura:
+
+1. 3/4 de uma pizza (desenhe uma pizza dividida em 4 partes, pinte 3)
+2. 2/3 de uma barra (desenhe uma barra dividida em 3 partes, pinte 2)
+3. 5/8 de um retângulo (desenhe um retângulo dividido em 8 partes, pinte 5)
+4. 1/2 de um quadrado (desenhe um quadrado dividido em 2 partes, pinte 1)
+
+## Atividade 2 -- Complete
+
+Complete com numerador e denominador:
+
+a) Na fração 3/5, o numerador é ____ e o denominador é ____
+b) Na fração 7/10, o numerador é ____ e o denominador é ____
+c) Na fração 2/6, o numerador é ____ e o denominador é ____
+d) Na fração 9/12, o numerador é ____ e o denominador é ____
+
+## Atividade 3 -- Leitura de Frações
+
+Escreva como se lê cada fração:
+
+1. 1/2 = ________________
+2. 1/3 = ________________
+3. 1/4 = ________________
+4. 1/5 = ________________
+5. 1/10 = ________________
+6. 2/3 = ________________
+7. 3/4 = ________________
+8. 7/10 = ________________
+
+## Atividade 4 -- Problemas
+
+Resolva:
+
+1. Maria comeu 3/8 de uma pizza. Quantos pedaços ela comeu se a pizza tem 8 pedaços?
+
+2. João leu 2/5 de um livro de 50 páginas. Quantas páginas ele leu?
+
+3. Uma barra de chocolate tem 12 quadradinhos. Pedro comeu 1/4. Quantos quadradinhos ele comeu?
+
+4. Em uma sala de 30 alunos, 2/3 são meninas. Quantas meninas há na sala?
+
+## Atividade 5 -- Comparação
+
+Compare as frações usando >, < ou =:
+
+1. 3/8 ___ 5/8
+2. 1/4 ___ 3/4
+3. 2/6 ___ 2/6
+4. 7/10 ___ 4/10
+5. 1/2 ___ 1/2
+6. 9/12 ___ 5/12
+
+──────────────────────────────────────────────────────────────────────
+
+# PROVA -- FRAÇÃO
+
+Nome: ________________________ Data: ____/____/______
+Turma: 6º ano
+
+---
+
+### Questão 1 (0,5 pt)
+O que indica o denominador de uma fração?
+a) ( ) Quantas partes foram pintadas
+b) ( ) Quantas partes o todo foi dividido
+c) ( ) O total de elementos
+d) ( ) A parte que sobrou
+
+### Questão 2 (0,5 pt)
+Na fração 3/8, o número 3 é chamado de:
+a) ( ) Denominador
+b) ( ) Numerador
+c) ( ) Quociente
+d) ( ) Resto
+
+### Questão 3 (0,5 pt)
+Como se lê a fração 1/5?
+a) ( ) Um quinto
+b) ( ) Um cinco
+c) ( ) Primeiro quinto
+d) ( ) Cinco avos
+
+### Questão 4 (0,5 pt)
+Qual figura representa 1/4?
+a) ( ) Um círculo dividido em 2 partes, 1 pintada
+b) ( ) Um círculo dividido em 4 partes, 1 pintada
+c) ( ) Um círculo dividido em 3 partes, 1 pintada
+d) ( ) Um círculo dividido em 4 partes, 3 pintadas
+
+### Questão 5 (1,0 pt)
+Explique com suas palavras o que é uma fração:
+
+________________________________________________________________
+
+________________________________________________________________
+
+### Questão 6 (1,0 pt)
+Pedro tem uma barra de chocolate com 12 quadradinhos. Ele comeu 1/3 da barra.
+a) Quantos quadradinhos ele comeu? ____
+b) Quantos quadradinhos sobraram? ____
+
+### Questões 7-10 (1,0 pt cada)
+
+7. Qual fração representa a parte pintada de uma figura dividida em 6 partes iguais com 2 partes pintadas?
+a) ( ) 2/6
+b) ( ) 6/2
+c) ( ) 2/4
+d) ( ) 4/6
+
+8. A fração 5/10 pode ser lida como:
+a) ( ) Cinco décimos
+b) ( ) Cinco centésimos
+c) ( ) Cinco milésimos
+d) ( ) Cinco avos
+
+9. Qual dessas frações é a maior?
+a) ( ) 2/8
+b) ( ) 5/8
+c) ( ) 1/8
+d) ( ) 7/8
+
+10. Em uma turma de 20 alunos, 3/5 usam óculos. Quantos alunos usam óculos?
+a) ( ) 6
+b) ( ) 8
+c) ( ) 10
+d) ( ) 12
+
+---
+
+### GABARITO
+
+| Q | Resposta |
+|---|----------|
+| 1 | B |
+| 2 | B |
+| 3 | A |
+| 4 | B |
+| 5 | Fração é uma forma de representar uma parte de um todo, indicada por dois números: numerador (partes consideradas) e denominador (total de partes) |
+| 6 | a) 4 b) 8 |
+| 7 | A |
+| 8 | A |
+| 9 | D |
+| 10 | D |
+
+──────────────────────────────────────────────────────────────────────
+
+# ROTEIRO DE SLIDES
+
+### Slide 1 -- Capa
+> FRAÇÃO
+> Matemática -- 6º ano
+
+### Slide 2 -- O que é uma fração?
+> Parte de um todo
+> Exemplo: pizza, bolo, barra de chocolate
+
+### Slide 3 -- Numerador e Denominador
+> 3/4
+> 3 = NUMERADOR (partes que peguei)
+> 4 = DENOMINADOR (total de partes)
+
+### Slide 4 -- Leitura das Frações
+> 1/2 = um meio
+> 1/3 = um terço
+> 1/4 = um quarto
+> 1/5 = um quinto
+> 1/10 = um décimo
+
+### Slide 5 -- Representação Gráfica
+> Pizza dividida em frações
+> Barras coloridas
+
+### Slide 6 -- Fração de uma Quantidade
+> Exemplo: 2/5 de 50 = 50 / 5 * 2 = 20
+
+### Slide 7 -- Comparando Frações
+> Com mesmo denominador: maior numerador = maior fração
+> 3/8 < 5/8
+
+### Slide 8 -- Resumo
+> Mapa mental: Fração = parte/todo
+> Numerador / Denominador
+
+──────────────────────────────────────────────────────────────────────
+
+╔══════════════════════════════════════════════════════════════╗
+║            ProfessorPro -- by COREGOV                        ║
+║               coregov.com.br/professorpro                    ║
+║         Dúvidas? WhatsApp: (18) 9 9188-8698                   ║
+╚══════════════════════════════════════════════════════════════╝

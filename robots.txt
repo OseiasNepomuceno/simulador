@@ -1,4 +1,50 @@
+# Robots.txt — CoreGov
+# https://coregov.com.br/robots.txt
+
+# Regras gerais para todos os bots
 User-agent: *
 Allow: /
+Disallow: /node_modules/
+Disallow: /materiais_gerados/
 
+# Google (incluindo Google-Extended para AI training)
+User-agent: Googlebot
+Allow: /
+Allow: /blog/
+Allow: /editais/
+Allow: /servicos.html
+Allow: /quem-somos.html
+
+User-agent: Googlebot-Image
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.svg
+
+# OpenAI (GPTBot — crawler para treinamento de IA)
+User-agent: GPTBot
+Allow: /
+Disallow: /node_modules/
+Disallow: /materiais_gerados/
+
+# Anthropic (Claude)
+User-agent: Claude-Web
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Sitemaps
 Sitemap: https://coregov.com.br/sitemap.xml

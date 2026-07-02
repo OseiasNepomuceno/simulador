@@ -1,0 +1,50 @@
+# 🦞 Atualização Automática de Editais COREGOV
+# Roda diariamente para manter os dados dos editais atualizados
+name: 📋 Atualizar Editais
+
+on:
+  schedule:
+    # Roda todo dia às 8h e 18h (horário comercial)
+    - cron: '0 11,21 * * *'  # 08:00 e 18:00 BRT (UTC-3)
+  workflow_dispatch:  # Permite rodar manualmente
+
+permissions:
+  contents: write
+
+jobs:
+  raspar-editais:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔄 Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 🕷️ Executar raspador de editais
+        run: python raspar_editais.py
+
+      - name: 📊 Verificar resultado
+        run: |
+          echo "=== ESTATÍSTICAS ==="
+          python -c "
+          import json
+          with open('editais/dados_editais.json') as f:
+              d = json.load(f)
+          r = d['resumo_estrategico']
+          print(f'Editais: {r[\"total_editais\"]}')
+          print(f'Abertos: {r[\"editais_abertos\"]}')
+          print(f'Total: {r[\"soma_valores_humano\"]}')
+          print(f'ONGs: {r[\"editais_para_ong\"]}')
+          "
+
+      - name: 📤 Commitar alterações
+        run: |
+          git config user.name "PicoClaw Bot"
+          git config user.email "bot@coregov.com.br"
+          git add editais/dados_editais.json
+          git diff --quiet && git diff --staged --quiet || \
+            (git commit -m "🦞 Atualização automática de editais - $(date +'%d/%m/%Y %H:%M')" && \
+             git push)

@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreGov | Consultoria para ONGs e Projetos Sociais</title>
+
+    <!-- SEO -->
+    <meta name="description" content="CoreGov: consultoria especializada em estatutos, planos de negócio e captação de recursos para ONGs e projetos sociais. +15 projetos estruturados. Transforme sua organização.">
+    <meta name="keywords" content="consultoria ONG, estatuto ONG, captacao de recursos, plano de negocio social, projetos sociais, adequacao de estatuto">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="CoreGov">
+    <link rel="canonical" href="https://coregov.com.br/">
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CoreGov | Consultoria para ONGs e Projetos Sociais">
+    <meta property="og:description" content="Da elaboracao de estatutos a captacao de recursos: transformamos projetos sociais em oportunidades reais de impacto.">
+    <meta property="og:url" content="https://coregov.com.br/">
+    <meta property="og:image" content="https://coregov.com.br/coregov01.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="CoreGov">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CoreGov | Consultoria para ONGs e Projetos Sociais">
+    <meta name="twitter:description" content="Da elaboracao de estatutos a captacao de recursos: transformamos projetos sociais em oportunidades reais.">
+    <meta name="twitter:image" content="https://coregov.com.br/coregov01.png">
+
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="COLAR_CODIGO_AQUI">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME (ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        :root {
+            --azul: #0f3460;
+            --azul-escuro: #091c33;
+            --dourado: #f5c518;
+            --vermelho: #e94560;
+            --bg: #f8fafc;
+            --bg-alt: #f1f5f9;
+            --branco: #ffffff;
+            --texto: #1e293b;
+            --texto-suave: #64748b;
+            --borda: #e2e8f0;
+            --sombra: 0 4px 20px rgba(15, 52, 96, 0.08);
+            --sombra-hover: 0 8px 32px rgba(15, 52, 96, 0.15);
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--texto);
+            line-height: 1.7;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 28px;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.55);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--borda);
+            transition: var(--transition);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--azul);
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--dourado); }
+
+        nav { display: flex; align-items: center; gap: 8px; }
+
+        nav a {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--texto-suave);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        nav a:hover {
+            color: var(--azul);
+            background: rgba(15, 52, 96, 0.06);
+        }
+
+        .nav-cta {
+            background: var(--azul);
+            color: #fff !important;
+            padding: 10px 20px !important;
+            font-weight: 600;
+        }
+        .nav-cta:hover {
+            background: var(--azul-escuro) !important;
+            color: #fff !important;
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--azul);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* ===== SECTIONS ===== */
+        section { padding: 100px 0; }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--dourado);
+            background: rgba(245, 197, 24, 0.12);
+            padding: 4px 14px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--azul);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .section-sub {
+            font-size: 18px;
+            color: var(--texto-suave);
+            max-width: 640px;
+            line-height: 1.6;
+        }
+
+        /* ===== HERO ===== */
+        #hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #eef2f7 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(15, 52, 96, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        #hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(245, 197, 24, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(15, 52, 96, 0.08);
+            color: var(--azul);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px 6px 8px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+        .hero-badge i { font-size: 14px; }
+
+        .hero-title {
+            font-size: 46px;
+            font-weight: 800;
+            color: var(--azul);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .hero-title span {
+            color: var(--dourado);
+            position: relative;
+        }
+        .hero-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: rgba(245, 197, 24, 0.25);
+            border-radius: 4px;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: var(--texto-suave);
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--azul);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: var(--azul-escuro);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(15, 52, 96, 0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--azul);
+            border: 2px solid var(--azul);
+        }
+        .btn-outline:hover {
+            background: var(--azul);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: #fff;
+        }
+        .btn-whatsapp:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card-destaque {
+            background: var(--branco);
+            border-radius: var(--radius);
+            padding: 40px 36px;
+            box-shadow: var(--sombra);
+            border: 1px solid var(--borda);
+            width: 100%;
+            max-width: 420px;
+        }
+        .hero-card-destaque .stat-number {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--azul);
+            line-height: 1;
+        }
+        .hero-card-destaque .stat-label {
+            font-size: 14px;
+            color: var(--texto-suave);
+            margin-bottom: 20px;
+        }
+        .hero-card-destaque ul {
+            list-style: none;
+        }
+        .hero-card-destaque ul li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--borda);
+            font-size: 14px;
+        }
+        .hero-card-destaque ul li:last-child { border: none; }
+        .hero-card-destaque ul li i {
+            color: var(--dourado);
+            font-size: 14px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* ===== SERVIÇOS ===== */
+        #servicos {
+            background: var(--branco);
+        }
+
+        .servicos-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .servicos-header .section-sub {
+            margin: 0 auto;
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .servico-card {
+            background: var(--branco);
+            border: 1px solid var(--borda);
+            border-radius: var(--radius);
+            padding: 40px 32px;
+            box-shadow: var(--sombra);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .servico-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--dourado);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .servico-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--sombra-hover);
+        }
+        .servico-card:hover::before { opacity: 1; }
+
+        .servico-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(15, 52, 96, 0.06);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--azul);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        .servico-card:hover .servico-icon {
+            background: var(--azul);
+            color: #fff;
+        }
+
+        .servico-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--azul);
+            margin-bottom: 12px;
+        }
+
+        .servico-card p {
+            font-size: 14px;
+            color: var(--texto-suave);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .servico-card .servico-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--dourado);
+            background: rgba(245, 197, 24, 0.1);
+            padding: 3px 12px;
+            border-radius: 100px;
+        }
+
+        .servico-card .card-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--azul);
+            margin-top: 8px;
+            transition: var(--transition);
+        }
+        .servico-card .card-cta:hover {
+            color: var(--dourado);
+            gap: 10px;
+        }
+
+        /* Card destaque (diferencial) */
+        .servico-card.destaque {
+            border-color: var(--dourado);
+            border-width: 2px;
+        }
+        .servico-card.destaque::before {
+            background: var(--dourado);
+            opacity: 1;
+        }
+        .servico-card.destaque .servico-icon {
+            background: rgba(245, 197, 24, 0.15);
+            color: var(--dourado);
+        }
+        .servico-card.destaque:hover .servico-icon {
+            background: var(--dourado);
+            color: var(--azul-escuro);
+        }
+
+        /* ===== SOBRE ===== */
+        #sobre {
+            background: var(--bg-alt);
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .sobre-texto p {
+            color: var(--texto-suave);
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        .sobre-texto p:last-child { margin-bottom: 0; }
+
+        .sobre-dados {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .dado-item {
+            background: var(--branco);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: var(--sombra);
+            border: 1px solid var(--borda);
+        }
+        .dado-item .numero {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--azul);
+        }
+        .dado-item .rotulo {
+            font-size: 13px;
+            color: var(--texto-suave);
+            margin-top: 4px;
+        }
+
+        /* ===== PLATAFORMA (APP) ===== */
+        #plataforma {
+            background: var(--branco);
+        }
+
+        .plataforma-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .plataforma-conteudo .section-sub {
+            margin-bottom: 24px;
+        }
+
+        .plataforma-conteudo ul {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+        .plataforma-conteudo ul li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            font-size: 15px;
+            color: var(--texto);
+        }
+        .plataforma-conteudo ul li i {
+            color: var(--dourado);
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .plataforma-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .plataforma-card {
+            background: linear-gradient(135deg, var(--azul) 0%, var(--azul-escuro) 100%);
+            border-radius: var(--radius);
+            padding: 40px 36px;
+            color: #fff;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 12px 40px rgba(15, 52, 96, 0.25);
+        }
+        .plataforma-card i {
+            font-size: 36px;
+            color: var(--dourado);
+            margin-bottom: 16px;
+        }
+        .plataforma-card h4 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .plataforma-card p {
+            font-size: 14px;
+            opacity: 0.85;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .plataforma-card .btn {
+            background: var(--dourado);
+            color: var(--azul-escuro);
+            font-weight: 700;
+        }
+        .plataforma-card .btn:hover {
+            background: #e0b010;
+            transform: translateY(-2px);
+        }
+
+        /* ===== CONTATO ===== */
+        #contato {
+            background: var(--bg-alt);
+        }
+
+        .contato-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .contato-info h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--azul);
+            margin-bottom: 12px;
+        }
+        .contato-info p {
+            color: var(--texto-suave);
+            margin-bottom: 24px;
+        }
+        .contato-info .contato-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+        .contato-info .contato-item i {
+            width: 44px;
+            height: 44px;
+            background: var(--branco);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul);
+            font-size: 18px;
+            border: 1px solid var(--borda);
+        }
+        .contato-info .contato-item div {
+            font-size: 14px;
+        }
+        .contato-info .contato-item strong {
+            display: block;
+            font-size: 15px;
+            color: var(--texto);
+        }
+
+        .contato-form {
+            background: var(--branco);
+            border-radius: var(--radius);
+            padding: 36px;
+            box-shadow: var(--sombra);
+            border: 1px solid var(--borda);
+        }
+        .contato-form h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--azul);
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--texto);
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--borda);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            color: var(--texto);
+            background: var(--bg);
+            transition: var(--transition);
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--azul);
+            box-shadow: 0 0 0 3px rgba(15, 52, 96, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--azul-escuro);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 48px 0 32px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+        .footer-brand .logo {
+            color: #fff;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        .footer-col h5 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .footer-col a {
+            display: block;
+            font-size: 14px;
+            padding: 6px 0;
+            color: rgba(255, 255, 255, 0.6);
+            transition: var(--transition);
+        }
+        .footer-col a:hover {
+            color: var(--dourado);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 13px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            transition: var(--transition);
+            font-size: 16px;
+        }
+        .footer-social a:hover {
+            background: var(--dourado);
+            color: var(--azul-escuro);
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 36px; }
+            .servicos-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 72px 0; }
+
+            .menu-toggle { display: block; }
+            nav {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--branco);
+                border-bottom: 1px solid var(--borda);
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 4px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            }
+            nav.open { display: flex; }
+            nav a { padding: 12px 16px; width: 100%; }
+            .nav-cta { text-align: center; }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            #hero { padding: 120px 0 72px; }
+            .hero-title { font-size: 30px; }
+            .hero-desc { font-size: 16px; }
+
+            .servicos-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 28px; }
+
+            .sobre-grid { grid-template-columns: 1fr; gap: 32px; }
+            .sobre-dados { grid-template-columns: 1fr 1fr; }
+
+            .plataforma-inner { grid-template-columns: 1fr; gap: 32px; }
+
+            .contato-grid { grid-template-columns: 1fr; }
+            .contato-form { padding: 24px; }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-card-destaque { padding: 28px 24px; }
+            .plataforma-card { padding: 28px 24px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 26px; }
+            .hero-actions { flex-direction: column; }
+            .btn { justify-content: center; }
+            .sobre-dados { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+    <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." 
+       target="_blank" 
+       class="whatsapp-float"
+       aria-label="Fale conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-inner">
+            <a href="#hero" class="logo">CORE<span>GOV</span></a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="mainNav">
+                <a href="#servicos">Serviços</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#plataforma">Plataforma</a>
+                <a href="#contato">Contato</a>
+                <a href="editais/">📋 Editais</a>
+                <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." 
+                   target="_blank" 
+                   class="nav-cta">
+                    <i class="fab fa-whatsapp"></i> Fale Conosco
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-handshake"></i>
+                    Consultoria especializada para ONGs
+                </div>
+                <h1 class="hero-title">
+                    Sua ONG <span>estruturada</span> para crescer e transformar
+                </h1>
+                <p class="hero-desc">
+                    Da elaboração de estatutos à curadoria de patrocinadores: 
+                    transformamos projetos sociais em oportunidades reais 
+                    de impacto e sustentabilidade financeira.
+                </p>
+                <div class="hero-actions">
+                    <a href="#servicos" class="btn btn-primary">
+                        <i class="fas fa-arrow-down"></i> Ver Serviços
+                    </a>
+                    <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Quero%20consultar%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." 
+                       target="_blank" 
+                       class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Falar Agora
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card-destaque">
+                    <div class="stat-number">+15</div>
+                    <div class="stat-label">projetos estruturados</div>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Estatutos e adequação legal</li>
+                        <li><i class="fas fa-check-circle"></i> Planos de negócio sociais</li>
+                        <li><i class="fas fa-check-circle"></i> Curadoria de patrocinadores</li>
+                        <li><i class="fas fa-check-circle"></i> Captação de recursos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVIÇOS ===== -->
+    <section id="servicos">
+        <div class="container">
+            <div class="servicos-header">
+                <div class="section-tag">Nossos Serviços</div>
+                <h2 class="section-title">Soluções completas para sua organização</h2>
+                <p class="section-sub">
+                    Cada serviço é desenhado sob medida para fortalecer a gestão, 
+                    atrair investidores e gerar resultado social duradouro.
+                </p>
+            </div>
+
+            <div class="servicos-grid">
+                <!-- Card 1: Estatutos -->
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Elaboração/Adequação de Estatutos</h3>
+                    <p>
+                        Criação ou adequação de estatuto social para ONGs, associações 
+                        e institutos. Documento alinhado à legislação vigente e preparado 
+                        para editais públicos e privados.
+                    </p>
+                    <span class="servico-tag">Base Legal</span>
+                    <br>
+                    <a href="editais/" 
+                       class="card-cta">
+                        Ver Editais Disponíveis <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2: Plano de Negócio (destaque) -->
+                <div class="servico-card destaque">
+                    <div class="servico-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Plano de Negócio Social</h3>
+                    <p>
+                        Estruturação financeira e estratégica do seu projeto. 
+                        Fluxo de caixa, cronograma, análise de viabilidade e 
+                        apresentação profissional para convencer investidores 
+                        e patrocinadores.
+                    </p>
+                    <span class="servico-tag">⭐ Mais Procurado</span>
+                    <br>
+                    <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Plano%20de%20Neg%C3%B3cio%20Social." 
+                       target="_blank" 
+                       class="card-cta">
+                        Consultar <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3: Curadoria de Patrocinadores -->
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Curadoria de Patrocinadores</h3>
+                    <p>
+                        Mapeamento inteligente de empresas, fundações e editais 
+                        alinhados ao perfil do seu projeto. Apresentação 
+                        personalizada e acompanhamento até a proposta final.
+                    </p>
+                    <span class="servico-tag">Novo</span>
+                    <br>
+                    <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Curadoria%20de%20Patrocinadores." 
+                       target="_blank" 
+                       class="card-cta">
+                        Consultar <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section id="sobre">
+        <div class="container">
+            <div class="sobre-grid">
+                <div class="sobre-texto">
+                    <div class="section-tag">Quem Somos</div>
+                    <h2 class="section-title">Expertise que transforma projetos em resultados</h2>
+                    <p>
+                        A <strong>CoreGov</strong> nasceu da experiência prática de quem já 
+                        estruturou dezenas de projetos sociais, elaborou estatutos, 
+                        planos de negócio e conexões com patrocinadores para ONGs 
+                        de todos os portes.
+                    </p>
+                    <p>
+                        Nosso diferencial é unir <strong>conhecimento técnico</strong> 
+                        (legislação, gestão, finanças) com <strong>inteligência artificial</strong> 
+                        para acelerar entregas e ampliar o alcance dos projetos que 
+                        atendemos.
+                    </p>
+                    <p>
+                        Acreditamos que toda organização social merece ter uma 
+                        base sólida para crescer e gerar impacto verdadeiro.
+                    </p>
+                </div>
+
+                <div class="sobre-dados">
+                    <div class="dado-item">
+                        <div class="numero">+15</div>
+                        <div class="rotulo">Projetos Estruturados</div>
+                    </div>
+                    <div class="dado-item">
+                        <div class="numero">Consultoria para MEI, Me e EPP</div>
+                        <div class="rotulo">Recursos para Todos</div>
+                    </div>
+                    <div class="dado-item">
+                        <div class="numero">100%</div>
+                        <div class="rotulo">Adequação Legal</div>
+                    </div>
+                    <div class="dado-item">
+                        <div class="numero">+30</div>
+                        <div class="rotulo">ONGs Atendidas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PLATAFORMA (APP) ===== -->
+    <section id="plataforma">
+        <div class="container">
+            <div class="plataforma-inner">
+                <div class="plataforma-conteudo">
+                    <div class="section-tag">Tecnologia</div>
+                    <h2 class="section-title">CoreGov App: IA a favor da sua gestão</h2>
+                    <p class="section-sub">
+                        Nossa plataforma inteligente ajuda sua ONG a criar e 
+                        gerenciar conteúdo digital com o poder da Inteligência 
+                        Artificial.
+                    </p>
+                    <ul>
+                        <li><i class="fas fa-robot"></i> Copiloto de IA para posts e comunicados</li>
+                        <li><i class="fas fa-calendar-alt"></i> Agendamento inteligente de redes sociais</li>
+                        <li><i class="fas fa-chart-bar"></i> Relatórios de engajamento e alcance</li>
+                        <li><i class="fas fa-users"></i> Suporte a múltiplas redes integradas</li>
+                    </ul>
+                    <a href="https://app.coregov.com.br" target="_blank" class="btn btn-outline">
+                        <i class="fas fa-external-link-alt"></i> Conhecer o App
+                    </a>
+                </div>
+
+                <div class="plataforma-visual">
+                    <div class="plataforma-card">
+                        <i class="fas fa-sparkles"></i>
+                        <h4>Experimente grátis</h4>
+                        <p>
+                            Crie sua conta no CoreGov App e descubra como a IA 
+                            pode turbinar a comunicação da sua organização social.
+                        </p>
+                        <a href="https://app.coregov.com.br" target="_blank" class="btn">
+                            <i class="fas fa-rocket"></i> Criar Conta Gratuita
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section id="contato">
+        <div class="container">
+            <div class="contato-grid">
+                <div class="contato-info">
+                    <div class="section-tag">Contato</div>
+                    <h3>Vamos conversar sobre seu projeto?</h3>
+                    <p>
+                        Preencha o formulário ou fale diretamente pelo WhatsApp. 
+                        Respondemos em até 24 horas úteis.
+                    </p>
+
+                    <div class="contato-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <a href="https://wa.me/5518991888698" target="_blank" style="color: var(--azul);">
+                                (18) 99188-8698
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contato-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>E-mail</strong>
+                            contato@coregov.com.br
+                        </div>
+                    </div>
+
+                    <div class="contato-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <strong>Site</strong>
+                            coregov.com.br
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 24px;">
+                        <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." 
+                           target="_blank" 
+                           class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contato-form">
+                    <h4>Solicite um orçamento</h4>
+                    <form action="https://formsubmit.co/contato@coregov.com.br" method="POST">
+                        <input type="hidden" name="_subject" value="Novo contato - CoreGov">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servico">Serviço de interesse</label>
+                            <select id="servico" name="servico">
+                                <option value="">Selecione...</option>
+                                <option value="estatuto">Elaboração de Estatuto</option>
+                                <option value="plano-negocio">Plano de Negócio Social</option>
+                                <option value="curadoria">Curadoria de Patrocinadores</option>
+                                <option value="app">CoreGov App</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre seu projeto..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">CORE<span>GOV</span></div>
+                    <p>
+                        Consultoria especializada em estruturação de projetos sociais, 
+                        estatutos, planos de negócio e curadoria de patrocinadores 
+                        para ONGs em todo o Brasil.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h5>Serviços</h5>
+                    <a href="#servicos">Elaboração de Estatutos</a>
+                    <a href="#servicos">Plano de Negócio Social</a>
+                    <a href="#servicos">Curadoria de Patrocinadores</a>
+                    <a href="#plataforma">CoreGov App</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Links</h5>
+                    <a href="#sobre">Quem Somos</a>
+                    <a href="#contato">Contato</a>
+                    <a href="https://app.coregov.com.br" target="_blank">Plataforma</a>
+                    <a href="https://wa.me/5518991888698" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 CoreGov. Todos os direitos reservados.</span>
+                <div class="footer-social">
+                    <a href="https://wa.me/5518991888698" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/coregov" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // Menu mobile toggle
+        const toggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('mainNav');
+
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+            const icon = toggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Fechar menu ao clicar em link
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+                const icon = toggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Header shadow ao scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
