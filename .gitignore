@@ -4,3 +4,52 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# Dependências
+node_modules/
+
+# Arquivos temporários
+*.bak
+*.tmp
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.env/
+.venv/
+
+# Assets grandes / binários desnecessários
+DejaVuSans.ttf
+
+# Scripts locais
+_push.ps1
+git_push_vagas.bat
+
+# Arquivos de configuração local
+config.json
+secrets.json
