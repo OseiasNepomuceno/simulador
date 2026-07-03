@@ -40,20 +40,74 @@
 
         /* HEADER */
         header {
-            position: fixed; top:0; width:100%;
-            padding: 16px 10%;
-            display: flex; justify-content: space-between; align-items: center;
-            background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--borda); z-index: 1000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--borda);
             transition: var(--transition);
         }
-        .logo-icon { height: 36px; }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--azul);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+        .logo span { color: var(--dourado); }
+
+        nav { display: flex; align-items: center; gap: 8px; }
+
         nav a {
-            margin: 0 12px; color: var(--texto-suave);
-            text-decoration: none; font-size: 14px; font-weight: 500;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--texto-suave);
+            border-radius: 8px;
             transition: var(--transition);
+            text-decoration: none;
         }
-        nav a:hover { color: var(--azul); }
+        nav a:hover {
+            color: var(--azul);
+            background: rgba(15, 52, 96, 0.06);
+        }
+
+        .nav-cta {
+            background: var(--azul);
+            color: #fff !important;
+            padding: 10px 20px !important;
+            font-weight: 600;
+        }
+        .nav-cta:hover {
+            background: var(--azul-escuro) !important;
+            color: #fff !important;
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--azul);
+            cursor: pointer;
+            padding: 4px;
+        }
 
         /* CONTAINER */
         .container { max-width: 1000px; margin: auto; padding: 40px 24px; }
@@ -193,7 +247,25 @@
         /* RESPONSIVO */
         @media(max-width: 768px) {
             body { padding-top: 80px; }
-            header { padding: 14px 5%; }
+
+            .menu-toggle { display: block; }
+            nav {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--branco);
+                border-bottom: 1px solid var(--borda);
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 4px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            }
+            nav.open { display: flex; }
+            nav a { padding: 12px 16px; width: 100%; margin: 0; }
+            .nav-cta { text-align: center; }
+
             .hero h1 { font-size: 24px; }
             thead th, tbody td { padding: 12px 14px; font-size: 13px; }
             .stats { gap: 12px; }
@@ -207,13 +279,27 @@
 <body>
 
 <header>
-    <img src="../logo-icon.png" class="logo-icon" alt="COREGOV">
-    <nav>
-        <a href="../index.html">Início</a>
-        <a href="../servicos.html">Serviços</a>
-        <a href="../ferramentas.html">Ferramentas</a>
-        <a href="../simulador.html">Simulador</a>
-    </nav>
+    <div class="container header-inner">
+        <a href="../" class="logo">CORE<span>GOV</span></a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav id="mainNav">
+            <a href="../#servicos">Serviços</a>
+            <a href="../#sobre">Sobre</a>
+            <a href="../#plataforma">Plataforma</a>
+            <a href="../#contato">Contato</a>
+            <a href="./">📋 Editais</a>
+            <a href="../produtos/">🛒 Produtos</a>
+            <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov."
+               target="_blank"
+               class="nav-cta">
+                <i class="fab fa-whatsapp"></i> Fale Conosco
+            </a>
+        </nav>
+    </div>
 </header>
 
 <div class="container">
@@ -425,6 +511,39 @@ document.getElementById('filtros').addEventListener('click', (e) => {
 // ═══════════════════════════════════════════════
 
 carregarDados();
+</script>
+
+<script>
+    // Menu mobile toggle
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('mainNav');
+
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        const icon = toggle.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+
+    // Fechar menu ao clicar em link
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            const icon = toggle.querySelector('i');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+        });
+    });
+
+    // Header shadow ao scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+            header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+        } else {
+            header.style.boxShadow = 'none';
+        }
+    });
 </script>
 
 </body>
