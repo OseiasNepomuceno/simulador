@@ -78,7 +78,7 @@
         .aba-painel { display: none; }
         .aba-painel.ativa { display: block; }
 
-        .btn-whatsapp-html {
+        .btn-telegram-html {
             display: block; width: 100%; background: #128c7e; color: white; text-align: center;
             padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px;
         }
@@ -118,7 +118,7 @@
                         <strong>ðŸš¨ STATUS DA ORGANIZAÃ‡ÃƒO: INAPTA PARA RECEBIMENTO DE EMENDAS</strong><br>
                         Termos obrigatÃ³rios ausentes. Ã‰ necessÃ¡rio emitir emendas de adequaÃ§Ã£o tÃ©cnica e ata corretiva.
                     </div>
-                    <a href="#" id="link-whats" target="_blank" class="btn-whatsapp-html">ðŸ’¬ Solicitar Minuta de AdequaÃ§Ã£o</a>
+                    <a href="#" id="link-whats" target="_blank" class="btn-telegram-html">ðŸ’¬ Solicitar Minuta de AdequaÃ§Ã£o</a>
                 </div>
             </section>
 
@@ -177,7 +177,7 @@
             const texto = document.getElementById('txt-estatuto').value;
             if(!texto.trim()) return alert("Insira o texto para auditar.");
             const msg = "OlÃ¡! ConcluÃ­ a validaÃ§Ã£o do Estatuto no CoreGov e verifiquei inconformidades com o TransfereGov. Preciso de suporte.";
-            document.getElementById('link-whats').href = `https://wa.me/5518991888698?text=${encodeURIComponent(msg)}`;
+            document.getElementById('link-whats').href = `https://t.me/coregovbr?text=${encodeURIComponent(msg)}`;
             document.getElementById('resultado-auditoria').style.display = 'block';
         }
     </script>

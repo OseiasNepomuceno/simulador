@@ -198,14 +198,14 @@
             box-shadow: 0 6px 24px rgba(34, 197, 94, 0.3);
         }
 
-        .btn-whatsapp {
+        .btn-telegram {
             background-color: #128c7e;
             color: white;
             box-shadow: 0 4px 20px rgba(18, 140, 126, 0.2);
             margin-top: 16px;
         }
 
-        .btn-whatsapp:hover {
+        .btn-telegram:hover {
             background-color: #075e54;
             box-shadow: 0 6px 24px rgba(18, 140, 126, 0.3);
         }
@@ -634,7 +634,7 @@ function gerarAnalise(nome, texto){
 
     ${htmlOportunidades}
 
-    <button class="btn btn-whatsapp" onclick="whats('${nome}')">
+    <button class="btn btn-telegram" onclick="whats('${nome}')">
         🛠️ Solicitar Minuta de Adequação e Regularizar Entidade
     </button>
     `;
@@ -649,7 +649,7 @@ function whats(nome){
         editaisMsg = ` Vi que existem ${r.editais_abertos} editais abertos com ${r.soma_valores_humano} disponíveis e meu estatuto me impede de captar. Quero saber como sua empresa pode me orientar sobre quais editais são ideais para meu perfil e quanto submeter em cada projeto.`;
     }
     let msg = encodeURIComponent(`Olá! Me chamo ${nome}. Utilizei o Revisor de Estatuto PRO e o relatório apontou falhas de adequação no estatuto perante as portarias do TransfereGov (424/2016 e atualizações recentes).${editaisMsg} Preciso de suporte especializado e orçamento para emissão da ata e cláusulas corretivas.`);
-    window.open(`https://wa.me/5518991888698?text=${msg}`, "_blank");
+    window.open(`https://t.me/coregovbr?text=${msg}`, "_blank");
 }
 </script>
 

@@ -103,8 +103,8 @@ button {
 .red { background: #7a1f1f; }
 .green { background: #1f6f3a; }
 
-.whatsapp {
-  background: #25d366;
+.telegram-btn {
+  background: #0088cc;
 }
 </style>
 </head>
@@ -134,7 +134,7 @@ button {
 
 <!-- DADOS -->
 <input type="text" id="nomeLead" placeholder="Seu nome">
-<input type="text" id="whats" placeholder="WhatsApp">
+<input type="text" id="telegram" placeholder="Telegram">
 
 <input type="number" id="receita" placeholder="Faturamento mensal">
 <input type="number" id="simples" value="8">
@@ -235,7 +235,7 @@ document.getElementById("resultado-completo").innerHTML = `
     ✔ Estratégia de economia tributária
   </div>
 
-  <button class="whatsapp" onclick="window.open('https://wa.me/55${whats}?text=${encodeURIComponent(texto)}','_blank')">
+  <button class="telegram-btn" onclick="window.open('https://t.me/coregovbr?text='+encodeURIComponent(texto),'_blank')">
     Falar com especialista
   </button>
 `;

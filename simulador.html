@@ -143,8 +143,8 @@ button {
 .red { background: #7a1f1f; }
 .green { background: #1f6f3a; }
 
-.whatsapp {
-  background: #25d366;
+.telegram-btn {
+  background: #0088cc;
   color: #000;
   margin-top: 10px;
 }
@@ -182,7 +182,7 @@ button {
 
 <!-- LEAD CAPTURE -->
 <input type="text" id="nome" placeholder="Seu nome">
-<input type="text" id="whats" placeholder="WhatsApp (DDD + número)">
+<input type="text" id="telegram" placeholder="Telegram (DDD + número)">
 
 <select id="tipo">
   <option value="mei">MEI</option>
@@ -247,7 +247,7 @@ document.getElementById("resultado").innerHTML = `
     📌 Avaliar regime tributário
   </div>
 
-  <button class="whatsapp" onclick="window.open('https://wa.me/55${whats}?text=${encodeURIComponent(texto)}','_blank')">
+  <button class="telegram-btn" onclick="window.open('https://t.me/coregovbr?text='+encodeURIComponent(texto),'_blank')">
     Falar com especialista agora
   </button>
 `;
