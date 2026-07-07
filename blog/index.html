@@ -1,107 +1,385 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog COREGOV | ONGs, Captação de Recursos e Gestão</title>
+    <meta name="description" content="Conteúdos sobre ONGs, estatutos, captação de recursos, editais, leis de incentivo, terceiro setor e gestão para organizações sociais.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="CoreGov">
+    <link rel="canonical" href="https://coregov.com.br/blog/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<title>Blog COREGOV | ONGs, CaptaÃ§Ã£o de Recursos e GestÃ£o</title>
+    <style>
+        :root {
+            --azul: #0f3460;
+            --azul-escuro: #091c33;
+            --dourado: #f5c518;
+            --vermelho: #e94560;
+            --bg: #f8fafc;
+            --bg-alt: #f1f5f9;
+            --branco: #ffffff;
+            --texto: #1e293b;
+            --texto-suave: #64748b;
+            --borda: #e2e8f0;
+            --sombra: 0 4px 20px rgba(15, 52, 96, 0.08);
+            --sombra-hover: 0 8px 32px rgba(15, 52, 96, 0.15);
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
 
-<meta name="description" content="ConteÃºdos sobre ONGs, estatutos, captaÃ§Ã£o de recursos, editais, leis de incentivo, terceiro setor e gestÃ£o para organizaÃ§Ãµes sociais.">
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--texto);
+            line-height: 1.7;
+            padding-top: 90px;
+        }
 
-<style>
-:root {
-  --verde:#00FF9F;
-  --azul:#0B1220;
-  --azul-medio:#111A2E;
-  --cinza:#CCCCCC;
-}
-* {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body {background:var(--azul);color:#fff;padding-top:90px;}
-header {position:fixed;top:0;width:100%;padding:12px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(11,18,32,0.85);backdrop-filter:blur(10px);z-index:1000;}
-.logo-icon {height:34px;}
-.brand {display:flex;align-items:center;gap:10px;}
-.brand-name {color:var(--verde);font-weight:700;}
-.brand-sub {font-size:11px;color:var(--cinza);}
-nav a {margin:0 8px;color:var(--cinza);text-decoration:none;}
-nav a:hover {color:var(--verde);}
-nav a.active {color:var(--verde);font-weight:bold;}
-.btn {background:var(--verde);color:#000;padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:bold;}
-.container {max-width:900px;margin:120px auto 40px auto;padding:40px;}
-h1 span{color:var(--verde)}
-h2 {color:var(--verde);margin-top:40px;margin-bottom:15px;}
-ul {line-height:2.0;margin-bottom:30px;}
-ul li a {color:#00ff9f;text-decoration:none;}
-ul li a:hover {text-decoration:underline;}
-.tag {display:inline-block;background:var(--azul-medio);color:var(--cinza);font-size:11px;padding:2px 8px;border-radius:4px;margin-left:5px;}
-footer {text-align:center;padding:30px;color:#888;}
-</style>
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--borda);
+            transition: var(--transition);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--azul);
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--dourado); }
+
+        nav { display: flex; align-items: center; gap: 8px; }
+
+        nav a {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--texto-suave);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        nav a:hover {
+            color: var(--azul);
+            background: rgba(15, 52, 96, 0.06);
+        }
+        nav a.active {
+            color: var(--azul);
+            background: rgba(15, 52, 96, 0.06);
+            font-weight: 600;
+        }
+
+        .nav-cta {
+            background: var(--azul);
+            color: #fff !important;
+            padding: 10px 20px !important;
+            font-weight: 600;
+        }
+        .nav-cta:hover {
+            background: var(--azul-escuro) !important;
+            color: #fff !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--azul);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* ===== BLOG HERO ===== */
+        .blog-hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--azul);
+            margin-bottom: 12px;
+        }
+        .blog-hero h1 span {
+            color: var(--dourado);
+        }
+        .blog-hero p {
+            font-size: 17px;
+            color: var(--texto-suave);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== BLOG CATEGORIES ===== */
+        .blog-section {
+            margin-bottom: 48px;
+        }
+
+        .blog-section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--azul);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--dourado);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .blog-section h2 i {
+            color: var(--dourado);
+            font-size: 20px;
+        }
+
+        .blog-list {
+            list-style: none;
+        }
+
+        .blog-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--borda);
+            transition: var(--transition);
+            border-radius: 8px;
+        }
+        .blog-list li:hover {
+            background: var(--branco);
+            box-shadow: var(--sombra);
+            border-color: transparent;
+        }
+
+        .blog-list li a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--texto);
+            transition: var(--transition);
+            flex: 1;
+        }
+        .blog-list li a:hover {
+            color: var(--azul);
+        }
+
+        .blog-list .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--dourado);
+            background: rgba(245, 197, 24, 0.1);
+            padding: 3px 12px;
+            border-radius: 100px;
+            margin-left: 12px;
+            white-space: nowrap;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--azul-escuro);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 32px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        footer p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        footer a {
+            color: var(--dourado);
+            transition: var(--transition);
+        }
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            nav {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--branco);
+                border-bottom: 1px solid var(--borda);
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 4px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            }
+            nav.open { display: flex; }
+            nav a { padding: 12px 16px; width: 100%; }
+            .nav-cta { text-align: center; }
+
+            .blog-hero h1 { font-size: 28px; }
+            .blog-hero { padding: 40px 0 24px; }
+            .blog-list li { flex-direction: column; align-items: flex-start; gap: 6px; }
+            .blog-list .tag { margin-left: 0; }
+        }
+
+        @media (max-width: 480px) {
+            .blog-hero h1 { font-size: 24px; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <div class="brand">
-    <img src="/logo-icon.png" class="logo-icon">
-    <div>
-      <div class="brand-name">COREGOV</div>
-      <div class="brand-sub">Consultoria para ONGs</div>
-    </div>
-  </div>
-  <nav>
-    <a href="/index.html">InÃ­cio</a>
-    <a href="/servicos.html">ServiÃ§os</a>
-    <a href="/blog/index.html" class="active">Blog</a>
-    <a href="/quem-somos.html">Quem Somos</a>
-  </nav>
-  <a class="btn" href="https://t.me/coregovbr">Contato</a>
-</header>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">CORE<span>GOV</span></a>
 
-<div class="container">
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
 
-<h1>Blog COREGOV â€” <span>Terceiro Setor & GestÃ£o</span></h1>
+            <nav id="mainNav">
+                <a href="/#servicos">Serviços</a>
+                <a href="/#sobre">Sobre</a>
+                <a href="/#plataforma">Plataforma</a>
+                <a href="/#contato">Contato</a>
+                <a href="/blog/" class="active"><i class="fas fa-pencil-alt"></i> Blog</a>
+                <a href="/editais/"><i class="fas fa-clipboard-list"></i> Editais</a>
+                <a href="/produtos/"><i class="fas fa-shopping-cart"></i> Produtos</a>
+                <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov."
+                   target="_blank"
+                   class="nav-cta">
+                    <i class="fab fa-telegram"></i> Fale Conosco
+                </a>
+            </nav>
+        </div>
+    </header>
 
-<p>ConteÃºdos prÃ¡ticos sobre ONGs, estatutos, captaÃ§Ã£o de recursos, editais, leis de incentivo e administraÃ§Ã£o para organizaÃ§Ãµes sociais.</p>
+    <!-- ===== BLOG HERO ===== -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Blog <span>COREGOV</span></h1>
+            <p>Conteúdos práticos sobre ONGs, estatutos, captação de recursos, editais, leis de incentivo e administração para organizações sociais.</p>
+        </div>
+    </section>
 
-<h2>ðŸ“Œ ONGs e CaptaÃ§Ã£o de Recursos</h2>
+    <!-- ===== CONTEÚDO DO BLOG ===== -->
+    <main class="container">
 
-<ul>
-  <li><a href="/blog/site-preparado-para-agentes-de-ia.html">Seu site estÃ¡ preparado para agentes de IA?</a> <span class="tag">tecnologia</span></li>
-  <li><a href="/blog/por-que-sua-ong-precisa-de-estatuto.html">Por que sua ONG precisa de um estatuto social bem feito</a> <span class="tag">estatuto</span></li>
-  <li><a href="/blog/captacao-de-recursos-para-ongs-guia-completo.html">CaptaÃ§Ã£o de Recursos para ONGs: Guia Completo 2026</a> <span class="tag">captaÃ§Ã£o</span></li>
-  <li><a href="/blog/editais-publicos-como-acessar-recursos.html">Editais PÃºblicos: Como sua ONG pode acessar milhÃµes em recursos</a> <span class="tag">editais</span></li>
-  <li><a href="/blog/lei-rouanet-para-ongs.html">Lei Rouanet para ONGs: Como captar recursos via incentivo fiscal</a> <span class="tag">leis de incentivo</span></li>
-  <li><a href="/blog/lei-de-incentivo-ao-esporte-para-ongs.html">Lei de Incentivo ao Esporte: CaptaÃ§Ã£o para projetos esportivos</a> <span class="tag">leis de incentivo</span></li>
-  <li><a href="/blog/emendas-parlamentares-para-ongs.html">Emendas Parlamentares para ONGs: Como acessar recursos</a> <span class="tag">emendas</span></li>
-  <li><a href="/blog/plano-de-negocio-social-para-ongs.html">Plano de NegÃ³cio Social: O documento que convence investidores</a> <span class="tag">planejamento</span></li>
-  <li><a href="/blog/regularizacao-de-ongs-passo-a-passo.html">RegularizaÃ§Ã£o de ONGs: Passo a passo para estar 100% legal</a> <span class="tag">regularizaÃ§Ã£o</span></li>
-  <li><a href="/blog/como-responder-edital-sem-ser-desclassificado.html">Como responder a um edital e nÃ£o ser desclassificado</a> <span class="tag">editais</span></li>
-  <li><a href="/blog/prestacao-de-contas-para-ongs.html">PrestaÃ§Ã£o de Contas para ONGs: O que o governo exige</a> <span class="tag">prestaÃ§Ã£o de contas</span></li>
-  <li><a href="/blog/governanca-em-ongs-gestao-profissional.html">GovernanÃ§a em ONGs: Como estruturar uma gestÃ£o profissional</a> <span class="tag">gestÃ£o</span></li>
-  <li><a href="/blog/metodo-ivy-lee.html">📝 Método Ivy Lee: a técnica de produtividade de 100 anos que ainda funciona</a> <span class="tag">produtividade</span></li>
-</ul>
+        <!-- ONGs e Captação -->
+        <section class="blog-section">
+            <h2><i class="fas fa-hand-holding-heart"></i> ONGs e Captação de Recursos</h2>
+            <ul class="blog-list">
+                <li><a href="site-preparado-para-agentes-de-ia.html">Seu site está preparado para agentes de IA?</a> <span class="tag">tecnologia</span></li>
+                <li><a href="por-que-sua-ong-precisa-de-estatuto.html">Por que sua ONG precisa de um estatuto social bem feito</a> <span class="tag">estatuto</span></li>
+                <li><a href="captacao-de-recursos-para-ongs-guia-completo.html">Captação de Recursos para ONGs: Guia Completo 2026</a> <span class="tag">captação</span></li>
+                <li><a href="editais-publicos-como-acessar-recursos.html">Editais Públicos: Como sua ONG pode acessar milhões em recursos</a> <span class="tag">editais</span></li>
+                <li><a href="lei-rouanet-para-ongs.html">Lei Rouanet para ONGs: Como captar recursos via incentivo fiscal</a> <span class="tag">leis de incentivo</span></li>
+                <li><a href="lei-de-incentivo-ao-esporte-para-ongs.html">Lei de Incentivo ao Esporte: Captação para projetos esportivos</a> <span class="tag">leis de incentivo</span></li>
+                <li><a href="emendas-parlamentares-para-ongs.html">Emendas Parlamentares para ONGs: Como acessar recursos</a> <span class="tag">emendas</span></li>
+                <li><a href="plano-de-negocio-social-para-ongs.html">Plano de Negócio Social: O documento que convence investidores</a> <span class="tag">planejamento</span></li>
+                <li><a href="regularizacao-de-ongs-passo-a-passo.html">Regularização de ONGs: Passo a passo para estar 100% legal</a> <span class="tag">regularização</span></li>
+                <li><a href="como-responder-edital-sem-ser-desclassificado.html">Como responder a um edital e não ser desclassificado</a> <span class="tag">editais</span></li>
+                <li><a href="prestacao-de-contas-para-ongs.html">Prestação de Contas para ONGs: O que o governo exige</a> <span class="tag">prestação de contas</span></li>
+                <li><a href="governanca-em-ongs-gestao-profissional.html">Governança em ONGs: Como estruturar uma gestão profissional</a> <span class="tag">gestão</span></li>
+                <li><a href="metodo-ivy-lee.html">📝 Método Ivy Lee: a técnica de produtividade de 100 anos que ainda funciona</a> <span class="tag">produtividade</span></li>
+            </ul>
+        </section>
 
+        <!-- MEI e Pequenas Empresas -->
+        <section class="blog-section">
+            <h2><i class="fas fa-store"></i> MEI e Pequenas Empresas</h2>
+            <ul class="blog-list">
+                <li><a href="o-que-e-mei-e-como-funciona.html">O que é MEI e como funciona</a></li>
+                <li><a href="como-abrir-mei-passo-a-passo.html">Como abrir MEI passo a passo</a></li>
+                <li><a href="quanto-mei-paga-imposto.html">Quanto o MEI paga de imposto</a></li>
+                <li><a href="mei-pode-contratar-funcionario.html">MEI pode contratar funcionário?</a></li>
+                <li><a href="mei-pode-emitir-nota-fiscal.html">MEI pode emitir nota fiscal?</a></li>
+                <li><a href="diferenca-entre-mei-me-epp.html">Diferença entre MEI, ME e EPP</a></li>
+                <li><a href="erros-que-fazem-mei-pagar-mais-imposto.html">Erros que fazem MEI pagar mais imposto</a></li>
+                <li><a href="o-mei-vai-acabar.html">O MEI vai acabar?</a></li>
+                <li><a href="como-aumentar-lucro-no-mei.html">Como aumentar lucro no MEI</a></li>
+                <li><a href="como-saber-se-estou-pagando-imposto-demais.html">Como saber se pago imposto demais</a></li>
+                <li><a href="mei-vale-a-pena-2026.html">MEI vale a pena em 2026?</a></li>
+                <li><a href="como-emitir-nota-fiscal-mei.html">Como emitir nota fiscal no MEI</a></li>
+                <li><a href="controle-financeiro-mei.html">Controle financeiro para MEI</a></li>
+                <li><a href="limite-faturamento-mei.html">Limite de faturamento do MEI</a></li>
+                <li><a href="impostos-mei-errados.html">Impostos do MEI: erros comuns</a></li>
+                <li><a href="desenquadramento-mei.html">Desenquadramento do MEI</a></li>
+                <li><a href="problemas-com-receita-federal-mei.html">Problemas com a Receita Federal no MEI</a></li>
+                <li><a href="como-evitar-prejuizo-mei.html">Como evitar prejuízo no MEI</a></li>
+            </ul>
+        </section>
 
-<h2>ðŸ“Œ MEI e Pequenas Empresas</h2>
+    </main>
 
-<ul>
-  <li><a href="/blog/o-que-e-mei-e-como-funciona.html">O que Ã© MEI e como funciona</a></li>
-  <li><a href="/blog/como-abrir-mei-passo-a-passo.html">Como abrir MEI passo a passo</a></li>
-  <li><a href="/blog/quanto-mei-paga-imposto.html">Quanto o MEI paga de imposto</a></li>
-  <li><a href="/blog/mei-pode-contratar-funcionario.html">MEI pode contratar funcionÃ¡rio?</a></li>
-  <li><a href="/blog/mei-pode-emitir-nota-fiscal.html">MEI pode emitir nota fiscal?</a></li>
-  <li><a href="/blog/diferenÃ§a-entre-mei-me-epp.html">DiferenÃ§a entre MEI, ME e EPP</a></li>
-  <li><a href="/blog/erros-que-fazem-mei-pagar-mais-imposto.html">Erros que fazem MEI pagar mais imposto</a></li>
-  <li><a href="/blog/o-mei-vai-acabar.html">MEI vai acabar?</a></li>
-  <li><a href="/blog/como-aumentar-lucro-no-mei.html">Como aumentar lucro no MEI</a></li>
-  <li><a href="/blog/como-saber-se-estou-pagando-imposto-demais.html">Como saber se pago imposto demais</a></li>
-</ul>
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CoreGov — Consultoria para ONGs • <a href="https://t.me/coregovbr" target="_blank">Telegram</a> • <a href="https://coregov.com.br">coregov.com.br</a></p>
+        </div>
+    </footer>
 
-</div>
-
-<footer>
-  Â© 2026 COREGOV â€” Consultoria para ONGs
-</footer>
-
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        const toggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('mainNav');
+        if (toggle && nav) {
+            toggle.addEventListener('click', function() {
+                nav.classList.toggle('open');
+                const icon = toggle.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+            nav.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('open');
+                    const icon = toggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 </html>

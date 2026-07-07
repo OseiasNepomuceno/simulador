@@ -1,188 +1,192 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Seu site está preparado para agentes de IA? | Blog COREGOV</title>
-
-<meta name="description" content="O Google lançou uma categoria experimental no Lighthouse chamada Agentic Browsing. Saiba o que isso significa para seu site e como prepará-lo para ser lido e compreendido por inteligências artificiais.">
-<meta name="keywords" content="agentic browsing, google lighthouse, SEO para IA, llms.txt, WebMCP, site preparado para IA, agentes de IA, SEO 2026">
-<meta name="robots" content="index, follow">
-<meta name="author" content="CoreGov">
-
-<!-- Open Graph -->
-<meta property="og:type" content="article">
-<meta property="og:title" content="Seu site está preparado para agentes de IA?">
-<meta property="og:description" content="O Google adicionou ao Lighthouse uma categoria experimental chamada Agentic Browsing. Entenda como preparar seu site para o novo público que está chegando: os agentes de inteligência artificial.">
-<meta property="og:url" content="https://coregov.com.br/blog/site-preparado-para-agentes-de-ia.html">
-<meta property="og:image" content="https://coregov.com.br/coregov01.png">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:site_name" content="CoreGov">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Seu site está preparado para agentes de IA?">
-<meta name="twitter:description" content="O Google adicionou ao Lighthouse uma categoria experimental chamada Agentic Browsing. Saiba o que muda para seu site.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --verde:#00FF9F;
-  --azul:#0B1220;
-  --azul-medio:#111A2E;
-  --cinza:#CCCCCC;
-}
-* {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body {background:var(--azul);color:#fff;padding-top:90px;}
-header {position:fixed;top:0;width:100%;padding:12px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(11,18,32,0.85);backdrop-filter:blur(10px);z-index:1000;}
-.brand {display:flex;align-items:center;gap:10px;}
-.brand-name {color:var(--verde);font-weight:700;}
-.brand-sub {font-size:11px;color:var(--cinza);}
-nav a {margin:0 8px;color:var(--cinza);text-decoration:none;}
-nav a:hover {color:var(--verde);}
-.btn {background:var(--verde);color:#000;padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:bold;}
-.container {max-width:800px;margin:60px auto 40px auto;padding:20px 40px;}
-h1 {font-size:32px;line-height:1.3;margin-bottom:10px;}
-h1 span {color:var(--verde);}
-.meta {color:#888;font-size:14px;margin-bottom:30px;}
-h2 {color:var(--verde);margin-top:40px;margin-bottom:15px;font-size:22px;}
-h3 {color:#fff;margin-top:30px;margin-bottom:10px;font-size:18px;}
-p {line-height:1.8;margin-bottom:20px;color:#ddd;}
-p strong {color:#fff;}
-ul {line-height:2.0;margin-bottom:30px;padding-left:20px;color:#ddd;}
-ul li {margin-bottom:6px;}
-ul li strong {color:#fff;}
-.destaque {background:var(--azul-medio);border-left:4px solid var(--verde);padding:20px 24px;margin:30px 0;border-radius:0 8px 8px 0;}
-.destaque p {margin-bottom:0;color:#fff;}
-.cta-box {background:linear-gradient(135deg, var(--azul-medio), #0a1428);border:1px solid var(--verde);border-radius:12px;padding:30px;margin:40px 0;text-align:center;}
-.cta-box h3 {color:var(--verde);margin-top:0;}
-.cta-box p {margin-bottom:20px;}
-.btn-cta {display:inline-block;background:var(--verde);color:#000;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:15px;}
-.btn-cta:hover {opacity:0.9;}
-code {background:#1a1a2e;color:var(--verde);padding:2px 8px;border-radius:4px;font-size:14px;}
-.tag {display:inline-block;background:var(--azul-medio);color:var(--cinza);font-size:11px;padding:4px 10px;border-radius:4px;margin-right:6px;}
-.voltar {display:inline-block;color:var(--verde);text-decoration:none;margin-top:30px;}
-.voltar:hover {text-decoration:underline;}
-footer {text-align:center;padding:30px;color:#888;}
-@media (max-width:768px) {
-  .container {padding:20px;}
-  h1 {font-size:24px;}
-  header {padding:12px 4%;flex-wrap:wrap;gap:8px;}
-  nav a {margin:0 4px;font-size:13px;}
-}
-</style>
-</head>
-<body>
-
-<header>
-  <div class="brand">
-    <img src="/logo-icon.png" class="logo-icon" alt="CoreGov">
-    <div>
-      <div class="brand-name">COREGOV</div>
-      <div class="brand-sub">Consultoria para ONGs</div>
-    </div>
-  </div>
-  <nav>
-    <a href="/index.html">Início</a>
-    <a href="/servicos.html">Serviços</a>
-    <a href="/blog/index.html">Blog</a>
-    <a href="/quem-somos.html">Quem Somos</a>
-  </nav>
-  <a class="btn" href="https://t.me/coregovbr">Contato</a>
-</header>
-
-<div class="container">
-
-  <span class="tag">Tecnologia</span>
-  <span class="tag">SEO</span>
-  <span class="tag">Agentes de IA</span>
-
-  <h1>Seu site está <span>preparado para agentes de IA</span>?</h1>
-
-  <p class="meta">Publicado em 1º de julho de 2026 • Por CoreGov • 5 min de leitura</p>
-
-  <p>O Google acabou de dar uma pista gigante sobre o futuro dos sites. E quase ninguém está prestando atenção.</p>
-
-  <p>Durante anos, empresas otimizaram seus sites para <strong>3 públicos</strong>: pessoas, buscadores e algoritmos de ranqueamento. Agora entrou um <strong>quarto público na sala</strong>: os <strong>agentes de inteligência artificial</strong>.</p>
-
-  <div class="destaque">
-    <p>🤖 O Google adicionou ao Lighthouse/PageSpeed uma categoria <strong>experimental</strong> chamada <strong>Agentic Browsing</strong>. Na prática, ela avalia se um site está preparado para ser lido, compreendido e usado por agentes de IA — e não apenas por humanos clicando em botões.</p>
-  </div>
-
-  <h2>O que isso significa na prática?</h2>
-
-  <p>O próximo cliente talvez não entre no seu site do jeito que você imagina. Ele pode simplesmente <strong>pedir a um assistente de IA</strong>:</p>
-
-  <ul>
-    <li>"Encontre a melhor empresa para resolver esse problema."</li>
-    <li>"Compare essas opções."</li>
-    <li>"Agende uma reunião com o fornecedor X."</li>
-    <li>"Preencha esse formulário de orçamento."</li>
-    <li>"Escolha o fornecedor mais confiável para este serviço."</li>
-  </ul>
-
-  <p>E quem vai navegar, interpretar e executar parte desse processo pode ser um <strong>agente de IA</strong>, não um humano.</p>
-
-  <h2>O que o Agentic Browsing avalia?</h2>
-
-  <p>O novo olhar técnico envolve pontos como:</p>
-
-  <ul>
-    <li><strong>🌐 Estrutura acessível</strong> — HTML semântico, hierarquia clara de headings, atributos alt em imagens</li>
-    <li><strong>📐 Layout estável</strong> — Sem mudanças bruscas que confundem crawlers de IA</li>
-    <li><strong>📝 HTML bem organizado</strong> — Dados estruturados (Schema.org) e marcação semântica</li>
-    <li><strong>💡 Informações claras</strong> — Conteúdo direto, sem ambiguidade, fácil de extrair</li>
-    <li><strong>📄 llms.txt</strong> — Arquivo específico para ajudar LLMs a entenderem seu site</li>
-    <li><strong>🔌 WebMCP</strong> — Protocolo para agentes de IA interagirem com APIs e ações do site</li>
-    <li><strong>📊 Dados que ajudem máquinas</strong> a entenderem o que sua empresa faz, para quem e como contratar</li>
-  </ul>
-
-  <div class="destaque">
-    <p><strong>⚠️ Importante:</strong> Isso ainda não é um fator direto de ranqueamento confirmado. Mas é um <strong>sinal claro de direção</strong>.</p>
-  </div>
-
-  <h2>SEO não morreu — mas está ficando pequeno</h2>
-
-  <p>A nova disputa não será apenas por <strong>cliques</strong>. Será por <strong>interpretação</strong>, por <strong>confiança</strong>, por <strong>recomendação</strong>, por <strong>capacidade de ser usado por agentes</strong>.</p>
-
-  <p>O site do futuro não será apenas bonito. Ele precisará ser <strong>legível, confiável e operável por IA</strong>.</p>
-
-  <h2>O que você pode fazer hoje</h2>
-
-  <h3>1. Crie um arquivo llms.txt</h3>
-  <p>O <code>llms.txt</code> é um arquivo simples (como o robots.txt) que dá instruções diretas para LLMs sobre seu site: o que você faz, quais são suas páginas principais, serviços, contato. É o <strong>mínimo que todo site deveria ter</strong> a partir de agora. <a href="https://llmstxt.org/" target="_blank" style="color:var(--verde);">Saiba mais sobre llms.txt</a>.</p>
-
-  <h3>2. Revise seu robots.txt</h3>
-  <p>Certifique-se de que os crawlers de IA (GPTBot, Claude-Web, Google-Extended, PerplexityBot) estão autorizados a acessar seu conteúdo relevante.</p>
-
-  <h3>3. Invista em HTML semântico e dados estruturados</h3>
-  <p>Quanto mais fácil para uma máquina extrair significado do seu site, melhor. Use Schema.org (Organization, LocalBusiness, Service, Article), headings em ordem (h1 → h2 → h3) e metadados ricos.</p>
-
-  <h3>4. Conteúdo claro e direto</h3>
-  <p>Evite textões vagos. Seja específico sobre o que sua empresa faz, para quem, quanto custa, como contratar. Quanto mais <strong>fato objetivo</strong>, melhor para a IA interpretar e recomendar.</p>
-
-  <h3>5. Monitore o Agentic Browsing no Lighthouse</h3>
-  <p>Abra o Chrome DevTools, vá até Lighthouse e veja se a categoria experimental <strong>Agentic Browsing</strong> já aparece para você. Teste seu site e veja sua pontuação.</p>
-
-  <div class="cta-box">
-    <h3>🦞 Quer ajuda para preparar seu site para agentes de IA?</h3>
-    <p>Na CoreGov, trabalhamos com agentes de IA e automação de processos. Podemos diagnosticar seu site e implementar as melhorias necessárias para o novo cenário.</p>
-    <a href="https://t.me/coregovbr?text=Quero%20saber%20mais%20sobre%20prepara%C3%A7%C3%A3o%20de%20site%20para%20agentes%20de%20IA." target="_blank" class="btn-cta">📱 Fale Conosco no Telegram</a>
-  </div>
-
-  <p><strong>Quem entender isso agora sai na frente. Quem ignorar pode descobrir tarde demais que seu site foi feito para pessoas… mas ficou invisível para as máquinas que vão influenciar a próxima decisão de compra.</strong></p>
-
-  <p>A próxima pergunta não é se sua empresa tem site. <strong>É se a IA consegue entender, confiar e agir dentro dele.</strong></p>
-
-  <a href="/blog/index.html" class="voltar">← Voltar para o Blog</a>
-
-</div>
-
-<footer>
-  © 2026 COREGOV — Consultoria para ONGs • <a href="https://t.me/coregovbr" style="color:var(--verde);">Telegram</a>
-</footer>
-
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Seu site está preparado para agentes de IA? | Blog COREGOV</title>
+
+<meta name="description" content="O Google lançou uma categoria experimental no Lighthouse chamada Agentic Browsing. Saiba o que isso significa para seu site e como prepará-lo para ser lido e compreendido por inteligências artificiais.">
+<meta name="keywords" content="agentic browsing, google lighthouse, SEO para IA, llms.txt, WebMCP, site preparado para IA, agentes de IA, SEO 2026">
+<meta name="robots" content="index, follow">
+<meta name="author" content="CoreGov">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Seu site está preparado para agentes de IA?">
+<meta property="og:description" content="O Google adicionou ao Lighthouse uma categoria experimental chamada Agentic Browsing. Entenda como preparar seu site para o novo público que está chegando: os agentes de inteligência artificial.">
+<meta property="og:url" content="https://coregov.com.br/blog/site-preparado-para-agentes-de-ia.html">
+<meta property="og:image" content="https://coregov.com.br/coregov01.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="CoreGov">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Seu site está preparado para agentes de IA?">
+<meta name="twitter:description" content="O Google adicionou ao Lighthouse uma categoria experimental chamada Agentic Browsing. Saiba o que muda para seu site.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root { --azul: #0f3460; --azul-escuro: #091c33; --dourado: #f5c518; --vermelho: #e94560; --bg: #f8fafc; --bg-alt: #f1f5f9; --branco: #ffffff; --texto: #1e293b; --texto-suave: #64748b; --borda: #e2e8f0; --sombra: 0 4px 20px rgba(15,52,96,0.08); --sombra-hover: 0 8px 32px rgba(15,52,96,0.15); --radius: 12px; --transition: 0.3s ease; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--texto); line-height: 1.7; padding-top: 90px; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; }
+.container { max-width: 800px; margin: 40px auto; padding: 0 24px; }
+header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--borda); transition: var(--transition); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.logo { font-size: 26px; font-weight: 800; color: var(--azul); letter-spacing: -0.5px; }
+.logo span { color: var(--dourado); }
+nav { display: flex; align-items: center; gap: 8px; }
+nav a { padding: 8px 16px; font-size: 14px; font-weight: 500; color: var(--texto-suave); border-radius: 8px; transition: var(--transition); }
+nav a:hover { color: var(--azul); background: rgba(15,52,96,0.06); }
+.nav-cta { background: var(--azul); color: #fff !important; padding: 10px 20px !important; font-weight: 600; }
+.nav-cta:hover { background: var(--azul-escuro) !important; color: #fff !important; }
+.menu-toggle { display: none; background: none; border: 24px; color: var(--azul); cursor: pointer; padding: 4px; }
+.article { max-width: 800px; margin: 60px auto; padding: 0 24px; }
+.article h1 { font-size: 32px; font-weight: 800; color: var(--azul); line-height: 1.2; margin-bottom: 16px; }
+.article h1 span { color: var(--dourado); }
+.article .meta { font-size: 14px; color: var(--texto-suave); margin-bottom: 32px; }
+.article h2 { font-size: 24px; font-weight: 700; color: var(--azul); margin-top: 40px; margin-bottom: 16px; }
+.article h3 { font-size: 18px; font-weight: 600; color: var(--texto); margin-top: 32px; margin-bottom: 12px; }
+.article p { font-size: 16px; color: var(--texto); margin-bottom: 20px; line-height: 1.8; }
+.article p strong { color: var(--azul); }
+.article ul { margin: 16px 0 24px 24px; line-height: 2.0; }
+.article ul li { color: var(--texto); margin-bottom: 6px; }
+.article ul li strong { color: var(--azul); }
+.article .tag { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--dourado); background: rgba(245,197,24,0.1); padding: 4px 14px; border-radius: 100px; margin-right: 6px; margin-bottom: 12px; }
+.article .destaque { background: var(--bg-alt); border-left: 4px solid var(--dourado); padding: 20px 24px; margin: 30px 0; border-radius: 0 8px 8px 0; }
+.article .destaque p { margin-bottom: 0; color: var(--texto); }
+.cta-box { background: var(--branco); border: 2px solid var(--dourado); border-radius: var(--radius); padding: 32px; margin: 40px 0; text-align: center; box-shadow: var(--sombra); }
+.cta-box h2, .cta-box h3 { color: var(--azul); margin-top: 0; }
+.cta-box p { color: var(--texto-suave); margin-bottom: 20px; }
+.btn-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--azul); color: #fff; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 15px; transition: var(--transition); }
+.btn-cta:hover { background: var(--azul-escuro); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,52,96,0.25); }
+.btn { display: inline-flex; align-items: center; gap: 8px; background: var(--azul); color: #fff; padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: 14px; transition: var(--transition); }
+.btn:hover { background: var(--azul-escuro); transform: translateY(-2px); }
+.voltar { display: inline-block; color: var(--azul); font-weight: 600; margin-top: 40px; transition: var(--transition); }
+.voltar:hover { color: var(--dourado); }
+footer { background: var(--azul-escuro); color: rgba(255,255,255,0.7); padding: 32px 0; text-align: center; margin-top: 60px; }
+footer p { font-size: 13px; color: rgba(255,255,255,0.6); }
+footer a { color: var(--dourado); transition: var(--transition); }
+footer a:hover { color: #fff; }
+@media (max-width: 768px) { .menu-toggle { display: block; } nav { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--branco); border-bottom: 1px solid var(--borda); flex-direction: column; padding: 16px 24px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); } nav.open { display: flex; } nav a { padding: 12px 16px; width: 100%; } .nav-cta { text-align: center; } .article h1 { font-size: 24px; } .article { margin: 40px auto; } .container { padding: 0 16px; } }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="/" class="logo">CORE<span>GOV</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></i></i></button>
+        <nav id="mainNav">
+            <a href="/#servicos">Serviços</a>
+            <a href="/#sobre">Sobre</a>
+            <a href="/#plataforma">Plataforma</a>
+            <a href="/#contato">Contato</a>
+            <a href="/blog/"><i class="fas fa-pencil-alt"></i> Blog</a>
+            <a href="/editais/"><i class="fas fa-clipboard-list"></i> Editais</a>
+            <a href="/produtos/"><i class="fas fa-shopping-cart"></i> Produtos</a>
+            <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." target="_blank" class="nav-cta"><i class="fab fa-telegram"></i> Fale Conosco</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+
+  <span class="tag">Tecnologia</span>
+  <span class="tag">SEO</span>
+  <span class="tag">Agentes de IA</span>
+
+  <h1>Seu site está <span>preparado para agentes de IA</span>?</h1>
+
+  <p class="meta">Publicado em 1º de julho de 2026 • Por CoreGov • 5 min de leitura</p>
+
+  <p>O Google acabou de dar uma pista gigante sobre o futuro dos sites. E quase ninguém está prestando atenção.</p>
+
+  <p>Durante anos, empresas otimizaram seus sites para <strong>3 públicos</strong>: pessoas, buscadores e algoritmos de ranqueamento. Agora entrou um <strong>quarto público na sala</strong>: os <strong>agentes de inteligência artificial</strong>.</p>
+
+  <div class="destaque">
+    <p>🤖 O Google adicionou ao Lighthouse/PageSpeed uma categoria <strong>experimental</strong> chamada <strong>Agentic Browsing</strong>. Na prática, ela avalia se um site está preparado para ser lido, compreendido e usado por agentes de IA — e não apenas por humanos clicando em botões.</p>
+  </div>
+
+  <h2>O que isso significa na prática?</h2>
+
+  <p>O próximo cliente talvez não entre no seu site do jeito que você imagina. Ele pode simplesmente <strong>pedir a um assistente de IA</strong>:</p>
+
+  <ul>
+    <li>"Encontre a melhor empresa para resolver esse problema."</li>
+    <li>"Compare essas opções."</li>
+    <li>"Agende uma reunião com o fornecedor X."</li>
+    <li>"Preencha esse formulário de orçamento."</li>
+    <li>"Escolha o fornecedor mais confiável para este serviço."</li>
+  </ul>
+
+  <p>E quem vai navegar, interpretar e executar parte desse processo pode ser um <strong>agente de IA</strong>, não um humano.</p>
+
+  <h2>O que o Agentic Browsing avalia?</h2>
+
+  <p>O novo olhar técnico envolve pontos como:</p>
+
+  <ul>
+    <li><strong>🌐 Estrutura acessível</strong> — HTML semântico, hierarquia clara de headings, atributos alt em imagens</li>
+    <li><strong>📐 Layout estável</strong> — Sem mudanças bruscas que confundem crawlers de IA</li>
+    <li><strong>📝 HTML bem organizado</strong> — Dados estruturados (Schema.org) e marcação semântica</li>
+    <li><strong>💡 Informações claras</strong> — Conteúdo direto, sem ambiguidade, fácil de extrair</li>
+    <li><strong>📄 llms.txt</strong> — Arquivo específico para ajudar LLMs a entenderem seu site</li>
+    <li><strong>🔌 WebMCP</strong> — Protocolo para agentes de IA interagirem com APIs e ações do site</li>
+    <li><strong>📊 Dados que ajudem máquinas</strong> a entenderem o que sua empresa faz, para quem e como contratar</li>
+  </ul>
+
+  <div class="destaque">
+    <p><strong>⚠️ Importante:</strong> Isso ainda não é um fator direto de ranqueamento confirmado. Mas é um <strong>sinal claro de direção</strong>.</p>
+  </div>
+
+  <h2>SEO não morreu — mas está ficando pequeno</h2>
+
+  <p>A nova disputa não será apenas por <strong>cliques</strong>. Será por <strong>interpretação</strong>, por <strong>confiança</strong>, por <strong>recomendação</strong>, por <strong>capacidade de ser usado por agentes</strong>.</p>
+
+  <p>O site do futuro não será apenas bonito. Ele precisará ser <strong>legível, confiável e operável por IA</strong>.</p>
+
+  <h2>O que você pode fazer hoje</h2>
+
+  <h3>1. Crie um arquivo llms.txt</h3>
+  <p>O <code>llms.txt</code> é um arquivo simples (como o robots.txt) que dá instruções diretas para LLMs sobre seu site: o que você faz, quais são suas páginas principais, serviços, contato. É o <strong>mínimo que todo site deveria ter</strong> a partir de agora. <a href="https://llmstxt.org/" target="_blank" style="color:var(--verde);">Saiba mais sobre llms.txt</a>.</p>
+
+  <h3>2. Revise seu robots.txt</h3>
+  <p>Certifique-se de que os crawlers de IA (GPTBot, Claude-Web, Google-Extended, PerplexityBot) estão autorizados a acessar seu conteúdo relevante.</p>
+
+  <h3>3. Invista em HTML semântico e dados estruturados</h3>
+  <p>Quanto mais fácil para uma máquina extrair significado do seu site, melhor. Use Schema.org (Organization, LocalBusiness, Service, Article), headings em ordem (h1 → h2 → h3) e metadados ricos.</p>
+
+  <h3>4. Conteúdo claro e direto</h3>
+  <p>Evite textões vagos. Seja específico sobre o que sua empresa faz, para quem, quanto custa, como contratar. Quanto mais <strong>fato objetivo</strong>, melhor para a IA interpretar e recomendar.</p>
+
+  <h3>5. Monitore o Agentic Browsing no Lighthouse</h3>
+  <p>Abra o Chrome DevTools, vá até Lighthouse e veja se a categoria experimental <strong>Agentic Browsing</strong> já aparece para você. Teste seu site e veja sua pontuação.</p>
+
+  <div class="cta-box">
+    <h3>🦞 Quer ajuda para preparar seu site para agentes de IA?</h3>
+    <p>Na CoreGov, trabalhamos com agentes de IA e automação de processos. Podemos diagnosticar seu site e implementar as melhorias necessárias para o novo cenário.</p>
+    <a href="https://t.me/coregovbr?text=Quero%20saber%20mais%20sobre%20prepara%C3%A7%C3%A3o%20de%20site%20para%20agentes%20de%20IA." target="_blank" class="btn-cta">📱 Fale Conosco no Telegram</a>
+  </div>
+
+  <p><strong>Quem entender isso agora sai na frente. Quem ignorar pode descobrir tarde demais que seu site foi feito para pessoas… mas ficou invisível para as máquinas que vão influenciar a próxima decisão de compra.</strong></p>
+
+  <p>A próxima pergunta não é se sua empresa tem site. <strong>É se a IA consegue entender, confiar e agir dentro dele.</strong></p>
+
+  <a href="/blog/index.html" class="voltar">← Voltar para o Blog</a>
+
+</div>
+
+<footer>
+    <div class="container">
+        <p>© 2026 CoreGov - Consultoria para ONGs | <a href="https://t.me/coregovbr" target="_blank">Telegram</a> | <a href="https://coregov.com.br">coregov.com.br</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
