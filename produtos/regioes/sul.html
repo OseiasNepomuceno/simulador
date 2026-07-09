@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editais e Captação de Recursos Sul | COREGOV</title>
+    <meta name="description" content="Hub Regional Sul COREGOV — editais estaduais PR, SC e RS, FAPERGS, FAPESC, Fundação Araucária, BRDE, FDS, Pronaf e ferramentas para sua ONG captar recursos.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        .header {
+            background: #0f3460;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(15, 52, 96, 0.2);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo a {
+            color: #f5c518;
+            font-weight: 800;
+            font-size: 1.5rem;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo a span {
+            color: #ffffff;
+        }
+
+        .nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover {
+            color: #f5c518;
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .breadcrumb a {
+            color: #0f3460;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb .sep {
+            margin: 0 0.5rem;
+            color: #94a3b8;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #0d3b1e 0%, #1a5c32 40%, #2d7a4b 100%);
+            color: #ffffff;
+            padding: 3.5rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(245, 197, 24, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.3rem 1rem;
+            border-radius: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .emoji {
+            font-style: normal;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #d4edda;
+            max-width: 640px;
+            margin: 0 auto 0.5rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat .num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #f5c518;
+        }
+
+        .hero-stat .label {
+            font-size: 0.85rem;
+            color: #b8dcc5;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        /* SECTION TITLE */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title .highlight {
+            color: #f5c518;
+        }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(15, 52, 96, 0.12);
+            border-color: #f5c518;
+        }
+
+        .product-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+            flex: 1;
+            margin-bottom: 1.2rem;
+        }
+
+        .product-card .price {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #f5c518;
+            margin-bottom: 1rem;
+        }
+
+        .product-card .btn {
+            display: inline-block;
+            background: #0f3460;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .product-card .btn:hover {
+            background: #1a4a7a;
+        }
+
+        /* SEO TEXT */
+        .seo-section {
+            margin-bottom: 3rem;
+        }
+
+        .seo-section h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 1rem;
+        }
+
+        .seo-section > p {
+            font-size: 1rem;
+            color: #475569;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        /* STATE CARDS */
+        .state-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .state-card {
+            background: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #2d7a4b;
+        }
+
+        .state-card .state-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #0f3460;
+            margin-bottom: 0.3rem;
+        }
+
+        .state-card .state-abbr {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .state-card p {
+            font-size: 0.88rem;
+            color: #475569;
+        }
+
+        /* HIGHLIGHT CARDS (FDS, BRDE, Cooperativismo) */
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .highlight-card {
+            background: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+            border-top: 4px solid #f5c518;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(15, 52, 96, 0.1);
+        }
+
+        .highlight-card .h-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-card p {
+            font-size: 0.88rem;
+            color: #475569;
+        }
+
+        /* FUNDS LIST */
+        .funds-list {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2.5rem;
+        }
+
+        .funds-list h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 1rem;
+        }
+
+        .funds-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .fund-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1rem;
+            background: #f8fafc;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .fund-item .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #2d7a4b;
+            flex-shrink: 0;
+        }
+
+        .fund-item .tag {
+            font-size: 0.7rem;
+            background: #0f3460;
+            color: #ffffff;
+            padding: 0.15rem 0.5rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        /* CTA */
+        .cta-box {
+            background: linear-gradient(135deg, #0d3b1e 0%, #1a5c32 100%);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .cta-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+        }
+
+        .cta-box p {
+            color: #d4edda;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-box .btn-cta {
+            display: inline-block;
+            background: #f5c518;
+            color: #0f3460;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 0.85rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .cta-box .btn-cta:hover {
+            background: #e0b100;
+            transform: scale(1.03);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #0f3460;
+            color: #94a3b8;
+            padding: 2.5rem 1.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer a {
+            color: #f5c518;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .footer .brand {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        /* TELEGRAM FAB */
+        .telegram-fab {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 56px;
+            height: 56px;
+            background: #0f3460;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(15, 52, 96, 0.35);
+            transition: all 0.3s ease;
+            z-index: 200;
+            border: 2px solid rgba(245, 197, 24, 0.3);
+        }
+
+        .telegram-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(245, 197, 24, 0.3);
+            border-color: #f5c518;
+        }
+
+        .telegram-fab svg {
+            width: 28px;
+            height: 28px;
+            fill: #ffffff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .hero-stat .num {
+                font-size: 1.4rem;
+            }
+
+            .nav a {
+                font-size: 0.8rem;
+                margin-left: 1rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .state-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .funds-items {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-box h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .nav a {
+                margin-left: 0.75rem;
+                margin-right: 0.75rem;
+                font-size: 0.78rem;
+            }
+
+            .state-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <a href="https://coregov.com.br"><span>COREGOV</span>.com.br</a>
+            </div>
+            <nav class="nav">
+                <a href="https://coregov.com.br">Início</a>
+                <a href="https://coregov.com.br/produtos">Produtos</a>
+                <a href="https://coregov.com.br/educacao.html">Educação</a>
+                <a href="https://t.me/coregovbr" target="_blank" rel="noopener">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <a href="https://coregov.com.br">Início</a>
+        <span class="sep">›</span>
+        <a href="https://coregov.com.br/produtos">Produtos</a>
+        <span class="sep">›</span>
+        <span style="color:#0f3460;font-weight:600;">Sul</span>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">🌲 Hub Regional</div>
+            <h1>Sul — Editais e Recursos<br>para sua ONG</h1>
+            <p>PR, SC e RS possuem fundos estaduais robustos e um ecossistema cooperativista forte. Acesse FAPERGS, FAPESC, Fundação Araucária, BRDE, FDS e mais.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="num">3</div>
+                    <div class="label">Estados</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">8+</div>
+                    <div class="label">Fundos Estaduais</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">R$ 1,8 bi+</div>
+                    <div class="label">Disponível/ano</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <div class="container">
+
+        <h2 class="section-title">📦 Ferramentas para sua <span class="highlight">ONG</span></h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="icon">📅</div>
+                <h3>Calendário Editais Sul</h3>
+                <p>Datas de abertura, prazos e requisitos de todos os editais estaduais do Sul — Paraná, Santa Catarina e Rio Grande do Sul — atualizado mensalmente.</p>
+                <div class="price">R$ 27</div>
+                <a href="../calendario-sul.html" class="btn">Acessar</a>
+            </div>
+            <div class="product-card">
+                <div class="icon">📋</div>
+                <h3>Checklist ONG Pronta</h3>
+                <p>Diagnóstico completo de conformidade documental e fiscal para sua ONG se habilitar em qualquer edital — das fundações estaduais ao BRDE.</p>
+                <div class="price">R$ 27</div>
+                <a href="../checklist-ong-pronta.html" class="btn">Acessar</a>
+            </div>
+        </div>
+
+        <!-- SEO TEXT -->
+        <div class="seo-section">
+            <h2>🌲 Por que focar no Sul?</h2>
+            <p>A Região Sul é referência nacional em organização do terceiro setor e cooperativismo. Paraná, Santa Catarina e Rio Grande do Sul possuem fundações de amparo à pesquisa consolidadas (Fundação Araucária, FAPESC, FAPERGS), secretarias estaduais com editais recorrentes e um ecossistema de fomento que movimenta mais de R$ 1,8 bilhão por ano.</p>
+            <p>Além disso, o Sul concentra a maior densidade de cooperativas do Brasil e conta com o BRDE (Banco Regional de Desenvolvimento do Extremo Sul) como fonte estratégica de crédito para projetos sociais e ambientais. Se sua ONG atua na região, este hub é seu ponto de partida.</p>
+
+            <!-- STATE CARDS -->
+            <h3 style="font-size:1.2rem;font-weight:700;color:#0f3460;margin-bottom:1rem;">📌 Estados do Sul</h3>
+            <div class="state-grid">
+                <div class="state-card">
+                    <div class="state-name">Paraná</div>
+                    <div class="state-abbr">PR</div>
+                    <p>Fundação Araucária (P&D, inovação social), SEDEST-PR (meio ambiente), Fundo Estadual de Cultura, e editais da Secretaria da Agricultura. Curitiba é polo de inovação.</p>
+                </div>
+                <div class="state-card">
+                    <div class="state-name">Santa Catarina</div>
+                    <div class="state-abbr">SC</div>
+                    <p>FAPESC (ciência, tecnologia e inovação), SEMA-SC (ambiental), Fundo Estadual de Cultura, e forte presença de cooperativismo (maior concentração do Brasil).</p>
+                </div>
+                <div class="state-card">
+                    <div class="state-name">Rio Grande do Sul</div>
+                    <div class="state-abbr">RS</div>
+                    <p>FAPERGS (pesquisa), SEMA-RS (ambiental), Fundo Estadual de Cultura, e orçamento participativo estadual. Destaque para editais de fortalecimento de associações comunitárias.</p>
+                </div>
+            </div>
+
+            <!-- HIGHLIGHT CARDS -->
+            <h3 style="font-size:1.2rem;font-weight:700;color:#0f3460;margin-bottom:1rem;">💡 Diferenciais da Região Sul</h3>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <div class="h-icon">🏦</div>
+                    <h4>FDS — Fundo de Desenvolvimento Social</h4>
+                    <p>Fundo federal com recursos não reembolsáveis para projetos de interesse social. Prioriza regiões com maior organização da sociedade civil — o Sul se destaca na aprovação.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="h-icon">🏛️</div>
+                    <h4>BRDE — Banco Regional</h4>
+                    <p>Único banco regional de fomento do país. Oferece linhas de crédito com condições especiais para projetos sociais, ambientais e de infraestrutura nos três estados do Sul.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="h-icon">🤝</div>
+                    <h4>Cooperativismo Forte</h4>
+                    <p>O Sul concentra as maiores cooperativas de crédito, produção e infraestrutura do Brasil. Parcerias com cooperativas abrem portas para editais e financiamento coletivo.</p>
+                </div>
+            </div>
+
+            <!-- FUNDS LIST -->
+            <div class="funds-list">
+                <h3>💰 Principais Fundos e Programas do Sul</h3>
+                <div class="funds-items">
+                    <div class="fund-item">
+                        <span class="dot"></span> FAPERGS (RS)
+                        <span class="tag">Pesquisa</span>
+                    </div>
+                    <div class="fund-item">
+                        <span class="dot"></span> FAPESC (SC)
+                        <span class="tag">Pesquisa</span>
+                    </div>
+                    <div class="fund-item">
+                        <span class="dot"></span> Fundação Araucária (PR)
+                        <span class="tag">Pesquisa</span>
+                    </div>
+                    <div class="fund-item">
+                        <span class="dot"></span> SEMA-RS
+                        <span class="tag">Ambiental</span>
+                    </div>
+                    <div class="fund-item">
+                        <span class="dot"></span> SEDEST-PR
+                        <span class="tag">Ambiental</span>
+                    </div>
+                    <div class="fund-item">
+                        <span class="dot"></span> BRDE
+                        <span class="tag">Fomento</span>
+                    </div>
+                    <div class="fund-item">
+                        <span class="dot"></span> FDS
+                        <span class="tag">Social</span>
+                    </div>
+                    <div class="fund-item">
+                        <span class="dot"></span> Pronaf
+                        <span class="tag">Agricultura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>🚀 Sua ONG está pronta para captar no Sul?</h3>
+                <p>Descubra quais editais sua organização pode acessar hoje mesmo com uma avaliação gratuita da COREGOV.</p>
+                <a href="https://t.me/coregovbr" target="_blank" rel="noopener" class="btn-cta">Falar com COREGOV no Telegram</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="brand">COREGOV</p>
+            <p>Estruturação, captação e compliance para organizações do terceiro setor</p>
+            <p><a href="https://coregov.com.br">coregov.com.br</a> &nbsp;·&nbsp; <a href="https://t.me/coregovbr" target="_blank" rel="noopener">Telegram: @coregovbr</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/oseias-nepomuceno-adm-dados/" target="_blank" rel="noopener">LinkedIn</a></p>
+            <p style="margin-top:0.8rem;font-size:0.75rem;">&copy; 2026 COREGOV. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- TELEGRAM FAB -->
+    <a href="https://t.me/coregovbr" target="_blank" rel="noopener" class="telegram-fab" aria-label="Fale conosco no Telegram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.127.087.497.106.677.11.998.22 2.056.336 3.153.222 2.102.455 4.208.676 6.307.065.617.056.686-.09.881-.17.228-.495.287-.678.296-.333.017-.556-.014-.824-.082-.77-.19-1.927-.497-3.24-.922-1.26-.406-2.23-.676-2.338-.676-.17 0-.335.067-.455.192-.2.207-.48.704-.622.942-.056.094-.127.164-.245.164h-.003c-.204-.006-1.325-.406-2.464-.843-1.14-.437-2.1-.844-2.215-.88-.15-.05-.285-.21-.192-.407.054-.115.178-.27.293-.392.174-.186.34-.35.508-.52.685-.69 1.078-1.087 1.07-1.224-.003-.057.22-.336.338-.484.312-.394.572-.716.572-1.045 0-.154.102-.47.14-.65.016-.075.016-.145-.026-.208-.052-.076-.16-.135-.315-.135-.175 0-.218.028-.63.157-1.78.582-2.48.724-2.604.712-.17-.017-.247-.118-.264-.183-.034-.135.074-.245.2-.33.22-.15.523-.323.523-.323s.198-.156.36-.238c.797-.4 1.854-.85 2.837-1.13.415-.117.804-.17 1.144-.17.372 0 .709.062.967.164.282.12.447.28.528.48.084.21.124.448.138.613.022.26.05.548.07.82.08.98.124 1.68.188 1.84.08.2.156.287.336.287.154 0 .336-.084.54-.26.294-.268.824-.848 1.23-1.28.39-.416.764-.802.936-.907a.17.17 0 0 1 .102-.028z"/>
+        </svg>
+    </a>
+
+</body>
+</html>

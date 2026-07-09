@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de Editais Centro-Oeste 2026 | COREGOV</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Mapeamento completo de editais para ONGs no Centro-Oeste. FCO, Fundo do Cerrado, FAPEG, FAPEMAT, FUNDECT, FAP-DF. Guia atualizado 2026 com planilha de cronograma.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://coregov.com.br/produtos/calendario-centro-oeste.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="📅 Calendário de Editais Centro-Oeste 2026 | COREGOV">
+    <meta property="og:description" content="Mapeamento completo de editais para ONGs no Centro-Oeste. FCO, Fundo do Cerrado, FAPEG, FAPEMAT, FUNDECT, FAP-DF. Guia atualizado 2026.">
+    <meta property="og:url" content="https://coregov.com.br/produtos/calendario-centro-oeste.html">
+    <meta property="og:image" content="https://coregov.com.br/img/og-calendario-centro-oeste.jpg">
+    <meta property="product:price:amount" content="27.00">
+    <meta property="product:price:currency" content="BRL">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        :root {
+            --azul: #0f3460;
+            --azul-escuro: #091c33;
+            --dourado: #f5c518;
+            --vermelho: #e94560;
+            --bg: #f8fafc;
+            --bg-alt: #f1f5f9;
+            --branco: #ffffff;
+            --texto: #1e293b;
+            --texto-suave: #64748b;
+            --borda: #e2e8f0;
+            --sombra: 0 4px 20px rgba(15, 52, 96, 0.08);
+            --sombra-hover: 0 8px 32px rgba(15, 52, 96, 0.15);
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--texto);
+            line-height: 1.7;
+            padding-top: 68px;
+            min-height: 100vh;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== TELEGRAM FLOAT ===== */
+        .telegram-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 56px;
+            height: 56px;
+            background: #0088cc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 28px;
+            box-shadow: 0 4px 16px rgba(0, 136, 204, 0.4);
+            transition: var(--transition);
+        }
+        .telegram-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(0, 136, 204, 0.55);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--borda);
+            transition: var(--transition);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--azul);
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--dourado); }
+
+        nav { display: flex; align-items: center; gap: 8px; }
+
+        nav a {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--texto-suave);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        nav a:hover {
+            color: var(--azul);
+            background: rgba(15, 52, 96, 0.06);
+        }
+
+        .nav-cta {
+            background: var(--azul);
+            color: #fff !important;
+            padding: 10px 20px !important;
+            font-weight: 600;
+        }
+        .nav-cta:hover {
+            background: var(--azul-escuro) !important;
+            color: #fff !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--azul);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* ===== HERO ===== */
+        #hero {
+            padding: 80px 0 60px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #eef2f7 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(15, 52, 96, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        #hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(245, 197, 24, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(15, 52, 96, 0.08);
+            color: var(--azul);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px 6px 8px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+        .hero-badge i { font-size: 14px; }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--azul);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .hero-title span {
+            color: var(--dourado);
+            position: relative;
+        }
+        .hero-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: rgba(245, 197, 24, 0.25);
+            border-radius: 4px;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: var(--texto-suave);
+            margin-bottom: 0;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== PREVIEW SECTION ===== */
+        #preview {
+            padding: 80px 0;
+            background: var(--branco);
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 40px;
+        }
+
+        .preview-card {
+            background: var(--bg);
+            border: 1px solid var(--borda);
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .preview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sombra-hover);
+        }
+        .preview-card .icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        .preview-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--azul);
+            margin-bottom: 10px;
+        }
+        .preview-card p {
+            font-size: 14px;
+            color: var(--texto-suave);
+            line-height: 1.7;
+        }
+
+        /* ===== CONTEÚDO ===== */
+        #conteudo {
+            padding: 80px 0;
+            background: var(--bg);
+        }
+
+        .conteudo-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .conteudo-lista {
+            list-style: none;
+            padding: 0;
+        }
+        .conteudo-lista li {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--borda);
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .conteudo-lista li:last-child { border-bottom: none; }
+        .conteudo-lista li i {
+            color: var(--dourado);
+            font-size: 18px;
+            margin-top: 3px;
+            min-width: 24px;
+        }
+        .conteudo-lista li strong {
+            color: var(--azul);
+        }
+        .conteudo-lista li span {
+            font-size: 15px;
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        .conteudo-highlight {
+            background: var(--branco);
+            border: 1px solid var(--borda);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            box-shadow: var(--sombra);
+        }
+        .conteudo-highlight h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--azul);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .conteudo-highlight h4 i { color: var(--dourado); }
+
+        /* ===== AMOSTRA ===== */
+        #amostra {
+            padding: 80px 0;
+            background: var(--azul-escuro);
+            color: #fff;
+        }
+        #amostra .section-tag { background: rgba(245, 197, 24, 0.15); }
+        #amostra .section-title { color: #fff; }
+        #amostra .section-sub { color: rgba(255,255,255,0.7); }
+
+        .tabela-amostra {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 36px;
+            font-size: 14px;
+            background: rgba(255,255,255,0.05);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .tabela-amostra thead {
+            background: rgba(245, 197, 24, 0.15);
+        }
+        .tabela-amostra th {
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--dourado);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tabela-amostra td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.85);
+        }
+        .tabela-amostra tr:last-child td { border-bottom: none; }
+        .tabela-amostra .tag-estado {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 100px;
+            background: rgba(245, 197, 24, 0.12);
+            color: var(--dourado);
+        }
+        .tabela-amostra .tag-federal {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 100px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .tabela-amostra .tag-cerrado {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 100px;
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+        }
+
+        .amostra-nota {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+        }
+        .amostra-nota i { margin-right: 6px; }
+
+        /* ===== BÔNUS ===== */
+        #bonus {
+            padding: 80px 0;
+            background: var(--branco);
+        }
+
+        .bonus-box {
+            background: linear-gradient(135deg, rgba(245,197,24,0.06) 0%, rgba(245,197,24,0.12) 100%);
+            border: 2px dashed var(--dourado);
+            border-radius: var(--radius);
+            padding: 40px 36px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .bonus-box .icon-big {
+            font-size: 52px;
+            margin-bottom: 16px;
+        }
+        .bonus-box h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--azul);
+            margin-bottom: 12px;
+        }
+        .bonus-box p {
+            font-size: 16px;
+            color: var(--texto-suave);
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        .bonus-box .bonus-tag {
+            display: inline-block;
+            background: var(--dourado);
+            color: var(--azul-escuro);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 4px 16px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+
+        /* ===== PREÇO / CTA ===== */
+        #preco {
+            padding: 80px 0;
+            background: var(--bg);
+            text-align: center;
+        }
+
+        .preco-box {
+            background: var(--branco);
+            border: 2px solid var(--borda);
+            border-radius: var(--radius);
+            padding: 48px 40px;
+            max-width: 540px;
+            margin: 0 auto;
+            box-shadow: var(--sombra);
+            transition: var(--transition);
+        }
+        .preco-box:hover {
+            border-color: var(--dourado);
+            box-shadow: var(--sombra-hover);
+        }
+
+        .preco-box .label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--texto-suave);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .preco-box .valor {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--azul);
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+        .preco-box .valor span { color: var(--dourado); }
+        .preco-box .parcelamento {
+            font-size: 15px;
+            color: var(--texto-suave);
+            margin-bottom: 28px;
+        }
+
+        .btn-comprar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            background: var(--dourado);
+            color: var(--azul-escuro);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+        .btn-comprar:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(245, 197, 24, 0.35);
+        }
+
+        .preco-box .garantia {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--texto-suave);
+        }
+        .preco-box .garantia i { color: #22c55e; }
+
+        .preco-box .entrega {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--texto-suave);
+        }
+        .preco-box .entrega i { color: var(--dourado); margin-right: 6px; }
+
+        /* ===== FAQ ===== */
+        #faq {
+            padding: 80px 0;
+            background: var(--branco);
+        }
+
+        .faq-list {
+            max-width: 720px;
+            margin: 40px auto 0;
+        }
+
+        .faq-item {
+            border: 1px solid var(--borda);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .faq-item:hover { border-color: var(--azul); }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--azul);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+        .faq-question:hover { background: rgba(15, 52, 96, 0.03); }
+        .faq-question i {
+            font-size: 14px;
+            color: var(--dourado);
+            transition: var(--transition);
+            min-width: 16px;
+        }
+        .faq-question.active i { transform: rotate(180deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            padding: 0 24px;
+            font-size: 15px;
+            color: var(--texto-suave);
+            line-height: 1.7;
+        }
+        .faq-answer.open {
+            max-height: 400px;
+            padding: 0 24px 20px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--azul-escuro);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 48px 0 32px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+        .footer-brand .logo {
+            color: #fff;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        .footer-col h5 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .footer-col a {
+            display: block;
+            font-size: 14px;
+            padding: 6px 0;
+            color: rgba(255, 255, 255, 0.6);
+            transition: var(--transition);
+        }
+        .footer-col a:hover { color: var(--dourado); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 13px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            transition: var(--transition);
+            font-size: 16px;
+        }
+        .footer-social a:hover {
+            background: var(--dourado);
+            color: var(--azul-escuro);
+        }
+
+        /* ===== BREADCRUMB ===== */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--texto-suave);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .breadcrumb a {
+            color: var(--azul);
+            font-weight: 500;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { color: var(--texto-suave); }
+
+        /* ===== SECTION COMMON ===== */
+        .section-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--dourado);
+            background: rgba(245, 197, 24, 0.12);
+            padding: 4px 14px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--azul);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .section-sub {
+            font-size: 18px;
+            color: var(--texto-suave);
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .text-center { text-align: center; }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 34px; }
+            .section-title { font-size: 30px; }
+            .preview-grid { grid-template-columns: repeat(2, 1fr); }
+            .conteudo-wrapper { grid-template-columns: 1fr; gap: 32px; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            nav {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--branco);
+                border-bottom: 1px solid var(--borda);
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 4px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            }
+            nav.open { display: flex; }
+            nav a { padding: 12px 16px; width: 100%; }
+            .nav-cta { text-align: center; }
+
+            #hero { padding: 60px 0 40px; }
+            .hero-title { font-size: 28px; }
+            .hero-desc { font-size: 16px; }
+
+            .preview-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 26px; }
+            .section-sub { font-size: 16px; }
+
+            .preco-box { padding: 32px 24px; }
+            .preco-box .valor { font-size: 42px; }
+
+            .bonus-box { padding: 28px 20px; }
+
+            .tabela-amostra { font-size: 12px; }
+            .tabela-amostra th,
+            .tabela-amostra td { padding: 10px 12px; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 24px; }
+            .preco-box .valor { font-size: 36px; }
+            .btn-comprar { width: 100%; font-size: 16px; padding: 14px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== TELEGRAM FLOATING BUTTON ===== -->
+    <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Calend%C3%A1rio%20de%20Editais%20Centro-Oeste%202026."
+       target="_blank"
+       class="telegram-float"
+       aria-label="Fale conosco pelo Telegram">
+        <i class="fab fa-telegram"></i>
+    </a>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-inner">
+            <a href="../index.html" class="logo">CORE<span>GOV</span></a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="mainNav">
+                <a href="../index.html#sobre">Sobre</a>
+                <a href="../index.html#plataforma">Plataforma</a>
+                <a href="../index.html#contato">Contato</a>
+                <a href="../editais/">📋 Editais</a>
+                <a href="index.html">🛒 Produtos</a>
+                <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20CoreGov."
+                   target="_blank"
+                   class="nav-cta">
+                    <i class="fab fa-telegram"></i> Fale Conosco
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>›</span>
+                <a href="index.html">Produtos</a>
+                <span>›</span>
+                <span>Calendário Centro-Oeste 2026</span>
+            </div>
+
+            <div class="hero-badge">
+                <i class="fas fa-cube"></i>
+                Produto Digital · R$ 27
+            </div>
+
+            <h1 class="hero-title">
+                📅 <span>Calendário de Editais</span><br>Centro-Oeste 2026
+            </h1>
+
+            <p class="hero-desc">
+                Mapeamento completo dos fundos estaduais e regionais do Centro-Oeste — 
+                <strong>FCO, Fundo do Cerrado, FAPEG, FAPEMAT, FUNDECT e FAP-DF</strong>. 
+                Saiba exatamente quando e onde inscrever sua ONG durante todo o ano.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== PREVIEW ===== -->
+    <section id="preview">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-tag">O que você vai receber</div>
+                <h2 class="section-title">📦 Este guia inclui</h2>
+                <p class="section-sub">
+                    Um PDF completo + planilha de cronograma — tudo que você precisa 
+                    para planejar a captação de 2026 no Centro-Oeste.
+                </p>
+            </div>
+
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <div class="icon">🗺️</div>
+                    <h4>4 Unidades Federativas</h4>
+                    <p>Editais de Goiás, Mato Grosso, Mato Grosso do Sul e Distrito Federal. Fundos estaduais, secretarias e agências de fomento.</p>
+                </div>
+
+                <div class="preview-card">
+                    <div class="icon">🏛️</div>
+                    <h4>FCO e Fundo do Cerrado</h4>
+                    <p>Fundo Constitucional do Centro-Oeste, linhas do BNDES para o Cerrado, Fundo Amazônia (MT), e mecanismos de desenvolvimento regional.</p>
+                </div>
+
+                <div class="preview-card">
+                    <div class="icon">📊</div>
+                    <h4>Cronograma Mês a Mês</h4>
+                    <p>Calendário visual com os períodos de inscrição de cada edital. Planeje seu ano de captação sem perder prazos.</p>
+                </div>
+
+                <div class="preview-card">
+                    <div class="icon">🎯</div>
+                    <h4>Editais por Tema</h4>
+                    <p>Organizados por área: meio ambiente (Cerrado), assistência social, cultura, educação, direitos humanos e desenvolvimento produtivo.</p>
+                </div>
+
+                <div class="preview-card">
+                    <div class="icon">📋</div>
+                    <h4>Requisitos de Elegibilidade</h4>
+                    <p>Resumo dos critérios de cada edital: contrapartida, limites de faturamento, documentação e prazos mínimos.</p>
+                </div>
+
+                <div class="preview-card">
+                    <div class="icon">📝</div>
+                    <h4>Dicas de Proposta</h4>
+                    <p>Orientações práticas para cada tipo de edital com base no que os avaliadores costumam pontuar mais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO DETALHADO ===== -->
+    <section id="conteudo">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-tag">Conteúdo completo</div>
+                <h2 class="section-title">📖 O que está no PDF</h2>
+                <p class="section-sub">
+                    Um guia prático com +35 páginas de conteúdo organizado para 
+                    você consultar rápido e agir.
+                </p>
+            </div>
+
+            <div class="conteudo-wrapper" style="margin-top: 40px;">
+                <div>
+                    <ul class="conteudo-lista">
+                        <li>
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <strong>Fundo do Cerrado e Editais Ambientais</strong><br>
+                                <span>Programa Cerrado Sustentável, Fundo Amazônia (MT), ICMS Ecológico, Fundo de Defesa Ambiental de cada estado. Foco em conservação do bioma Cerrado e desenvolvimento sustentável.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-building"></i>
+                            <div>
+                                <strong>FCO — Fundo Constitucional do Centro-Oeste</strong><br>
+                                <span>Linhas de financiamento para projetos produtivos, infraestrutura e desenvolvimento social. Condições especiais para cooperativas e associações. Prazos, valores e como acessar.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-flask"></i>
+                            <div>
+                                <strong>FAPs Estaduais (FAPEG, FAPEMAT, FUNDECT, FAP-DF)</strong><br>
+                                <span>Fundos de Amparo à Pesquisa de Goiás, Mato Grosso, Mato Grosso do Sul e Distrito Federal. Editais de inovação, ciência, tecnologia e extensão tecnológica para ONGs e OSCIPs.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <strong>Calendário com Prazos</strong><br>
+                                <span>Tabela mensal de janeiro a dezembro de 2026 com as janelas de inscrição de cada edital, incluindo períodos de recurso e divulgação de resultados.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-balance-scale"></i>
+                            <div>
+                                <strong>Contrapartidas e Limites</strong><br>
+                                <span>Resumo comparativo das contrapartidas exigidas (de 0% a 20%), limites por projeto e valores mínimos/máximos de cada edital.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-file-alt"></i>
+                            <div>
+                                <strong>Documentação Necessária</strong><br>
+                                <span>Checklist de documentos por tipo de edital: certidões, estatuto social registrado, CNPJ, declarações e comprovantes de regularidade fiscal.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <strong>Dicas de Captação por Estado</strong><br>
+                                <span>Particularidades de cada UF: portais estaduais de editais, secretarias que mais abrem chamamentos, contatos úteis e cadastros obrigatórios.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="conteudo-highlight">
+                        <h4><i class="fas fa-check-circle"></i> Para quem é este guia</h4>
+
+                        <ul style="list-style: none; padding: 0; font-size: 15px;">
+                            <li style="padding: 10px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid var(--borda);">
+                                <span style="color: #22c55e;">✅</span>
+                                <span>ONGs e associações comunitárias do <strong>Centro-Oeste</strong> que querem se planejar para 2026</span>
+                            </li>
+                            <li style="padding: 10px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid var(--borda);">
+                                <span style="color: #22c55e;">✅</span>
+                                <span>Organizações ambientalistas que atuam na <strong>conservação do Cerrado</strong> e no desenvolvimento sustentável da região</span>
+                            </li>
+                            <li style="padding: 10px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid var(--borda);">
+                                <span style="color: #22c55e;">✅</span>
+                                <span>Organizações que <strong>já captam</strong> mas querem diversificar as fontes de recursos</span>
+                            </li>
+                            <li style="padding: 10px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid var(--borda);">
+                                <span style="color: #22c55e;">✅</span>
+                                <span>Consultores sociais que atendem <strong>clientes no CO</strong> e precisam de um roteiro anual</span>
+                            </li>
+                            <li style="padding: 10px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid var(--borda);">
+                                <span style="color: #22c55e;">✅</span>
+                                <span>Secretarias e departamentos de <strong>captação municipal</strong> que buscam recursos estaduais e federais</span>
+                            </li>
+                            <li style="padding: 10px 0; display: flex; gap: 10px; align-items: flex-start;">
+                                <span style="color: #22c55e;">✅</span>
+                                <span>Cooperativas da agricultura familiar e <strong>empreendimentos do Cerrado</strong></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AMOSTRA ===== -->
+    <section id="amostra">
+        <div class="container text-center">
+            <div class="section-tag">Amostra do conteúdo</div>
+            <h2 class="section-title">🔍 Veja um trecho do guia</h2>
+            <p class="section-sub">
+                Abaixo, alguns dos editais mapeados no calendário. O guia completo 
+                traz a tabela detalhada com os 4 estados e o DF.
+            </p>
+
+            <div style="overflow-x: auto;">
+                <table class="tabela-amostra">
+                    <thead>
+                        <tr>
+                            <th>Edital / Fundo</th>
+                            <th>UF</th>
+                            <th>Período</th>
+                            <th>Valor</th>
+                            <th>Segmento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FCO — Fundo Constitucional do CO</td>
+                            <td><span class="tag-federal">CO</span></td>
+                            <td>Jan–Fev</td>
+                            <td>até R$ 5 M</td>
+                            <td>Produtivo</td>
+                        </tr>
+                        <tr>
+                            <td>FAPEG — Universal</td>
+                            <td><span class="tag-estado">GO</span></td>
+                            <td>Fev–Mar</td>
+                            <td>até R$ 200 mil</td>
+                            <td>Ciência</td>
+                        </tr>
+                        <tr>
+                            <td>Fundo de Defesa Ambiental</td>
+                            <td><span class="tag-estado">GO</span></td>
+                            <td>Mar–Abr</td>
+                            <td>até R$ 300 mil</td>
+                            <td>Ambiental</td>
+                        </tr>
+                        <tr>
+                            <td>FAPEMAT — Demanda Universal</td>
+                            <td><span class="tag-estado">MT</span></td>
+                            <td>Abr–Mai</td>
+                            <td>até R$ 180 mil</td>
+                            <td>Ciência</td>
+                        </tr>
+                        <tr>
+                            <td>FUNDECT — Inovação</td>
+                            <td><span class="tag-estado">MS</span></td>
+                            <td>Mai–Jun</td>
+                            <td>até R$ 250 mil</td>
+                            <td>Inovação</td>
+                        </tr>
+                        <tr>
+                            <td>Fundo do Cerrado — Conservação</td>
+                            <td><span class="tag-cerrado">🌿</span></td>
+                            <td>Jun–Jul</td>
+                            <td>até R$ 800 mil</td>
+                            <td>Ambiental</td>
+                        </tr>
+                        <tr>
+                            <td>FAP-DF — Extensão Tecnológica</td>
+                            <td><span class="tag-estado">DF</span></td>
+                            <td>Jul–Ago</td>
+                            <td>até R$ 150 mil</td>
+                            <td>Tecnologia</td>
+                        </tr>
+                        <tr>
+                            <td>Secretaria de Cultura — MS</td>
+                            <td><span class="tag-estado">MS</span></td>
+                            <td>Ago–Set</td>
+                            <td>até R$ 120 mil</td>
+                            <td>Cultura</td>
+                        </tr>
+                        <tr>
+                            <td>FNMA — Edital Nacional</td>
+                            <td><span class="tag-federal">Federal</span></td>
+                            <td>Set–Out</td>
+                            <td>R$ 1 M–R$ 2 M</td>
+                            <td>Ambiental</td>
+                        </tr>
+                        <tr>
+                            <td>BNDES Fundo Socioambiental</td>
+                            <td><span class="tag-federal">Federal</span></td>
+                            <td>Out–Nov</td>
+                            <td>até R$ 5 M</td>
+                            <td>Socioambiental</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="amostra-nota">
+                <i class="fas fa-info-circle"></i>
+                * Tabela ilustrativa. O guia completo contém +30 editais mapeados com 
+                links, contatos e detalhes de cada um.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== BÔNUS ===== -->
+    <section id="bonus">
+        <div class="container text-center">
+            <div class="section-tag">Bônus exclusivo</div>
+
+            <div class="bonus-box">
+                <div class="bonus-tag">🎁 Grátis!</div>
+                <div class="icon-big">📊</div>
+                <h3>Planilha Editável de Cronograma</h3>
+                <p>
+                    Organize sua captação de 2026 mês a mês. A planilha em Excel (.xlsx) 
+                    já vem preenchida com todos os editais do guia — é só marcar os que 
+                    deseja concorrer e definir seus prazos internos.
+                </p>
+                <p style="margin-top: 12px; color: var(--texto-suave); font-size: 14px;">
+                    <i class="fas fa-check" style="color: #22c55e;"></i> 
+                    Incluso no valor — sem custo adicional
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PREÇO / CTA ===== -->
+    <section id="preco">
+        <div class="container">
+            <div class="preco-box">
+                <div class="label">Acesso imediato</div>
+                <div class="valor">R$ <span>27</span></div>
+                <div class="parcelamento">ou 2x de R$ 13,50 sem juros</div>
+
+                <a href="https://mpago.la/1GdxnTE" class="btn-comprar">
+                    <i class="fas fa-lock-open"></i>
+                    QUERO MEU GUIA AGORA
+                </a>
+
+                <div class="garantia">
+                    <i class="fas fa-shield-alt"></i>
+                    Compra segura · Download imediato · Pagamento processado pelo Mercado Pago
+                </div>
+
+                <div class="entrega">
+                    <i class="fas fa-download"></i>
+                    Você recebe o PDF + Planilha por e-mail após a confirmação do pagamento
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-tag">Dúvidas frequentes</div>
+                <h2 class="section-title">❓ Perguntas &amp; Respostas</h2>
+                <p class="section-sub">
+                    Tire suas dúvidas sobre o Calendário de Editais Centro-Oeste 2026.
+                </p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        O guia cobre todos os estados do Centro-Oeste?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Sim! Mapeamos editais de Goiás, Mato Grosso, Mato Grosso do Sul e Distrito Federal. 
+                        Incluímos tanto os fundos estaduais (FAPEG, FAPEMAT, FUNDECT, FAP-DF) quanto os 
+                        editais das secretarias estaduais, prefeituras das capitais (Goiânia, Cuiabá, 
+                        Campo Grande, Brasília) e cidades-polo da região.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        O que é o FCO e ele está incluído?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        O Fundo Constitucional do Centro-Oeste (FCO) é o principal mecanismo de 
+                        financiamento da região, com recursos para setores produtivos, infraestrutura 
+                        e desenvolvimento social. Sim, o FCO está mapeado no guia com todas as 
+                        suas linhas, prazos e condições para ONGs e cooperativas acessarem.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Tem editais específicos para o Cerrado?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Sim! Dedicamos uma seção especial aos fundos ambientais do Cerrado, incluindo 
+                        o Fundo Cerrado Sustentável, linhas do Fundo Amazônia para a região de 
+                        transição amazônica em MT, ICMS Ecológico, e programas de conservação 
+                        da biodiversidade. É o diferencial deste guia para ONGs ambientalistas.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Quanto tempo leva para receber após a compra?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Imediato! Após a confirmação do pagamento pelo Mercado Pago (geralmente 
+                        minutos no cartão ou boleto compensado em até 2 dias úteis), você recebe 
+                        o link de download no e-mail cadastrado. O PDF e a planilha ficam disponíveis 
+                        para download direto.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Minha ONG é de fora do Centro-Oeste. Esse guia serve?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Este guia é focado no Centro-Oeste, mas os editais federais mapeados (FNMA, 
+                        BNDES, CAIXA) são nacionais. Se sua ONG quer concorrer a editais com recorte 
+                        da região ou está sediada em GO, MT, MS ou DF, o guia é ideal. Para outras 
+                        regiões, confira nosso Calendário de Editais 2026 completo ou as versões 
+                        específicas por região.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">CORE<span>GOV</span></div>
+                    <p>
+                        Consultoria para ONGs, recursos federais para prefeituras 
+                        e agentes de IA para automatizar processos. 
+                        Da elaboração de estatutos ao Transferegov.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h5>Serviços</h5>
+                    <a href="../index.html#servicos">Elaboração de Estatutos</a>
+                    <a href="../index.html#servicos">Plano de Negócio Social</a>
+                    <a href="../index.html#servicos">Curadoria de Patrocinadores</a>
+                    <a href="../index.html#servicos">Recursos Federais</a>
+                    <a href="../index.html#servicos">Agentes de IA</a>
+                    <a href="../index.html#plataforma">CoreGov App</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Links</h5>
+                    <a href="../index.html#sobre">Quem Somos</a>
+                    <a href="../index.html#contato">Contato</a>
+                    <a href="https://app.coregov.com.br" target="_blank">Plataforma</a>
+                    <a href="https://t.me/coregovbr" target="_blank">Telegram</a>
+                    <a href="../editais/">📋 Editais</a>
+                    <a href="index.html">🛒 Produtos</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 CoreGov. Todos os direitos reservados.</span>
+                <div class="footer-social">
+                    <a href="https://t.me/coregovbr" target="_blank" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/oseias-nepomuceno-adm-dados/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // Menu mobile toggle
+        const toggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('mainNav');
+
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+            const icon = toggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Fechar menu ao clicar em link
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+                const icon = toggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Header shadow ao scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                const isOpen = answer.classList.contains('open');
+
+                // Fecha todas
+                document.querySelectorAll('.faq-answer').forEach(a => {
+                    a.classList.remove('open');
+                });
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                });
+
+                // Abre a clicada se estava fechada
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    btn.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

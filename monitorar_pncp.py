@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🦞 Monitor de Licitações PNCP — COREGOV
+[MONITOR] Monitor de Licitações PNCP — COREGOV
 ========================================
 Monitora o Portal Nacional de Contratações Públicas (PNCP)
 em busca de licitações para serviços de:
@@ -89,7 +89,7 @@ def fetch(url):
         with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
             return r.read().decode("utf-8", errors="replace")
     except Exception as e:
-        print(f"  ⚠️  Erro: {e}", file=sys.stderr)
+        print(f"  [AVISO]  Erro: {e}", file=sys.stderr)
         return ""
 
 
@@ -252,8 +252,8 @@ def gerar_relatorio(resultados_por_palavra, oportunidades_gov=None):
     """Gera relatório formatado."""
     linhas = []
     linhas.append("=" * 55)
-    linhas.append("  🦞 MONITOR DE LICITAÇÕES PNCP — COREGOV")
-    linhas.append(f"  📅 {datetime.now().strftime('%d/%m/%Y %H:%M')}")
+    linhas.append("  [MONITOR] MONITOR DE LICITAÇÕES PNCP — COREGOV")
+    linhas.append(f"  [DATA] {datetime.now().strftime('%d/%m/%Y %H:%M')}")
     linhas.append("=" * 55)
     linhas.append("")
     
@@ -263,10 +263,10 @@ def gerar_relatorio(resultados_por_palavra, oportunidades_gov=None):
         relevantes = [r for r in resultados if r.get("relevante")]
         if relevantes:
             total_relevantes += len(relevantes)
-            linhas.append(f"\n🔍 '{palavra}' — {len(relevantes)} resultado(s)")
+            linhas.append(f"\n[BUSCAR] '{palavra}' — {len(relevantes)} resultado(s)")
             linhas.append("-" * 45)
             for r in relevantes[:5]:  # Top 5
-                linhas.append(f"  📌 {r.get('titulo', 'Sem título')}")
+                linhas.append(f"  [PIN] {r.get('titulo', 'Sem título')}")
                 if r.get("descricao"):
                     desc = r["descricao"][:120]
                     linhas.append(f"     {desc}")
@@ -275,12 +275,12 @@ def gerar_relatorio(resultados_por_palavra, oportunidades_gov=None):
                 linhas.append("")
     
     if total_relevantes == 0:
-        linhas.append("  📭 Nenhum resultado relevante encontrado nesta rodada.")
+        linhas.append("  [CAIXA] Nenhum resultado relevante encontrado nesta rodada.")
     
     if oportunidades_gov:
-        linhas.append(f"\n  🏛️  Fontes governamentais verificadas: {len(oportunidades_gov)}")
+        linhas.append(f"\n  [GOV]  Fontes governamentais verificadas: {len(oportunidades_gov)}")
         for og in oportunidades_gov:
-            status_icone = "✅" if og.get("status") == "acessado" else "⚠️"
+            status_icone = "[OK]" if og.get("status") == "acessado" else "[AVISO]"
             linhas.append(f"     {status_icone} {og.get('fonte', '')}")
     
     linhas.append("")
@@ -302,19 +302,19 @@ def main():
     args = parser.parse_args()
     
     if args.watch:
-        print(f"🦞 Monitor contínuo iniciado (intervalo: {args.interval//3600}h)")
+        print(f"[MONITOR] Monitor contínuo iniciado (intervalo: {args.interval//3600}h)")
         print(f"   Pressione Ctrl+C para parar\n")
         import time
         while True:
-            print(f"\n⏰ {datetime.now().strftime('%d/%m/%Y %H:%M')} — Verificando...")
+            print(f"\n[ALARME] {datetime.now().strftime('%d/%m/%Y %H:%M')} — Verificando...")
             try:
                 verificar_agora(args.quiet)
             except KeyboardInterrupt:
-                print("\n⏹️  Monitor parado.")
+                print("\n[PARAR]  Monitor parado.")
                 break
             except Exception as e:
-                print(f"  ⚠️  Erro: {e}", file=sys.stderr)
-            print(f"  💤 Próxima verificação em {args.interval//3600}h...")
+                print(f"  [AVISO]  Erro: {e}", file=sys.stderr)
+            print(f"  [Zzz] Próxima verificação em {args.interval//3600}h...")
             time.sleep(args.interval)
     else:
         verificar_agora(args.quiet, args.only_count)
@@ -329,7 +329,7 @@ def verificar_agora(quiet=False, only_count=False):
     total_geral = 0
     
     if not quiet:
-        print(f"  🔎 Verificando {len(PALAVRAS_CHAVE)} palavras-chave...")
+        print(f"  [BUSCA] Verificando {len(PALAVRAS_CHAVE)} palavras-chave...")
     
     for i, palavra in enumerate(PALAVRAS_CHAVE):
         if not quiet:
@@ -341,7 +341,7 @@ def verificar_agora(quiet=False, only_count=False):
         # Se DuckDuckGo falhar, tenta buscar no Google
         if not resultados:
             if not quiet:
-                print("➡️  Google...", end=" ")
+                print("->  Google...", end=" ")
             resultados = buscar_google(palavra)
         
         # Classificar relevância
@@ -364,7 +364,7 @@ def verificar_agora(quiet=False, only_count=False):
     
     # Verificar fontes governamentais
     if not quiet:
-        print("  🏛️  Verificando fontes governamentais...")
+        print("  [GOV]  Verificando fontes governamentais...")
     oportunidades_gov = buscar_oportunidades_governo()
     
     # Gerar relatório
@@ -397,7 +397,7 @@ def verificar_agora(quiet=False, only_count=False):
         }
         registrar_alerta(alerta)
         if not quiet:
-            print(f"\n  🚨 {total_relevantes} resultado(s) relevante(s) encontrado(s)! Alerta salvo.")
+            print(f"\n  [ALERTA] {total_relevantes} resultado(s) relevante(s) encontrado(s)! Alerta salvo.")
     
     return total_relevantes
 

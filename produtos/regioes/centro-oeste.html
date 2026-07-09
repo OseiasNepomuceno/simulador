@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editais e Captação de Recursos Centro-Oeste | COREGOV</title>
+  <meta name="description" content="Hub regional COREGOV para o Centro-Oeste: editais, FCO, Fundo do Cerrado, fundos estaduais e recursos para ONGs do DF, GO, MT, MS e toda a região.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    a { color: #0f3460; text-decoration: none; transition: color .2s; }
+    a:hover { color: #f5c518; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── Header ── */
+    .header {
+      background: #0f3460;
+      color: #fff;
+      padding: 1rem 0;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 12px rgba(15,52,96,.15);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -.025em; }
+    .logo span { color: #f5c518; }
+    .logo small { font-size: .7rem; font-weight: 400; opacity: .7; display: block; }
+
+    /* ── Container ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      background: #fff;
+      padding: .75rem 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: .875rem;
+    }
+    .breadcrumb a { color: #64748b; }
+    .breadcrumb a:hover { color: #0f3460; }
+    .breadcrumb .sep { color: #94a3b8; margin: 0 .5rem; }
+    .breadcrumb .current { color: #0f3460; font-weight: 600; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #d4a373 0%, #cc8b4f 25%, #b87333 50%, #a0522d 100%);
+      color: #fff;
+      padding: 4rem 0 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,.12) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(0,0,0,.10) 0%, transparent 50%),
+        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,.04) 40px, rgba(255,255,255,.04) 41px);
+      pointer-events: none;
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      backdrop-filter: blur(4px);
+      padding: .3rem .9rem;
+      border-radius: 999px;
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+    .hero h1 { font-size: 2.75rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+    .hero h1 .emoji { display: inline-block; }
+    .hero p { font-size: 1.15rem; max-width: 640px; opacity: .92; line-height: 1.7; }
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-top: 2rem; flex-wrap: wrap;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat .num { font-size: 1.8rem; font-weight: 800; display: block; }
+    .hero-stat .label { font-size: .82rem; opacity: .8; }
+
+    /* ── Section ── */
+    .section { padding: 3.5rem 0; }
+    .section-title {
+      font-size: 1.75rem; font-weight: 700; color: #0f3460;
+      margin-bottom: .5rem;
+    }
+    .section-sub { color: #64748b; margin-bottom: 2rem; font-size: 1.05rem; }
+
+    /* ── Product Cards ── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      border: 1px solid #e2e8f0;
+      transition: transform .2s, box-shadow .2s;
+      display: flex; flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(15,52,96,.10);
+    }
+    .product-card .icon { font-size: 2.5rem; margin-bottom: .75rem; }
+    .product-card h3 { font-size: 1.2rem; font-weight: 700; color: #0f3460; margin-bottom: .5rem; }
+    .product-card p { font-size: .9rem; color: #64748b; margin-bottom: 1.25rem; flex: 1; }
+    .product-card .price {
+      font-size: 1.1rem; font-weight: 700; color: #f5c518;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: #0f3460; color: #fff;
+      padding: .7rem 1.5rem; border-radius: 8px;
+      font-weight: 600; font-size: .9rem;
+      transition: background .2s, transform .15s;
+      border: none; cursor: pointer; text-align: center;
+      justify-content: center;
+    }
+    .btn:hover { background: #1a4a82; color: #fff; transform: scale(1.02); }
+    .btn-gold { background: #f5c518; color: #0f3460; }
+    .btn-gold:hover { background: #e0b014; color: #0f3460; }
+
+    /* ── Por que focar? ── */
+    .why-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .why-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+    }
+    .why-card .icon { font-size: 2rem; margin-bottom: .5rem; }
+    .why-card h4 { font-size: 1rem; font-weight: 700; color: #0f3460; }
+    .why-card p { font-size: .85rem; color: #64748b; margin-top: .25rem; }
+    .why-highlight {
+      background: linear-gradient(135deg, #0f3460, #1a4a82);
+      color: #fff;
+      border-color: transparent;
+    }
+    .why-highlight h4 { color: #f5c518; }
+    .why-highlight p { color: rgba(255,255,255,.85); }
+
+    /* ── Funding List ── */
+    .funding-list {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+    .funding-list h4 { font-size: 1.1rem; color: #0f3460; margin-bottom: 1rem; }
+    .funding-list ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: .6rem;
+    }
+    .funding-list li {
+      padding: .5rem .75rem;
+      background: #f1f5f9;
+      border-radius: 8px;
+      font-size: .9rem;
+      font-weight: 500;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .funding-list li::before {
+      content: '🔹';
+      font-size: .8rem;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: #0f3460;
+      color: #fff;
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+      border-radius: 16px;
+      margin: 2rem 0;
+    }
+    .cta-section h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: .75rem; }
+    .cta-section p { opacity: .85; margin-bottom: 1.5rem; font-size: 1.05rem; }
+    .cta-section .btn { font-size: 1.05rem; padding: .9rem 2.2rem; }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0f3460;
+      color: rgba(255,255,255,.7);
+      padding: 2.5rem 0 1.5rem;
+      margin-top: 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer h4 { color: #fff; font-size: .95rem; font-weight: 700; margin-bottom: .75rem; }
+    .footer a { color: rgba(255,255,255,.7); font-size: .875rem; display: block; margin-bottom: .35rem; }
+    .footer a:hover { color: #f5c518; }
+    .footer-copy { text-align: center; font-size: .8rem; border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.5rem; }
+
+    /* ── Telegram Float ── */
+    .telegram-float {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999;
+      background: #0088cc; color: #fff;
+      width: 56px; height: 56px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 16px rgba(0,136,204,.35);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .telegram-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(0,136,204,.45); color: #fff; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+      .hero-stats { gap: 1.5rem; }
+      .hero-stat .num { font-size: 1.4rem; }
+      .section-title { font-size: 1.4rem; }
+      .cta-section h2 { font-size: 1.4rem; }
+      .header-inner { flex-direction: column; gap: .5rem; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 2.5rem 0; }
+      .products-grid { grid-template-columns: 1fr; }
+      .why-cards { grid-template-columns: 1fr; }
+      .funding-list ul { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ Header ═══ -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo" style="color:#fff;">
+        COREGOV<span>.</span>
+        <small>Hub Centro-Oeste</small>
+      </a>
+      <nav style="display:flex;gap:1.25rem;font-size:.875rem;font-weight:500;">
+        <a href="/" style="color:rgba(255,255,255,.8);">Início</a>
+        <a href="/produtos" style="color:rgba(255,255,255,.8);">Produtos</a>
+        <a href="/editais" style="color:rgba(255,255,255,.8);">Editais</a>
+        <a href="/contato" style="color:rgba(255,255,255,.8);">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══ Breadcrumb ═══ -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Início</a>
+      <span class="sep">›</span>
+      <a href="/produtos">Produtos</a>
+      <span class="sep">›</span>
+      <span class="current">Centro-Oeste</span>
+    </div>
+  </div>
+
+  <!-- ═══ Hero ═══ -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge">🌵 Hub Regional</span>
+      <h1><span class="emoji">🌵</span> Centro-Oeste<br>Editais e Recursos para sua ONG</h1>
+      <p>
+        O Centro-Oeste concentra <strong>R$ 8,5 bilhões</strong> anuais do FCO,
+        o maior fundo constitucional do país, além de fundos estaduais, emendas
+        parlamentares e editais voltados ao Cerrado, cooperativismo e
+        desenvolvimento regional. Sua ONG está preparada?
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="num">R$ 8,5 bi</span>
+          <span class="label">FCO por ano</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">5</span>
+          <span class="label">UFs — DF, GO, MT, MS, TO*</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">12+</span>
+          <span class="label">Fundos e linhas ativas</span>
+        </div>
+      </div>
+      <p style="font-size:.8rem;margin-top:1rem;opacity:.6;">* Tocantins é parte da região Norte, mas mantém forte integração econômica com o Centro-Oeste.</p>
+    </div>
+  </section>
+
+  <!-- ═══ Produtos ═══ -->
+  <section class="section" id="produtos">
+    <div class="container">
+      <h2 class="section-title">📦 Produtos para sua ONG</h2>
+      <p class="section-sub">Ferramentas práticas criadas sob medida para organizações do Centro-Oeste.</p>
+
+      <div class="products-grid">
+        <!-- Produto 1 -->
+        <div class="product-card">
+          <div class="icon">📅</div>
+          <h3>Calendário Editais Centro-Oeste</h3>
+          <p>
+            Planeje-se com antecedência: cronograma anual com todos os editais
+            estaduais e federais abertos para ONGs do Centro-Oeste, incluindo
+            FCO, Fundo do Cerrado e fundos estaduais.
+          </p>
+          <div class="price">R$ 27</div>
+          <a href="../calendario-centro-oeste.html" class="btn">📥 Adquirir</a>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="product-card">
+          <div class="icon">📋</div>
+          <h3>Checklist ONG Pronta</h3>
+          <p>
+            Diagnóstico completo de elegibilidade: documentos, certidões,
+            regularidade fiscal, alinhamento com os objetivos do FCO e
+            adequação estatutária para captar recursos na região.
+          </p>
+          <div class="price">R$ 27</div>
+          <a href="../checklist-ong-pronta.html" class="btn">📥 Adquirir</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Por que focar no Centro-Oeste? ═══ -->
+  <section class="section" style="background:#f1f5f9;padding:3.5rem 0;">
+    <div class="container">
+      <h2 class="section-title">🌎 Por que focar no Centro-Oeste?</h2>
+      <p class="section-sub">
+        A região que mais cresce no Brasil também é a que tem mais recursos
+        disponíveis — e menos organizações preparadas para acessá-los.
+      </p>
+
+      <!-- Cards UFs + Destaques -->
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="icon">🇧🇷</div>
+          <h4>Distrito Federal</h4>
+          <p>Berço de emendas parlamentares, fundos nacionais e sedes de ministérios. ONGs com sede em Brasília têm vantagem competitiva.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon">🏞️</div>
+          <h4>Goiás</h4>
+          <p>FAPEG ativa, forte presença do cooperativismo agrícola e crescente demanda por projetos socioambientais no Cerrado.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon">🌳</div>
+          <h4>Mato Grosso</h4>
+          <p>FAPEMAT, fronteira agrícola e maior bioma Cerrado do país. Oportunidades em regularização ambiental e inclusão produtiva.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon">🌊</div>
+          <h4>Mato Grosso do Sul</h4>
+          <p>FUNDECT, Pantanal e bioeconomia. Editais voltados a conservação, turismo de base comunitária e desenvolvimento sustentável.</p>
+        </div>
+        <div class="why-card why-highlight">
+          <div class="icon">💰</div>
+          <h4>FCO — R$ 8,5 bilhões</h4>
+          <p>Maior fundo constitucional do Brasil. Financia projetos de infraestrutura, produção e serviços — ONGs podem acessar via parcerias.</p>
+        </div>
+        <div class="why-card why-highlight">
+          <div class="icon">🌿</div>
+          <h4>Fundo do Cerrado</h4>
+          <p>Recursos específicos para conservação e uso sustentável do bioma. Editais anuais com valores entre R$ 200 mil e R$ 2 milhões.</p>
+        </div>
+      </div>
+
+      <!-- Fundos e Linhas -->
+      <div class="funding-list">
+        <h4>📌 Principais fundos e linhas de fomento da região</h4>
+        <ul>
+          <li>FCO — Fundo Constitucional do Centro-Oeste</li>
+          <li>Fundo do Cerrado (MMA/PNUD)</li>
+          <li>FAPEG — Fundação de Amparo à Pesquisa de Goiás</li>
+          <li>FAPEMAT — Fundação de Amparo à Pesquisa de MT</li>
+          <li>FUNDECT — Fundação de Apoio ao Desenvolvimento do Ensino, Ciência e Tecnologia do MS</li>
+          <li>FAP-DF — Fundação de Apoio à Pesquisa do Distrito Federal</li>
+          <li>Pronaf — Programa Nacional da Agricultura Familiar</li>
+          <li>Emendas Parlamentares (individuais e de bancada)</li>
+          <li>Fundo Nacional do Meio Ambiente (FNMA)</li>
+          <li>Fundo Amazônia (para projetos no Cerrado adjacente)</li>
+          <li>BNDES Fundo Socioambiental</li>
+          <li>Programa de Aquisição de Alimentos (PAA)</li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <h2>🎯 Sua ONG pode estar perdendo esses recursos</h2>
+        <p>
+          Estatuto desatualizado, documentação irregular ou falta de
+          alinhamento com as linhas de fomento são os principais motivos de
+          reprovação. A COREGOV estrutura sua organização para captar.
+        </p>
+        <a href="https://t.me/coregovbr" class="btn btn-gold" target="_blank" rel="noopener">
+          💬 Fale conosco no Telegram
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>COREGOV</h4>
+          <p style="font-size:.825rem;">
+            Estruturação, estatutos e captação de recursos<br>
+            para organizações do terceiro setor.
+          </p>
+        </div>
+        <div>
+          <h4>Produtos</h4>
+          <a href="/produtos">Todos os produtos</a>
+          <a href="../calendario-centro-oeste.html">Calendário Centro-Oeste</a>
+          <a href="../checklist-ong-pronta.html">Checklist ONG Pronta</a>
+        </div>
+        <div>
+          <h4>Regiões</h4>
+          <a href="centro-oeste.html">Centro-Oeste</a>
+          <a href="nordeste.html">Nordeste</a>
+          <a href="norte.html">Norte</a>
+          <a href="sudeste.html">Sudeste</a>
+          <a href="sul.html">Sul</a>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <a href="https://t.me/coregovbr" target="_blank" rel="noopener">Telegram: @coregovbr</a>
+          <a href="https://coregov.com.br">coregov.com.br</a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 COREGOV. CNPJ em regularização. &mdash; Hub Centro-Oeste
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Telegram Float ═══ -->
+  <a href="https://t.me/coregovbr" class="telegram-float" target="_blank" rel="noopener" aria-label="Fale conosco no Telegram">
+    ✈️
+  </a>
+
+</body>
+</html>
