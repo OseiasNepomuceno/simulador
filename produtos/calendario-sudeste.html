@@ -1,613 +1,613 @@
-﻿<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ðŸ“… CalendÃ¡rio de Editais Sudeste 2026 | COREGOV</title>
-  <meta name="description" content="CalendÃ¡rio completo de editais pÃºblicos para ONGs do Sudeste (SP, RJ, MG, ES): FEHIDRO, FAPESP, FAPEMIG, FAPERJ e muito mais. R$27." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
-      line-height: 1.6;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; }
-
-    /* === HEADER === */
-    .header {
-      background: #0f3460;
-      padding: 16px 24px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(15,52,96,0.2);
-    }
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .header-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.4rem;
-    }
-    .header-logo span { color: #f5c518; }
-    .header-nav { display: flex; gap: 24px; }
-    .header-nav a {
-      color: #cbd5e1;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .header-nav a:hover { color: #f5c518; }
-
-    /* === CONTAINER === */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-    /* === HERO === */
-    .hero {
-      background: linear-gradient(135deg, #0f3460 0%, #1a4a7a 50%, #0f3460 100%);
-      color: #fff;
-      padding: 80px 24px 60px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 50%, rgba(245,197,24,0.06) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
-    .hero h1 .emoji { font-size: 2.6rem; }
-    .hero p {
-      font-size: 1.2rem;
-      color: #cbd5e1;
-      max-width: 700px;
-      margin: 0 auto 32px;
-      font-weight: 300;
-    }
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .hero-tag {
-      background: rgba(245,197,24,0.15);
-      color: #f5c518;
-      padding: 8px 20px;
-      border-radius: 100px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border: 1px solid rgba(245,197,24,0.25);
-    }
-    .hero-tag strong { color: #fff; }
-
-    /* === SECTION === */
-    .section { padding: 64px 0; }
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #0f3460;
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .section-title span { color: #f5c518; }
-
-    /* === CARDS === */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 32px 24px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      border: 1px solid #e2e8f0;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 32px rgba(15,52,96,0.12);
-    }
-    .card-icon { font-size: 2.4rem; margin-bottom: 16px; }
-    .card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #0f3460;
-      margin-bottom: 8px;
-    }
-    .card p { font-size: 0.9rem; color: #475569; line-height: 1.6; }
-
-    /* === PREVIEW === */
-    .preview-box {
-      background: #fff;
-      border-radius: 16px;
-      border: 2px solid #e2e8f0;
-      overflow: hidden;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .preview-header {
-      background: #0f3460;
-      color: #fff;
-      padding: 16px 24px;
-      font-weight: 600;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .preview-body { padding: 32px 24px; }
-    .preview-month {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 14px 0;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    .preview-month:last-child { border-bottom: none; }
-    .preview-month .month {
-      font-weight: 700;
-      color: #f5c518;
-      background: #0f3460;
-      min-width: 100px;
-      padding: 4px 12px;
-      border-radius: 6px;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-    .preview-month .info { color: #475569; font-size: 0.9rem; flex: 1; }
-    .preview-month .info strong { color: #0f3460; }
-    .preview-month .value {
-      font-weight: 700;
-      color: #0f3460;
-      font-size: 0.9rem;
-      white-space: nowrap;
-    }
-
-    /* === BÃ”NUS === */
-    .bonus-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-    .bonus-item {
-      background: #fff;
-      border-radius: 12px;
-      padding: 24px;
-      border: 1px solid #e2e8f0;
-      position: relative;
-    }
-    .bonus-item::before {
-      content: 'ðŸŽ';
-      font-size: 1.5rem;
-      display: block;
-      margin-bottom: 8px;
-    }
-    .bonus-item h4 { font-size: 1rem; font-weight: 700; color: #0f3460; margin-bottom: 6px; }
-    .bonus-item p { font-size: 0.85rem; color: #475569; }
-    .bonus-badge {
-      display: inline-block;
-      background: #f5c518;
-      color: #0f3460;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 2px 10px;
-      border-radius: 100px;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
-
-    /* === PRICE === */
-    .price-section {
-      background: linear-gradient(135deg, #0f3460, #1a4a7a);
-      color: #fff;
-      text-align: center;
-      padding: 64px 24px;
-    }
-    .price-amount {
-      font-size: 4rem;
-      font-weight: 800;
-      color: #f5c518;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .price-amount small {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #cbd5e1;
-    }
-    .price-sub {
-      font-size: 1rem;
-      color: #94a3b8;
-      margin-bottom: 32px;
-    }
-    .price-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: #f5c518;
-      color: #0f3460;
-      font-weight: 700;
-      font-size: 1.2rem;
-      padding: 16px 48px;
-      border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .price-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(245,197,24,0.35);
-    }
-    .price-disclaimer {
-      margin-top: 16px;
-      font-size: 0.85rem;
-      color: #94a3b8;
-    }
-
-    /* === FAQ === */
-    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-    .faq-item {
-      background: #fff;
-      border-radius: 12px;
-      border: 1px solid #e2e8f0;
-      overflow: hidden;
-    }
-    .faq-question {
-      padding: 18px 24px;
-      font-weight: 600;
-      color: #0f3460;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.2s;
-    }
-    .faq-question:hover { background: #f1f5f9; }
-    .faq-question::after {
-      content: '+';
-      font-size: 1.4rem;
-      color: #f5c518;
-      font-weight: 700;
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 24px;
-      transition: max-height 0.3s, padding 0.3s;
-      color: #475569;
-      font-size: 0.9rem;
-    }
-    .faq-item.active .faq-answer {
-      max-height: 300px;
-      padding: 0 24px 18px;
-    }
-    .faq-item.active .faq-question::after { content: 'âˆ’'; }
-
-    /* === FOOTER === */
-    .footer {
-      background: #0f3460;
-      color: #94a3b8;
-      padding: 40px 24px;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-    .footer strong { color: #f5c518; }
-    .footer a { color: #cbd5e1; text-decoration: underline; }
-    .footer .social-links { margin: 16px 0; display: flex; justify-content: center; gap: 20px; }
-    .footer .social-links a {
-      color: #cbd5e1;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer .social-links a:hover { color: #f5c518; }
-
-    /* === FLOATING TELEGRAM === */
-    .telegram-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 200;
-    }
-    .telegram-float a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #0088cc;
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 14px 24px;
-      border-radius: 50px;
-      box-shadow: 0 4px 20px rgba(0,136,204,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .telegram-float a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 28px rgba(0,136,204,0.5);
-    }
-    .telegram-float .tg-icon {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-    }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 1.8rem; }
-      .hero p { font-size: 1rem; }
-      .hero-tags { gap: 8px; }
-      .hero-tag { font-size: 0.8rem; padding: 6px 14px; }
-      .section-title { font-size: 1.5rem; }
-      .header-nav { display: none; }
-      .price-amount { font-size: 3rem; }
-      .price-cta { width: 100%; justify-content: center; }
-      .preview-month { flex-wrap: wrap; gap: 6px; }
-      .preview-month .month { min-width: 80px; }
-      .telegram-float a { padding: 12px 18px; font-size: 0.85rem; }
-      .telegram-float .tg-icon { width: 20px; height: 20px; }
-    }
-
-    @media (max-width: 480px) {
-      .hero { padding: 48px 16px 40px; }
-      .section { padding: 40px 0; }
-      .card { padding: 24px 20px; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- ========== HEADER ========== -->
-  <header class="header">
-    <div class="header-inner">
-      <a href="../index.html" class="header-logo">
-        <span>COREGOV</span> <span style="font-weight:300;color:#94a3b8;">|</span> Consultoria
-      </a>
-      <nav class="header-nav">
-        <a href="../index.html">InÃ­cio</a>
-        <a href="../index.html#produtos">Produtos</a>
-        <a href="../index.html#contato">Contato</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ========== HERO ========== -->
-  <section class="hero">
-    <h1>ðŸ“… CalendÃ¡rio de Editais<br/>Sudeste 2026</h1>
-    <p>
-      Todos os editais, chamadas pÃºblicas e oportunidades de captaÃ§Ã£o de recursos
-      dos principais Ã³rgÃ£os do Sudeste em um Ãºnico PDF â€” organizados por mÃªs.
-    </p>
-    <div class="hero-tags">
-      <span class="hero-tag">ðŸ‡¸ðŸ‡µ <strong>SP</strong> Â· FEHIDRO Â· FAPESP</span>
-      <span class="hero-tag">ðŸ‡·ðŸ‡¯ <strong>RJ</strong> Â· FAPERJ</span>
-      <span class="hero-tag">ðŸ‡²ðŸ‡¬ <strong>MG</strong> Â· FAPEMIG</span>
-      <span class="hero-tag">ðŸ‡ªðŸ‡¸ <strong>ES</strong> Â· FAPES</span>
-    </div>
-    <div class="hero-tags" style="margin-top:8px;">
-      <span class="hero-tag" style="background:rgba(248,250,252,0.1);color:#94a3b8;border-color:rgba(255,255,255,0.1);">+ Fundos Estaduais de Meio Ambiente</span>
-      <span class="hero-tag" style="background:rgba(248,250,252,0.1);color:#94a3b8;border-color:rgba(255,255,255,0.1);">+ Conselhos Municipais</span>
-    </div>
-  </section>
-
-  <!-- ========== O QUE VOCÃŠ LEVA ========== -->
-  <section class="section" id="conteudo">
-    <div class="container">
-      <h2 class="section-title">ðŸ“‹ O que vocÃª <span>leva</span></h2>
-      <div class="cards-grid">
-        <div class="card">
-          <div class="card-icon">ðŸ“†</div>
-          <h3>12 Meses de Editais</h3>
-          <p>Cada mÃªs com as chamadas abertas, prazos, valores disponÃ­veis e links oficiais para inscriÃ§Ã£o.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">ðŸ›ï¸</div>
-          <h3>FEHIDRO (SP)</h3>
-          <p>Recursos do Fundo Estadual de Recursos HÃ­dricos de SP. Datas de abertura, limites por projeto e critÃ©rios de elegibilidade.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">ðŸ”¬</div>
-          <h3>FAPESP Â· FAPEMIG Â· FAPERJ</h3>
-          <p>Cronograma das fundaÃ§Ãµes de amparo Ã  pesquisa dos trÃªs maiores estados â€” programas de difusÃ£o, extensÃ£o e inovaÃ§Ã£o social.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">ðŸŒ¿</div>
-          <h3>Fundos de Meio Ambiente</h3>
-          <p>Editais estaduais de meio ambiente (FEMA, FEAD, etc.) e programas de resÃ­duos sÃ³lidos, educaÃ§Ã£o ambiental e arborizaÃ§Ã£o.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">ðŸ™ï¸</div>
-          <h3>Conselhos Municipais</h3>
-          <p>CMAS, CMDCA, CMDI e fundos municipais dos 1.668 municÃ­pios do Sudeste â€” organizados por porte e regiÃ£o.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">ðŸ’°</div>
-          <h3>Valores Estimados</h3>
-          <p>Faixas de recursos disponÃ­veis por edital, contrapartidas exigidas e exemplos de projetos financiados nos Ãºltimos ciclos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PREVIEW ========== -->
-  <section class="section" style="background:#f1f5f9;">
-    <div class="container">
-      <h2 class="section-title">ðŸ‘€ PrÃ©via do <span>conteÃºdo</span></h2>
-      <div class="preview-box">
-        <div class="preview-header">ðŸ“… VISÃƒO GERAL Â· Sudeste 2026</div>
-        <div class="preview-body">
-          <div class="preview-month">
-            <span class="month">JAN</span>
-            <span class="info"><strong>FEHIDRO SP</strong> â€” PrÃ©-projeto / habilitaÃ§Ã£o</span>
-            <span class="value">R$ 300K</span>
-          </div>
-          <div class="preview-month">
-            <span class="month">FEV</span>
-            <span class="info"><strong>FAPEMIG MG</strong> â€” Edital de ExtensÃ£o TecnolÃ³gica</span>
-            <span class="value">R$ 150K</span>
-          </div>
-          <div class="preview-month">
-            <span class="month">MAR</span>
-            <span class="info"><strong>FAPERJ RJ</strong> â€” Apoio a OSC / Editais pÃºblicos</span>
-            <span class="value">R$ 200K</span>
-          </div>
-          <div class="preview-month">
-            <span class="month">ABR</span>
-            <span class="info"><strong>FEAD ES</strong> â€” Fundo Estadual de Meio Ambiente</span>
-            <span class="value">R$ 120K</span>
-          </div>
-          <div class="preview-month">
-            <span class="month">MAI</span>
-            <span class="info"><strong>FAPESP SP</strong> â€” Programa Pesquisa em PolÃ­ticas PÃºblicas</span>
-            <span class="value">R$ 500K</span>
-          </div>
-          <div class="preview-month" style="border-bottom:none;">
-            <span class="month">JUN</span>
-            <span class="info"><strong>Feiras e ConferÃªncias</strong> â€” CaptaÃ§Ã£o ativa no setor</span>
-            <span class="value">R$ 80K</span>
-          </div>
-        </div>
-      </div>
-      <p style="text-align:center;margin-top:24px;color:#64748b;font-size:0.9rem;">
-        â‹¯ e mais <strong>50+ editais</strong> organizados mÃªs a mÃªs atÃ© dezembro de 2026.
-      </p>
-    </div>
-  </section>
-
-  <!-- ========== BÃ”NUS ========== -->
-  <section class="section" id="bonus">
-    <div class="container">
-      <h2 class="section-title">ðŸŽ BÃ´nus <span>exclusivos</span></h2>
-      <div class="bonus-grid">
-        <div class="bonus-item">
-          <div class="bonus-badge">BÃ”NUS 1</div>
-          <h4>ðŸ“„ Modelo de Carta de ApresentaÃ§Ã£o</h4>
-          <p>Template pronto para anexar nas propostas dos editais do Sudeste â€” adaptado para cada agÃªncia financiadora.</p>
-        </div>
-        <div class="bonus-item">
-          <div class="bonus-badge">BÃ”NUS 2</div>
-          <h4>ðŸ§® Calculadora de Contrapartida</h4>
-          <p>Planilha automÃ¡tica que calcula quanto sua ONG precisa de contrapartida em cada edital â€” evita erro na hora da inscriÃ§Ã£o.</p>
-        </div>
-        <div class="bonus-item">
-          <div class="bonus-badge">BÃ”NUS 3</div>
-          <h4>ðŸ“ž Contatos das Secretarias Estaduais</h4>
-          <p>Lista atualizada com e-mails e telefones dos responsÃ¡veis por convÃªnios e parcerias em SP, RJ, MG e ES.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PREÃ‡O ========== -->
-  <section class="price-section" id="comprar">
-    <h2 style="font-size:1.6rem;font-weight:600;margin-bottom:16px;">Invista na sua captaÃ§Ã£o</h2>
-    <p style="color:#94a3b8;margin-bottom:24px;font-size:1.05rem;">
-      Menos de <strong style="color:#f5c518;">R$0,70 por edital</strong> â€” o guia mais completo do mercado
-    </p>
-    <div class="price-amount">
-      R$27 <small>,00</small>
-    </div>
-    <p class="price-sub">Pagamento Ãºnico Â· Acesso vitalÃ­cio Â· AtualizaÃ§Ãµes gratuitas</p>
-    <a href="https://mpago.la/26gMNFh" class="price-cta">
-      ðŸ”’ QUERO COMPRAR AGORA
-    </a>
-    <p class="price-disclaimer">ðŸ” Pagamento 100% seguro Â· Receba o PDF e os bÃ´nus por e-mail</p>
-  </section>
-
-  <!-- ========== FAQ ========== -->
-  <section class="section" id="faq">
-    <div class="container">
-      <h2 class="section-title">â“ Perguntas <span>frequentes</span></h2>
-      <div class="faq-list">
-        <div class="faq-item active">
-          <div class="faq-question">O calendÃ¡rio cobre todos os municÃ­pios do Sudeste?</div>
-          <div class="faq-answer">Sim! IncluÃ­mos editais estaduais (SP, RJ, MG, ES) e os principais fundos municipais dos municÃ­pios com mais de 50 mil habitantes â€” cerca de 280 cidades. As menores entram nos consÃ³rcios e editais regionais que tambÃ©m listamos.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Os valores dos editais sÃ£o atualizados?</div>
-          <div class="faq-answer">O calendÃ¡rio Ã© lanÃ§ado em janeiro de 2026 com base no histÃ³rico dos ciclos anteriores e nas prÃ©vias publicadas pelas agÃªncias. Enviamos atualizaÃ§Ãµes gratuitas por e-mail sempre que houver alteraÃ§Ãµes significativas.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Serve para MEIs ou associaÃ§Ãµes informais?</div>
-          <div class="faq-answer">A maioria dos editais exige CNPJ hÃ¡ pelo menos 1 ano. Se a sua organizaÃ§Ã£o estÃ¡ em fase de estruturaÃ§Ã£o, indicamos os editais com exigÃªncias simplificadas â€” sinalizamos isso no calendÃ¡rio.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Como recebo o produto?</div>
-          <div class="faq-answer">ApÃ³s a confirmaÃ§Ã£o do pagamento, enviamos o PDF do calendÃ¡rio + os 3 bÃ´nus para o e-mail informado na compra. VocÃª tambÃ©m pode solicitar pelo Telegram @coregovbr.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">E se eu nÃ£o souber por onde comeÃ§ar?</div>
-          <div class="faq-answer">O calendÃ¡rio Ã© organizado por mÃªs e por prioridade. Cada edital tem um selo de dificuldade (â˜… fÃ¡cil, â˜…â˜… mÃ©dio, â˜…â˜…â˜… avanÃ§ado). Assim vocÃª sabe exatamente por onde comeÃ§ar de acordo com o nÃ­vel da sua ONG.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div style="max-width:1200px;margin:0 auto;">
-      <div style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">
-        COREGOV <span style="color:#f5c518;">Consultoria</span>
-      </div>
-      <p style="color:#94a3b8;max-width:500px;margin:0 auto 16px;">
-        EstruturaÃ§Ã£o, estatutos e captaÃ§Ã£o de recursos para organizaÃ§Ãµes do terceiro setor.
-      </p>
-      <div class="social-links">
-        <a href="https://coregov.com.br" target="_blank">ðŸŒ coregov.com.br</a>
-        <a href="https://www.linkedin.com/in/oseias-nepomuceno-adm-dados/" target="_blank">LinkedIn</a>
-        <a href="https://t.me/coregovbr" target="_blank">ðŸ“± @coregovbr</a>
-      </div>
-      <p>
-        Â© 2026 COREGOV Consultoria Â· CNPJ em regularizaÃ§Ã£o Â· Feito para fortalecer o terceiro setor no Brasil.
-      </p>
-    </div>
-  </footer>
-
-  <!-- ========== FLOATING TELEGRAM ========== -->
-  <div class="telegram-float">
-    <a href="https://t.me/coregovbr" target="_blank" rel="noopener">
-      <svg class="tg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-      </svg>
-      Fale conosco no Telegram
-    </a>
-  </div>
-
-  <!-- ========== FAQ TOGGLE ========== -->
-  <script>
-    document.querySelectorAll('.faq-question').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var item = this.parentElement;
-        item.classList.toggle('active');
-      });
-    });
-  </script>
-
-</body>
-</html>
-
+?<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📅 Calendário de Editais Sudeste 2026 | COREGOV</title>
+  <meta name="description" content="Calendário completo de editais públicos para ONGs do Sudeste (SP, RJ, MG, ES): FEHIDRO, FAPESP, FAPEMIG, FAPERJ e muito mais. R$27." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; }
+
+    /* === HEADER === */
+    .header {
+      background: #0f3460;
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(15,52,96,0.2);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+    .header-logo span { color: #f5c518; }
+    .header-nav { display: flex; gap: 24px; }
+    .header-nav a {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .header-nav a:hover { color: #f5c518; }
+
+    /* === CONTAINER === */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* === HERO === */
+    .hero {
+      background: linear-gradient(135deg, #0f3460 0%, #1a4a7a 50%, #0f3460 100%);
+      color: #fff;
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 50%, rgba(245,197,24,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+    .hero h1 .emoji { font-size: 2.6rem; }
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: 0 auto 32px;
+      font-weight: 300;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .hero-tag {
+      background: rgba(245,197,24,0.15);
+      color: #f5c518;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid rgba(245,197,24,0.25);
+    }
+    .hero-tag strong { color: #fff; }
+
+    /* === SECTION === */
+    .section { padding: 64px 0; }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0f3460;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-title span { color: #f5c518; }
+
+    /* === CARDS === */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(15,52,96,0.12);
+    }
+    .card-icon { font-size: 2.4rem; margin-bottom: 16px; }
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f3460;
+      margin-bottom: 8px;
+    }
+    .card p { font-size: 0.9rem; color: #475569; line-height: 1.6; }
+
+    /* === PREVIEW === */
+    .preview-box {
+      background: #fff;
+      border-radius: 16px;
+      border: 2px solid #e2e8f0;
+      overflow: hidden;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .preview-header {
+      background: #0f3460;
+      color: #fff;
+      padding: 16px 24px;
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .preview-body { padding: 32px 24px; }
+    .preview-month {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .preview-month:last-child { border-bottom: none; }
+    .preview-month .month {
+      font-weight: 700;
+      color: #f5c518;
+      background: #0f3460;
+      min-width: 100px;
+      padding: 4px 12px;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    .preview-month .info { color: #475569; font-size: 0.9rem; flex: 1; }
+    .preview-month .info strong { color: #0f3460; }
+    .preview-month .value {
+      font-weight: 700;
+      color: #0f3460;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    /* === BÔNUS === */
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .bonus-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #e2e8f0;
+      position: relative;
+    }
+    .bonus-item::before {
+      content: '�?';
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .bonus-item h4 { font-size: 1rem; font-weight: 700; color: #0f3460; margin-bottom: 6px; }
+    .bonus-item p { font-size: 0.85rem; color: #475569; }
+    .bonus-badge {
+      display: inline-block;
+      background: #f5c518;
+      color: #0f3460;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    /* === PRICE === */
+    .price-section {
+      background: linear-gradient(135deg, #0f3460, #1a4a7a);
+      color: #fff;
+      text-align: center;
+      padding: 64px 24px;
+    }
+    .price-amount {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #f5c518;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .price-amount small {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #cbd5e1;
+    }
+    .price-sub {
+      font-size: 1rem;
+      color: #94a3b8;
+      margin-bottom: 32px;
+    }
+    .price-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #f5c518;
+      color: #0f3460;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 16px 48px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .price-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(245,197,24,0.35);
+    }
+    .price-disclaimer {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    /* === FAQ === */
+    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 18px 24px;
+      font-weight: 600;
+      color: #0f3460;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .faq-question:hover { background: #f1f5f9; }
+    .faq-question::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: #f5c518;
+      font-weight: 700;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 24px;
+      transition: max-height 0.3s, padding 0.3s;
+      color: #475569;
+      font-size: 0.9rem;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 24px 18px;
+    }
+    .faq-item.active .faq-question::after { content: '−'; }
+
+    /* === FOOTER === */
+    .footer {
+      background: #0f3460;
+      color: #94a3b8;
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    .footer strong { color: #f5c518; }
+    .footer a { color: #cbd5e1; text-decoration: underline; }
+    .footer .social-links { margin: 16px 0; display: flex; justify-content: center; gap: 20px; }
+    .footer .social-links a {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer .social-links a:hover { color: #f5c518; }
+
+    /* === FLOATING TELEGRAM === */
+    .telegram-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 200;
+    }
+    .telegram-float a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #0088cc;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 24px;
+      border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(0,136,204,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .telegram-float a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(0,136,204,0.5);
+    }
+    .telegram-float .tg-icon {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+      .hero-tags { gap: 8px; }
+      .hero-tag { font-size: 0.8rem; padding: 6px 14px; }
+      .section-title { font-size: 1.5rem; }
+      .header-nav { display: none; }
+      .price-amount { font-size: 3rem; }
+      .price-cta { width: 100%; justify-content: center; }
+      .preview-month { flex-wrap: wrap; gap: 6px; }
+      .preview-month .month { min-width: 80px; }
+      .telegram-float a { padding: 12px 18px; font-size: 0.85rem; }
+      .telegram-float .tg-icon { width: 20px; height: 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 48px 16px 40px; }
+      .section { padding: 40px 0; }
+      .card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="header-logo">
+        <span>COREGOV</span> <span style="font-weight:300;color:#94a3b8;">|</span> Consultoria
+      </a>
+      <nav class="header-nav">
+        <a href="../index.html">Início</a>
+        <a href="../index.html#produtos">Produtos</a>
+        <a href="../index.html#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <h1>📅 Calendário de Editais<br/>Sudeste 2026</h1>
+    <p>
+      Todos os editais, chamadas públicas e oportunidades de captação de recursos
+      dos principais órgãos do Sudeste em um único PDF — organizados por mês.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">🇸🇵 <strong>SP</strong> · FEHIDRO · FAPESP</span>
+      <span class="hero-tag">🇷🇯 <strong>RJ</strong> · FAPERJ</span>
+      <span class="hero-tag">🇲🇬 <strong>MG</strong> · FAPEMIG</span>
+      <span class="hero-tag">🇪🇸 <strong>ES</strong> · FAPES</span>
+    </div>
+    <div class="hero-tags" style="margin-top:8px;">
+      <span class="hero-tag" style="background:rgba(248,250,252,0.1);color:#94a3b8;border-color:rgba(255,255,255,0.1);">+ Fundos Estaduais de Meio Ambiente</span>
+      <span class="hero-tag" style="background:rgba(248,250,252,0.1);color:#94a3b8;border-color:rgba(255,255,255,0.1);">+ Conselhos Municipais</span>
+    </div>
+  </section>
+
+  <!-- ========== O QUE VOCÊ LEVA ========== -->
+  <section class="section" id="conteudo">
+    <div class="container">
+      <h2 class="section-title">📋 O que você <span>leva</span></h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">📆</div>
+          <h3>12 Meses de Editais</h3>
+          <p>Cada mês com as chamadas abertas, prazos, valores disponíveis e links oficiais para inscrição.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">�?��?</div>
+          <h3>FEHIDRO (SP)</h3>
+          <p>Recursos do Fundo Estadual de Recursos Hídricos de SP. Datas de abertura, limites por projeto e critérios de elegibilidade.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔬</div>
+          <h3>FAPESP · FAPEMIG · FAPERJ</h3>
+          <p>Cronograma das fundações de amparo à pesquisa dos três maiores estados — programas de difusão, extensão e inovação social.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌿</div>
+          <h3>Fundos de Meio Ambiente</h3>
+          <p>Editais estaduais de meio ambiente (FEMA, FEAD, etc.) e programas de resíduos sólidos, educação ambiental e arborização.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">�?��?</div>
+          <h3>Conselhos Municipais</h3>
+          <p>CMAS, CMDCA, CMDI e fundos municipais dos 1.668 municípios do Sudeste — organizados por porte e região.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💰</div>
+          <h3>Valores Estimados</h3>
+          <p>Faixas de recursos disponíveis por edital, contrapartidas exigidas e exemplos de projetos financiados nos últimos ciclos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PREVIEW ========== -->
+  <section class="section" style="background:#f1f5f9;">
+    <div class="container">
+      <h2 class="section-title">👀 Prévia do <span>conteúdo</span></h2>
+      <div class="preview-box">
+        <div class="preview-header">📅 VISÃO GERAL · Sudeste 2026</div>
+        <div class="preview-body">
+          <div class="preview-month">
+            <span class="month">JAN</span>
+            <span class="info"><strong>FEHIDRO SP</strong> — Pré-projeto / habilitação</span>
+            <span class="value">R$ 300K</span>
+          </div>
+          <div class="preview-month">
+            <span class="month">FEV</span>
+            <span class="info"><strong>FAPEMIG MG</strong> — Edital de Extensão Tecnológica</span>
+            <span class="value">R$ 150K</span>
+          </div>
+          <div class="preview-month">
+            <span class="month">MAR</span>
+            <span class="info"><strong>FAPERJ RJ</strong> — Apoio a OSC / Editais públicos</span>
+            <span class="value">R$ 200K</span>
+          </div>
+          <div class="preview-month">
+            <span class="month">ABR</span>
+            <span class="info"><strong>FEAD ES</strong> — Fundo Estadual de Meio Ambiente</span>
+            <span class="value">R$ 120K</span>
+          </div>
+          <div class="preview-month">
+            <span class="month">MAI</span>
+            <span class="info"><strong>FAPESP SP</strong> — Programa Pesquisa em Políticas Públicas</span>
+            <span class="value">R$ 500K</span>
+          </div>
+          <div class="preview-month" style="border-bottom:none;">
+            <span class="month">JUN</span>
+            <span class="info"><strong>Feiras e Conferências</strong> — Captação ativa no setor</span>
+            <span class="value">R$ 80K</span>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:24px;color:#64748b;font-size:0.9rem;">
+        ⋯ e mais <strong>50+ editais</strong> organizados mês a mês até dezembro de 2026.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== BÔNUS ========== -->
+  <section class="section" id="bonus">
+    <div class="container">
+      <h2 class="section-title">�? Bônus <span>exclusivos</span></h2>
+      <div class="bonus-grid">
+        <div class="bonus-item">
+          <div class="bonus-badge">BÔNUS 1</div>
+          <h4>📄 Modelo de Carta de Apresentação</h4>
+          <p>Template pronto para anexar nas propostas dos editais do Sudeste — adaptado para cada agência financiadora.</p>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-badge">BÔNUS 2</div>
+          <h4>🧮 Calculadora de Contrapartida</h4>
+          <p>Planilha automática que calcula quanto sua ONG precisa de contrapartida em cada edital — evita erro na hora da inscrição.</p>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-badge">BÔNUS 3</div>
+          <h4>📞 Contatos das Secretarias Estaduais</h4>
+          <p>Lista atualizada com e-mails e telefones dos responsáveis por convênios e parcerias em SP, RJ, MG e ES.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PREÇO ========== -->
+  <section class="price-section" id="comprar">
+    <h2 style="font-size:1.6rem;font-weight:600;margin-bottom:16px;">Invista na sua captação</h2>
+    <p style="color:#94a3b8;margin-bottom:24px;font-size:1.05rem;">
+      Menos de <strong style="color:#f5c518;">R$0,70 por edital</strong> — o guia mais completo do mercado
+    </p>
+    <div class="price-amount">
+      R$27 <small>,00</small>
+    </div>
+    <p class="price-sub">Pagamento único · Acesso vitalício · Atualizações gratuitas</p>
+    <a href="https://mpago.la/26gMNFh" class="price-cta">
+      🔒 QUERO COMPRAR AGORA
+    </a>
+    <p class="price-disclaimer">�? Pagamento 100% seguro · Receba o PDF e os bônus por e-mail</p>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title">�?� Perguntas <span>frequentes</span></h2>
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-question">O calendário cobre todos os municípios do Sudeste?</div>
+          <div class="faq-answer">Sim! Incluímos editais estaduais (SP, RJ, MG, ES) e os principais fundos municipais dos municípios com mais de 50 mil habitantes — cerca de 280 cidades. As menores entram nos consórcios e editais regionais que também listamos.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Os valores dos editais são atualizados?</div>
+          <div class="faq-answer">O calendário é lançado em janeiro de 2026 com base no histórico dos ciclos anteriores e nas prévias publicadas pelas agências. Enviamos atualizações gratuitas por e-mail sempre que houver alterações significativas.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Serve para MEIs ou associações informais?</div>
+          <div class="faq-answer">A maioria dos editais exige CNPJ há pelo menos 1 ano. Se a sua organização está em fase de estruturação, indicamos os editais com exigências simplificadas — sinalizamos isso no calendário.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Como recebo o produto?</div>
+          <div class="faq-answer">Após a confirmação do pagamento, enviamos o PDF do calendário + os 3 bônus para o e-mail informado na compra. Você também pode solicitar pelo Telegram @coregovbr.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">E se eu não souber por onde começar?</div>
+          <div class="faq-answer">O calendário é organizado por mês e por prioridade. Cada edital tem um selo de dificuldade (★ fácil, ★★ médio, ★★★ avançado). Assim você sabe exatamente por onde começar de acordo com o nível da sua ONG.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">
+        COREGOV <span style="color:#f5c518;">Consultoria</span>
+      </div>
+      <p style="color:#94a3b8;max-width:500px;margin:0 auto 16px;">
+        Estruturação, estatutos e captação de recursos para organizações do terceiro setor.
+      </p>
+      <div class="social-links">
+        <a href="https://coregov.com.br" target="_blank">�? coregov.com.br</a>
+        <a href="https://www.linkedin.com/in/oseias-nepomuceno-adm-dados/" target="_blank">LinkedIn</a>
+        <a href="https://t.me/coregovbr" target="_blank">📱 @coregovbr</a>
+      </div>
+      <p>
+        © 2026 COREGOV Consultoria · CNPJ em regularização · Feito para fortalecer o terceiro setor no Brasil.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING TELEGRAM ========== -->
+  <div class="telegram-float">
+    <a href="https://t.me/coregovbr" target="_blank" rel="noopener">
+      <svg class="tg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+      </svg>
+      Fale conosco no Telegram
+    </a>
+  </div>
+
+  <!-- ========== FAQ TOGGLE ========== -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
+
