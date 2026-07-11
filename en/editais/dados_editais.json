@@ -1,0 +1,277 @@
+{
+  "metadata": {
+    "versao": "1.0",
+    "data_coleta": "2026-07-11T21:39:15.287306",
+    "fontes": [
+      "capitaai.com.br",
+      "editalong.com",
+      "capta.org.br"
+    ],
+    "total_editais": 18
+  },
+  "resumo_estrategico": {
+    "total_editais": 18,
+    "editais_abertos": 18,
+    "soma_valores_total": 225500045.0,
+    "soma_valores_humano": "R$ 225.5 milhões",
+    "editais_para_ong": 3,
+    "soma_valores_ong": 0,
+    "soma_valores_ong_humano": "R$ 0",
+    "fontes_monitoradas": 3,
+    "data_atualizacao": "2026-07-11T21:39:15.287289",
+    "mensagem_urgencia": "There are 18 open notices today with over R$ 225.5 milhões available. Of these, 3 are directly for NGOs/OSCs. Your organization may be missing these opportunities."
+  },
+  "editais": [
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Simplified Call – Direct Support for Community Initiatives",
+      "valor_str": "R$ 2 mil",
+      "valor_numerico": 2000000.0,
+      "regiao": "National",
+      "prazo": null,
+      "areas_atuacao": [
+        "Human Rights"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.280896"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Public Call for Proposals",
+      "valor_str": "R$ 150 mil",
+      "valor_numerico": 150000000.0,
+      "regiao": "Acre, Amazonas and Pará",
+      "prazo": null,
+      "areas_atuacao": [
+        "Health",
+        "Social Assistance",
+        "Inclusion"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.281357"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Notice for Education, Protection and Animal Welfare",
+      "valor_str": "R$ 1,5 mil",
+      "valor_numerico": 1500000.0,
+      "regiao": "Maceió (AL).",
+      "prazo": null,
+      "areas_atuacao": [
+        "Education",
+        "Environment",
+        "Inclusion"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.281587"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Call No. 49",
+      "valor_str": "R$ 3.300.000,",
+      "valor_numerico": 0.0,
+      "regiao": "States of Maranhão, Tocantins and Mato Grosso — Brazilian Legal Amazon",
+      "prazo": null,
+      "areas_atuacao": [],
+      "data_coleta": "2026-07-11T21:39:15.281902"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Social Projects Support Program – PAPS Notice 2027",
+      "valor_str": "R$ 70 mil",
+      "valor_numerico": 70000000.0,
+      "regiao": "National",
+      "prazo": null,
+      "areas_atuacao": [
+        "Education",
+        "Culture"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.282306"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Living Territories of the Amazon",
+      "valor_str": "R$ 3.600.000,",
+      "valor_numerico": 0.0,
+      "regiao": "States of the Legal Amazon and also the state of Maranhão",
+      "prazo": null,
+      "areas_atuacao": [
+        "Education",
+        "Culture",
+        "Health",
+        "Environment"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.282863"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Notice No.",
+      "valor_str": "R$ 45.000 ",
+      "valor_numerico": 45.0,
+      "regiao": "Colatina, Espírito Santo",
+      "prazo": null,
+      "areas_atuacao": [
+        "Education",
+        "Culture"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.282994"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Emergency Support",
+      "valor_str": "Consultar edital",
+      "valor_numerico": 0,
+      "regiao": "All over Brazil",
+      "prazo": null,
+      "areas_atuacao": [
+        "Human Rights"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.283390"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Instituto Claro Sponsorships",
+      "valor_str": "Consultar edital",
+      "valor_numerico": 0,
+      "regiao": "All over Brazil",
+      "prazo": null,
+      "areas_atuacao": [
+        "Education",
+        "Culture",
+        "Environment",
+        "Sports"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.283723"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Community Development Grant",
+      "valor_str": "R$ 317.739,34,",
+      "valor_numerico": 0.0,
+      "regiao": "All over Brazil",
+      "prazo": null,
+      "areas_atuacao": [
+        "Education",
+        "Culture",
+        "Health",
+        "Sports",
+        "Income Generation",
+        "Inclusion"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.284086"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Prosas Incentive Bank",
+      "valor_str": "Consultar edital",
+      "valor_numerico": 0,
+      "regiao": "All over Brazil",
+      "prazo": null,
+      "areas_atuacao": [
+        "Culture",
+        "Sports"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.284189"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Project Bank",
+      "valor_str": "Consultar edital",
+      "valor_numerico": 0,
+      "regiao": "States of Goiás, Rio Grande do Sul and São Paulo",
+      "prazo": null,
+      "areas_atuacao": [
+        "Education",
+        "Culture",
+        "Sports"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.284539"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "VBIO Seeking Projects",
+      "valor_str": "Consultar edital",
+      "valor_numerico": 0,
+      "regiao": "All over Brazil",
+      "prazo": null,
+      "areas_atuacao": [
+        "Culture",
+        "Income Generation"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.284644"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Urgent Action Fund",
+      "valor_str": "Consultar edital",
+      "valor_numerico": 0,
+      "regiao": "All over Brazil",
+      "prazo": null,
+      "areas_atuacao": [
+        "Education",
+        "Culture",
+        "Human Rights",
+        "Women"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.285058"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Consulate General of Japan",
+      "valor_str": "Consultar edital",
+      "valor_numerico": 0,
+      "regiao": "All over Brazil",
+      "prazo": null,
+      "areas_atuacao": [
+        "Education",
+        "Health",
+        "Environment",
+        "Social Assistance"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.285210"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "National Geographic Society",
+      "valor_str": "Consultar edital",
+      "valor_numerico": 0,
+      "regiao": "All over Brazil",
+      "prazo": null,
+      "areas_atuacao": [
+        "Education",
+        "Culture",
+        "Health",
+        "Environment",
+        "Social Assistance",
+        "Human Rights",
+        "Sustainability"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.285779"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Ford Foundation",
+      "valor_str": "Consultar edital",
+      "valor_numerico": 0,
+      "regiao": "All over Brazil",
+      "prazo": null,
+      "areas_atuacao": [
+        "Youth"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.285925"
+    },
+    {
+      "fonte": "capta.org.br",
+      "titulo": "Waitt Foundation",
+      "valor_str": "R$ 2 mil",
+      "valor_numerico": 2000000.0,
+      "regiao": "All over Brazil",
+      "prazo": null,
+      "areas_atuacao": [
+        "Health",
+        "Social Assistance",
+        "Human Rights",
+        "Inclusion",
+        "Sustainability"
+      ],
+      "data_coleta": "2026-07-11T21:39:15.287178"
+    }
+  ]
+}

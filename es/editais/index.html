@@ -475,21 +475,21 @@ function renderizarTabela(editais) {
         const dias = e.dias_restantes;
         let badge = '';
         let badgeClass = 'badge-green';
-        let prazoTexto = e.prazo || 'Aberto';
+        let prazoTexto = e.prazo || 'Abierto';
 
         if (dias !== null && dias !== undefined) {
             if (dias <= 15) {
-                badge = '🔴 ' + dias + ' dias';
+                badge = '🔴 ' + dias + ' días';
                 badgeClass = 'badge-red';
             } else if (dias <= 36) {
-                badge = '🟡 ' + dias + ' dias';
+                badge = '🟡 ' + dias + ' días';
                 badgeClass = 'badge-yellow';
             } else {
-                badge = '🟢 ' + dias + ' dias';
+                badge = '🟢 ' + dias + ' días';
                 badgeClass = 'badge-green';
             }
         } else if (e.prazo === 'Aberto' || !e.prazo) {
-            badge = '📅 Aberto';
+            badge = '📅 Abierto';
         } else {
             badge = e.prazo;
         }
