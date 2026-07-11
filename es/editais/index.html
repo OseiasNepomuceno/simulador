@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editais para ONGs | COREGOV</title>
+    <title>Edictos para ONGs | COREGOV</title>
     <!-- Menu padronizado com index principal - v2 -->
     <link rel="alternate" hreflang="pt" href="https://coregov.com.br/editais/">
     <link rel="alternate" hreflang="pt-br" href="https://coregov.com.br/editais/">
@@ -328,9 +328,9 @@
             <a href="./">📋 Editais</a>
             <a href="../produtos/">🛒 Produtos</a>
             <div class="lang-switcher">
-                <a href="/" class="lang-active" aria-label="Português">PT</a>
+                <a href="/" aria-label="Português">PT</a>
                 <a href="/en/" aria-label="English">EN</a>
-                <a href="/es/" aria-label="Español">ES</a>
+                <a href="/es/" class="lang-active" aria-label="Español">ES</a>
             </div>
             <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov."
                target="_blank"
@@ -345,10 +345,10 @@
 
     <!-- HERO -->
     <div class="hero">
-        <h1>📋 Editais <span>Abertos</span> para ONGs</h1>
+        <h1>📋 Edictos <span>Abiertos</span> para ONGs</h1>
         <p class="subtitle">
-            Monitoramos as principais fontes de recursos públicos e privados do Brasil.
-            Saiba para onde sua organização pode captar.
+            Monitoreamos las principales fuentes de recursos públicos y privados de Brasil.
+            Sepa hacia dónde su organización puede captar.
         </p>
         <div class="stats" id="statsHero">
             <div class="stat-card"><div class="spinner" style="width:24px;height:24px;"></div></div>
@@ -358,10 +358,10 @@
     <!-- DISCLAIMER — PRÉVIA -->
     <div class="disclaimer">
         <p>
-            ⚠️ <strong class="dourado">Prévia de Oportunidades</strong> — Esta página lista os editais disponíveis no mercado com valores totais e prazos indicativos. 
-            Os detalhes completos de cada edital e a orientação sobre <strong class="texto">quanto e como submeter</strong> são fornecidos 
-            <strong class="dourado">exclusivamente aos clientes</strong> que contratam a adequação do estatuto. 
-            Após fechar contrato, nossa equipe encaminha sua organização para os editais corretos e define os valores ideais de submissão para cada projeto. 💼
+            ⚠️ <strong class="dourado">Vista Previa de Oportunidades</strong> — Esta página enumera los edictos disponibles en el mercado con valores totales y plazos indicativos. 
+            Los detalles completos de cada edicto y la orientación sobre <strong class="texto">cuánto y cómo presentarse</strong> se proporcionan 
+            <strong class="dourado">exclusivamente a los clientes</strong> que contratan la adecuación del estatuto. 
+            Después de cerrar el contrato, nuestro equipo dirige su organización a los edictos correctos y define los valores ideales de presentación para cada proyecto. 💼
         </p>
     </div>
 
@@ -369,38 +369,38 @@
     <div class="filtros" id="filtros">
         <button class="filtro-btn ativo" data-categoria="todas">📌 Todas</button>
         <button class="filtro-btn" data-categoria="cultura">🎭 Cultura</button>
-        <button class="filtro-btn" data-categoria="educação">📚 Educação</button>
-        <button class="filtro-btn" data-categoria="meio ambiente">🌿 Meio Ambiente</button>
+        <button class="filtro-btn" data-categoria="educação">📚 Educación</button>
+        <button class="filtro-btn" data-categoria="meio ambiente">🌿 Medio Ambiente</button>
         <button class="filtro-btn" data-categoria="social">🤝 Social</button>
-        <button class="filtro-btn" data-categoria="geral">📌 Geral</button>
+        <button class="filtro-btn" data-categoria="geral">📌 General</button>
     </div>
 
     <!-- TABELA -->
     <div class="tabela-container" id="tabelaContainer">
         <div class="loading">
             <div class="spinner"></div>
-            Carregando editais...
+            Cargando edictos...
         </div>
     </div>
 
     <!-- CTA -->
     <div class="cta-section">
-        <h2>🔍 Seu estatuto está adequado para captar esses recursos?</h2>
-        <p>Muitas ONGs perdem milhões porque o estatuto social não atende às exigências dos editais.</p>
+        <h2>🔍 ¿Tu estatuto está adecuado para captar estos recursos?</h2>
+        <p>Muchas ONGs pierden millones porque el estatuto social no cumple con los requisitos de los edictos.</p>
         <a href="https://app.coregov.com.br/analisar-estatuto" class="btn btn-primary">
-            📜 Analisar Estatuto Agora
+            📜 Analizar Estatuto Ahora
         </a>
         <br><br>
         <a href="https://t.me/coregovbr?text=Olá! Quero saber como adequar meu estatuto para captar editais." 
            class="btn btn-telegram" target="_blank">
-            💬 Fale Conosco no Telegram
+            💬 Contáctenos en Telegram
         </a>
     </div>
 
     <div class="footer-info">
-        ⚠️ Os editais listados são uma prévia do mercado. Clientes COREGOV recebem orientação personalizada sobre quais oportunidades são ideais para seu perfil e quanto submeter em cada projeto.
+        ⚠️ Los edictos listados son una vista previa del mercado. Los clientes COREGOV reciben orientación personalizada sobre qué oportunidades son ideales para su perfil y cuánto presentar en cada proyecto.
         <br>
-        <span class="picolaw">🦞 Desenvolvido por PicoClaw COREGOV</span>
+        <span class="picolaw">🦞 Desarrollado por PicoClaw COREGOV</span>
     </div>
 
 </div>
@@ -420,7 +420,7 @@ async function carregarDados() {
     } catch (e) {
         document.getElementById('tabelaContainer').innerHTML = `
             <div class="empty">
-                ❌ Erro ao carregar dados dos editais.<br>
+                ❌ Error al cargar datos de los edictos.<br>
                 <span style="font-size:13px;color:var(--texto-suave);">${e.message}</span>
             </div>`;
     }
@@ -442,11 +442,11 @@ function renderizarStats(resumo) {
     document.getElementById('statsHero').innerHTML = `
         <div class="stat-card">
             <div class="numero">${resumo.editais_abertos}</div>
-            <div class="label">📋 Editais Abertos</div>
+            <div class="label">📋 Edictos Abiertos</div>
         </div>
         <div class="stat-card">
             <div class="numero">${resumo.soma_valores_humano}</div>
-            <div class="label">💰 Total Disponível</div>
+            <div class="label">💰 Total Disponible</div>
         </div>
         <div class="stat-card">
             <div class="numero">${resumo.editais_para_ong}</div>
@@ -465,7 +465,7 @@ function renderizarTabela(editais) {
     if (filtrados.length === 0) {
         container.innerHTML = `
             <div class="empty">
-                📭 Nenhum edital encontrado para esta categoria.
+                📭 No se encontraron edictos para esta categoría.
             </div>`;
         return;
     }
@@ -520,9 +520,9 @@ function renderizarTabela(editais) {
         <table>
             <thead>
                 <tr>
-                    <th>Edital</th>
-                    <th>Valor</th>
-                    <th>Prazo</th>
+                    <th>Edicto</th>
+                    <th>Monto</th>
+                    <th>Plazo</th>
                 </tr>
             </thead>
             <tbody>

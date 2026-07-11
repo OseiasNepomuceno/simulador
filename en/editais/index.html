@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editais para ONGs | COREGOV</title>
+    <title>Public Notices for NGOs | COREGOV</title>
     <!-- Menu padronizado com index principal - v2 -->
     <link rel="alternate" hreflang="pt" href="https://coregov.com.br/editais/">
     <link rel="alternate" hreflang="pt-br" href="https://coregov.com.br/editais/">
@@ -328,8 +328,8 @@
             <a href="./">📋 Editais</a>
             <a href="../produtos/">🛒 Produtos</a>
             <div class="lang-switcher">
-                <a href="/" class="lang-active" aria-label="Português">PT</a>
-                <a href="/en/" aria-label="English">EN</a>
+                <a href="/" aria-label="Português">PT</a>
+                <a href="/en/" class="lang-active" aria-label="English">EN</a>
                 <a href="/es/" aria-label="Español">ES</a>
             </div>
             <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov."
@@ -345,10 +345,10 @@
 
     <!-- HERO -->
     <div class="hero">
-        <h1>📋 Editais <span>Abertos</span> para ONGs</h1>
+        <h1>📋 Public Notices <span>Open</span> for NGOs</h1>
         <p class="subtitle">
-            Monitoramos as principais fontes de recursos públicos e privados do Brasil.
-            Saiba para onde sua organização pode captar.
+            We monitor the main public and private funding sources in Brazil.
+            Find out where your organization can raise funds.
         </p>
         <div class="stats" id="statsHero">
             <div class="stat-card"><div class="spinner" style="width:24px;height:24px;"></div></div>
@@ -358,49 +358,49 @@
     <!-- DISCLAIMER — PRÉVIA -->
     <div class="disclaimer">
         <p>
-            ⚠️ <strong class="dourado">Prévia de Oportunidades</strong> — Esta página lista os editais disponíveis no mercado com valores totais e prazos indicativos. 
-            Os detalhes completos de cada edital e a orientação sobre <strong class="texto">quanto e como submeter</strong> são fornecidos 
-            <strong class="dourado">exclusivamente aos clientes</strong> que contratam a adequação do estatuto. 
-            Após fechar contrato, nossa equipe encaminha sua organização para os editais corretos e define os valores ideais de submissão para cada projeto. 💼
+            ⚠️ <strong class="dourado">Opportunity Preview</strong> — This page lists available notices with indicative total values and deadlines. 
+            Complete details for each notice and guidance on <strong class="texto">how much and how to apply</strong> are provided 
+            <strong class="dourado">exclusively to clients</strong> who contract bylaw adaptation services. 
+            After signing a contract, our team directs your organization to the right notices and sets the ideal submission values for each project. 💼
         </p>
     </div>
 
     <!-- FILTROS -->
     <div class="filtros" id="filtros">
-        <button class="filtro-btn ativo" data-categoria="todas">📌 Todas</button>
-        <button class="filtro-btn" data-categoria="cultura">🎭 Cultura</button>
-        <button class="filtro-btn" data-categoria="educação">📚 Educação</button>
-        <button class="filtro-btn" data-categoria="meio ambiente">🌿 Meio Ambiente</button>
+        <button class="filtro-btn ativo" data-categoria="todas">📌 All</button>
+        <button class="filtro-btn" data-categoria="cultura">🎭 Culture</button>
+        <button class="filtro-btn" data-categoria="educação">📚 Education</button>
+        <button class="filtro-btn" data-categoria="meio ambiente">🌿 Environment</button>
         <button class="filtro-btn" data-categoria="social">🤝 Social</button>
-        <button class="filtro-btn" data-categoria="geral">📌 Geral</button>
+        <button class="filtro-btn" data-categoria="geral">📌 General</button>
     </div>
 
     <!-- TABELA -->
     <div class="tabela-container" id="tabelaContainer">
         <div class="loading">
             <div class="spinner"></div>
-            Carregando editais...
+            Loading notices...
         </div>
     </div>
 
     <!-- CTA -->
     <div class="cta-section">
-        <h2>🔍 Seu estatuto está adequado para captar esses recursos?</h2>
-        <p>Muitas ONGs perdem milhões porque o estatuto social não atende às exigências dos editais.</p>
+        <h2>🔍 Is your bylaw suitable to capture these resources?</h2>
+        <p>Many NGOs lose millions because their bylaws do not meet the requirements of public notices.</p>
         <a href="https://app.coregov.com.br/analisar-estatuto" class="btn btn-primary">
-            📜 Analisar Estatuto Agora
+            📜 Analyze Bylaw Now
         </a>
         <br><br>
         <a href="https://t.me/coregovbr?text=Olá! Quero saber como adequar meu estatuto para captar editais." 
            class="btn btn-telegram" target="_blank">
-            💬 Fale Conosco no Telegram
+            💬 Contact us on Telegram
         </a>
     </div>
 
     <div class="footer-info">
-        ⚠️ Os editais listados são uma prévia do mercado. Clientes COREGOV recebem orientação personalizada sobre quais oportunidades são ideais para seu perfil e quanto submeter em cada projeto.
+        ⚠️ The notices listed are a market preview. COREGOV clients receive personalized guidance on which opportunities are ideal for their profile and how much to submit for each project.
         <br>
-        <span class="picolaw">🦞 Desenvolvido por PicoClaw COREGOV</span>
+        <span class="picolaw">🦞 Developed by PicoClaw COREGOV</span>
     </div>
 
 </div>
@@ -420,7 +420,7 @@ async function carregarDados() {
     } catch (e) {
         document.getElementById('tabelaContainer').innerHTML = `
             <div class="empty">
-                ❌ Erro ao carregar dados dos editais.<br>
+                ❌ Error loading notices data.<br>
                 <span style="font-size:13px;color:var(--texto-suave);">${e.message}</span>
             </div>`;
     }
@@ -442,15 +442,15 @@ function renderizarStats(resumo) {
     document.getElementById('statsHero').innerHTML = `
         <div class="stat-card">
             <div class="numero">${resumo.editais_abertos}</div>
-            <div class="label">📋 Editais Abertos</div>
+            <div class="label">📋 Open Notices</div>
         </div>
         <div class="stat-card">
             <div class="numero">${resumo.soma_valores_humano}</div>
-            <div class="label">💰 Total Disponível</div>
+            <div class="label">💰 Total Available</div>
         </div>
         <div class="stat-card">
             <div class="numero">${resumo.editais_para_ong}</div>
-            <div class="label">🏛️ Para ONGs/OSCs</div>
+            <div class="label">🏛️ For NGOs/OSCs</div>
         </div>
     `;
 }
@@ -465,7 +465,7 @@ function renderizarTabela(editais) {
     if (filtrados.length === 0) {
         container.innerHTML = `
             <div class="empty">
-                📭 Nenhum edital encontrado para esta categoria.
+                📭 No notices found for this category.
             </div>`;
         return;
     }
@@ -520,9 +520,9 @@ function renderizarTabela(editais) {
         <table>
             <thead>
                 <tr>
-                    <th>Edital</th>
-                    <th>Valor</th>
-                    <th>Prazo</th>
+                    <th>Notice</th>
+                    <th>Amount</th>
+                    <th>Deadline</th>
                 </tr>
             </thead>
             <tbody>
