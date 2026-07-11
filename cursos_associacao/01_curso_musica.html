@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Curso de Iniciação Musical</title>
+<style>
+    @page {
+        size: A4;
+        margin: 2.5cm 2cm 2.5cm 2cm;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: #1a1a1a;
+        max-width: 210mm;
+        margin: 0 auto;
+        padding: 20mm 15mm;
+    }
+    /* Cover page */
+    .cover-page {
+        text-align: center;
+        padding: 80mm 20mm 40mm 20mm;
+        page-break-after: always;
+    }
+    .cover-page h1 {
+        font-size: 28pt;
+        color: #1a3a5c;
+        margin-bottom: 20pt;
+        line-height: 1.3;
+    }
+    .cover-page .subtitle {
+        font-size: 16pt;
+        color: #555;
+        margin-bottom: 40pt;
+        font-style: italic;
+    }
+    .cover-page .info {
+        font-size: 11pt;
+        color: #777;
+        margin-top: 60pt;
+        line-height: 2;
+    }
+    .cover-page .separator {
+        width: 60%;
+        height: 3px;
+        background: #1a3a5c;
+        margin: 30pt auto;
+    }
+    /* Typography */
+    h1 {
+        font-size: 20pt;
+        color: #1a3a5c;
+        margin-top: 30pt;
+        margin-bottom: 15pt;
+        page-break-before: always;
+        border-bottom: 2px solid #1a3a5c;
+        padding-bottom: 8pt;
+    }
+    h1:first-of-type {
+        page-break-before: auto;
+    }
+    h2 {
+        font-size: 16pt;
+        color: #2a5a8c;
+        margin-top: 25pt;
+        margin-bottom: 10pt;
+    }
+    h3 {
+        font-size: 13pt;
+        color: #3a6a9c;
+        margin-top: 20pt;
+        margin-bottom: 8pt;
+    }
+    h4 {
+        font-size: 12pt;
+        color: #4a7aac;
+        margin-top: 15pt;
+        margin-bottom: 6pt;
+    }
+    p {
+        margin-bottom: 10pt;
+        text-align: justify;
+    }
+    ul, ol {
+        margin: 8pt 0 10pt 25pt;
+    }
+    li {
+        margin-bottom: 4pt;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15pt 0;
+        font-size: 11pt;
+    }
+    th {
+        background: #1a3a5c;
+        color: white;
+        padding: 8pt 10pt;
+        text-align: left;
+        font-weight: bold;
+    }
+    td {
+        padding: 6pt 10pt;
+        border: 1px solid #ccc;
+    }
+    tr:nth-child(even) {
+        background: #f5f8fc;
+    }
+    blockquote {
+        margin: 15pt 20pt;
+        padding: 10pt 15pt;
+        background: #f0f4f8;
+        border-left: 4px solid #1a3a5c;
+        font-style: italic;
+    }
+    strong {
+        color: #1a3a5c;
+    }
+    code {
+        font-family: 'Courier New', monospace;
+        background: #f0f0f0;
+        padding: 1pt 4pt;
+        font-size: 11pt;
+    }
+    hr {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 20pt 0;
+    }
+    /* Sumário / TOC */
+    .toc {
+        margin: 20pt 0;
+    }
+    .toc ul {
+        list-style: none;
+        margin-left: 0;
+    }
+    .toc li {
+        margin-bottom: 6pt;
+        font-size: 12pt;
+    }
+    .toc a {
+        color: #1a3a5c;
+        text-decoration: none;
+    }
+    .toc a:hover {
+        text-decoration: underline;
+    }
+    /* Footer */
+    .footer {
+        text-align: center;
+        color: #999;
+        font-size: 10pt;
+        margin-top: 40pt;
+        padding-top: 20pt;
+        border-top: 1px solid #ddd;
+    }
+    @media print {
+        body {
+            padding: 0;
+        }
+        .cover-page {
+            padding-top: 100mm;
+        }
+        h1 {
+            page-break-before: always;
+        }
+        h1:first-of-type {
+            page-break-before: auto;
+        }
+        h2 {
+            page-break-after: avoid;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE (generated from content) -->
+<div class="cover-page">
+    <h1>🎵 CURSO DE INICIAÇÃO MUSICAL<br>PARA ASSOCIAÇÕES COMUNITÁRIAS</h1>
+    <div class="separator"></div>
+    <p class="subtitle">Apostila do Aluno</p>
+    <div class="info">
+        <strong>Realização:</strong> [Nome da Associação]<br>
+        <strong>Carga Horária:</strong> 40 horas<br>
+        <strong>Público-Alvo:</strong> Jovens e adultos a partir de 12 anos<br>
+        <strong>Ano:</strong> 2026
+    </div>
+</div>
+
+<h1 id="curso-de-iniciacao-musical-para-associacoes-comunitarias">CURSO DE INICIAÇÃO MUSICAL PARA ASSOCIAÇÕES COMUNITÁRIAS</h1>
+<hr />
+<p><strong>Realização:</strong> [Nome da Associação]
+<strong>Carga Horária:</strong> 40 horas
+<strong>Público-Alvo:</strong> Jovens e adultos da comunidade, a partir de 12 anos
+<strong>Material Didático:</strong> Apostila do Aluno
+<strong>Ano:</strong> 2026</p>
+<hr />
+<h2 id="sumario">SUMÁRIO</h2>
+<ol>
+<li>APRESENTAÇÃO DO CURSO</li>
+<li>MÓDULO 1 — FUNDAMENTOS DA MÚSICA
+   1.1 O que é música?
+   1.2 Elementos da música: melodia, harmonia e ritmo
+   1.3 Propriedades do som: altura, duração, intensidade e timbre
+   1.4 Pauta musical e clave de sol
+   1.5 Notas musicais e sua localização
+   1.6 Exercícios de fixação</li>
+<li>MÓDULO 2 — TEORIA MUSICAL BÁSICA
+   2.1 Figuras de som e silêncio
+   2.2 Compasso e fórmula de compasso
+   2.3 Andamento e dinâmica
+   2.4 Sinais de repetição e expressão
+   2.5 Escalas maiores e menores
+   2.6 Intervalos musicais
+   2.7 Exercícios de fixação</li>
+<li>MÓDULO 3 — INSTRUMENTOS MUSICAIS
+   3.1 Classificação dos instrumentos
+   3.2 Instrumentos de corda: violão, viola, cavaquinho
+   3.3 Instrumentos de sopro: flauta, gaita, escaleta
+   3.4 Instrumentos de percussão: pandeiro, tambor, triângulo
+   3.5 Cuidados e manutenção básica
+   3.6 Prática guiada: primeiros acordes no violão
+   3.7 Exercícios de fixação</li>
+<li>MÓDULO 4 — CANTO E PERCEPÇÃO MUSICAL
+   4.1 Técnica vocal básica
+   4.2 Respiração diafragmática
+   4.3 Aquecimento vocal
+   4.4 Percepção rítmica
+   4.5 Percepção melódica
+   4.6 Canto coletivo: noções de coral
+   4.7 Exercícios práticos</li>
+<li>MÓDULO 5 — CRIAÇÃO E APRESENTAÇÃO MUSICAL
+   5.1 Formação de grupo musical
+   5.2 Repertório para eventos comunitários
+   5.3 Noções de palco e apresentação
+   5.4 Organização de ensaios
+   5.5 Avaliação final</li>
+<li>REFERÊNCIAS BIBLIOGRÁFICAS</li>
+</ol>
+<hr />
+<h2 id="apresentacao-do-curso">APRESENTAÇÃO DO CURSO</h2>
+<p>A música é uma das mais poderosas formas de expressão humana. Ela acompanha a humanidade desde os tempos mais remotos, seja em rituais, celebrações, manifestações culturais ou simplesmente como entretenimento. Para as comunidades, a música tem um papel ainda mais especial: ela une pessoas, fortalece laços, preserva tradições e abre portas para o desenvolvimento pessoal e profissional.</p>
+<p>Este curso foi elaborado especialmente para associações comunitárias que desejam oferecer formação musical acessível e de qualidade para seus membros e para a comunidade do entorno. Não é necessário ter conhecimento prévio de música — aqui, cada conceito é apresentado de forma clara, gradual e prática.</p>
+<p>Ao longo das próximas páginas, você vai aprender desde os fundamentos da teoria musical até a prática de instrumentos e canto. Mais do que um curso teórico, esta apostila foi pensada para que você possa, ao final, participar ativamente de um grupo musical comunitário, seja como instrumentista, cantor ou organizador.</p>
+<p>A música transforma vidas. E este curso é o primeiro passo dessa transformação.</p>
+<p><strong>Objetivo Geral:</strong> Capacitar os participantes com conhecimentos teóricos e práticos de iniciação musical, habilitando-os a participar de grupos musicais comunitários e a compreender a linguagem musical em seus elementos fundamentais.</p>
+<p><strong>Objetivos Específicos:</strong>
+- Compreender os elementos básicos da linguagem musical
+- Desenvolver habilidades de leitura e escrita musical elementar
+- Iniciar a prática instrumental (violão e percussão)
+- Desenvolver percepção rítmica e melódica
+- Formar grupo musical para eventos da associação</p>
+<hr />
+<h2 id="modulo-1-fundamentos-da-musica">MÓDULO 1 — FUNDAMENTOS DA MÚSICA</h2>
+<h3 id="11-o-que-e-musica">1.1 O que é música?</h3>
+<p>Música é a arte de combinar sons e silêncios de forma organizada ao longo do tempo. Essa organização segue princípios de melodia, harmonia e ritmo, criando uma experiência estética e emocional.</p>
+<p>Desde o nascimento até os momentos mais marcantes da vida, a música está presente: nas canções de ninar, nas festas populares, nas cerimônias religiosas, nos shows e nas celebrações comunitárias. Cada cultura tem sua própria forma de fazer música, e isso reflete sua história, seus valores e sua identidade.</p>
+<p>A música não precisa ser complicada para ser bela. Muitas das canções mais queridas pelo povo brasileiro têm estruturas musicais simples, mas carregam uma força expressiva imensa. É por isso que este curso começa pelo básico: porque é no simples que encontramos a essência da música.</p>
+<h3 id="12-elementos-da-musica-melodia-harmonia-e-ritmo">1.2 Elementos da música: melodia, harmonia e ritmo</h3>
+<p>A música é composta por três elementos fundamentais:</p>
+<p><strong>Melodia:</strong> É a sucessão de sons que ouvimos como uma "linha musical". É aquilo que assobiarmos quando uma canção nos vem à cabeça. A melodia é a parte mais reconhecível de uma música — é a "voz principal" que conduz a canção.</p>
+<p><strong>Harmonia:</strong> É a combinação de sons tocados simultaneamente. Enquanto a melodia avança no tempo, a harmonia a acompanha com acordes que criam profundidade e emoção. No violão, os acordes que você toca enquanto canta são a harmonia.</p>
+<p><strong>Ritmo:</strong> É a organização do som no tempo. É o "pulso" da música — aquilo que faz você bater o pé ou balançar a cabeça. O ritmo dá movimento e estrutura à música, dividindo o tempo em pulsos regulares ou irregulares.</p>
+<p>Esses três elementos trabalham juntos. Imagine uma cantora (melodia) acompanhada por um violão (harmonia) enquanto uma bateria marca o tempo (ritmo). Cada um tem seu papel, mas juntos criam algo maior.</p>
+<h3 id="13-propriedades-do-som-altura-duracao-intensidade-e-timbre">1.3 Propriedades do som: altura, duração, intensidade e timbre</h3>
+<p>O som, matéria-prima da música, tem quatro propriedades fundamentais:</p>
+<p><strong>Altura:</strong> É o que diferencia um som "grave" de um som "agudo". A altura é determinada pela frequência da vibração sonora. Sons graves (como o de um contrabaixo) têm frequência baixa; sons agudos (como o de um apito) têm frequência alta.</p>
+<p><strong>Duração:</strong> É o tempo que o som permanece audível. Pode ser curto (como uma batida de tambor) ou longo (como uma nota sustentada em um violino). A duração é representada na partitura pelas figuras de som.</p>
+<p><strong>Intensidade:</strong> É o volume do som — o que chamamos de "forte" ou "fraco". A intensidade está relacionada à amplitude da vibração. Na música, variações de intensidade criam dinâmica e expressividade.</p>
+<p><strong>Timbre:</strong> É a "cor" do som, a característica que nos permite distinguir dois instrumentos diferentes tocando a mesma nota. O timbre de uma flauta é diferente do timbre de um violão, mesmo que ambos toquem a mesma altura.</p>
+<h3 id="14-pauta-musical-e-clave-de-sol">1.4 Pauta musical e clave de sol</h3>
+<p>A pauta musical (ou pentagrama) é o conjunto de cinco linhas horizontais e quatro espaços onde escrevemos as notas musicais. As linhas e espaços são contados de baixo para cima.</p>
+<pre><code>   _____ 5ª linha
+  _____ 4ª linha
+ _____ 3ª linha
+_____ 2ª linha
+_____ 1ª linha
+</code></pre>
+<p>A <strong>Clave de Sol</strong> é o símbolo colocado no início da pauta que determina a altura das notas. Ela indica que a nota na segunda linha (de baixo para cima) é o Sol (G). A partir dessa referência, todas as outras notas são determinadas.</p>
+<p>A clave de sol é usada para instrumentos de tessitura média e aguda, como violão, flauta, canto e teclado.</p>
+<h3 id="15-notas-musicais-e-sua-localizacao">1.5 Notas musicais e sua localização</h3>
+<p>As notas musicais são sete: DÓ, RÉ, MI, FÁ, SOL, LÁ, SI.</p>
+<p>Na pauta, com clave de sol, as notas são posicionadas da seguinte forma:</p>
+<p><strong>Nas linhas (de baixo para cima):</strong>
+- 1ª linha: MI (E)
+- 2ª linha: SOL (G)
+- 3ª linha: SI (B)
+- 4ª linha: RÉ (D)
+- 5ª linha: FÁ (F)</p>
+<p><strong>Nos espaços (de baixo para cima):</strong>
+- 1º espaço: FÁ (F)
+- 2º espaço: LÁ (A)
+- 3º espaço: DÓ (C)
+- 4º espaço: MI (E)</p>
+<p>Um mnemônico útil para decorar as notas nas linhas é: <strong>M</strong>inha <strong>S</strong>ogra <strong>B</strong>ate <strong>D</strong>e <strong>F</strong>rente (MI-SOL-SI-RÉ-FÁ).</p>
+<p>Para os espaços, basta lembrar que formam a palavra <strong>FÁ-LÁ-DÓ-MI</strong> (de baixo para cima).</p>
+<p>Notas acima ou abaixo da pauta são escritas com <strong>linhas suplementares</strong> (pequenas linhas extras).</p>
+<h3 id="16-exercicios-de-fixacao">1.6 Exercícios de fixação</h3>
+<ol>
+<li>Desenhe uma pauta musical (5 linhas e 4 espaços) em seu caderno.</li>
+<li>Desenhe a clave de sol no início da pauta.</li>
+<li>Escreva a nota DÓ no 3º espaço.</li>
+<li>Escreva a nota SOL na 2ª linha.</li>
+<li>Escreva a nota MI na 1ª linha.</li>
+<li>Escreva a nota FÁ no 1º espaço.</li>
+<li>Cante em voz alta: DÓ-RÉ-MI-FÁ-SOL-LÁ-SI-DÓ (subindo) e DÓ-SI-LÁ-SOL-FÁ-MI-RÉ-DÓ (descendo).</li>
+<li>Identifique três músicas que você conhece e tente assobiar a melodia delas.</li>
+</ol>
+<hr />
+<h2 id="modulo-2-teoria-musical-basica">MÓDULO 2 — TEORIA MUSICAL BÁSICA</h2>
+<h3 id="21-figuras-de-som-e-silencio">2.1 Figuras de som e silêncio</h3>
+<p>Na música escrita, utilizamos figuras para representar a duração dos sons e dos silêncios. Cada figura tem uma duração específica, medida em tempos.</p>
+<p><strong>Figuras de som (valores relativos):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Figura</th>
+<th>Nome</th>
+<th>Duração (em tempos)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>♩</td>
+<td>Semínima</td>
+<td>1 tempo</td>
+</tr>
+<tr>
+<td>♫</td>
+<td>Colcheia</td>
+<td>1/2 tempo</td>
+</tr>
+<tr>
+<td>♪</td>
+<td>Duas colcheias</td>
+<td>1 tempo (cada)</td>
+</tr>
+<tr>
+<td>♬</td>
+<td>Semicolcheia</td>
+<td>1/4 tempo</td>
+</tr>
+<tr>
+<td>𝅜</td>
+<td>Mínima</td>
+<td>2 tempos</td>
+</tr>
+<tr>
+<td>𝅝</td>
+<td>Semibreve</td>
+<td>4 tempos</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Figuras de silêncio (pausas):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th>Nome</th>
+<th>Duração</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>Pausa da semibreve</td>
+<td>4 tempos</td>
+</tr>
+<tr>
+<td>–</td>
+<td>Pausa da mínima</td>
+<td>2 tempos</td>
+</tr>
+<tr>
+<td>𝄾</td>
+<td>Pausa da semínima</td>
+<td>1 tempo</td>
+</tr>
+<tr>
+<td>𝄿</td>
+<td>Pausa da colcheia</td>
+<td>1/2 tempo</td>
+</tr>
+<tr>
+<td>𝅉</td>
+<td>Pausa da semicolcheia</td>
+<td>1/4 tempo</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ponto de aumento:</strong> Um ponto colocado à direita da figura aumenta sua duração pela metade. Exemplo: semínima pontuada = 1 tempo + 1/2 tempo = 1,5 tempo.</p>
+<h3 id="22-compasso-e-formula-de-compasso">2.2 Compasso e fórmula de compasso</h3>
+<p>O <strong>compasso</strong> é a divisão do tempo musical em partes iguais. As barras de compasso (linhas verticais) separam essas divisões.</p>
+<p>A <strong>fórmula de compasso</strong> é escrita no início da música, depois da clave. Ela tem dois números:</p>
+<ul>
+<li><strong>Numerador:</strong> indica quantos tempos cabem em cada compasso</li>
+<li><strong>Denominador:</strong> indica qual figura de som vale 1 tempo (4 = semínima)</li>
+</ul>
+<p><strong>Principais tipos de compasso:</strong></p>
+<ul>
+<li><strong>2/4 (binário):</strong> 2 tempos por compasso — marcha, polca</li>
+<li><strong>3/4 (ternário):</strong> 3 tempos por compasso — valsa</li>
+<li><strong>4/4 (quaternário):</strong> 4 tempos por compasso — a maioria das músicas populares</li>
+<li><strong>6/8 (binário composto):</strong> 6 tempos, mas agrupados em 2 grupos de 3 — algumas canções folclóricas</li>
+</ul>
+<h3 id="23-andamento-e-dinamica">2.3 Andamento e dinâmica</h3>
+<p><strong>Andamento</strong> é a velocidade da música. Os principais andamentos, do mais lento ao mais rápido, são:</p>
+<table>
+<thead>
+<tr>
+<th>Termo</th>
+<th>Significado</th>
+<th>BPM (aproximado)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Largo</td>
+<td>Muito lento</td>
+<td>40-60</td>
+</tr>
+<tr>
+<td>Adágio</td>
+<td>Lento</td>
+<td>66-76</td>
+</tr>
+<tr>
+<td>Andante</td>
+<td>Moderado, caminhando</td>
+<td>76-108</td>
+</tr>
+<tr>
+<td>Moderato</td>
+<td>Moderado</td>
+<td>108-120</td>
+</tr>
+<tr>
+<td>Allegro</td>
+<td>Rápido, alegre</td>
+<td>120-168</td>
+</tr>
+<tr>
+<td>Presto</td>
+<td>Muito rápido</td>
+<td>168-200</td>
+</tr>
+</tbody>
+</table>
+<p><em>BPM = Batidas por minuto</em></p>
+<p><strong>Dinâmica</strong> refere-se à intensidade (volume) do som:</p>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th>Nome</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pp</td>
+<td>Pianíssimo</td>
+<td>Muito fraco</td>
+</tr>
+<tr>
+<td>p</td>
+<td>Piano</td>
+<td>Fraco</td>
+</tr>
+<tr>
+<td>mp</td>
+<td>Mezzo-piano</td>
+<td>Meio fraco</td>
+</tr>
+<tr>
+<td>mf</td>
+<td>Mezzo-forte</td>
+<td>Meio forte</td>
+</tr>
+<tr>
+<td>f</td>
+<td>Forte</td>
+<td>Forte</td>
+</tr>
+<tr>
+<td>ff</td>
+<td>Fortíssimo</td>
+<td>Muito forte</td>
+</tr>
+<tr>
+<td>\&lt;</td>
+<td>Crescendo</td>
+<td>Aumentando gradualmente</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Diminuendo</td>
+<td>Diminuindo gradualmente</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-sinais-de-repeticao-e-expressao">2.4 Sinais de repetição e expressão</h3>
+<p>Alguns sinais importantes para a leitura musical:</p>
+<p><strong>Barras de repetição:</strong> Indicam que um trecho deve ser repetido.
+<strong>Casa 1 e 2:</strong> Na primeira repetição toca-se a casa 1; na segunda, a casa 2.
+<strong>D.C. (Da Capo):</strong> Voltar ao início.
+<strong>D.S. (Dal Segno):</strong> Voltar ao sinal (𝄋).
+<strong>Fermata (𝄐):</strong> Susta a nota além de sua duração normal.
+<strong>Ligadura:</strong> Une duas notas da mesma altura, somando suas durações.</p>
+<h3 id="25-escalas-maiores-e-menores">2.5 Escalas maiores e menores</h3>
+<p>A <strong>escala</strong> é uma sequência de notas em ordem ascendente ou descendente. A escala mais conhecida é a <strong>escala maior de DÓ</strong>:</p>
+<p>DÓ - RÉ - MI - FÁ - SOL - LÁ - SI - DÓ</p>
+<p>Os intervalos entre as notas seguem o padrão: TOM - TOM - SEMITOM - TOM - TOM - TOM - SEMITOM.</p>
+<p><strong>Escala menor natural de LÁ:</strong>
+LÁ - SI - DÓ - RÉ - MI - FÁ - SOL - LÁ</p>
+<p>Padrão: TOM - SEMITOM - TOM - TOM - SEMITOM - TOM - TOM</p>
+<h3 id="26-intervalos-musicais">2.6 Intervalos musicais</h3>
+<p><strong>Intervalo</strong> é a distância entre duas notas. Pode ser:</p>
+<ul>
+<li><strong>Melódico:</strong> notas tocadas sucessivamente</li>
+<li><strong>Harmônico:</strong> notas tocadas simultaneamente</li>
+</ul>
+<p>Principais intervalos (considerando a escala maior):</p>
+<table>
+<thead>
+<tr>
+<th>Nº de tons</th>
+<th>Nome do intervalo</th>
+<th>Exemplo (a partir de DÓ)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Uníssono</td>
+<td>DÓ-DÓ</td>
+</tr>
+<tr>
+<td>1/2</td>
+<td>2ª menor</td>
+<td>DÓ-RÉb</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2ª maior</td>
+<td>DÓ-RÉ</td>
+</tr>
+<tr>
+<td>1 1/2</td>
+<td>3ª menor</td>
+<td>DÓ-MIb</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3ª maior</td>
+<td>DÓ-MI</td>
+</tr>
+<tr>
+<td>2 1/2</td>
+<td>4ª justa</td>
+<td>DÓ-FÁ</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4ª aumentada / 5ª diminuta</td>
+<td>DÓ-FÁ#</td>
+</tr>
+<tr>
+<td>3 1/2</td>
+<td>5ª justa</td>
+<td>DÓ-SOL</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5ª aumentada / 6ª menor</td>
+<td>DÓ-SOL#</td>
+</tr>
+<tr>
+<td>4 1/2</td>
+<td>6ª maior</td>
+<td>DÓ-LÁ</td>
+</tr>
+<tr>
+<td>5</td>
+<td>7ª menor</td>
+<td>DÓ-SIb</td>
+</tr>
+<tr>
+<td>5 1/2</td>
+<td>7ª maior</td>
+<td>DÓ-SI</td>
+</tr>
+<tr>
+<td>6</td>
+<td>8ª (oitava)</td>
+<td>DÓ-DÓ'</td>
+</tr>
+</tbody>
+</table>
+<h3 id="27-exercicios-de-fixacao">2.7 Exercícios de fixação</h3>
+<ol>
+<li>Desenhe as figuras de som da semibreve até a semicolcheia.</li>
+<li>Desenhe as pausas correspondentes a cada figura.</li>
+<li>Quantos tempos tem uma mínima? E uma semínima pontuada?</li>
+<li>Identifique o compasso da música "Parabéns pra Você".</li>
+<li>Cante a escala maior de DÓ subindo e descendo.</li>
+<li>Toque a escala maior de DÓ em qualquer instrumento disponível.</li>
+<li>Identifique o intervalo entre SOL e DÓ (resposta: 4ª justa).</li>
+</ol>
+<hr />
+<h2 id="modulo-3-instrumentos-musicais">MÓDULO 3 — INSTRUMENTOS MUSICAIS</h2>
+<h3 id="31-classificacao-dos-instrumentos">3.1 Classificação dos instrumentos</h3>
+<p>Os instrumentos musicais são classificados em três grandes grupos, de acordo com a forma como produzem som:</p>
+<p><strong>Instrumentos de Corda (Cordofones):</strong> Produzem som pela vibração de cordas. Podem ser:
+- <strong>Cordas dedilhadas:</strong> violão, viola caipira, cavaquinho, harpa
+- <strong>Cordas friccionadas:</strong> violino, viola de arco, violoncelo
+- <strong>Cordas percutidas:</strong> piano (martelos nas cordas)</p>
+<p><strong>Instrumentos de Sopro (Aerofones):</strong> Produzem som pela vibração do ar. Dividem-se em:
+- <strong>Madeiras:</strong> flauta, clarinete, saxofone, escaleta
+- <strong>Metais:</strong> trompete, trombone, tuba
+- <strong>Palhetas livres:</strong> gaita, acordeom</p>
+<p><strong>Instrumentos de Percussão (Idiofones e Membranofones):</strong> Produzem som sendo golpeados, sacudidos ou raspados.
+- <strong>Membranofones:</strong> tambor, pandeiro, surdo, caixa, bongô
+- <strong>Idiofones:</strong> triângulo, chocalho, agogô, reco-reco, ganzá, xilofone</p>
+<h3 id="32-instrumentos-de-corda-violao-viola-cavaquinho">3.2 Instrumentos de corda: violão, viola, cavaquinho</h3>
+<p><strong>Violão:</strong> É o instrumento mais versátil da música popular brasileira. Possui 6 cordas (Mí, Si, Sol, Ré, Lá, Mi — da mais aguda para a mais grave) e pode ser usado para acompanhamento (acordes) ou melodia (dedilhado).</p>
+<p>Partes do violão:
+- <strong>Corpo (caixa acústica):</strong> amplifica o som
+- <strong>Braço ou escala:</strong> onde os dedos pressionam as cordas
+- <strong>Trastes:</strong> divisões metálicas no braço
+- <strong>Cabeça ou tarraxas:</strong> afinação
+- <strong>Boca:</strong> abertura que projeta o som
+- <strong>Cavalete:</strong> prende as cordas no corpo</p>
+<p><strong>Viola Caipira:</strong> Semelhante ao violão, mas com 10 cordas em 5 pares (curso duplo). É o instrumento típico da música sertaneja raiz.</p>
+<p><strong>Cavaquinho:</strong> Menor que o violão, com 4 cordas (Ré, Si, Sol, Ré — da mais aguda). Muito usado no samba, choro e pagode.</p>
+<h3 id="33-instrumentos-de-sopro-flauta-gaita-escaleta">3.3 Instrumentos de sopro: flauta, gaita, escaleta</h3>
+<p><strong>Flauta Doce:</strong> Instrumento de sopro de madeira ou plástico. Ideal para iniciantes. Possui 8 furos (7 frontais + 1 traseiro). Produz som pelo sopro direcionado a um bisel.</p>
+<p><strong>Gaita (Harmônica):</strong> Pequeno instrumento de palhetas que cabe no bolso. Cada furo produz duas notas (soprando e aspirando). Muito versátil para blues, folk e música popular.</p>
+<p><strong>Escaleta:</strong> Instrumento de sopro com teclado. Sopra-se por um bocal e as notas são selecionadas por teclas. Ótima para aprender melodia.</p>
+<h3 id="34-instrumentos-de-percussao-pandeiro-tambor-triangulo">3.4 Instrumentos de percussão: pandeiro, tambor, triângulo</h3>
+<p><strong>Pandeiro:</strong> Instrumento circular com pele de um lado e platinelas de metal ao redor. Muito versátil, usado em samba, forró, capoeira, coco e muitos outros ritmos.</p>
+<p>Técnica básica: segurar o pandeiro com a mão não dominante (que também faz os movimentos de oscilação para as platinelas) e bater com a mão dominante na pele, alternando ponta dos dedos, palma e base da mão.</p>
+<p><strong>Tambor:</strong> Instrumento de percussão com corpo cilíndrico e pele esticada em uma ou ambas as extremidades. Diferentes tamanhos produzem diferentes alturas (sons mais graves em tambores maiores).</p>
+<p><strong>Triângulo:</strong> Barra de metal em forma triangular, percutida com uma baqueta de metal. Produz som agudo e penetrante. O segredo do triângulo é o toque abafado (segurando com uma mão que também amortece) e o toque aberto.</p>
+<h3 id="35-cuidados-e-manutencao-basica">3.5 Cuidados e manutenção básica</h3>
+<p>Para conservar seu instrumento em bom estado:</p>
+<p><strong>Violão:</strong>
+- Guarde em local arejado (evite umidade e calor excessivo)
+- Limpe as cordas com pano seco após tocar
+- Troque as cordas regularmente (a cada 3-6 meses de uso)
+- Afine antes de cada uso
+- Não apoie o violão contra paredes (risco de queda)</p>
+<p><strong>Percussão:</strong>
+- Evite exposição ao sol (pode ressecar a pele)
+- Limpe com pano úmido (não molhado)
+- Guarde em local seco
+- Afrouxe as tensões se for guardar por muito tempo</p>
+<p><strong>Sopro:</strong>
+- Lave os bocal após cada uso (água corrente)
+- Não compartilhe o bocal sem higienização
+- Guarde no estojo para proteger</p>
+<h3 id="36-pratica-guiada-primeiros-acordes-no-violao">3.6 Prática guiada: primeiros acordes no violão</h3>
+<p>Aqui estão os primeiros acordes que você deve aprender no violão:</p>
+<p><strong>Lá Maior (A):</strong>
+- 1ª corda (Mí): solta
+- 2ª corda (Si): 2º traste
+- 3ª corda (Sol): 2º traste
+- 4ª corda (Ré): 2º traste
+- 5ª corda (Lá): solta
+- 6ª corda (Mí): não toca</p>
+<p><strong>Ré Maior (D):</strong>
+- 1ª corda: 2º traste
+- 2ª corda: 3º traste
+- 3ª corda: 2º traste
+- 4ª corda: solta
+- 5ª e 6ª: não tocam</p>
+<p><strong>Mi Maior (E):</strong>
+- 1ª corda: solta
+- 2ª corda: solta
+- 3ª corda: 1º traste
+- 4ª corda: 2º traste
+- 5ª corda: 2º traste
+- 6ª corda: solta</p>
+<p><strong>Dica importante:</strong> Para tocar acordes limpos, pressione as cordas com a ponta dos dedos, próximo ao traste (não em cima dele). Mantenha a unha da mão esquerda curta.</p>
+<h3 id="37-exercicios-de-fixacao">3.7 Exercícios de fixação</h3>
+<ol>
+<li>Identifique e nomeie as partes do violão.</li>
+<li>Pratique os acordes A, D e E, alternando entre eles.</li>
+<li>Toque a sequência: A - D - E (4 batidas cada).</li>
+<li>No pandeiro, pratique o ritmo básico do samba: polegar na borda, dedos no centro.</li>
+<li>Crie um ritmo simples com dois instrumentos de percussão.</li>
+<li>Demonstre os cuidados básicos de manutenção do seu instrumento.</li>
+</ol>
+<hr />
+<h2 id="modulo-4-canto-e-percepcao-musical">MÓDULO 4 — CANTO E PERCEPÇÃO MUSICAL</h2>
+<h3 id="41-tecnica-vocal-basica">4.1 Técnica vocal básica</h3>
+<p>Cantar é uma atividade natural do ser humano, mas cantar bem exige técnica. A boa notícia é que técnica vocal pode ser aprendida e desenvolvida por qualquer pessoa.</p>
+<p><strong>Postura correta ao cantar:</strong>
+- Pés firmes no chão, alinhados com os ombros
+- Coluna ereta, mas não rígida
+- Ombros relaxados e para trás
+- Cabeça reta, queixo paralelo ao chão
+- Braços soltos ao lado do corpo</p>
+<h3 id="42-respiracao-diafragmatica">4.2 Respiração diafragmática</h3>
+<p>A respiração é a base do canto. A maioria das pessoas respira de forma superficial (respiração torácica). Para cantar, precisamos da <strong>respiração diafragmática</strong> (ou abdominal).</p>
+<p><strong>Exercício prático:</strong>
+1. Deite-se de costas com um livro sobre a barriga
+2. Ao inspirar, o livro deve subir (barriga expande)
+3. Ao expirar, o livro desce (barriga contrai)
+4. Pratique por 5 minutos diários</p>
+<p><strong>Técnica:</strong>
+- Inspire profundamente pelo nariz, sentindo o abdômen expandir
+- Segure o ar por 2 segundos
+- Expire lentamente pela boca, como se estivesse soprando uma vela
+- Repita 10 vezes</p>
+<h3 id="43-aquecimento-vocal">4.3 Aquecimento vocal</h3>
+<p>Antes de cantar, é essencial aquecer a voz. Aqui estão 5 exercícios simples:</p>
+<ol>
+<li><strong>Vibração de lábios:</strong> Faça "brrrr" com os lábios vibrando, subindo e descendo na escala</li>
+<li><strong>Ng:</strong> Emita o som "ng" (como em "ping"), subindo e descendo na escala</li>
+<li><strong>Vogais:</strong> Cante as vogais A-E-I-O-U em sequência, na mesma nota</li>
+<li><strong>Sirene:</strong> Imite o som de uma sirene (de grave a agudo e vice-versa)</li>
+<li><strong>Escalas:</strong> Cante a escala maior de DÓ em vogais</li>
+</ol>
+<p><strong>Duração:</strong> 5 a 10 minutos de aquecimento antes de cantar.</p>
+<h3 id="44-percepcao-ritmica">4.4 Percepção rítmica</h3>
+<p>A percepção rítmica é a capacidade de sentir e reproduzir o pulso da música.</p>
+<p><strong>Exercícios práticos:</strong>
+1. <strong>Pulso:</strong> Coloque uma música e bata palmas no pulso (batida constante)
+2. <strong>Contração:</strong> Dentro do pulso, identifique o primeiro tempo de cada compasso (acentuação)
+3. <strong>Ditado rítmico:</strong> Ouça um ritmo simples e tente reproduzi-lo batendo palmas
+4. <strong>Leitura rítmica:</strong> Leia figuras rítmicas em voz alta usando sílabas:
+   - Semínima: "tá"
+   - Colcheia: "te-te"
+   - Semicolcheia: "ti-ri-ti-ri"</p>
+<h3 id="45-percepcao-melodica">4.5 Percepção melódica</h3>
+<p>A percepção melódica é a capacidade de reconhecer e reproduzir alturas (notas).</p>
+<p><strong>Exercícios práticos:</strong>
+1. <strong>Chamado e resposta:</strong> Um líder toca/canta uma nota, o grupo repete
+2. <strong>Identificação de intervalos:</strong> Ouça dois sons e identifique se o segundo é mais agudo ou mais grave que o primeiro
+3. <strong>Canções conhecidas:</strong> Tente identificar a primeira nota de uma música conhecida
+4. <strong>Afinação:</strong> Cante junto com uma nota de referência (violão, teclado ou aplicativo)</p>
+<h3 id="46-canto-coletivo-nocoes-de-coral">4.6 Canto coletivo: noções de coral</h3>
+<p>Cantar em grupo é uma experiência enriquecedora. O coral (ou grupo vocal) é a forma mais democrática de fazer música.</p>
+<p><strong>Divisão de vozes:</strong>
+- <strong>Soprano:</strong> vozes femininas mais agudas
+- <strong>Contralto:</strong> vozes femininas mais graves
+- <strong>Tenor:</strong> vozes masculinas mais agudas
+- <strong>Baixo:</strong> vozes masculinas mais graves</p>
+<p><strong>Regras básicas do canto coletivo:</strong>
+- Ouça mais do que cante (cada voz precisa se equilibrar com as demais)
+- Mantenha o volume da sua voz na mesma intensidade dos colegas
+- Respeite o regente (coordenador do grupo)
+- Marque o livro de músicas</p>
+<h3 id="47-exercicios-praticos">4.7 Exercícios práticos</h3>
+<ol>
+<li>Pratique 5 minutos de respiração diafragmática.</li>
+<li>Faça o aquecimento vocal completo (5 exercícios).</li>
+<li>Cante a escala maior de DÓ em "A" subindo e descendo.</li>
+<li>Escolha uma música conhecida e cante identificando: melodia principal + pulso rítmico.</li>
+<li>Em grupo: formem um pequeno coral e cantem uma canção em duas vozes.</li>
+<li>Grave sua voz cantando e ouça depois — isso ajuda a identificar pontos de melhoria.</li>
+</ol>
+<hr />
+<h2 id="modulo-5-criacao-e-apresentacao-musical">MÓDULO 5 — CRIAÇÃO E APRESENTAÇÃO MUSICAL</h2>
+<h3 id="51-formacao-de-grupo-musical">5.1 Formação de grupo musical</h3>
+<p>Agora que você já tem conhecimentos básicos de música, instrumento e canto, é hora de pensar na formação de um grupo musical comunitário.</p>
+<p><strong>Tipos de formação possíveis:</strong>
+- <strong>Dupla ou trio:</strong> voz + violão + percussão
+- <strong>Grupo de violões:</strong> 3 a 6 violões tocando juntos
+- <strong>Coral comunitário:</strong> 10 a 30 vozes
+- <strong>Banda de percussão:</strong> 5 a 15 percussionistas
+- <strong>Orquestra comunitária:</strong> todos os instrumentos disponíveis</p>
+<p><strong>Definições iniciais do grupo:</strong>
+1. Qual o estilo musical principal? (MPB, sertanejo, forró, samba, religioso)
+2. Quantas pessoas participam e quais instrumentos cada uma toca?
+3. Qual a frequência de ensaios? (recomendado: 2x por semana)
+4. Onde serão os ensaios? (espaço da associação, igreja, praça)
+5. Quem será o coordenador musical? (uma pessoa responsável pelos arranjos)</p>
+<h3 id="52-repertorio-para-eventos-comunitarios">5.2 Repertório para eventos comunitários</h3>
+<p>Um bom repertório para eventos comunitários deve considerar:</p>
+<ul>
+<li><strong>Diversidade de estilos</strong> para agradar diferentes públicos</li>
+<li><strong>Facilidade de execução</strong> (dentro do nível técnico do grupo)</li>
+<li><strong>Letras adequadas</strong> ao contexto e ao público do evento</li>
+<li><strong>Duração total</strong> do show (30 a 90 minutos, dependendo do evento)</li>
+</ul>
+<p><strong>Sugestão de repertório básico (eventos comunitários):</strong></p>
+<p><em>Para qualquer evento:</em>
+- Músicas conhecidas do cancioneiro popular brasileiro
+- Clássicos da MPB que todas as gerações conhecem
+- Canções regionais típicas da localidade</p>
+<p><em>Para festas juninas:</em>
+- Forró, xote, baião
+- Quadrilhas e músicas temáticas</p>
+<p><em>Para Natal:</em>
+- Canções natalinas tradicionais
+- Músicas de confraternização</p>
+<p><em>Para aniversário do bairro/comunidade:</em>
+- Hino da cidade (se houver)
+- Músicas que exaltam a região
+- Repertório variado e festivo</p>
+<h3 id="53-nocoes-de-palco-e-apresentacao">5.3 Noções de palco e apresentação</h3>
+<p>Uma apresentação musical não é apenas tocar e cantar. É também uma performance visual.</p>
+<p><strong>Antes do evento:</strong>
+- Verifique a afinação dos instrumentos
+- Teste o som (microfones, caixas, retorno)
+- Organize o palco (posição de cada músico)
+- Combine o roteiro do show (músicas na ordem)
+- Chegue com pelo menos 1 hora de antecedência</p>
+<p><strong>Durante a apresentação:</strong>
+- Mantenha contato visual com o público
+- Apresente cada música (diga o nome, o compositor, um contexto)
+- Sorria e demonstre que está feliz em tocar
+- Não fique parado — movimente-se no palco
+- Tenha um "encore" preparado (música extra se o público pedir mais)</p>
+<p><strong>Após o evento:</strong>
+- Agradeça ao público e aos organizadores
+- Guarde os equipamentos com cuidado
+- Faça uma avaliação rápida com o grupo (o que funcionou, o que melhorar)</p>
+<h3 id="54-organizacao-de-ensaios">5.4 Organização de ensaios</h3>
+<p>Ensaio produtivo segue uma estrutura:</p>
+<ol>
+<li><strong>Aquecimento (10 min):</strong> Exercícios vocais e alongamento</li>
+<li><strong>Revisão (10 min):</strong> Músicas já aprendidas anteriormente</li>
+<li><strong>Estudo novo (30 min):</strong> Aprender uma nova música ou refinar arranjos</li>
+<li><strong>Passagem geral (15 min):</strong> Tocar o repertório completo</li>
+<li><strong>Discussão (10 min):</strong> Ajustes, dúvidas, próximos passos</li>
+</ol>
+<p><strong>Duração total ideal:</strong> 60 a 90 minutos</p>
+<h3 id="55-avaliacao-final">5.5 Avaliação final</h3>
+<p>Para a avaliação final do curso, cada participante deverá:</p>
+<ol>
+<li>Apresentar uma música (instrumental ou vocal) individualmente</li>
+<li>Participar de uma apresentação em grupo</li>
+<li>Responder a um questionário teórico básico</li>
+<li>Autoavaliar seu progresso durante o curso</li>
+</ol>
+<p><strong>Critérios de avaliação:</strong>
+- Afinação (capacidade de manter a nota correta)
+- Ritmo (capacidade de manter o pulso da música)
+- Técnica (postura, respiração, execução instrumental)
+- Participação (assiduidade, colaboração com o grupo)
+- Evolução (progresso desde o início do curso)</p>
+<hr />
+<h2 id="referencias-bibliograficas">REFERÊNCIAS BIBLIOGRÁFICAS</h2>
+<p>BOULAY, Jean-Michel. <strong>Manual de Iniciação Musical</strong>. São Paulo: Irmãos Vitale, 2008.</p>
+<p>BRASIL. Secretaria de Educação Fundamental. <strong>Parâmetros Curriculares Nacionais: Arte</strong>. Brasília: MEC/SEF, 1997.</p>
+<p>COELHO, Sônia. <strong>Teoria da Música</strong>. São Paulo: Irmãos Vitale, 2007.</p>
+<p>GRANJA, Carlos. <strong>Música para Todos: Iniciação Musical</strong>. Rio de Janeiro: Gryphus, 2010.</p>
+<p>GURGEL, Maurício. <strong>Percepção Musical I e II</strong>. São Paulo: Irmãos Vitale, 2015.</p>
+<p>MED, Bohumil. <strong>Teoria da Música</strong>. 4. ed. Brasília: MusiMed, 1996.</p>
+<p>PRIOLLI, Maria Luisa de Mattos. <strong>Princípios Básicos da Música</strong>. Rio de Janeiro: Scala, 2005.</p>
+<p>SOUZA, Jussamara. <strong>Aprender e Ensinar Música no Cotidiano</strong>. Porto Alegre: Sulina, 2008.</p>
+<p>WISNIK, José Miguel. <strong>O Som e o Sentido</strong>. São Paulo: Companhia das Letras, 1989.</p>
+<hr />
+<p><strong>Fim da Apostila</strong></p>
+<p><em>Material produzido para uso gratuito em associações comunitárias.</em>
+<em>Distribuição livre e permitida.</em></p>
+
+<div class="footer">
+    <p><em>Material produzido para uso gratuito em associações comunitárias. Distribuição livre e permitida.</em></p>
+</div>
+
+</body>
+</html>

@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoreGov | Consultoria para ONGs e Projetos Sociais</title>
+    <title>CoreGov | ONGs • Prefeituras • Inteligência Artificial</title>
 
     <!-- SEO -->
-    <meta name="description" content="CoreGov: consultoria especializada em estatutos, planos de negócio e captação de recursos para ONGs e projetos sociais. +15 projetos estruturados. Transforme sua organização.">
-    <meta name="keywords" content="consultoria ONG, estatuto ONG, captacao de recursos, plano de negocio social, projetos sociais, adequacao de estatuto">
+    <meta name="description" content="CoreGov: consultoria para ONGs, recursos federais para prefeituras e agentes de IA para automatizar sua operação. Estatuto, Transferegov, captação, automação inteligente e site preparado para agentes de IA (Agentic Browsing).">
+    <meta name="keywords" content="consultoria ONG, estatuto ONG, captação de recursos, plano de negócio social, projetos sociais, adequação de estatuto, recursos federais, transferegov, arborização, prefeituras, agentes de IA, automação de processos, inteligência artificial, terceiro setor, gestão pública, agentic browsing, site para IA, llms.txt, SEO para agentes de IA">
     <meta name="robots" content="index, follow">
     <meta name="author" content="CoreGov">
     <link rel="canonical" href="https://coregov.com.br/">
 
-    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <!-- Open Graph (Facebook, LinkedIn, Telegram) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="CoreGov | Consultoria para ONGs e Projetos Sociais">
-    <meta property="og:description" content="Da elaboracao de estatutos a captacao de recursos: transformamos projetos sociais em oportunidades reais de impacto.">
+    <meta property="og:title" content="CoreGov | ONGs • Prefeituras • Inteligência Artificial">
+    <meta property="og:description" content="Da ONG à prefeitura: estruturamos projetos, acessamos recursos federais e automatizamos processos com IA. Estatuto, Transferegov, captação e agentes inteligentes.">
     <meta property="og:url" content="https://coregov.com.br/">
     <meta property="og:image" content="https://coregov.com.br/coregov01.png">
     <meta property="og:image:width" content="1200">
@@ -25,8 +25,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="CoreGov | Consultoria para ONGs e Projetos Sociais">
-    <meta name="twitter:description" content="Da elaboracao de estatutos a captacao de recursos: transformamos projetos sociais em oportunidades reais.">
+    <meta name="twitter:title" content="CoreGov | ONGs • Prefeituras • Inteligência Artificial">
+    <meta name="twitter:description" content="Da ONG à prefeitura: estruturamos projetos, acessamos recursos federais e automatizamos processos com IA.">
     <meta name="twitter:image" content="https://coregov.com.br/coregov01.png">
 
     <!-- Google Search Console -->
@@ -79,15 +79,15 @@
             padding: 0 24px;
         }
 
-        /* ===== WHATSAPP FLOAT ===== */
-        .whatsapp-float {
+        /* ===== TELEGRAM FLOAT ===== */
+        .telegram-float {
             position: fixed;
             bottom: 24px;
             right: 24px;
             z-index: 999;
             width: 56px;
             height: 56px;
-            background: #25D366;
+            background: #0088cc;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -97,9 +97,9 @@
             box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
             transition: var(--transition);
         }
-        .whatsapp-float:hover {
+        .telegram-float:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.55);
+            box-shadow: 0 6px 24px rgba(0, 136, 204, 0.55);
         }
 
         /* ===== HEADER ===== */
@@ -321,11 +321,11 @@
             transform: translateY(-2px);
         }
 
-        .btn-whatsapp {
-            background: #25D366;
+        .btn-telegram {
+            background: #0088cc;
             color: #fff;
         }
-        .btn-whatsapp:hover {
+        .btn-telegram:hover {
             background: #1ebe5d;
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
@@ -857,12 +857,12 @@
 </head>
 <body>
 
-    <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
-    <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." 
+    <!-- ===== TELEGRAM FLOATING BUTTON ===== -->
+    <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." 
        target="_blank" 
-       class="whatsapp-float"
-       aria-label="Fale conosco pelo WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+       class="telegram-float"
+       aria-label="Fale conosco pelo Telegram">
+        <i class="fab fa-telegram"></i>
     </a>
 
     <!-- ===== HEADER ===== -->
@@ -879,11 +879,13 @@
                 <a href="#sobre">Sobre</a>
                 <a href="#plataforma">Plataforma</a>
                 <a href="#contato">Contato</a>
+                <a href="blog/">📝 Blog</a>
                 <a href="editais/">📋 Editais</a>
-                <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." 
+                <a href="produtos/">🛒 Produtos</a>
+                <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." 
                    target="_blank" 
                    class="nav-cta">
-                    <i class="fab fa-whatsapp"></i> Fale Conosco
+                    <i class="fab fa-telegram"></i> Fale Conosco
                 </a>
             </nav>
         </div>
@@ -895,24 +897,24 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <i class="fas fa-handshake"></i>
-                    Consultoria especializada para ONGs
+                    Consultoria para ONGs • Prefeituras • IA
                 </div>
                 <h1 class="hero-title">
-                    Sua ONG <span>estruturada</span> para crescer e transformar
+                    Da ONG à <span>prefeitura</span>: projetos que captam recursos
                 </h1>
                 <p class="hero-desc">
-                    Da elaboração de estatutos à curadoria de patrocinadores: 
-                    transformamos projetos sociais em oportunidades reais 
-                    de impacto e sustentabilidade financeira.
+                    Estatutos, planos de negócio, recursos federais via Transferegov 
+                    e agentes de IA para automatizar sua operação. 
+                    Da ONG à prefeitura, entregamos tudo pronto.
                 </p>
                 <div class="hero-actions">
                     <a href="#servicos" class="btn btn-primary">
                         <i class="fas fa-arrow-down"></i> Ver Serviços
                     </a>
-                    <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Quero%20consultar%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." 
+                    <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Quero%20consultar%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." 
                        target="_blank" 
-                       class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Falar Agora
+                       class="btn btn-telegram">
+                        <i class="fab fa-telegram"></i> Falar Agora
                     </a>
                 </div>
             </div>
@@ -924,8 +926,8 @@
                     <ul>
                         <li><i class="fas fa-check-circle"></i> Estatutos e adequação legal</li>
                         <li><i class="fas fa-check-circle"></i> Planos de negócio sociais</li>
-                        <li><i class="fas fa-check-circle"></i> Curadoria de patrocinadores</li>
-                        <li><i class="fas fa-check-circle"></i> Captação de recursos</li>
+                        <li><i class="fas fa-check-circle"></i> Recursos federais para prefeituras</li>
+                        <li><i class="fas fa-check-circle"></i> Agentes de IA e automação</li>
                     </ul>
                 </div>
             </div>
@@ -978,7 +980,7 @@
                     </p>
                     <span class="servico-tag">⭐ Mais Procurado</span>
                     <br>
-                    <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Plano%20de%20Neg%C3%B3cio%20Social." 
+                    <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Plano%20de%20Neg%C3%B3cio%20Social." 
                        target="_blank" 
                        class="card-cta">
                         Consultar <i class="fas fa-arrow-right"></i>
@@ -998,7 +1000,45 @@
                     </p>
                     <span class="servico-tag">Novo</span>
                     <br>
-                    <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Curadoria%20de%20Patrocinadores." 
+                    <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Curadoria%20de%20Patrocinadores." 
+                       target="_blank" 
+                       class="card-cta">
+                        Consultar <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <!-- Card 4: Recursos Federais -->
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3>Recursos Federais para Prefeituras</h3>
+                    <p>
+                        Acesso a recursos não reembolsáveis do Governo Federal via Transferegov. 
+                        Editais como ArborizaCidades (FNMA), saneamento e infraestrutura verde. 
+                        Da análise de elegibilidade ao envio, entregamos tudo pronto.
+                    </p>
+                    <span class="servico-tag">Prefeituras</span>
+                    <br>
+                    <a href="editais/" 
+                       class="card-cta">
+                        Ver Editais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 5: IA e Automação -->
+                <div class="servico-card destaque">
+                    <div class="servico-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Agentes de IA & Automação</h3>
+                    <p>
+                        Agentes autônomos de Inteligência Artificial que eliminam tarefas 
+                        repetitivas, automatizam fluxos de dados e criam assistentes 
+                        inteligentes de atendimento e gestão. Diagnóstico gratuito de ROI.
+                    </p>
+                    <span class="servico-tag">⭐ Tech</span>
+                    <br>
+                    <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20Agentes%20de%20IA%20e%20Automa%C3%A7%C3%A3o." 
                        target="_blank" 
                        class="card-cta">
                         Consultar <i class="fas fa-arrow-right"></i>
@@ -1016,20 +1056,31 @@
                     <div class="section-tag">Quem Somos</div>
                     <h2 class="section-title">Expertise que transforma projetos em resultados</h2>
                     <p>
-                        A <strong>CoreGov</strong> nasceu da experiência prática de quem já 
-                        estruturou dezenas de projetos sociais, elaborou estatutos, 
-                        planos de negócio e conexões com patrocinadores para ONGs 
-                        de todos os portes.
+                        A <strong>CoreGov</strong> nasceu da experiência de quem está há mais de 
+                        25 anos em projetos sociais, geração de emprego e renda, 
+                        e desenvolvimento institucional — unindo forças com 
+                        <strong>Inteligência Artificial</strong> para ampliar resultados.
                     </p>
                     <p>
-                        Nosso diferencial é unir <strong>conhecimento técnico</strong> 
-                        (legislação, gestão, finanças) com <strong>inteligência artificial</strong> 
-                        para acelerar entregas e ampliar o alcance dos projetos que 
-                        atendemos.
+                        Atendemos <strong>ONGs</strong> (estatutos, planos de negócio, captação), 
+                        <strong>prefeituras</strong> (recursos federais via Transferegov) e 
+                        <strong>empresas</strong> (agentes de IA para automatizar processos). 
+                        Nosso diferencial: diagnosticamos onde cada ação gera retorno 
+                        financeiro rápido e entregamos tudo pronto.
                     </p>
                     <p>
                         Acreditamos que toda organização social merece ter uma 
                         base sólida para crescer e gerar impacto verdadeiro.
+                    </p>
+                    <p>
+                        🔍 <strong>Palavras-chave:</strong> Consultoria para ONGs | 
+                        Captação de recursos federais | Transferegov | 
+                        Arborização urbana | Agentes de IA | 
+                        Automação de processos | Projetos para prefeituras
+                    </p>
+                    <p>
+                        📖 <strong>Novo artigo:</strong> <a href="blog/site-preparado-para-agentes-de-ia.html" style="color: var(--azul); text-decoration: underline;">Seu site está preparado para agentes de IA?</a> — 
+                        O Google lançou o Agentic Browsing no Lighthouse. Entenda como preparar seu site para o futuro.
                     </p>
                 </div>
 
@@ -1039,8 +1090,8 @@
                         <div class="rotulo">Projetos Estruturados</div>
                     </div>
                     <div class="dado-item">
-                        <div class="numero">Consultoria para MEI, Me e EPP</div>
-                        <div class="rotulo">Recursos para Todos</div>
+                        <div class="numero">ONGs +</div>
+                        <div class="rotulo">Prefeituras + Empresas</div>
                     </div>
                     <div class="dado-item">
                         <div class="numero">100%</div>
@@ -1103,15 +1154,15 @@
                     <div class="section-tag">Contato</div>
                     <h3>Vamos conversar sobre seu projeto?</h3>
                     <p>
-                        Preencha o formulário ou fale diretamente pelo WhatsApp. 
+                        Preencha o formulário ou fale diretamente pelo Telegram. 
                         Respondemos em até 24 horas úteis.
                     </p>
 
                     <div class="contato-item">
-                        <i class="fab fa-whatsapp"></i>
+                        <i class="fab fa-telegram"></i>
                         <div>
-                            <strong>WhatsApp</strong>
-                            <a href="https://wa.me/5518991888698" target="_blank" style="color: var(--azul);">
+                            <strong>Telegram</strong>
+                            <a href="https://t.me/coregovbr" target="_blank" style="color: var(--azul);">
                                 (18) 99188-8698
                             </a>
                         </div>
@@ -1134,10 +1185,10 @@
                     </div>
 
                     <div style="margin-top: 24px;">
-                        <a href="https://wa.me/5518991888698?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." 
+                        <a href="https://t.me/coregovbr?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20CoreGov." 
                            target="_blank" 
-                           class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
+                           class="btn btn-telegram">
+                            <i class="fab fa-telegram"></i> Fale pelo Telegram
                         </a>
                     </div>
                 </div>
@@ -1187,9 +1238,9 @@
                 <div class="footer-brand">
                     <div class="logo">CORE<span>GOV</span></div>
                     <p>
-                        Consultoria especializada em estruturação de projetos sociais, 
-                        estatutos, planos de negócio e curadoria de patrocinadores 
-                        para ONGs em todo o Brasil.
+                        Consultoria para ONGs, recursos federais para prefeituras 
+                        e agentes de IA para automatizar processos. 
+                        Da elaboração de estatutos ao Transferegov.
                     </p>
                 </div>
                 <div class="footer-col">
@@ -1197,6 +1248,8 @@
                     <a href="#servicos">Elaboração de Estatutos</a>
                     <a href="#servicos">Plano de Negócio Social</a>
                     <a href="#servicos">Curadoria de Patrocinadores</a>
+                    <a href="#servicos">Recursos Federais</a>
+                    <a href="#servicos">Agentes de IA</a>
                     <a href="#plataforma">CoreGov App</a>
                 </div>
                 <div class="footer-col">
@@ -1204,20 +1257,20 @@
                     <a href="#sobre">Quem Somos</a>
                     <a href="#contato">Contato</a>
                     <a href="https://app.coregov.com.br" target="_blank">Plataforma</a>
-                    <a href="https://wa.me/5518991888698" target="_blank">WhatsApp</a>
+                    <a href="https://t.me/coregovbr" target="_blank">Telegram</a>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <span>&copy; 2026 CoreGov. Todos os direitos reservados.</span>
                 <div class="footer-social">
-                    <a href="https://wa.me/5518991888698" target="_blank" aria-label="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
+                    <a href="https://t.me/coregovbr" target="_blank" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
                     </a>
                     <a href="#" target="_blank" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.linkedin.com/company/coregov" target="_blank" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/oseias-nepomuceno-adm-dados/" target="_blank" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                     <a href="#" target="_blank" aria-label="TikTok">

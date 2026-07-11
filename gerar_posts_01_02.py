@@ -1,0 +1,306 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Gera HTMLs estilizados para os posts 01 e 02 (Prefeituras MT / Associações SP)"""
+
+def gerar_post_01():
+    """Post 01: Prefeituras de MT - Milhões em recursos federais não acessados"""
+    html = """<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Post 01 - Prefeituras MT | COREGOV</title>
+<style>
+    @page { size: A4; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        background: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+    .card {
+        max-width: 595px; width: 100%;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        padding: 40px 36px;
+        margin: 20px auto;
+    }
+    .post-header {
+        display: flex; align-items: center;
+        margin-bottom: 20px; padding-bottom: 16px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .logo {
+        width: 52px; height: 52px; border-radius: 50%;
+        background: linear-gradient(135deg, #0f3460, #e94560);
+        display: flex; align-items: center; justify-content: center;
+        color: white; font-weight: bold; font-size: 22px;
+        margin-right: 14px; flex-shrink: 0;
+    }
+    .post-author h2 { font-size: 16px; color: #0f3460; margin: 0; }
+    .post-author p { font-size: 13px; color: #666; margin: 2px 0 0 0; }
+    .badge {
+        display: inline-block;
+        background: #0f3460; color: white;
+        padding: 4px 12px; border-radius: 20px;
+        font-size: 12px; font-weight: bold;
+        margin-bottom: 16px;
+    }
+    .post-content {
+        font-size: 14.5px; line-height: 1.7; color: #1a1a1a;
+    }
+    .post-content h1 {
+        font-size: 24px; color: #0f3460;
+        margin: 16px 0 12px 0; line-height: 1.3;
+    }
+    .post-content p { margin-bottom: 14px; }
+    .post-content strong { color: #0f3460; }
+    .highlight-box {
+        background: #f0f4ff;
+        border-left: 4px solid #0f3460;
+        padding: 16px 20px; border-radius: 0 8px 8px 0;
+        margin: 16px 0;
+    }
+    .highlight-box strong { color: #e94560; }
+    .cta-box {
+        background: linear-gradient(135deg, #0f3460, #1a4a7a);
+        color: white; padding: 20px 24px;
+        border-radius: 12px; margin: 20px 0;
+        text-align: center;
+    }
+    .cta-box strong { font-size: 17px; }
+    .hashtags {
+        margin-top: 20px; padding-top: 16px;
+        border-top: 1px solid #e0e0e0;
+        font-size: 13px; color: #0f3460;
+    }
+    .footer-note {
+        margin-top: 24px; text-align: center;
+        font-size: 11px; color: #999;
+    }
+    @media print {
+        body { padding: 0; background: white; }
+        .card { box-shadow: none; margin: 0; border-radius: 0; padding: 30px; }
+    }
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="post-header">
+        <div class="logo">C</div>
+        <div class="post-author">
+            <h2>COREGOV</h2>
+            <p>Captacao de Recursos • 28 anos de trajetoria</p>
+        </div>
+    </div>
+    <div class="post-content">
+        <span class="badge">🎯 PREFEITURAS DE MT</span>
+        
+        <h1>Milhões em recursos federais voltam todo ano porque o projeto nao chegou a tempo</h1>
+        
+        <p>Mato Grosso tem <strong>142 municipios</strong>. Quase todos elegiveis a dezenas de editais federais.</p>
+        
+        <p>Mas o que mais vejo nas prefeituras do interior:</p>
+        
+        <div class="highlight-box">
+            ❌ Ninguem monitora os editais que abrem<br>
+            ❌ Quando descobrem, ja perdeu o prazo<br>
+            ❌ Correm pra fazer projeto em 3 dias → proposta reprovada<br>
+            ❌ Recurso volta pro governo → outro municipio capta no lugar
+        </div>
+        
+        <p>Ja atendi municipios que perderam <strong>mais de R$ 2 milhoes</strong> em um unico ano porque simplesmente nao sabiam que o edital existia.</p>
+        
+        <p>Nao e falta de recurso. E <strong>falta de organizacao</strong>.</p>
+        
+        <p>Com um calendario de editais regionalizado e assessoria direcionada, sua prefeitura pode:</p>
+        
+        <p>✅ Saber com <strong>60-90 dias de antecedencia</strong> quais editais vao abrir<br>
+        ✅ Preparar projeto com calma e qualidade<br>
+        ✅ Multiplicar por 3 ou 4 a taxa de aprovacao</p>
+        
+        <div class="cta-box">
+            <strong>💬 Ja perdeu recurso federal por falta de projeto?</strong><br>
+            <span style="font-size:13px; opacity:0.9;">Comenta abaixo ou manda um direct. Posso ajudar a virar esse jogo.</span>
+        </div>
+    </div>
+    <div class="hashtags">
+        #PrefeiturasMT #CaptacaoDeRecursos #EditaisFederais #MatoGrosso #GestaoPublica #COREGOV
+    </div>
+    <div class="footer-note">
+        COREGOV • coregov.com.br
+    </div>
+</div>
+</body>
+</html>"""
+    return html
+
+def gerar_post_02():
+    """Post 02: Associações de SP - 30% das ONGs + maior fila de reprovações"""
+    html = """<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Post 02 - Associacoes SP | COREGOV</title>
+<style>
+    @page { size: A4; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        background: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+    .card {
+        max-width: 595px; width: 100%;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        padding: 40px 36px;
+        margin: 20px auto;
+    }
+    .post-header {
+        display: flex; align-items: center;
+        margin-bottom: 20px; padding-bottom: 16px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .logo {
+        width: 52px; height: 52px; border-radius: 50%;
+        background: linear-gradient(135deg, #0f3460, #e94560);
+        display: flex; align-items: center; justify-content: center;
+        color: white; font-weight: bold; font-size: 22px;
+        margin-right: 14px; flex-shrink: 0;
+    }
+    .post-author h2 { font-size: 16px; color: #0f3460; margin: 0; }
+    .post-author p { font-size: 13px; color: #666; margin: 2px 0 0 0; }
+    .badge {
+        display: inline-block;
+        background: #1a5276; color: white;
+        padding: 4px 12px; border-radius: 20px;
+        font-size: 12px; font-weight: bold;
+        margin-bottom: 16px;
+    }
+    .post-content {
+        font-size: 14.5px; line-height: 1.7; color: #1a1a1a;
+    }
+    .post-content h1 {
+        font-size: 24px; color: #1a5276;
+        margin: 16px 0 12px 0; line-height: 1.3;
+    }
+    .post-content p { margin-bottom: 14px; }
+    .post-content strong { color: #1a5276; }
+    .stat-box {
+        display: flex; gap: 16px; margin: 16px 0;
+    }
+    .stat-item {
+        flex: 1; text-align: center;
+        background: #e8f0fe;
+        border-radius: 12px; padding: 14px 10px;
+    }
+    .stat-num {
+        font-size: 28px; font-weight: bold; color: #e94560;
+    }
+    .stat-label {
+        font-size: 12px; color: #555; margin-top: 4px;
+    }
+    .highlight-box {
+        background: #fef7e8;
+        border-left: 4px solid #f5c518;
+        padding: 16px 20px; border-radius: 0 8px 8px 0;
+        margin: 16px 0;
+    }
+    .cta-box {
+        background: linear-gradient(135deg, #1a5276, #2e7daf);
+        color: white; padding: 20px 24px;
+        border-radius: 12px; margin: 20px 0;
+        text-align: center;
+    }
+    .cta-box strong { font-size: 17px; }
+    .hashtags {
+        margin-top: 20px; padding-top: 16px;
+        border-top: 1px solid #e0e0e0;
+        font-size: 13px; color: #1a5276;
+    }
+    .footer-note {
+        margin-top: 24px; text-align: center;
+        font-size: 11px; color: #999;
+    }
+    @media print {
+        body { padding: 0; background: white; }
+        .card { box-shadow: none; margin: 0; border-radius: 0; padding: 30px; }
+    }
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="post-header">
+        <div class="logo">C</div>
+        <div class="post-author">
+            <h2>COREGOV</h2>
+            <p>Captacao de Recursos para ONGs • 28 anos de trajetoria</p>
+        </div>
+    </div>
+    <div class="post-content">
+        <span class="badge">🔵 ASSOCIACOES DE SP</span>
+        
+        <h1>SP concentra 30% das ONGs do Brasil — e tambem a maior fila de reprovacoes</h1>
+        
+        <div class="stat-box">
+            <div class="stat-item">
+                <div class="stat-num">30%</div>
+                <div class="stat-label">das ONGs estao em SP</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">60%+</div>
+                <div class="stat-label">sao reprovadas na 1a tentativa</div>
+            </div>
+        </div>
+        
+        <p>Sao Paulo e o estado com <strong>maior concentracao de associacoes e ONGs</strong> do pais. Mas tambem e onde mais vejo organizacoes perdendo editais por um motivo simples:</p>
+        
+        <div class="highlight-box">
+            <strong>📍 O estatuto social esta desatualizado.</strong><br><br>
+            A ONG ate tem boa intencao. Mas na hora de inscrever o projeto no Transferegov, Plataforma +Brasil, ou edital estadual — descobre que o objeto social nao cobre a area de atuacao.<br><br>
+            Resultado: <strong>reprovacao na etapa documental</strong>. Nem chega a ser avaliado o merito do projeto.
+        </div>
+        
+        <p>E um erro burocratico que custa caro.</p>
+        
+        <p>Em um dos programas sociais que atuei, uma ONG de SP ficou <strong>3 anos tentando captar</strong> e sendo reprovada — ate que ajustamos o estatuto. No edital seguinte, foi aprovada.</p>
+        
+        <p>A correcao e simples. O estatuto precisa estar alinhado com as linhas de captacao que voce quer acessar.</p>
+        
+        <div class="cta-box">
+            <strong>💬 Ja perdeu edital por problema de documentacao?</strong><br>
+            <span style="font-size:13px; opacity:0.9;">Comenta ou manda DM. Posso revisar seu estatuto e mostrar onde esta o gargalo.</span>
+        </div>
+    </div>
+    <div class="hashtags">
+        #ONGsSP #TerceiroSetor #Estatuto #CaptacaoDeRecursos #Associacoes #COREGOV
+    </div>
+    <div class="footer-note">
+        COREGOV • coregov.com.br
+    </div>
+</div>
+</body>
+</html>"""
+    return html
+
+# Gerar os arquivos
+with open("post_01_prefeituras_mt.html", "w", encoding="utf-8") as f:
+    f.write(gerar_post_01())
+
+with open("post_02_associacoes_sp.html", "w", encoding="utf-8") as f:
+    f.write(gerar_post_02())
+
+print("✅ Post 01 - Prefeituras MT: post_01_prefeituras_mt.html")
+print("✅ Post 02 - Associacoes SP: post_02_associacoes_sp.html")
+print(f"\n📂 Salvos em: repo_simulador/")
+print("\n🔹 Abra no navegador e Ctrl+P → Salvar como PDF")
